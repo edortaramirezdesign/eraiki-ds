@@ -1,0 +1,388 @@
+/*
+ * Eraiki DS 1.0 — Design tokens
+ * Two axes: THEME (light default / dark) and VIEWPORT (desktop default / mobile <=1024px).
+ * Colors: Primitives (theme-dependent) + semantic Fill/Stroke aliases. Sizes: responsive.
+ * Values transcribed from the Figma Variables panel (Color, Sizes, Typography collections).
+ */
+
+:root {
+  /* ===== BRAND TOKENS — the small surface a team overrides to rebrand the whole
+     system: accent colour, fonts and corner radius. Override these on :root (and
+     their dark counterparts in the dark scopes below); everything else derives. ===== */
+  --brand-primary: #EB6C38;                        /* main accent */
+  --brand-primary-strong: #DF5F27;                 /* pressed / hover-darker accent */
+  --brand-primary-soft: rgba(235, 108, 56, 0.4);   /* disabled accent */
+  --brand-neutral: #1E1F24;                        /* neutral ink — text and greys derive from it */
+  --brand-neutral-paper: #FFFFFF;                  /* base surface / paper */
+  --brand-font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --brand-font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --brand-radius: 4px;
+
+  /* ===== COLOR — PRIMITIVES (light) ===== */
+  --color-primitives-primary-900: var(--brand-primary-strong);
+  --color-primitives-primary-600: var(--brand-primary);
+  --color-primitives-primary-300: var(--brand-primary-soft);
+  --color-primitives-complementary-600: #212D30;
+  --color-primitives-gray-600: var(--brand-neutral);
+  --color-primitives-gray-500: color-mix(in srgb, var(--brand-neutral) 72%, transparent);
+  --color-primitives-gray-400: color-mix(in srgb, var(--brand-neutral) 56%, transparent);
+  --color-primitives-gray-300: color-mix(in srgb, var(--brand-neutral) 26%, transparent);
+  --color-primitives-gray-200: color-mix(in srgb, var(--brand-neutral) 12%, transparent);
+  --color-primitives-gray-100: color-mix(in srgb, var(--brand-neutral) 3%, transparent);
+  --color-primitives-gray-000: var(--brand-neutral-paper);
+  --color-primitives-oncolor: #FFFFFF; /* OnColor: #FFF constante, NO vira con el tema */
+  --color-primitives-red-300: #D02020;
+  --color-primitives-red-100: rgba(208, 32, 32, 0.08);
+  --color-primitives-orange-300: #F0A21D;
+  --color-primitives-orange-100: rgba(240, 162, 29, 0.16);
+  --color-primitives-blue-300: #3A99EC;
+  --color-primitives-blue-100: rgba(58, 153, 236, 0.16);
+  --color-primitives-green-300: #34A654;
+  --color-primitives-green-100: rgba(52, 166, 84, 0.16);
+  --color-primitives-yellow-300: #FFE100; /* rating star fill; not theme-dependent */
+
+  /* ===== COLOR — SEMANTIC (alias primitives) ===== */
+  /* Fill / Plain / Surface */
+  --color-fill-plain-surface-accent: var(--color-primitives-primary-600);
+  --color-fill-plain-surface-complementary: var(--color-primitives-complementary-600);
+  --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-600);
+  --color-fill-plain-surface-standard-l: var(--color-primitives-gray-300);
+  --color-fill-plain-surface-standard-m: var(--color-primitives-gray-200);
+  --color-fill-plain-surface-standard-s: var(--color-primitives-gray-100);
+  --color-fill-plain-surface-base: var(--color-primitives-gray-000);
+  /* Fill / Plain / Text */
+  --color-fill-plain-text-accent: var(--color-primitives-primary-600);
+  --color-fill-plain-text-standard-l: var(--color-primitives-gray-600);
+  --color-fill-plain-text-standard-m: var(--color-primitives-gray-500);
+  --color-fill-plain-text-standard-s: var(--color-primitives-gray-300);
+  --color-fill-plain-text-inverse: var(--color-primitives-gray-000);
+  --color-fill-plain-text-oncolor: var(--color-primitives-oncolor);
+  /* Fill / Link / Surface */
+  --color-fill-link-surface-accent-active: var(--color-primitives-primary-900);
+  --color-fill-link-surface-accent-hover: var(--color-primitives-primary-900);
+  --color-fill-link-surface-accent-default: var(--color-primitives-primary-600);
+  --color-fill-link-surface-accent-disabled: var(--color-primitives-primary-300);
+  --color-fill-link-surface-standard-active: var(--color-primitives-gray-200);
+  --color-fill-link-surface-standard-hover: var(--color-primitives-gray-200);
+  --color-fill-link-surface-standard-default: var(--color-primitives-gray-100);
+  --color-fill-link-surface-standard-disabled: var(--color-primitives-gray-100);
+  /* Fill / Link / Text */
+  --color-fill-link-text-active: var(--color-primitives-gray-600);
+  --color-fill-link-text-hover: var(--color-primitives-gray-600);
+  --color-fill-link-text-default: var(--color-primitives-gray-500);
+  --color-fill-link-text-disabled: var(--color-primitives-gray-400);
+  /* Stroke / Link / Icon */
+  --color-stroke-link-icon-active: var(--color-primitives-gray-600);
+  --color-stroke-link-icon-hover: var(--color-primitives-gray-600);
+  --color-stroke-link-icon-default: var(--color-primitives-gray-500);
+  --color-stroke-link-icon-disabled: var(--color-primitives-gray-400);
+  --color-stroke-link-icon-inverse: var(--color-primitives-gray-000);
+  --color-stroke-link-icon-oncolor: var(--color-primitives-oncolor);
+  /* Stroke / Link / Input */
+  --color-stroke-link-input-active: var(--color-primitives-primary-600);
+  --color-stroke-link-input-hover: var(--color-primitives-gray-400);
+  --color-stroke-link-input-default: var(--color-primitives-gray-300);
+  --color-stroke-link-input-disabled: var(--color-primitives-gray-300);
+  --color-stroke-link-input-error: var(--color-primitives-red-300);
+  /* Stroke / Link / Surface */
+  --color-stroke-link-surface-accent-active: var(--color-primitives-primary-900);
+  --color-stroke-link-surface-accent-hover: var(--color-primitives-primary-900);
+  --color-stroke-link-surface-accent-default: var(--color-primitives-primary-600);
+  --color-stroke-link-surface-accent-disabled: var(--color-primitives-primary-300);
+  --color-stroke-link-surface-standard-active: var(--color-primitives-gray-400);
+  --color-stroke-link-surface-standard-hover: var(--color-primitives-gray-300);
+  --color-stroke-link-surface-standard-default: var(--color-primitives-gray-200);
+  --color-stroke-link-surface-standard-disabled: var(--color-primitives-gray-200);
+  /* Stroke / Plain / Icon */
+  --color-stroke-plain-icons-standard-m: var(--color-primitives-gray-600);
+  --color-stroke-plain-icons-standard-s: var(--color-primitives-gray-400);
+  --color-stroke-plain-icon-inverse: var(--color-primitives-gray-000);
+  --color-stroke-plain-icon-oncolor: var(--color-primitives-oncolor);
+  /* Stroke / Plain / Shape */
+  --color-stroke-plain-shape-accent: var(--color-primitives-primary-600);
+  --color-stroke-plain-shape-standard-l: var(--color-primitives-gray-300);
+  --color-stroke-plain-shape-standard-m: var(--color-primitives-gray-200);
+  --color-stroke-plain-shape-standard-s: var(--color-primitives-gray-100);
+  --color-stroke-plain-shape-inverse: var(--color-primitives-gray-000);
+  --color-stroke-plain-shape-oncolor: var(--color-primitives-oncolor);
+  /* Semantic */
+  --color-semantic-alert-m: var(--color-primitives-orange-300);
+  --color-semantic-alert-s: var(--color-primitives-orange-100);
+  --color-semantic-error-m: var(--color-primitives-red-300);
+  --color-semantic-error-s: var(--color-primitives-red-100);
+  --color-semantic-info-m: var(--color-primitives-blue-300);
+  --color-semantic-info-s: var(--color-primitives-blue-100);
+  --color-semantic-success-m: var(--color-primitives-green-300);
+  --color-semantic-success-s: var(--color-primitives-green-100);
+  /* Overlay — scrim behind modal/drawer surfaces (theme-independent) */
+  --color-overlay-scrim: rgba(0, 0, 0, 0.4);
+
+  /* ===== TYPOGRAPHY — font family (per role) ===== */
+  --font-family-display: var(--brand-font-heading);
+  --font-family-heading: var(--brand-font-heading);
+  --font-family-label: var(--brand-font-heading);
+  --font-family-body: var(--brand-font-body);
+  --font-family-detail: var(--brand-font-body);
+
+  /* ===== TYPOGRAPHY — font weight (per role) ===== */
+  --font-weight-display: 500;
+  --font-weight-heading: 500;
+  --font-weight-label: 600;
+  --font-weight-body: 400;
+  --font-weight-body-bold: 600;
+  --font-weight-detail: 400;
+
+  /* ===== TYPOGRAPHY — font size (desktop) ===== */
+  --font-size-display-m: 64px;
+  --font-size-heading-xl: 48px;
+  --font-size-heading-l: 40px;
+  --font-size-heading-m: 32px;
+  --font-size-heading-s: 24px;
+  --font-size-label-l: 12px;
+  --font-size-label-m: 10px;
+  --font-size-body-l: 18px;
+  --font-size-body-m: 14px;
+  --font-size-detail-m: 12px;
+  --font-size-detail-s: 8px;
+
+  /* ===== TYPOGRAPHY — line height (desktop) ===== */
+  --line-height-display-m: 72px;
+  --line-height-heading-xl: 56px;
+  --line-height-heading-l: 48px;
+  --line-height-heading-m: 40px;
+  --line-height-heading-s: 32px;
+  --line-height-label-l: 18px;
+  --line-height-label-m: 18px;
+  --line-height-body-l: 26px;
+  --line-height-body-m: 22px;
+  --line-height-detail-m: 20px;
+  --line-height-detail-s: 16px;
+
+  /* ===== TYPOGRAPHY — letter spacing ===== */
+  --letter-spacing-s: -1.5px;
+  --letter-spacing-m: 0;
+  --letter-spacing-l: 4px;
+
+  /* ===== SPACING (desktop) ===== */
+  --spacing-zero: 0;
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 12px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 40px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 80px;
+  --spacing-5xl: 120px;
+  --spacing-6xl: 200px;
+
+  /* ===== RADIUS ===== */
+  --radius-standard: var(--brand-radius);
+  --radius-circle: 99999px;
+
+  /* ===== STROKE / BORDER ===== */
+  /* Figma-tokenized stroke sizes (single source of truth) */
+  --stroke-size-m-default: 1.5px;
+  --stroke-m: var(--stroke-size-m-default);
+  --border-width-default: var(--stroke-size-m-default);
+
+  /* ===== ELEVATION ===== */
+  --elevation-small: 0 2px 8px rgba(30, 31, 36, 0.08);
+  --elevation-medium: 0 4px 8px rgba(30, 31, 36, 0.24);
+
+  /* ===== CANVAS WIDTH (desktop) ===== */
+  --width-max: 2560px;
+  --width-min: 1025px;
+
+  /* ===== BREAKPOINTS (from Canvas width) ===== */
+  --breakpoint-desktop-min: 1025px;
+  --breakpoint-mobile-min: 320px;
+  --breakpoint-mobile-max: 1024px;
+
+  /* ===== ICONS ===== */
+  --icon-size: 20px;
+  --icon-stroke: 1.5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      /* primitives (dark) */
+      --brand-primary-strong: #DD602A;
+      --brand-primary-soft: rgba(245, 118, 66, 0.4);
+      --color-primitives-primary-900: var(--brand-primary-strong);
+      --color-primitives-primary-600: var(--brand-primary);
+      --color-primitives-primary-300: var(--brand-primary-soft);
+      --color-primitives-complementary-600: #212D30;
+      --brand-neutral: #EFEFF0;
+      --brand-neutral-paper: #1E1F24;
+      --color-primitives-gray-600: var(--brand-neutral);
+      --color-primitives-gray-500: color-mix(in srgb, var(--brand-neutral) 72%, transparent);
+      --color-primitives-gray-400: color-mix(in srgb, var(--brand-neutral) 56%, transparent);
+      --color-primitives-gray-300: color-mix(in srgb, var(--brand-neutral) 32%, transparent);
+      --color-primitives-gray-200: color-mix(in srgb, var(--brand-neutral) 16%, transparent);
+      --color-primitives-gray-100: color-mix(in srgb, var(--brand-neutral) 12%, transparent);
+      --color-primitives-gray-000: var(--brand-neutral-paper);
+      --color-primitives-red-300: #D02020;
+      --color-primitives-red-100: rgba(208, 32, 32, 0.16);
+      --color-primitives-orange-300: #F0A21D;
+      --color-primitives-orange-100: rgba(240, 162, 29, 0.16);
+      --color-primitives-blue-300: #3A99EC;
+      --color-primitives-blue-100: rgba(58, 153, 236, 0.16);
+      --color-primitives-green-300: #34A654;
+      --color-primitives-green-100: rgba(52, 166, 84, 0.16);
+
+      /* semantic overrides where the alias differs in dark */
+      --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-500);
+  }
+}
+
+:root[data-theme="dark"] {
+    /* primitives (dark) */
+    --brand-primary-strong: #DD602A;
+    --brand-primary-soft: rgba(245, 118, 66, 0.4);
+    --color-primitives-primary-900: var(--brand-primary-strong);
+    --color-primitives-primary-600: var(--brand-primary);
+    --color-primitives-primary-300: var(--brand-primary-soft);
+    --color-primitives-complementary-600: #212D30;
+    --brand-neutral: #EFEFF0;
+    --brand-neutral-paper: #1E1F24;
+    --color-primitives-gray-600: var(--brand-neutral);
+    --color-primitives-gray-500: color-mix(in srgb, var(--brand-neutral) 72%, transparent);
+    --color-primitives-gray-400: color-mix(in srgb, var(--brand-neutral) 56%, transparent);
+    --color-primitives-gray-300: color-mix(in srgb, var(--brand-neutral) 32%, transparent);
+    --color-primitives-gray-200: color-mix(in srgb, var(--brand-neutral) 16%, transparent);
+    --color-primitives-gray-100: color-mix(in srgb, var(--brand-neutral) 12%, transparent);
+    --color-primitives-gray-000: var(--brand-neutral-paper);
+    --color-primitives-red-300: #D02020;
+    --color-primitives-red-100: rgba(208, 32, 32, 0.16);
+    --color-primitives-orange-300: #F0A21D;
+    --color-primitives-orange-100: rgba(240, 162, 29, 0.16);
+    --color-primitives-blue-300: #3A99EC;
+    --color-primitives-blue-100: rgba(58, 153, 236, 0.16);
+    --color-primitives-green-300: #34A654;
+    --color-primitives-green-100: rgba(52, 166, 84, 0.16);
+
+    /* semantic overrides where the alias differs in dark */
+    --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-500);
+}
+
+@media (max-width: 1024px) {
+  :root {
+      /* font size (mobile) */
+      --font-size-display-m: 40px;
+      --font-size-heading-xl: 40px;
+      --font-size-heading-l: 34px;
+      --font-size-heading-m: 28px;
+
+      /* line height (mobile) */
+      --line-height-display-m: 46px;
+      --line-height-heading-xl: 46px;
+      --line-height-heading-l: 40px;
+      --line-height-heading-m: 32px;
+
+      /* spacing (mobile) */
+      --spacing-3xl: 48px;
+      --spacing-4xl: 52px;
+      --spacing-5xl: 64px;
+      --spacing-6xl: 80px;
+
+      /* canvas width (mobile) */
+      --width-max: 1024px;
+      --width-min: 320px;
+  }
+}
+
+/* Local dark scope: full alias set so var() re-resolves against dark primitives.
+   Lives here (not docs.css) so it also applies inside the section preview iframes. */
+.theme-dark {
+  --brand-primary-strong: #DD602A;
+  --brand-primary-soft: rgba(245, 118, 66, 0.4);
+  --color-primitives-primary-900: var(--brand-primary-strong);
+  --color-primitives-primary-600: var(--brand-primary);
+  --color-primitives-primary-300: var(--brand-primary-soft);
+  --color-primitives-complementary-600: #212D30;
+  --brand-neutral: #EFEFF0;
+  --brand-neutral-paper: #1E1F24;
+  --color-primitives-gray-600: var(--brand-neutral);
+  --color-primitives-gray-500: color-mix(in srgb, var(--brand-neutral) 72%, transparent);
+  --color-primitives-gray-400: color-mix(in srgb, var(--brand-neutral) 56%, transparent);
+  --color-primitives-gray-300: color-mix(in srgb, var(--brand-neutral) 32%, transparent);
+  --color-primitives-gray-200: color-mix(in srgb, var(--brand-neutral) 16%, transparent);
+  --color-primitives-gray-100: color-mix(in srgb, var(--brand-neutral) 12%, transparent);
+  --color-primitives-gray-000: var(--brand-neutral-paper);
+  --color-primitives-red-300: #D02020;
+  --color-primitives-red-100: rgba(208, 32, 32, 0.16);
+  --color-primitives-orange-300: #F0A21D;
+  --color-primitives-orange-100: rgba(240, 162, 29, 0.16);
+  --color-primitives-blue-300: #3A99EC;
+  --color-primitives-blue-100: rgba(58, 153, 236, 0.16);
+  --color-primitives-green-300: #34A654;
+  --color-primitives-green-100: rgba(52, 166, 84, 0.16);
+  /* aliases */
+  --color-fill-plain-surface-accent: var(--color-primitives-primary-600);
+  --color-fill-plain-surface-complementary: var(--color-primitives-complementary-600);
+  --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-600);
+  --color-fill-plain-surface-standard-l: var(--color-primitives-gray-300);
+  --color-fill-plain-surface-standard-m: var(--color-primitives-gray-200);
+  --color-fill-plain-surface-standard-s: var(--color-primitives-gray-100);
+  --color-fill-plain-surface-base: var(--color-primitives-gray-000);
+  --color-fill-plain-text-accent: var(--color-primitives-primary-600);
+  --color-fill-plain-text-standard-l: var(--color-primitives-gray-600);
+  --color-fill-plain-text-standard-m: var(--color-primitives-gray-500);
+  --color-fill-plain-text-standard-s: var(--color-primitives-gray-300);
+  --color-fill-plain-text-inverse: var(--color-primitives-gray-000);
+  --color-fill-plain-text-oncolor: var(--color-primitives-oncolor);
+  --color-fill-link-surface-accent-active: var(--color-primitives-primary-900);
+  --color-fill-link-surface-accent-hover: var(--color-primitives-primary-900);
+  --color-fill-link-surface-accent-default: var(--color-primitives-primary-600);
+  --color-fill-link-surface-accent-disabled: var(--color-primitives-primary-300);
+  --color-fill-link-surface-standard-active: var(--color-primitives-gray-200);
+  --color-fill-link-surface-standard-hover: var(--color-primitives-gray-200);
+  --color-fill-link-surface-standard-default: var(--color-primitives-gray-100);
+  --color-fill-link-surface-standard-disabled: var(--color-primitives-gray-100);
+  --color-fill-link-text-active: var(--color-primitives-gray-600);
+  --color-fill-link-text-hover: var(--color-primitives-gray-600);
+  --color-fill-link-text-default: var(--color-primitives-gray-500);
+  --color-fill-link-text-disabled: var(--color-primitives-gray-400);
+  --color-stroke-link-icon-active: var(--color-primitives-gray-600);
+  --color-stroke-link-icon-hover: var(--color-primitives-gray-600);
+  --color-stroke-link-icon-default: var(--color-primitives-gray-500);
+  --color-stroke-link-icon-disabled: var(--color-primitives-gray-400);
+  --color-stroke-link-icon-inverse: var(--color-primitives-gray-000);
+  --color-stroke-link-icon-oncolor: var(--color-primitives-oncolor);
+  --color-stroke-link-input-active: var(--color-primitives-primary-600);
+  --color-stroke-link-input-hover: var(--color-primitives-gray-400);
+  --color-stroke-link-input-default: var(--color-primitives-gray-300);
+  --color-stroke-link-input-disabled: var(--color-primitives-gray-300);
+  --color-stroke-link-input-error: var(--color-primitives-red-300);
+  --color-stroke-link-surface-accent-active: var(--color-primitives-primary-900);
+  --color-stroke-link-surface-accent-hover: var(--color-primitives-primary-900);
+  --color-stroke-link-surface-accent-default: var(--color-primitives-primary-600);
+  --color-stroke-link-surface-accent-disabled: var(--color-primitives-primary-300);
+  --color-stroke-link-surface-standard-active: var(--color-primitives-gray-400);
+  --color-stroke-link-surface-standard-hover: var(--color-primitives-gray-300);
+  --color-stroke-link-surface-standard-default: var(--color-primitives-gray-200);
+  --color-stroke-link-surface-standard-disabled: var(--color-primitives-gray-200);
+  --color-stroke-plain-icons-standard-m: var(--color-primitives-gray-600);
+  --color-stroke-plain-icons-standard-s: var(--color-primitives-gray-400);
+  --color-stroke-plain-icon-inverse: var(--color-primitives-gray-000);
+  --color-stroke-plain-icon-oncolor: var(--color-primitives-oncolor);
+  --color-stroke-plain-shape-accent: var(--color-primitives-primary-600);
+  --color-stroke-plain-shape-standard-l: var(--color-primitives-gray-300);
+  --color-stroke-plain-shape-standard-m: var(--color-primitives-gray-200);
+  --color-stroke-plain-shape-inverse: var(--color-primitives-gray-000);
+  --color-stroke-plain-shape-oncolor: var(--color-primitives-oncolor);
+  --color-semantic-alert-m: var(--color-primitives-orange-300);
+  --color-semantic-alert-s: var(--color-primitives-orange-100);
+  --color-semantic-error-m: var(--color-primitives-red-300);
+  --color-semantic-error-s: var(--color-primitives-red-100);
+  --color-semantic-info-m: var(--color-primitives-blue-300);
+  --color-semantic-info-s: var(--color-primitives-blue-100);
+  --color-semantic-success-m: var(--color-primitives-green-300);
+  --color-semantic-success-s: var(--color-primitives-green-100);
+  /* dark overrides */
+  --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-500);
+  background: var(--color-fill-plain-surface-base);
+  color: var(--color-fill-plain-text-standard-l);
+}

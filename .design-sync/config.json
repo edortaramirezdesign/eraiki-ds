@@ -1,0 +1,37 @@
+{
+  "shape": "package",
+  "pkg": "@eraiki/react",
+  "globalName": "Eraiki",
+  "buildCmd": "cd react && npm ci && npm run build && node scripts/gen-docs.mjs",
+  "entry": "react/dist/index.js",
+  "cssEntry": "dist/eraiki.css",
+  "extraFonts": [
+    "node_modules/@fontsource/inter/latin-400.css",
+    "node_modules/@fontsource/inter/latin-500.css",
+    "node_modules/@fontsource/inter/latin-600.css",
+    "node_modules/@fontsource/inter/latin-700.css",
+    "node_modules/@fontsource/plus-jakarta-sans/latin-500.css",
+    "node_modules/@fontsource/plus-jakarta-sans/latin-600.css",
+    "node_modules/@fontsource/plus-jakarta-sans/latin-700.css"
+  ],
+  "componentSrcMap": {
+    "cx": null,
+    "useControllable": null
+  },
+  "overrides": {
+    "Banner": {
+      "cardMode": "column"
+    },
+    "ButtonGroup": {
+      "cardMode": "column"
+    },
+    "Icon": {
+      "cardMode": "column"
+    }
+  },
+  "provider": {
+    "component": "EraikiProvider"
+  },
+  "docsDir": "docs",
+  "readmeHeader": ".design-sync/conventions.md"
+}

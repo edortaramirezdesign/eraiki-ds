@@ -1,0 +1,26 @@
+{
+  "name": "@eraiki/react",
+  "version": "0.1.0",
+  "private": true,
+  "description": "React components for Eraiki DS — thin wrappers that render the canonical .ek-* markup styled by ../css/components.css + ../tokens.css.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "node build.mjs && tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/plus-jakarta-sans": "5.2.8",
+    "@types/react": "19.2.2",
+    "esbuild": "0.25.10",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "typescript": "5.9.3"
+  }
+}

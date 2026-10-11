@@ -5,6 +5,10 @@
  * Values transcribed from the Figma Variables panel (Color, Sizes, Typography collections).
  */
 
+/* Brand fonts (--brand-font-heading / --brand-font-body) served by Google Fonts.
+   If you rebrand the fonts below, update this URL to match. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Plus+Jakarta+Sans:wght@500..700&display=swap');
+
 :root {
   /* ===== BRAND TOKENS — the small surface a team overrides to rebrand the whole
      system: accent colour, fonts and corner radius. Override these on :root (and

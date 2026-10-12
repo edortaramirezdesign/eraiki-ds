@@ -11,19 +11,23 @@
 - [GENERAL] Fonts: the repo originally never loaded Inter / Plus Jakarta Sans (`--brand-font-*` only named them). Fixed at the source (user's choice, 2026-10-11): `tokens.css` now `@import`s Google Fonts (Inter 400–700, Plus Jakarta Sans 500–700, variable). The converter reports `[FONT_REMOTE]` (informational, expected) — no `cfg.extraFonts` needed. Verified loading in the bundle previews and in Storybook.
 - [GENERAL] Inputs rendered in serif: `.ek-input input { font: inherit }` and nothing sets a family above it unless an ancestor has `.ek`. Fix: `EraikiProvider` (renders `<div class="ek">`) set as `cfg.provider`; the conventions header tells the design agent to always wrap in it.
 - [GENERAL] Do not load `js/eraiki.js` alongside the React components: its document-level click delegation toggles the same `is-on`/`is-open` classes React manages.
-- Banner / ButtonGroup / Icon: `[GRID_OVERFLOW] wide` → `cardMode: "column"`.
+- Banner / ButtonGroup / Icon / CellsRow / LinkableCell / PlainCell / FileDrop / TextArea / Accordion / TextGroup / Pagination: `[GRID_OVERFLOW] wide` → `cardMode: "column"`.
+- `react/src/builders.ts` imports `js/builders.js` (window.EK_BUILD) to reuse the rating star and text-group icon SVGs — keep icons.js imported first.
+
+## Known render warns
+- Rating: `[RENDER_THIN] mounts have no text and paint nothing` — false positive; the stars are SVG only and render correctly (verified on the sheet).
 
 ## DS findings (not sync issues — for the Eraiki team)
 - `tokens.css` dark mode: the `@media (prefers-color-scheme: dark) :root {…}` block has no `:not([data-theme="light"])` guard, so `data-theme="light"` cannot force light mode on a dark-OS machine.
 - Fonts come from Google Fonts at runtime: in the EU this sends visitors' IPs to Google (GDPR exposure for client sites); self-hosting the woff2 files is the alternative if that matters.
 
-## Scope (phase 1 of 3, 2026-10-11)
-- Synced: EraikiProvider, Icon, Button, ButtonGroup, Badge, Avatar, AvatarGroup, Banner, Checkbox, CheckboxGroup, Switch, TextField, Dropdown, Tabs (desktop), ProductCard, Label, Pill, PillGroup, Tooltip.
-- Pending phase 2: Accordion, Breadcrumb, Calendar, Cell (featured/linkable/plain), Cells row, Divider, Dropdown input/options, File drop, Image, Input field (date range, date selector, password, text area), Pagination, PIN code, Placeholder, Radio buttons group, Rating, Search field, Tabs mobile, Text group.
+## Scope
+- Phase 1 (2026-10-11): EraikiProvider, Icon, Button, ButtonGroup, Badge, Avatar, AvatarGroup, Banner, Checkbox, CheckboxGroup, Switch, TextField, Dropdown, Tabs (desktop), ProductCard, Label, Pill, PillGroup, Tooltip.
+- Phase 2 (2026-10-12): Accordion, Breadcrumb, Calendar, PlainCell, LinkableCell, FeaturedCell, CellsRow, Divider, DropdownInput, DropdownMenu (= Dropdown options), FileDrop, Image, DateField (= date selector), DateRangeField, PasswordField, TextArea, Pagination, PinCode, Placeholder, RadioGroup, Rating, SearchField, MobileTabs (= Tabs group mobile), TextGroup. All 41 DS components now covered.
 - Pending phase 3: the 14 sections (`js/sections.js`).
 
 ## Re-sync risks
 - React markup is hand-mirrored from `js/playgrounds.js` / `js/previews.js`: if a component's HTML structure changes there, update `react/src/<Name>.tsx` too (CSS-only changes flow automatically via `dist/eraiki.css`).
-- Previews load remote images (i.pravatar.cc, cdn.dummyjson.com) — if those hosts change or block, Avatar / AvatarGroup / ProductCard cards go blank.
+- Previews load remote images (i.pravatar.cc, cdn.dummyjson.com, images.unsplash.com) — if those hosts change or block, Avatar / AvatarGroup / ProductCard cards go blank.
 - Fonts load from fonts.googleapis.com at runtime — offline or blocked networks fall back to system fonts; if the brand fonts change, update the `@import` URL in `tokens.css`.
 - Toolchain: Node 25, React 19.2, esbuild 0.25, TS 5.9, playwright 1.64 (chromium-1248 cache).

@@ -19,6 +19,30 @@
     },
     "Icon": {
       "cardMode": "column"
+    },
+    "CellsRow": {
+      "cardMode": "column"
+    },
+    "LinkableCell": {
+      "cardMode": "column"
+    },
+    "PlainCell": {
+      "cardMode": "column"
+    },
+    "FileDrop": {
+      "cardMode": "column"
+    },
+    "TextArea": {
+      "cardMode": "column"
+    },
+    "Accordion": {
+      "cardMode": "column"
+    },
+    "TextGroup": {
+      "cardMode": "column"
+    },
+    "Pagination": {
+      "cardMode": "column"
     }
   },
   "provider": {

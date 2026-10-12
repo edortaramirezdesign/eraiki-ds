@@ -20,9 +20,18 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 - Do NOT also load the vanilla `eraiki.js` runtime — the React components manage their own state (open, checked, selected) and the runtime would toggle classes twice.
 
 ## Components (props, not classes)
-Button / ButtonGroup, TextField, Dropdown, Checkbox / CheckboxGroup, Switch, Pill / PillGroup, Tabs, Banner, Tooltip, Badge, Label, Avatar / AvatarGroup, ProductCard, Icon. Each has a `.d.ts` (exact props) and `.prompt.md` (when to use / when not). Key conventions:
+- Actions: Button / ButtonGroup, Pill / PillGroup
+- Forms: TextField, TextArea, PasswordField, SearchField, Dropdown, DropdownInput, DropdownMenu, Checkbox / CheckboxGroup, RadioGroup, Switch, DateField, DateRangeField, Calendar, PinCode, FileDrop
+- Navigation: Tabs (desktop), MobileTabs, Breadcrumb, Pagination
+- Feedback: Banner, Tooltip
+- Data display: Badge, Label, Avatar / AvatarGroup, Rating, Image, CellsRow + PlainCell / LinkableCell / FeaturedCell (tables)
+- Layout: TextGroup (eyebrow · title · body · action — the brick of marketing sections), Accordion, Divider, Placeholder
+- Commerce: ProductCard · Foundations: EraikiProvider, Icon
+
+ Each has a `.d.ts` (exact props) and `.prompt.md` (when to use / when not). Key conventions:
 - Labels are uppercase by design and end with a colon: `label="Email:"`.
 - `Button variant`: `primary` (one per view, main action) · `secondary` · `tertiary` (text only). `size`: `medium` (40px) · `small` (32px). Icons via `iconLeft` / `iconRight` / `icon`.
+- Tables: stack `CellsRow`s; first row of `FeaturedCell`s as the header; `kind="amount"` right-aligns numbers.
 - Semantic kinds everywhere: `info` · `success` · `alert` · `error` (Banner `kind`, Label `kind`, Badge `color`).
 - Icons: `<Icon name="search" />` — names listed in `IconName` (check, chevronDown, plus, trash, info, heart, close, user…). They inherit `currentColor`.
 

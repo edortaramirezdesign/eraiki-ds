@@ -43,6 +43,62 @@
     },
     "Pagination": {
       "cardMode": "column"
+    },
+    "Hero001": {
+      "cardMode": "column",
+      "viewport": "1440x900"
+    },
+    "Hero002": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "Explanation001": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "Explanation004": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "Explanation005": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "Explanation006": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "ValuesFeatures001": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "ValuesFeatures002": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "ValuesFeatures003": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "ValuesFeatures004": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "Marquee001": {
+      "cardMode": "single",
+      "viewport": "1440x900"
+    },
+    "Explanation002": {
+      "cardMode": "column",
+      "viewport": "1440x900"
+    },
+    "Explanation003": {
+      "cardMode": "column",
+      "viewport": "1440x900"
+    },
+    "Contact001": {
+      "cardMode": "column",
+      "viewport": "1440x900"
     }
   },
   "provider": {

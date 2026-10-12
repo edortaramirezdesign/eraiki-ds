@@ -14,6 +14,10 @@
 - Banner / ButtonGroup / Icon / CellsRow / LinkableCell / PlainCell / FileDrop / TextArea / Accordion / TextGroup / Pagination: `[GRID_OVERFLOW] wide` → `cardMode: "column"`.
 - `react/src/builders.ts` imports `js/builders.js` (window.EK_BUILD) to reuse the rating star and text-group icon SVGs — keep icons.js imported first.
 
+- [GENERAL] Section images (phase 3): the repo has no published URL (no git remote) and the converter uploads no asset files, so `assets/sections/` isn't reachable from the project. Decision (2026-10-12): inline them in the bundle as data URLs (`react/build.mjs` loader `.webp`/`.svg` → `dataurl`). Photos are WebP copies in `react/src/sections/assets/` (made with Pillow from `assets/sections/*.jpg`: wide ones 1280px, portraits 720px tall, q42–55, 236 KB total); logos and illustrations import the original SVGs from `assets/sections/` (single source). Exposed as `sectionImages` and used as each section's default `image`/`images`/`logos`. Bundle grew 83 KB → ~450 KB. If the source photos change, regenerate the WebPs.
+- Sections are 1440px page blocks with a real `@media (max-width: 1024px)` reflow → `cfg.overrides` give every section `viewport: "1440x900"`; `cardMode: "single"`, or `"column"` for the ones whose previews show both orders (Hero001, Explanation002, Explanation003, Contact001).
+- Sections reuse components where the DS markup matches exactly: Button / ButtonGroup everywhere, TextGroup (Explanation001 card, Explanation004 card), TextField / TextArea with `ek-datefield--full` (Contact001), Icon. The h2 + `ek-heading-*` heads are the shared `react/src/sections/parts.tsx` (TextGroup renders an h3 with an inline size, which isn't the section markup).
+
 ## Known render warns
 - Rating: `[RENDER_THIN] mounts have no text and paint nothing` — false positive; the stars are SVG only and render correctly (verified on the sheet).
 
@@ -24,9 +28,11 @@
 ## Scope
 - Phase 1 (2026-10-11): EraikiProvider, Icon, Button, ButtonGroup, Badge, Avatar, AvatarGroup, Banner, Checkbox, CheckboxGroup, Switch, TextField, Dropdown, Tabs (desktop), ProductCard, Label, Pill, PillGroup, Tooltip.
 - Phase 2 (2026-10-12): Accordion, Breadcrumb, Calendar, PlainCell, LinkableCell, FeaturedCell, CellsRow, Divider, DropdownInput, DropdownMenu (= Dropdown options), FileDrop, Image, DateField (= date selector), DateRangeField, PasswordField, TextArea, Pagination, PinCode, Placeholder, RadioGroup, Rating, SearchField, MobileTabs (= Tabs group mobile), TextGroup. All 41 DS components now covered.
-- Pending phase 3: the 14 sections (`js/sections.js`).
+- Phase 3 (2026-10-12): the 14 sections from `js/sections.js` — Hero001, Hero002, Explanation001–006, ValuesFeatures001–004, Marquee001, Contact001 (category "Sections", docs generated from the section version config) + `sectionImages`.
 
 ## Re-sync risks
+- Section markup is hand-mirrored from `js/sections.js` (`ERAIKI_SECTIONS_BUILD`): structural changes there need the matching `react/src/sections/*.tsx` update.
+- Marquee001's sample logos (`assets/sections/marquee-logo-*.svg`) are real press brands (Forbes, Expansión, El País…) — fine as placeholders, but designs should replace them via `logos`.
 - React markup is hand-mirrored from `js/playgrounds.js` / `js/previews.js`: if a component's HTML structure changes there, update `react/src/<Name>.tsx` too (CSS-only changes flow automatically via `dist/eraiki.css`).
 - Previews load remote images (i.pravatar.cc, cdn.dummyjson.com, images.unsplash.com) — if those hosts change or block, Avatar / AvatarGroup / ProductCard cards go blank.
 - Fonts load from fonts.googleapis.com at runtime — offline or blocked networks fall back to system fonts; if the brand fonts change, update the `@import` URL in `tokens.css`.

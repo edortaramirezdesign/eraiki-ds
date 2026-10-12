@@ -12,6 +12,8 @@ await build({
   jsx: 'automatic',
   target: 'es2020',
   external: ['react', 'react/jsx-runtime', 'react-dom'],
+  // Section sample images/logos are inlined as data URLs (src/sections/images.ts).
+  loader: { '.webp': 'dataurl', '.svg': 'dataurl' },
   logLevel: 'info',
 });
 

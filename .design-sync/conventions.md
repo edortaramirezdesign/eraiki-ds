@@ -27,6 +27,7 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 - Data display: Badge, Label, Avatar / AvatarGroup, Rating, Image, CellsRow + PlainCell / LinkableCell / FeaturedCell (tables)
 - Layout: TextGroup (eyebrow · title · body · action — the brick of marketing sections), Accordion, Divider, Placeholder
 - Commerce: ProductCard · Foundations: EraikiProvider, Icon
+- Sections (full-width page blocks): Hero001, Hero002, Explanation001–006, ValuesFeatures001–004, Marquee001, Contact001
 
  Each has a `.d.ts` (exact props) and `.prompt.md` (when to use / when not). Key conventions:
 - Labels are uppercase by design and end with a colon: `label="Email:"`.
@@ -34,6 +35,28 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 - Tables: stack `CellsRow`s; first row of `FeaturedCell`s as the header; `kind="amount"` right-aligns numbers.
 - Semantic kinds everywhere: `info` · `success` · `alert` · `error` (Banner `kind`, Label `kind`, Badge `color`).
 - Icons: `<Icon name="search" />` — names listed in `IconName` (check, chevronDown, plus, trash, info, heart, close, user…). They inherit `currentColor`.
+
+## Building pages from sections
+A landing page is a vertical stack of sections. Put them directly inside `EraikiProvider`, one after another — no wrapper, margins or gaps between them (each section carries its own padding and background).
+
+```jsx
+const { EraikiProvider, Hero001, ValuesFeatures001, Explanation002, Marquee001, Contact001 } = window.Eraiki;
+
+<EraikiProvider>
+  <Hero001 label="New collection" title="Designed to last a lifetime" primaryAction="Explore">Handmade furniture from local oak.</Hero001>
+  <ValuesFeatures001 label="Why us" title="Built with confidence" primaryAction="Get started"
+    items={[{ icon: 'calendar', title: 'Fixed timeline', text: '…' }, { icon: 'check', title: 'Fixed price', text: '…' }]}>Intro copy.</ValuesFeatures001>
+  <Explanation002 label="Materials" title="Natural materials" primaryAction="View materials" image="https://…/photo.jpg">Body copy.</Explanation002>
+  <Explanation002 order="image-text" label="Craft" title="Cut by hand" primaryAction="Meet the team">Body copy.</Explanation002>
+  <Marquee001 title="Trusted by" />
+  <Contact001 label="Contact" title="Let's talk" submitLabel="Send">We reply within two days.</Contact001>
+</EraikiProvider>
+```
+- Content goes in props, never in custom markup: `label` (eyebrow), `title`, children (body copy), `primaryAction` / `secondaryAction` (button labels, + `onPrimaryAction` / `onSecondaryAction`), and `items` arrays for lists/cards.
+- Typical order: one hero first (Hero001 or Hero002) → values/features → explanations (alternate `order="text-image"` / `"image-text"` for rhythm) → marquee (social proof) → Contact001 last.
+- Images: `image` / `images` / `background` / `logos` take URLs. Every section ships with built-in sample images (also exposed as `sectionImages`), so omit them for a quick mock and pass real URLs for real content.
+- Sections reflow to a single column at ≤ 1024px viewport width (real media query) — design desktop at 1440px wide and mobile at 390px.
+- Use only one hero per page and at most one primary action per section.
 
 ## Your own layout glue — tokens and type classes
 Use `var(--…)` tokens in inline styles; never hard-code hex values, px font sizes or font families.

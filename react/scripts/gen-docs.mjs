@@ -8,6 +8,10 @@ const root = new URL('../../', import.meta.url);
 const ctx = { window: {} };
 vm.runInNewContext(readFileSync(new URL('js/components-data.js', root), 'utf8'), ctx);
 const BY_SLUG = Object.fromEntries(ctx.window.ERAIKI_COMPONENTS.map((c) => [c.slug, c]));
+// Sections: written docs live per version in js/sections.js (ERAIKI_SECTIONS).
+vm.runInNewContext(readFileSync(new URL('js/sections.js', root), 'utf8'), ctx);
+const SECTION_BY_SLUG = {};
+for (const sec of ctx.window.ERAIKI_SECTIONS) for (const v of sec.versions) SECTION_BY_SLUG[v.slug] = v;
 
 // React component -> [DS slug | null, category]
 const MAP = {
@@ -56,8 +60,27 @@ const MAP = {
   FileDrop: ['file-drop', 'Forms'],
 };
 
+// React section -> js/sections.js version slug (category "Sections").
+const SECTIONS = {
+  Hero001: 'hero-001',
+  Hero002: 'hero-002',
+  Explanation001: 'explanation-001',
+  Explanation002: 'explanation-002',
+  Explanation003: 'explanation-003',
+  Explanation004: 'explanation-004',
+  Explanation005: 'explanation-005',
+  Explanation006: 'explanation-006',
+  ValuesFeatures001: 'values-001',
+  ValuesFeatures002: 'values-002',
+  ValuesFeatures003: 'values-003',
+  ValuesFeatures004: 'values-004',
+  Marquee001: 'marquee-001',
+  Contact001: 'contact-001',
+};
+
 const EXTRA = {
   EraikiProvider: 'App root for Eraiki. Renders the `.ek` root class (the body font family that inputs and plain text inherit) and applies the light/dark theme. Wrap every screen in it exactly once.',
+  Contact001: 'Contact 001 is a two-column contact block: the message (eyebrow, heading and a short paragraph) on one side and a simple form on the other — labelled text fields, a message text area and a single primary submit button. On narrow screens the columns stack, message first. Use it at the end of a page to collect enquiries; keep the form short.',
   Icon: 'Eraiki line icon: a 20×20, 1.5px-stroke glyph that inherits `currentColor`. Use `size="s"` for the 16px variant. The available names are listed in the `name` prop.',
 };
 
@@ -99,6 +122,20 @@ const PROPS_MAP = {
   Calendar: 'Mode → `mode`; Month selector → `monthSelector`; Year selector → `yearSelector`; Button → `buttonLabel`; selection → `defaultSelected` / `defaultRange`.',
   PinCode: 'cells → `length`; State Error → `error`, Disabled → `disabled`; Filled → `defaultValue`.',
   RadioGroup: 'Label → `label`; options → `options`; Selected → `value` / `defaultValue`; State Disabled → `disabled` (group) or per-option `disabled`.',
+  Hero001: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; arrows → `showNav` (+ `onPrevious` / `onNext`); photo → `image`.',
+  Hero002: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; photo → `image`.',
+  Explanation001: 'Text group card → `label` / `title` / children / `primaryAction`; background photo → `image`.',
+  Explanation002: 'Text + image / Image + text → `order`; text → `label` / `title` / children; buttons → `primaryAction` / `secondaryAction`; photo → `image`.',
+  Explanation003: 'Text + image / Image + text → `order`; text card → `label` / `title` / children / `primaryAction` / `secondaryAction`; image card → `image`.',
+  Explanation004: 'Header → `label` / `title`; image panels → `images` (two); text card → `cardLabel` / `cardTitle` / children / `primaryAction`.',
+  Explanation005: 'Intro → `label` / `title` / children; scrolling image row → `images`.',
+  Explanation006: 'Text → `label` / `title` / children / `primaryAction`; card image → `image`; full-bleed backdrop → `background`.',
+  ValuesFeatures001: 'Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; feature cards → `items` (`{icon, title, text}`).',
+  ValuesFeatures002: 'Heading → `label` / `title`; feature list → `items` (`{icon, title, text}`); open item → `defaultActive` / `active`; photo → `image`.',
+  ValuesFeatures003: 'Heading → `label` / `title`; numbered rows → `items` (`{title, text}`, numbers are automatic); photo → `image`.',
+  ValuesFeatures004: 'Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; staggered cards → `items` (`{title, text, illustration}`).',
+  Marquee001: 'Intro → `label` / `title` / children / `primaryAction`; logo strip → `logos` (image URLs).',
+  Contact001: 'Text + Form / Form + Text → `order`; message → `label` / `title` / children; fields → `fields` (`{label, placeholder, type, multiline}`); button → `submitLabel` (+ `onSubmit`).',
   FileDrop: 'State Uploading → `status="uploading"` + `progress`; Upload failed → `status="error"`; Dragging is live on drag-over; Uploaded files → `files`.',
 };
 
@@ -117,4 +154,20 @@ for (const [name, [slug, category]] of Object.entries(MAP)) {
   if (PROPS_MAP[name]) out.push('', '## Design properties → React props', PROPS_MAP[name]);
   writeFileSync(new URL(`docs/${name}.md`, new URL('../', import.meta.url)), out.join('\n') + '\n');
 }
-console.log(`  docs: ${Object.keys(MAP).length} files written`);
+for (const [name, slug] of Object.entries(SECTIONS)) {
+  const v = SECTION_BY_SLUG[slug];
+  if (!v) throw new Error(`no section ${slug}`);
+  const out = ['---', 'category: Sections'];
+  if (v.keywords?.length) out.push(`keywords: [${v.keywords.map((k) => JSON.stringify(k)).join(', ')}]`);
+  out.push('---', '');
+  if (v.short) out.push(v.short, '');
+  out.push(v.description || EXTRA[name]);
+  if (v.frameDesktop || v.frameMobile) out.push('', '## Layout', `- Desktop (> 1024px): ${v.frameDesktop}`, `- Mobile (≤ 1024px): ${v.frameMobile}`);
+  if (v.options?.length) out.push('', '## Options', ...v.options.map((o) => `- ${o.name} (\`order="${o.kind}"\`): ${o.desc}`));
+  if (v.whenToUse?.length) out.push('', '## When to use', ...v.whenToUse.map((x) => `- ${x}`));
+  if (v.whenNotToUse?.length) out.push('', '## When not to use', ...v.whenNotToUse.map((x) => `- ${x}`));
+  out.push('', '## Design properties → React props', PROPS_MAP[name]);
+  out.push('', 'Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.');
+  writeFileSync(new URL(`docs/${name}.md`, new URL('../', import.meta.url)), out.join('\n') + '\n');
+}
+console.log(`  docs: ${Object.keys(MAP).length + Object.keys(SECTIONS).length} files written`);

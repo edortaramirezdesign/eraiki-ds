@@ -28,7 +28,7 @@
     ] },
     { h: 'Detail', desc: 'We’ll use the Detail text size for short phrases that provide additional information or context.', rows: [
       ['M', 'ek-detail-m', 12, 20, 12, 20, 400],
-      ['S', 'ek-detail-s', 8, 16, 8, 16, 400],
+      ['S', 'ek-detail-s', 8, 16, 8, 16, 500],
     ] },
   ];
   const TYPE_FAMILY_MD = '**Font family (per role)**\n| Role | Family |\n|---|---|\n| Display | Plus Jakarta Sans |\n| Heading | Plus Jakarta Sans |\n| Label | Plus Jakarta Sans |\n| Body | Inter |\n| Detail | Inter |';
@@ -45,7 +45,7 @@
     ['Label L','--font-size-label-l','--line-height-label-l','--font-weight-label','--font-family-label'],
     ['Label M','--font-size-label-m','--line-height-label-m','--font-weight-label','--font-family-label'],
     ['Detail M','--font-size-detail-m','--line-height-detail-m','--font-weight-detail','--font-family-detail'],
-    ['Detail S','--font-size-detail-s','--line-height-detail-s','--font-weight-detail','--font-family-detail'],
+    ['Detail S','--font-size-detail-s','--line-height-detail-s','--font-weight-detail-s','--font-family-detail'],
   ];
 
   window.ERAIKI_TYPE = { TYPE_DOC, TYPE_FAMILY_MD, TYPE_LETTERSPACING_MD, TYPE_SHORT_MD, TYPE_ROLES };

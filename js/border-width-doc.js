@@ -5,10 +5,11 @@
 // BORDER_DOC: one row per stroke width [name, token].
 (function () {
   const BORDER_DOC = [
+    ['S', '--stroke-size-s'],
     ['Default', '--border-width-default'],
   ];
-  const BORDER_DESC = 'A single default stroke width of 1.5px, used for borders, dividers and input outlines across the system.';
-  const BORDER_SHORT_MD = 'A single default stroke width (Strokes / Sizes / M).';
+  const BORDER_DESC = 'Two stroke widths: S (1px) for the finest hairlines, and the default 1.5px used for borders, dividers and input outlines across the system.';
+  const BORDER_SHORT_MD = 'Two stroke widths: S (1px) and the default (Strokes / Sizes / M, 1.5px).';
 
   window.ERAIKI_BORDER = { BORDER_DOC, BORDER_DESC, BORDER_SHORT_MD };
 })();

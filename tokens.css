@@ -135,6 +135,7 @@
   --font-weight-body: 400;
   --font-weight-body-bold: 600;
   --font-weight-detail: 400;
+  --font-weight-detail-s: 500;
 
   /* ===== TYPOGRAPHY — font size (desktop) ===== */
   --font-size-display-m: 64px;
@@ -187,13 +188,14 @@
 
   /* ===== STROKE / BORDER ===== */
   /* Figma-tokenized stroke sizes (single source of truth) */
+  --stroke-size-s: 1px;
   --stroke-size-m-default: 1.5px;
   --stroke-m: var(--stroke-size-m-default);
   --border-width-default: var(--stroke-size-m-default);
 
   /* ===== ELEVATION ===== */
-  --elevation-small: 0 2px 8px rgba(30, 31, 36, 0.08);
-  --elevation-medium: 0 4px 8px rgba(30, 31, 36, 0.24);
+  --elevation-small: 0 2px 8px rgba(18, 18, 18, 0.08);
+  --elevation-medium: 0 4px 8px rgba(18, 18, 18, 0.24);
 
   /* ===== CANVAS WIDTH (desktop) ===== */
   --width-max: 2560px;
@@ -238,6 +240,9 @@
 
       /* semantic overrides where the alias differs in dark */
       --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-500);
+      /* Figma: Stroke/Plain Icon + Shape On-color follow the theme in dark (gray-600). */
+      --color-stroke-plain-icon-oncolor: var(--color-primitives-gray-600);
+      --color-stroke-plain-shape-oncolor: var(--color-primitives-gray-600);
   }
 }
 
@@ -269,6 +274,9 @@
 
     /* semantic overrides where the alias differs in dark */
     --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-500);
+    /* Figma: Stroke/Plain Icon + Shape On-color follow the theme in dark (gray-600). */
+    --color-stroke-plain-icon-oncolor: var(--color-primitives-gray-600);
+    --color-stroke-plain-shape-oncolor: var(--color-primitives-gray-600);
 }
 
 @media (max-width: 1024px) {
@@ -387,6 +395,9 @@
   --color-semantic-success-s: var(--color-primitives-green-100);
   /* dark overrides */
   --color-fill-plain-surface-standard-xl: var(--color-primitives-gray-500);
+  /* Figma: Stroke/Plain Icon + Shape On-color follow the theme in dark (gray-600). */
+  --color-stroke-plain-icon-oncolor: var(--color-primitives-gray-600);
+  --color-stroke-plain-shape-oncolor: var(--color-primitives-gray-600);
   background: var(--color-fill-plain-surface-base);
   color: var(--color-fill-plain-text-standard-l);
 }

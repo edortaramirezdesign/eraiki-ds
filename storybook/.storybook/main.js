@@ -10,6 +10,8 @@ const config = {
     '@storybook/addon-docs',
   ],
   framework: '@storybook/html-vite',
+  // Autodocs entries (each component's docs page) are labelled "Documentation", not "Docs".
+  docs: { defaultName: 'Documentation' },
   // Serve the repo's icon SVGs (and any other asset) at /assets, so the Icons story
   // can reference the same files the portal does — assets/icons/<num>-<name>.svg.
   staticDirs: [{ from: join(process.cwd(), '..', 'assets'), to: '/assets' }],

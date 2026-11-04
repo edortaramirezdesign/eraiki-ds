@@ -1,8 +1,8 @@
 {
-  "name": "eraiki-storybook-prototype",
+  "name": "eraiki-ds-storybook",
   "version": "0.0.0",
   "private": true,
-  "description": "Throwaway Storybook (@storybook/html) prototype to compare against the custom docs portal.",
+  "description": "Storybook documentation for Eraiki DS v02 (@storybook/html-vite).",
   "scripts": {
     "storybook": "LAUNCH_EDITOR='/Applications/Cursor.app/Contents/Resources/app/bin/cursor' storybook dev -p 6006",
     "build-storybook": "storybook build"

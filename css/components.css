@@ -157,6 +157,7 @@
   border: var(--border-width-default) solid var(--color-stroke-link-input-default);
   border-radius: var(--radius-standard);
   color: var(--color-fill-plain-text-standard-l);
+  font-family: var(--font-family-body); font-weight: var(--font-weight-body);
   font-size: var(--font-size-body-m);
 }
 .ek-input input { border: none; outline: none; background: none; font: inherit; color: inherit; width: 100%; text-overflow: ellipsis; }
@@ -782,7 +783,7 @@
 .ek-values2__col { display: flex; flex-direction: column; justify-content: space-between; gap: var(--spacing-m); }
 .ek-values2__intro { display: flex; flex-direction: column; gap: var(--spacing-l); }
 .ek-values2__list { display: flex; flex-direction: column; gap: var(--spacing-m); }
-.ek-values2__item { display: flex; gap: var(--spacing-l); padding: var(--spacing-m); border-radius: var(--radius-standard); width: 100%; text-align: left; font: inherit; color: inherit; background: transparent; border: 0; cursor: pointer; transition: background .14s ease; }
+.ek-values2__item { display: flex; gap: var(--spacing-l); padding: var(--spacing-m); border-radius: var(--radius-standard); width: 100%; text-align: left; font: inherit; font-family: var(--font-family-body); color: inherit; background: transparent; border: 0; cursor: pointer; transition: background .14s ease; }
 .ek-values2__item:hover, .ek-values2__item.is-active { background: var(--color-fill-plain-surface-standard-s); }
 .ek-values2__icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: var(--radius-standard); background: var(--color-fill-link-surface-accent-default); color: var(--color-fill-plain-text-oncolor); display: grid; place-items: center; }
 .ek-values2__icon svg { width: 20px; height: 20px; }

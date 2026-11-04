@@ -15,10 +15,14 @@ const preview = {
       // Sidebar order mirrors the custom repo's nav exactly (js/app.js buildNav +
       // FOUNDATIONS / ERAIKI_COMPONENTS / SECTIONS order). Names not yet present as
       // stories are simply skipped; '*' lets anything new fall in afterwards.
+      // Anything not listed sorts alphabetically, so each section family reads
+      // "<Version> - Documentation", "<Version> - Playground", next version…
       storySort: {
+        method: 'alphabetical',
         order: [
           'Foundations', [
-            'Theming', 'Colors', 'Typography', 'Spacing', 'Corner radius',
+            'Theming', 'Colors', ['Primitives', 'Fill', 'Stroke', 'Semantic'],
+            'Typography', ['Display', 'Headings', 'Labels', 'Body', 'Detail'], 'Spacing', 'Corner radius',
             'Border width', 'Elevations', 'Breakpoints', 'Icons', '*',
           ],
           'Components', [

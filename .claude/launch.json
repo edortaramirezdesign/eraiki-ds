@@ -4,8 +4,8 @@
     {
       "name": "storybook",
       "runtimeExecutable": "sh",
-      "runtimeArgs": ["-c", "cd storybook && npx storybook dev -p 6007 --no-open"],
-      "port": 6007
+      "runtimeArgs": ["-c", "cd storybook && npx storybook dev -p 6006 --no-open"],
+      "port": 6006
     }
   ]
 }

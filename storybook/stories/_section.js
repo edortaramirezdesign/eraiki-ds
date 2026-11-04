@@ -6,12 +6,15 @@ import { SECTIONS, SECTIONS_BUILD } from './_previews.js';
 const BY_VER = {};
 SECTIONS.forEach((sec) => (sec.versions || []).forEach((v) => { BY_VER[v.slug] = { ...v, sectionName: sec.name, sectionDesc: sec.desc }; }));
 
+// Widest a section renders in Storybook; wider viewports centre it.
+const SECTION_MAX_WIDTH = 1920;
+
 // Live markup of a built section version (the portal's own builder).
 export function sectionRender(slug) {
   const build = SECTIONS_BUILD[slug];
   if (!build) return '<p style="padding:24px;font-family:var(--font-family-body)">No live build for this version.</p>';
   const v = BY_VER[slug] || {};
-  return build(v.overviewKind);
+  return `<div style="max-width:${SECTION_MAX_WIDTH}px;margin:0 auto">${build(v.overviewKind)}</div>`;
 }
 
 // Written documentation (from the section/version config) as Markdown for the Docs page.

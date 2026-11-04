@@ -12,7 +12,7 @@ const val = (tok) => getComputedStyle(document.documentElement).getPropertyValue
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
 const cell = (num, ic) => {
-  const file = '/assets/icons/' + encodeURIComponent(num + '-' + ic) + '.svg';
+  const file = 'assets/icons/' + encodeURIComponent(num + '-' + ic) + '.svg';
   return `<div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 6px">
     <span style="display:grid;place-items:center;width:40px;height:40px;border:1.5px solid ${hair};border-radius:6px">
       <img src="${file}" alt="" loading="lazy" style="width:var(--icon-size,20px);height:var(--icon-size,20px)">

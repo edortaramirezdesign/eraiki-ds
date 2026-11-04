@@ -898,4 +898,4 @@
 .ek-label-l { font-family: var(--font-family-label); font-weight: var(--font-weight-label); font-size: var(--font-size-label-l); line-height: var(--line-height-label-l); text-transform: uppercase; }
 .ek-label-m { font-family: var(--font-family-label); font-weight: var(--font-weight-label); font-size: var(--font-size-label-m); line-height: var(--line-height-label-m); text-transform: uppercase; }
 .ek-detail-m { font-family: var(--font-family-detail); font-weight: var(--font-weight-detail); font-size: var(--font-size-detail-m); line-height: var(--line-height-detail-m); }
-.ek-detail-s { font-family: var(--font-family-detail); font-weight: var(--font-weight-detail); font-size: var(--font-size-detail-s); line-height: var(--line-height-detail-s); }
+.ek-detail-s { font-family: var(--font-family-detail); font-weight: var(--font-weight-detail-s); font-size: var(--font-size-detail-s); line-height: var(--line-height-detail-s); }

@@ -27,12 +27,12 @@ export const sectionImages = {
   banner: photoBanner,
   /** Wide backdrop for Explanation Dark Card. */
   backdrop: photoBackdrop,
-  /** Portrait photos (Explanation Split Media / 004 / 005 / 006, Values & Features 002 / 003). */
+  /** Portrait photos (Explanation Split Media / 004 / 005 / 006, Values & Features Highlight List / 003). */
   portrait: photoPortrait,
   portrait2: photoPortrait2,
   portrait3: photoPortrait3,
   /** Eight monochrome brand logos (168×72) for Marquee Logo Strip. */
   logos: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8],
-  /** Three abstract illustrations for Values & Features 004. */
+  /** Three abstract illustrations for Values & Features Staggered Cards. */
   illustrations: [illus1, illus2, illus3],
 };

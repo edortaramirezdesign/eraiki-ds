@@ -5,7 +5,7 @@ keywords: ["values", "features", "numbered list", "steps", "ordered list", "text
 
 A heading over an image paired with a numbered feature list.
 
-Values & Features 003 opens with a heading, then sets a tall image beside a numbered list. Each row pairs an index and a short title with a line of supporting copy, and thin rules separate one row from the next — so a sequence of features or steps reads in a clear, ordered rhythm next to a supporting visual.
+Values & Features Numbered List opens with a heading, then sets a tall image beside a numbered list. Each row pairs an index and a short title with a line of supporting copy, and thin rules separate one row from the next — so a sequence of features or steps reads in a clear, ordered rhythm next to a supporting visual.
 
 The list reuses the Text group type styles: a muted number, a compact bold title and a quieter description. On smaller screens the image moves above the list and each row stacks its title over its description. Use it to walk through an ordered set of features, principles or steps.
 

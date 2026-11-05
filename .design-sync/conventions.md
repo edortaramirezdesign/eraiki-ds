@@ -27,7 +27,7 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 - Data display: Badge, Label, Avatar / AvatarGroup, Rating, Image, CellsRow + PlainCell / LinkableCell / FeaturedCell (tables)
 - Layout: TextGroup (eyebrow · title · body · action — the brick of marketing sections), Accordion, Divider, Placeholder
 - Commerce: ProductCard · Foundations: EraikiProvider, Icon
-- Sections (full-width page blocks): HeroImageSlider, HeroSplitColumns, ExplanationBannerCard, ExplanationSplitMedia, ExplanationTwinCards, ExplanationTriplePanel, ExplanationImageMarquee, ExplanationDarkCard, ValuesFeatures001–004, MarqueeLogoStrip, ContactSplitForm
+- Sections (full-width page blocks): HeroImageSlider, HeroSplitColumns, ExplanationBannerCard, ExplanationSplitMedia, ExplanationTwinCards, ExplanationTriplePanel, ExplanationImageMarquee, ExplanationDarkCard, ValuesFeaturesIconGrid, ValuesFeaturesHighlightList, ValuesFeaturesNumberedList, ValuesFeaturesStaggeredCards, MarqueeLogoStrip, ContactSplitForm
 
  Each has a `.d.ts` (exact props) and `.prompt.md` (when to use / when not). Key conventions:
 - Labels are uppercase by design and end with a colon: `label="Email:"`.
@@ -40,12 +40,12 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 A landing page is a vertical stack of sections. Put them directly inside `EraikiProvider`, one after another — no wrapper, margins or gaps between them (each section carries its own padding and background).
 
 ```jsx
-const { EraikiProvider, HeroImageSlider, ValuesFeatures001, ExplanationSplitMedia, MarqueeLogoStrip, ContactSplitForm } = window.Eraiki;
+const { EraikiProvider, HeroImageSlider, ValuesFeaturesIconGrid, ExplanationSplitMedia, MarqueeLogoStrip, ContactSplitForm } = window.Eraiki;
 
 <EraikiProvider>
   <HeroImageSlider label="New collection" title="Designed to last a lifetime" primaryAction="Explore">Handmade furniture from local oak.</HeroImageSlider>
-  <ValuesFeatures001 label="Why us" title="Built with confidence" primaryAction="Get started"
-    items={[{ icon: 'calendar', title: 'Fixed timeline', text: '…' }, { icon: 'check', title: 'Fixed price', text: '…' }]}>Intro copy.</ValuesFeatures001>
+  <ValuesFeaturesIconGrid label="Why us" title="Built with confidence" primaryAction="Get started"
+    items={[{ icon: 'calendar', title: 'Fixed timeline', text: '…' }, { icon: 'check', title: 'Fixed price', text: '…' }]}>Intro copy.</ValuesFeaturesIconGrid>
   <ExplanationSplitMedia label="Materials" title="Natural materials" primaryAction="View materials" image="https://…/photo.jpg">Body copy.</ExplanationSplitMedia>
   <ExplanationSplitMedia order="image-text" label="Craft" title="Cut by hand" primaryAction="Meet the team">Body copy.</ExplanationSplitMedia>
   <MarqueeLogoStrip title="Trusted by" />

@@ -44,9 +44,9 @@
         frameMobile: 'The columns stack — heading first, then the paragraph and CTA.' },
     ] },
     { slug: 'values-features', name: 'Values & Features', desc: 'Grids and lists that communicate product value and features.', versions: [
-      { slug: 'values-001', name: 'Values & Features 001', shot: 'values-001', node: '1316-18293',
+      { slug: 'values-icon-grid', name: 'Values & Features Icon Grid', shot: 'values-icon-grid', node: '1316-18293',
         short: 'A centered intro above a row of four icon-led feature cards.',
-        description: 'Values & Features 001 leads with a short, centered message — an eyebrow, a heading, a line of copy and a pair of actions — and follows it with a row of four feature cards. Each card is a small icon box, a short title and a line of supporting copy, so a set of benefits reads as one calm, scannable grid rather than a wall of text.\n\nThe intro is a Text group with a primary and a secondary action; the cards reuse the same icon-box, title and body building blocks on a muted surface. On smaller screens the four cards stack into a single column and the actions move under one another. Use it to summarise the core values or features of a product in one glanceable band.',
+        description: 'Values & Features Icon Grid leads with a short, centered message — an eyebrow, a heading, a line of copy and a pair of actions — and follows it with a row of four feature cards. Each card is a small icon box, a short title and a line of supporting copy, so a set of benefits reads as one calm, scannable grid rather than a wall of text.\n\nThe intro is a Text group with a primary and a secondary action; the cards reuse the same icon-box, title and body building blocks on a muted surface. On smaller screens the four cards stack into a single column and the actions move under one another. Use it to summarise the core values or features of a product in one glanceable band.',
         keywords: ['values', 'features', 'benefits', 'feature grid', 'icon cards', 'value props', 'highlights', 'text boxes', 'four columns', 'feature list'],
         whenToUse: [
           'Summarising three to four core values or features in one scannable row.',
@@ -62,9 +62,9 @@
         ],
         frameDesktop: 'The intro sits centered above four equal feature cards in a row.',
         frameMobile: 'The four cards stack into one column and the actions stack too.' },
-      { slug: 'values-002', name: 'Values & Features 002', shot: 'values-002', node: '1316-18682',
+      { slug: 'values-highlight-list', name: 'Values & Features Highlight List', shot: 'values-highlight-list', node: '1316-18682',
         short: 'A heading and a vertical feature list beside a tall image.',
-        description: 'Values & Features 002 puts a heading and a vertical list of features on one side and a tall image on the other. The first item is highlighted on a muted surface and carries a line of supporting copy, while the rest stay as compact title-only rows — a simple way to lead with one key feature and let the others follow.\n\nEach row pairs an accent-filled icon box with its title, reusing the Text group building blocks so type and spacing match the rest of the system. On smaller screens the list stacks above the image. Use it to walk through a handful of features next to a supporting visual.',
+        description: 'Values & Features Highlight List puts a heading and a vertical list of features on one side and a tall image on the other. The first item is highlighted on a muted surface and carries a line of supporting copy, while the rest stay as compact title-only rows — a simple way to lead with one key feature and let the others follow.\n\nEach row pairs an accent-filled icon box with its title, reusing the Text group building blocks so type and spacing match the rest of the system. On smaller screens the list stacks above the image. Use it to walk through a handful of features next to a supporting visual.',
         keywords: ['values', 'features', 'feature list', 'benefits', 'text + image', 'highlighted item', 'icon list', 'vertical list', 'image', 'showcase'],
         whenToUse: [
           'Walking through a handful of features next to a supporting image.',
@@ -73,16 +73,16 @@
           'A calmer alternative to an even grid when one item should stand out.',
         ],
         whenNotToUse: [
-          'Giving every feature equal weight — use the even grid of Values 001.',
+          'Giving every feature equal weight — use the even grid of Values & Features Icon Grid.',
           'When there is no relevant image to sit beside the list.',
           'Long descriptions on every row — only the lead item is meant to expand.',
           'More items than read comfortably as a single vertical column.',
         ],
         frameDesktop: 'The heading and feature list sit left; a tall image fills the right.',
         frameMobile: 'The heading and list stack first, with the image below them.' },
-      { slug: 'values-003', name: 'Values & Features 003', shot: 'values-003', node: '1316-18724',
+      { slug: 'values-numbered-list', name: 'Values & Features Numbered List', shot: 'values-numbered-list', node: '1316-18724',
         short: 'A heading over an image paired with a numbered feature list.',
-        description: 'Values & Features 003 opens with a heading, then sets a tall image beside a numbered list. Each row pairs an index and a short title with a line of supporting copy, and thin rules separate one row from the next — so a sequence of features or steps reads in a clear, ordered rhythm next to a supporting visual.\n\nThe list reuses the Text group type styles: a muted number, a compact bold title and a quieter description. On smaller screens the image moves above the list and each row stacks its title over its description. Use it to walk through an ordered set of features, principles or steps.',
+        description: 'Values & Features Numbered List opens with a heading, then sets a tall image beside a numbered list. Each row pairs an index and a short title with a line of supporting copy, and thin rules separate one row from the next — so a sequence of features or steps reads in a clear, ordered rhythm next to a supporting visual.\n\nThe list reuses the Text group type styles: a muted number, a compact bold title and a quieter description. On smaller screens the image moves above the list and each row stacks its title over its description. Use it to walk through an ordered set of features, principles or steps.',
         keywords: ['values', 'features', 'numbered list', 'steps', 'ordered list', 'text + image', 'principles', 'index', 'feature list', 'dividers'],
         whenToUse: [
           'Walking through an ordered set of features, principles or steps.',
@@ -98,15 +98,15 @@
         ],
         frameDesktop: 'The heading sits above an image on the left and a numbered list on the right.',
         frameMobile: 'The image moves above the list; each row stacks its title over its description.' },
-      { slug: 'values-004', name: 'Values & Features 004', shot: 'values-004', node: '1316-20821',
+      { slug: 'values-staggered-cards', name: 'Values & Features Staggered Cards', shot: 'values-staggered-cards', node: '1316-20821',
         short: 'A centered intro over three staggered illustrated cards.',
-        description: 'Values & Features 004 leads with a centered message — an eyebrow, a heading, a line of copy and a pair of actions — then presents three feature cards that step down the page in a staggered rhythm. Each card pairs a short heading with an abstract illustration and a line of supporting copy, so a small set of features reads as a light, editorial layout rather than a rigid row.\n\nThe intro reuses the Text group and Button components; the cards sit on a muted surface with illustrations exported from the design. On smaller screens the stagger flattens and the three cards stack into a single column. Use it to present three headline features with a more expressive, illustrated treatment.',
+        description: 'Values & Features Staggered Cards leads with a centered message — an eyebrow, a heading, a line of copy and a pair of actions — then presents three feature cards that step down the page in a staggered rhythm. Each card pairs a short heading with an abstract illustration and a line of supporting copy, so a small set of features reads as a light, editorial layout rather than a rigid row.\n\nThe intro reuses the Text group and Button components; the cards sit on a muted surface with illustrations exported from the design. On smaller screens the stagger flattens and the three cards stack into a single column. Use it to present three headline features with a more expressive, illustrated treatment.',
         keywords: ['values', 'features', 'staggered', 'cards', 'illustrations', 'masonry', 'feature cards', 'editorial', 'offset grid', 'three columns'],
         whenToUse: [
           'Presenting three headline features with an illustrated, editorial feel.',
           'When a staggered, less rigid layout suits the brand.',
           'Pairing each feature with an abstract illustration rather than an icon.',
-          'A more expressive alternative to the even grid of Values 001.',
+          'A more expressive alternative to the even grid of Values & Features Icon Grid.',
         ],
         whenNotToUse: [
           'More than three items — the stagger and illustrations get unwieldy.',
@@ -415,10 +415,10 @@
       </div>`;
       return `<div class="ek-marquee1">${text}<div class="ek-marquee1__strip"><div class="ek-marquee1__lane">${grp}${grp}</div></div></div>`;
     },
-    // Values & Features 001 — a centered intro (eyebrow, heading, body, primary +
+    // Values & Features Icon Grid — a centered intro (eyebrow, heading, body, primary +
     // secondary actions) above a row of four feature cards, each an icon box, a
     // short title and a line of copy.
-    'values-001': () => {
+    'values-icon-grid': () => {
       const cards = [
         'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum.',
         'Integer quis rhoncus leo. Fusce in sodales lorem, at fermentum massa. Donec auctor velit sit amet.',
@@ -436,10 +436,10 @@
       </div>`;
       return `<div class="ek-values1">${intro}<div class="ek-values1__boxes">${cards}</div></div>`;
     },
-    // Values & Features 002 — heading + a vertical feature list on the left (first
+    // Values & Features Highlight List — heading + a vertical feature list on the left (first
     // item highlighted, with body copy; the rest are title-only rows) next to a
     // tall image on the right. Icons sit in small accent-filled boxes.
-    'values-002': () => {
+    'values-highlight-list': () => {
       const feats = [
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
         { t: 'Lorem ipsum dolor sit amet', b: 'Pellentesque fringilla tellus dolor, a fermentum massa finibus id. Integer quis rhoncus leo, vel dignissim.' },
@@ -457,9 +457,9 @@
         <div class="ek-values2__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div>
       </div></div></div>`;
     },
-    // Values & Features 003 — a heading, then an image beside a numbered list.
+    // Values & Features Numbered List — a heading, then an image beside a numbered list.
     // Each row pairs a number + title with a description, divided by thin rules.
-    'values-003': () => {
+    'values-numbered-list': () => {
       const items = ['01', '02', '03', '04'].map(n => `<div class="ek-values3__item">
         <div class="ek-values3__label"><span class="ek-values3__num ek-label-m">${n}.</span><span class="ek-values3__title ek-body-l ek-strong">Lorem ipsum dolor</span></div>
         <p class="ek-values3__desc ek-body-m">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.</p>
@@ -472,9 +472,9 @@
         </div>
       </div></div>`;
     },
-    // Values & Features 004 — a centered intro over three staggered cards, each a
+    // Values & Features Staggered Cards — a centered intro over three staggered cards, each a
     // heading, an abstract illustration (exported from Figma) and a line of copy.
-    'values-004': () => {
+    'values-staggered-cards': () => {
       const body = 'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.';
       const cards = [1, 2, 3].map(n => `<div class="ek-values4__card">
         <h3 class="ek-textgroup__title">Lorem ipsum</h3>

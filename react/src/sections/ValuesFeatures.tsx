@@ -19,15 +19,15 @@ export interface FeatureItem {
   icon?: IconName;
 }
 
-export interface ValuesFeatures001Props extends IntroProps, SectionActions {
+export interface ValuesFeaturesIconGridProps extends IntroProps, SectionActions {
   /** Intro paragraph under the heading. */
   children?: ReactNode;
   /** Feature cards in a row (designed for four). */
   items: FeatureItem[];
 }
 
-/** Values & Features 001 — centered intro with two actions above a row of feature cards (icon, title, copy). */
-export function ValuesFeatures001({ label, title, children, items, className, ...actions }: ValuesFeatures001Props) {
+/** Values & Features Icon Grid — centered intro with two actions above a row of feature cards (icon, title, copy). */
+export function ValuesFeaturesIconGrid({ label, title, children, items, className, ...actions }: ValuesFeaturesIconGridProps) {
   return (
     <div className={cx('ek-values1', className)}>
       <div className="ek-values1__intro">
@@ -48,7 +48,7 @@ export function ValuesFeatures001({ label, title, children, items, className, ..
   );
 }
 
-export interface ValuesFeatures002Props extends IntroProps {
+export interface ValuesFeaturesHighlightListProps extends IntroProps {
   /** Feature list; the active item is highlighted and expands to show its text. */
   items: FeatureItem[];
   /** Index of the item open initially (uncontrolled). */
@@ -60,8 +60,8 @@ export interface ValuesFeatures002Props extends IntroProps {
   image?: string;
 }
 
-/** Values & Features 002 — heading + an expandable feature list (one open at a time) beside a square image. */
-export function ValuesFeatures002({ label, title, items, defaultActive = 0, active, onActiveChange, image = sectionImages.portrait, className }: ValuesFeatures002Props) {
+/** Values & Features Highlight List — heading + an expandable feature list (one open at a time) beside a square image. */
+export function ValuesFeaturesHighlightList({ label, title, items, defaultActive = 0, active, onActiveChange, image = sectionImages.portrait, className }: ValuesFeaturesHighlightListProps) {
   const [inner, setInner] = useState(defaultActive);
   const current = active ?? inner;
   const select = (i: number) => { setInner(i); onActiveChange?.(i); };
@@ -91,15 +91,15 @@ export interface NumberedItem {
   text?: ReactNode;
 }
 
-export interface ValuesFeatures003Props extends IntroProps {
+export interface ValuesFeaturesNumberedListProps extends IntroProps {
   /** Numbered rows (01., 02.… added automatically), split by thin rules. */
   items: NumberedItem[];
   /** Photo on the left; it stretches to the list's height. */
   image?: string;
 }
 
-/** Values & Features 003 — heading, then an image beside a numbered list (number + title, description). */
-export function ValuesFeatures003({ label, title, items, image = sectionImages.portrait, className }: ValuesFeatures003Props) {
+/** Values & Features Numbered List — heading, then an image beside a numbered list (number + title, description). */
+export function ValuesFeaturesNumberedList({ label, title, items, image = sectionImages.portrait, className }: ValuesFeaturesNumberedListProps) {
   return (
     <div className={cx('ek-values3', className)}><div className="ek-values3__inner">
       <div className="ek-values3__head"><Head label={label} title={title} size="l" /></div>
@@ -128,15 +128,15 @@ export interface IllustratedItem {
   illustration?: string;
 }
 
-export interface ValuesFeatures004Props extends IntroProps, SectionActions {
+export interface ValuesFeaturesStaggeredCardsProps extends IntroProps, SectionActions {
   /** Intro paragraph under the heading. */
   children?: ReactNode;
   /** Three staggered cards: title, illustration, copy. */
   items: IllustratedItem[];
 }
 
-/** Values & Features 004 — centered intro with two actions over three staggered cards (title, illustration, copy). */
-export function ValuesFeatures004({ label, title, children, items, className, ...actions }: ValuesFeatures004Props) {
+/** Values & Features Staggered Cards — centered intro with two actions over three staggered cards (title, illustration, copy). */
+export function ValuesFeaturesStaggeredCards({ label, title, children, items, className, ...actions }: ValuesFeaturesStaggeredCardsProps) {
   return (
     <div className={cx('ek-values4', className)}>
       <div className="ek-values4__intro">

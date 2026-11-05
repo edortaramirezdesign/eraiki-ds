@@ -68,19 +68,19 @@
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "ValuesFeatures001": {
+    "ValuesFeaturesIconGrid": {
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "ValuesFeatures002": {
+    "ValuesFeaturesHighlightList": {
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "ValuesFeatures003": {
+    "ValuesFeaturesNumberedList": {
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "ValuesFeatures004": {
+    "ValuesFeaturesStaggeredCards": {
       "cardMode": "single",
       "viewport": "1440x900"
     },

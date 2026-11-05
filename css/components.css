@@ -764,7 +764,7 @@
 .ek-marquee1__logo { flex: 0 0 auto; width: 168px; height: 72px; }
 .ek-marquee1__divider { flex: 0 0 auto; width: var(--border-width-default); align-self: stretch; background: var(--color-stroke-plain-shape-standard-m); }
 
-/* Values & Features 001 — centered intro + a row of feature cards (icon, title, body) */
+/* Values & Features Icon Grid — centered intro + a row of feature cards (icon, title, body) */
 .ek-values1 {
   display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3xl);
   background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) var(--spacing-l);
@@ -775,7 +775,7 @@
 .ek-values1__boxes { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-m); width: 100%; }
 .ek-values1__card { background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard); padding: var(--spacing-l); display: flex; flex-direction: column; gap: var(--spacing-m); }
 
-/* Values & Features 002 — a heading over a vertical feature list on the left
+/* Values & Features Highlight List — a heading over a vertical feature list on the left
    (the first item highlighted, with body copy) beside a tall image on the right. */
 .ek-values2 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0; }
 .ek-values2__inner { max-width: 1360px; margin: 0 auto; padding: 0 var(--spacing-l); }
@@ -796,7 +796,7 @@
 .ek-values2__media { border-radius: var(--radius-standard); overflow: hidden; aspect-ratio: 1 / 1; }
 .ek-values2__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-/* Values & Features 003 — a heading, then an image beside a numbered list; each
+/* Values & Features Numbered List — a heading, then an image beside a numbered list; each
    row pairs a number + title with a description, split by thin dividers. */
 .ek-values3 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0; }
 .ek-values3__inner { max-width: 1360px; margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; gap: var(--spacing-3xl); }
@@ -816,7 +816,7 @@
 .ek-values3__title { color: var(--color-fill-plain-text-standard-l); }
 .ek-values3__desc { color: var(--color-fill-plain-text-standard-m); }
 
-/* Values & Features 004 — a centered intro over three staggered cards, each with
+/* Values & Features Staggered Cards — a centered intro over three staggered cards, each with
    a heading, an illustration and a line of copy (columns step down 0/80/160). */
 .ek-values4 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) var(--spacing-l); display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3xl); }
 .ek-values4__intro { max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
@@ -865,17 +865,17 @@
   .ek-hero2 { min-height: 542px; }
   .ek-hero2__row { flex-direction: column; align-items: stretch; gap: var(--spacing-xxl); }
   .ek-hero2__aside { flex: none; max-width: none; padding-top: 0; }
-  /* Values & Features 001 — the four cards stack; the actions stack too */
+  /* Values & Features Icon Grid — the four cards stack; the actions stack too */
   .ek-values1__boxes { grid-template-columns: 1fr; }
   .ek-values1__intro .ek-btn-group { flex-direction: column; align-items: stretch; width: 100%; }
-  /* Values & Features 002 — stack the list over the image */
+  /* Values & Features Highlight List — stack the list over the image */
   .ek-values2__row { grid-template-columns: 1fr; gap: var(--spacing-3xl); }
   .ek-values2__col { justify-content: flex-start; gap: var(--spacing-xl); }
-  /* Values & Features 003 — image over the list; each row stacks title over body */
+  /* Values & Features Numbered List — image over the list; each row stacks title over body */
   .ek-values3__row { grid-template-columns: 1fr; gap: var(--spacing-l); }
   .ek-values3__media { aspect-ratio: 1 / 1; }
   .ek-values3__item { grid-template-columns: 1fr; gap: var(--spacing-xs); }
-  /* Values & Features 004 — cards stack (no stagger); actions stack too */
+  /* Values & Features Staggered Cards — cards stack (no stagger); actions stack too */
   .ek-values4__grid { grid-template-columns: 1fr; gap: var(--spacing-m); }
   .ek-values4__card:nth-child(2), .ek-values4__card:nth-child(3) { margin-top: 0; }
   .ek-values4__intro .ek-btn-group { flex-direction: column; align-items: stretch; width: 100%; }

@@ -6,9 +6,9 @@
 (function () {
   const SECTIONS = [
     { slug: 'hero', name: 'Hero', desc: 'Above-the-fold intro: headline, supporting copy and primary actions.', versions: [
-      { slug: 'hero-001', name: 'Hero 001', shot: 'hero-001', node: '1316-18543',
+      { slug: 'hero-image-slider', name: 'Hero Image Slider', shot: 'hero-image-slider', node: '1316-18543',
         short: 'Full-bleed image hero with the headline and actions anchored to the bottom.',
-        description: "Hero 001 is a full-bleed image hero: a large photograph fills the block, a dark scrim keeps the copy legible, and the content sits at the bottom. The message — an eyebrow, a big heading and a short paragraph — occupies the lower-left, with a primary action and a pair of previous / next arrows along the base.\n\nText and controls use the system's dark (on-image) tokens, and it is built from the Text group and Button components. Use it above the fold to set the tone with a single strong image and one clear call to action; the arrows suit a rotating set of slides.",
+        description: "Hero Image Slider is a full-bleed image hero: a large photograph fills the block, a dark scrim keeps the copy legible, and the content sits at the bottom. The message — an eyebrow, a big heading and a short paragraph — occupies the lower-left, with a primary action and a pair of previous / next arrows along the base.\n\nText and controls use the system's dark (on-image) tokens, and it is built from the Text group and Button components. Use it above the fold to set the tone with a single strong image and one clear call to action; the arrows suit a rotating set of slides.",
         keywords: ['hero', 'image hero', 'full-bleed', 'above the fold', 'banner', 'headline', 'cta', 'carousel', 'scrim', 'landing'],
         whenToUse: [
           'Opening a page above the fold with a strong, full-bleed image.',
@@ -24,9 +24,9 @@
         ],
         frameDesktop: 'The image fills the block; the headline sits lower-left with the actions along the bottom.',
         frameMobile: 'The image and copy stack full-width, with the actions below the text.' },
-      { slug: 'hero-002', name: 'Hero 002', shot: 'hero-002', node: '1316-18548',
+      { slug: 'hero-split-columns', name: 'Hero Split Columns', shot: 'hero-split-columns', node: '1316-18548',
         short: 'Full-screen image hero with two text columns anchored to the bottom.',
-        description: 'Hero 002 spreads its content across the bottom of a full-screen image: the headline — an eyebrow and a large title — sits on the left, while a short paragraph and a primary action sit in a narrower column on the right. A dark scrim keeps both columns legible over the photography.\n\nThe two columns share the same on-image (dark) tokens and are built from the Text group and Button components; on smaller screens they stack, heading first. Use it when the headline and the supporting copy each deserve their own space over a strong image.',
+        description: 'Hero Split Columns spreads its content across the bottom of a full-screen image: the headline — an eyebrow and a large title — sits on the left, while a short paragraph and a primary action sit in a narrower column on the right. A dark scrim keeps both columns legible over the photography.\n\nThe two columns share the same on-image (dark) tokens and are built from the Text group and Button components; on smaller screens they stack, heading first. Use it when the headline and the supporting copy each deserve their own space over a strong image.',
         keywords: ['hero', 'image hero', 'full-screen', 'two columns', 'split heading', 'above the fold', 'headline', 'cta', 'scrim', 'editorial'],
         whenToUse: [
           'Giving the headline and the supporting copy their own columns over an image.',
@@ -372,9 +372,9 @@
       const group = `<div class="ek-explain5__mgroup">${img.repeat(6)}</div>`;
       return `<div class="ek-explain5"><div class="ek-explain5__contained">${text}</div><div class="ek-explain5__fluid"><div class="ek-explain5__marquee">${group}${group}</div></div></div>`;
     },
-    // Hero 001 — full-bleed image hero (dark scrim), content anchored bottom:
+    // Hero Image Slider — full-bleed image hero (dark scrim), content anchored bottom:
     // text (lower-left) + actions (primary button and prev/next arrows). Light text.
-    'hero-001': () => `<div class="ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
+    'hero-image-slider': () => `<div class="ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
       <div class="ek-hero__row--text">
         <div class="ek-textgroup ek-hero__text"><div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
@@ -389,9 +389,9 @@
         </div>
       </div>
     </div>`,
-    // Hero 002 — full-screen image (dark scrim); two text columns anchored bottom:
+    // Hero Split Columns — full-screen image (dark scrim); two text columns anchored bottom:
     // heading (left) + paragraph & primary button (right). Light text.
-    'hero-002': () => `<div class="ek-hero2 theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
+    'hero-split-columns': () => `<div class="ek-hero2 theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
       <div class="ek-hero2__row">
         <div class="ek-hero2__heading-group">
           <div class="ek-textgroup__eyebrow">Lorem ipsum</div>

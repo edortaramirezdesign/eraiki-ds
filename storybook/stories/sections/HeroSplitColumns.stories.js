@@ -3,8 +3,8 @@
 import { sectionRender } from '../_section.js';
 
 export default {
-  title: 'Sections/Hero/Hero 002 - Playground',
+  title: 'Sections/Hero/Hero Split Columns - Playground',
   parameters: { layout: 'fullscreen' },
 };
 
-export const Playground = { name: 'Hero 002 - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('hero-002') };
+export const Playground = { name: 'Hero Split Columns - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('hero-split-columns') };

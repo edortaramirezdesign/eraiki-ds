@@ -3,8 +3,8 @@
 import { sectionRender } from '../_section.js';
 
 export default {
-  title: 'Sections/Hero/Hero 001 - Playground',
+  title: 'Sections/Hero/Hero Image Slider - Playground',
   parameters: { layout: 'fullscreen' },
 };
 
-export const Playground = { name: 'Hero 001 - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('hero-001') };
+export const Playground = { name: 'Hero Image Slider - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('hero-image-slider') };

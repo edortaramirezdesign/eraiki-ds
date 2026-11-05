@@ -62,8 +62,8 @@ const MAP = {
 
 // React section -> js/sections.js version slug (category "Sections").
 const SECTIONS = {
-  Hero001: 'hero-001',
-  Hero002: 'hero-002',
+  HeroImageSlider: 'hero-image-slider',
+  HeroSplitColumns: 'hero-split-columns',
   ExplanationBannerCard: 'explanation-banner-card',
   ExplanationSplitMedia: 'explanation-split-media',
   ExplanationTwinCards: 'explanation-twin-cards',
@@ -122,8 +122,8 @@ const PROPS_MAP = {
   Calendar: 'Mode → `mode`; Month selector → `monthSelector`; Year selector → `yearSelector`; Button → `buttonLabel`; selection → `defaultSelected` / `defaultRange`.',
   PinCode: 'cells → `length`; State Error → `error`, Disabled → `disabled`; Filled → `defaultValue`.',
   RadioGroup: 'Label → `label`; options → `options`; Selected → `value` / `defaultValue`; State Disabled → `disabled` (group) or per-option `disabled`.',
-  Hero001: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; arrows → `showNav` (+ `onPrevious` / `onNext`); photo → `image`.',
-  Hero002: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; photo → `image`.',
+  HeroImageSlider: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; arrows → `showNav` (+ `onPrevious` / `onNext`); photo → `image`.',
+  HeroSplitColumns: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; photo → `image`.',
   ExplanationBannerCard: 'Text group card → `label` / `title` / children / `primaryAction`; background photo → `image`.',
   ExplanationSplitMedia: 'Text + image / Image + text → `order`; text → `label` / `title` / children; buttons → `primaryAction` / `secondaryAction`; photo → `image`.',
   ExplanationTwinCards: 'Text + image / Image + text → `order`; text card → `label` / `title` / children / `primaryAction` / `secondaryAction`; image card → `image`.',

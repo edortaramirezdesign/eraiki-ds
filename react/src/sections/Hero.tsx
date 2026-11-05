@@ -4,7 +4,7 @@ import { Button } from '../Button';
 import { Head, Body, Primary, scrim, type SectionActions } from './parts';
 import { sectionImages } from './images';
 
-export interface Hero001Props extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
+export interface HeroImageSliderProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   /** Uppercase eyebrow above the headline. */
   label?: ReactNode;
   /** Headline (heading XL). */
@@ -20,8 +20,8 @@ export interface Hero001Props extends Pick<SectionActions, 'primaryAction' | 'on
   className?: string;
 }
 
-/** Hero 001 — full-bleed image hero; text lower-left, primary action + prev/next arrows along the base. */
-export function Hero001({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, showNav = true, onPrevious, onNext, className }: Hero001Props) {
+/** Hero Image Slider — full-bleed image hero; text lower-left, primary action + prev/next arrows along the base. */
+export function HeroImageSlider({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, showNav = true, onPrevious, onNext, className }: HeroImageSliderProps) {
   return (
     <div className={cx('ek-hero theme-dark', className)} style={scrim(image)}>
       <div className="ek-hero__row--text">
@@ -43,7 +43,7 @@ export function Hero001({ label, title, children, image = sectionImages.landscap
   );
 }
 
-export interface Hero002Props extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
+export interface HeroSplitColumnsProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   label?: ReactNode;
   /** Headline (heading XL), left column. */
   title?: ReactNode;
@@ -54,8 +54,8 @@ export interface Hero002Props extends Pick<SectionActions, 'primaryAction' | 'on
   className?: string;
 }
 
-/** Hero 002 — full-screen image; headline bottom-left, paragraph + primary action in a column on the right. */
-export function Hero002({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, className }: Hero002Props) {
+/** Hero Split Columns — full-screen image; headline bottom-left, paragraph + primary action in a column on the right. */
+export function HeroSplitColumns({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, className }: HeroSplitColumnsProps) {
   return (
     <div className={cx('ek-hero2 theme-dark', className)} style={scrim(image)}>
       <div className="ek-hero2__row">

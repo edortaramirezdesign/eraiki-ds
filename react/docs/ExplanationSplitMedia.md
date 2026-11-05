@@ -5,7 +5,7 @@ keywords: ["explanation", "text and image", "image and text", "two columns", "fe
 
 Two columns pairing a text block with a supporting image.
 
-Explanation 002 places a text block beside a supporting image to explain an idea while giving it a strong visual anchor. The text carries an eyebrow, a large heading, a short paragraph and up to two actions; the image sits in the opposite column and can lead or follow the text.
+Explanation Split Media places a text block beside a supporting image to explain an idea while giving it a strong visual anchor. The text carries an eyebrow, a large heading, a short paragraph and up to two actions; the image sits in the opposite column and can lead or follow the text.
 
 Both columns are built from existing components — the Text group and the Image — so type, spacing and button states stay consistent. Alternate the image side between consecutive sections to create rhythm down a long page, and keep each block focused on a single idea.
 

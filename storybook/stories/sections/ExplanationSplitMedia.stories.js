@@ -3,8 +3,8 @@
 import { sectionRender } from '../_section.js';
 
 export default {
-  title: 'Sections/Explanations/Explanation 005 - Playground',
+  title: 'Sections/Explanations/Explanation Split Media - Playground',
   parameters: { layout: 'fullscreen' },
 };
 
-export const Playground = { name: 'Explanation 005 - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('explanation-005') };
+export const Playground = { name: 'Explanation Split Media - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('explanation-split-media') };

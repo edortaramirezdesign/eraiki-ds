@@ -3,8 +3,8 @@
 import { sectionRender } from '../_section.js';
 
 export default {
-  title: 'Sections/Explanations/Explanation 003 - Playground',
+  title: 'Sections/Explanations/Explanation Twin Cards - Playground',
   parameters: { layout: 'fullscreen' },
 };
 
-export const Playground = { name: 'Explanation 003 - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('explanation-003') };
+export const Playground = { name: 'Explanation Twin Cards - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('explanation-twin-cards') };

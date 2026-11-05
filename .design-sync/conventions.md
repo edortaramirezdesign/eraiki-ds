@@ -27,7 +27,7 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 - Data display: Badge, Label, Avatar / AvatarGroup, Rating, Image, CellsRow + PlainCell / LinkableCell / FeaturedCell (tables)
 - Layout: TextGroup (eyebrow · title · body · action — the brick of marketing sections), Accordion, Divider, Placeholder
 - Commerce: ProductCard · Foundations: EraikiProvider, Icon
-- Sections (full-width page blocks): Hero001, Hero002, Explanation001–006, ValuesFeatures001–004, Marquee001, ContactSplitForm
+- Sections (full-width page blocks): Hero001, Hero002, ExplanationBannerCard, ExplanationSplitMedia, ExplanationTwinCards, ExplanationTriplePanel, ExplanationImageMarquee, ExplanationDarkCard, ValuesFeatures001–004, Marquee001, ContactSplitForm
 
  Each has a `.d.ts` (exact props) and `.prompt.md` (when to use / when not). Key conventions:
 - Labels are uppercase by design and end with a colon: `label="Email:"`.
@@ -40,14 +40,14 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 A landing page is a vertical stack of sections. Put them directly inside `EraikiProvider`, one after another — no wrapper, margins or gaps between them (each section carries its own padding and background).
 
 ```jsx
-const { EraikiProvider, Hero001, ValuesFeatures001, Explanation002, Marquee001, ContactSplitForm } = window.Eraiki;
+const { EraikiProvider, Hero001, ValuesFeatures001, ExplanationSplitMedia, Marquee001, ContactSplitForm } = window.Eraiki;
 
 <EraikiProvider>
   <Hero001 label="New collection" title="Designed to last a lifetime" primaryAction="Explore">Handmade furniture from local oak.</Hero001>
   <ValuesFeatures001 label="Why us" title="Built with confidence" primaryAction="Get started"
     items={[{ icon: 'calendar', title: 'Fixed timeline', text: '…' }, { icon: 'check', title: 'Fixed price', text: '…' }]}>Intro copy.</ValuesFeatures001>
-  <Explanation002 label="Materials" title="Natural materials" primaryAction="View materials" image="https://…/photo.jpg">Body copy.</Explanation002>
-  <Explanation002 order="image-text" label="Craft" title="Cut by hand" primaryAction="Meet the team">Body copy.</Explanation002>
+  <ExplanationSplitMedia label="Materials" title="Natural materials" primaryAction="View materials" image="https://…/photo.jpg">Body copy.</ExplanationSplitMedia>
+  <ExplanationSplitMedia order="image-text" label="Craft" title="Cut by hand" primaryAction="Meet the team">Body copy.</ExplanationSplitMedia>
   <Marquee001 title="Trusted by" />
   <ContactSplitForm label="Contact" title="Let's talk" submitLabel="Send">We reply within two days.</ContactSplitForm>
 </EraikiProvider>

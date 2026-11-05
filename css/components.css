@@ -632,7 +632,7 @@
 .ek-contact__text { max-width: none; }
 .ek-contact__form { display: flex; flex-direction: column; gap: var(--spacing-l); }
 
-/* Explanation 001 — full-bleed image banner with a contained text card (left) */
+/* Explanation Banner Card — full-bleed image banner with a contained text card (left) */
 .ek-explain {
   display: flex; align-items: flex-start;
   min-height: 520px; padding: var(--spacing-xxl);
@@ -641,7 +641,7 @@
 }
 .ek-explain > .ek-textgroup { width: 400px; max-width: 100%; }
 
-/* Explanation 002 — two columns: text group + supporting image (either side) */
+/* Explanation Split Media — two columns: text group + supporting image (either side) */
 .ek-explain2 {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: start;
   background: var(--color-fill-plain-surface-base);
@@ -651,7 +651,7 @@
 .ek-explain2__media { display: flex; justify-content: center; }
 .ek-explain2__media img { width: 320px; max-width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
 
-/* Explanation 003 — two equal cards side by side: a text card + an image card */
+/* Explanation Twin Cards — two equal cards side by side: a text card + an image card */
 .ek-explain3 {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xs); align-items: stretch;
   background: var(--color-fill-plain-surface-base);
@@ -668,7 +668,7 @@
   background-position: center; background-size: cover; background-repeat: no-repeat;
 }
 
-/* Explanation 004 — header over a row of three equal panels (2 images + text card) */
+/* Explanation Triple Panel — header over a row of three equal panels (2 images + text card) */
 .ek-explain4 {
   display: flex; flex-direction: column; gap: var(--spacing-3xl);
   background: var(--color-fill-plain-surface-base);
@@ -687,7 +687,7 @@
 }
 .ek-explain4__card .ek-textgroup { max-width: none; width: 100%; }
 
-/* Explanation 005 — contained text intro (left half) + full-bleed row of images */
+/* Explanation Image Marquee — contained text intro (left half) + full-bleed row of images */
 .ek-explain5 {
   display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
   background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0;
@@ -706,7 +706,7 @@
 @keyframes ek-marquee { to { transform: translateX(calc(-100% - var(--marquee-gap, 0px))); } }
 @media (prefers-reduced-motion: reduce) { .ek-explain5__mgroup, .ek-marquee1__group { animation: none; } }
 
-/* Explanation 006 — dark (complementary) card with text + image, over a full-bleed
+/* Explanation Dark Card — dark (complementary) card with text + image, over a full-bleed
    background image. The card carries .theme-dark so text/tokens invert to light. */
 .ek-explain6 {
   display: flex; justify-content: center;
@@ -834,27 +834,27 @@
 @media (max-width: 1024px) {
   /* Contact Split Form — stack text over form */
   .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-xl); padding: var(--spacing-xl); }
-  /* Explanation 001 — shorter banner */
+  /* Explanation Banner Card — shorter banner */
   .ek-explain { min-height: 422px; }
   .ek-explain > .ek-textgroup { width: 100%; }
-  /* Explanation 002 — stack image over text */
+  /* Explanation Split Media — stack image over text */
   .ek-explain2 { grid-template-columns: 1fr; gap: var(--spacing-3xl); padding: var(--spacing-3xl) var(--spacing-l); }
   .ek-explain2__media { order: -1; }
   .ek-explain2__media img { width: 100%; }
   .ek-explain2 .ek-btn-group { flex-direction: column; align-items: flex-start; }
-  /* Explanation 003 — stack text card over image card */
+  /* Explanation Twin Cards — stack text card over image card */
   .ek-explain3 { grid-template-columns: 1fr; padding: var(--spacing-3xl) var(--spacing-m); }
   .ek-explain3__text { padding: var(--spacing-l); }
   .ek-explain3__media { min-height: 220px; }
   .ek-explain3 .ek-btn-group { flex-direction: column; align-items: flex-start; }
-  /* Explanation 004 — stack the three panels into one column */
+  /* Explanation Triple Panel — stack the three panels into one column */
   .ek-explain4 { padding-left: var(--spacing-l); padding-right: var(--spacing-l); }
   .ek-explain4__block { grid-template-columns: 1fr; }
   .ek-explain4__img { min-height: 245px; }
-  /* Explanation 005 — text full width; image strip goes full-bleed and drops to two */
+  /* Explanation Image Marquee — text full width; image strip goes full-bleed and drops to two */
   .ek-explain5__contained { grid-template-columns: 1fr; }
   .ek-explain5__img { min-height: 245px; }
-  /* Explanation 006 — stack text over image inside the card */
+  /* Explanation Dark Card — stack text over image inside the card */
   .ek-explain6__card { grid-template-columns: 1fr; gap: var(--spacing-xxl); padding: var(--spacing-l); }
   .ek-explain6__col { justify-content: flex-start; }
   .ek-explain6__media { min-height: 192px; }

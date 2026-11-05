@@ -21,13 +21,13 @@ import illus3 from '../../../assets/sections/values-004-illus-3.svg';
 
 /** Placeholder images used by the sections when no `image` / `images` / `logos` prop is given. */
 export const sectionImages = {
-  /** Wide landscape photo (heroes, Explanation 003). */
+  /** Wide landscape photo (heroes, Explanation Twin Cards). */
   landscape: photoLandscape,
-  /** Wide photo for the Explanation 001 banner. */
+  /** Wide photo for the Explanation Banner Card banner. */
   banner: photoBanner,
-  /** Wide backdrop for Explanation 006. */
+  /** Wide backdrop for Explanation Dark Card. */
   backdrop: photoBackdrop,
-  /** Portrait photos (Explanation 002 / 004 / 005 / 006, Values & Features 002 / 003). */
+  /** Portrait photos (Explanation Split Media / 004 / 005 / 006, Values & Features 002 / 003). */
   portrait: photoPortrait,
   portrait2: photoPortrait2,
   portrait3: photoPortrait3,

@@ -3,8 +3,8 @@
 import { sectionRender } from '../_section.js';
 
 export default {
-  title: 'Sections/Explanations/Explanation 006 - Playground',
+  title: 'Sections/Explanations/Explanation Dark Card - Playground',
   parameters: { layout: 'fullscreen' },
 };
 
-export const Playground = { name: 'Explanation 006 - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('explanation-006') };
+export const Playground = { name: 'Explanation Dark Card - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('explanation-dark-card') };

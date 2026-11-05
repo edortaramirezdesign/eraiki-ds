@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './Explanation003.stories.js';
-import { sectionDoc, sectionField, SectionPreview, SectionMobile } from '../_section.js';
+import { sectionDoc, sectionField } from '../_section.js';
 
 <Meta title="Sections/Explanations/Explanation 003 - Documentation" />
 
@@ -10,34 +10,6 @@ import { sectionDoc, sectionField, SectionPreview, SectionMobile } from '../_sec
 
 <Markdown>{sectionField('explanation-003', 'short')}</Markdown>
 
-## Overview
-
-### Desktop
-
-<Markdown>{sectionField('explanation-003', 'frameDesktop')}</Markdown>
-
 <Canvas of={Stories.Playground} sourceState="none" />
-
-### Mobile
-
-<Markdown>{sectionField('explanation-003', 'frameMobile')}</Markdown>
-
-<SectionMobile storyId="sections-explanations-explanation-003-playground--playground" />
-
-## Options
-
-### Text + image
-
-The text card leads on the left with the image card on the right.
-
-<SectionPreview slug="explanation-003" kind="text-image" />
-
-### Image + text
-
-The image card leads on the left with the text card on the right.
-
-<SectionPreview slug="explanation-003" kind="image-text" />
-
-## Description
 
 <Markdown>{sectionDoc('explanation-003')}</Markdown>

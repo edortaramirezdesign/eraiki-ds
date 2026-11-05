@@ -273,7 +273,7 @@
         'Collecting sensitive data without the appropriate consent and security treatment.',
       ],
       versions: [
-      { slug: 'contact-001', name: 'Contact 001', shot: 'contact-001', node: '1282-33736',
+      { slug: 'contact-split-form', name: 'Contact Split Form', shot: 'contact-split-form', node: '1282-33736',
         frameDesktop: 'Two columns side by side: the message and its supporting copy on the left, the form on the right.',
         frameMobile: 'The two columns collapse into a single stack — the message first, then the form below it.',
         options: [
@@ -299,7 +299,7 @@
   SECTIONS.sort((a, b) => a.name.localeCompare(b.name));
   const SECTION_BUILD = {
     // kind: 'text-form' (text left, form right — default) or 'form-text' (reversed)
-    'contact-001': (kind) => {
+    'contact-split-form': (kind) => {
       // Only what is actually visible in Figma: no icon, no info/tooltip/required,
       // no textarea footer, and a single primary submit button.
       const field = () => `<div class="ek-datefield ek-datefield--text ek-datefield--full">

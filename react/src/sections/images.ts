@@ -31,7 +31,7 @@ export const sectionImages = {
   portrait: photoPortrait,
   portrait2: photoPortrait2,
   portrait3: photoPortrait3,
-  /** Eight monochrome brand logos (168×72) for Marquee 001. */
+  /** Eight monochrome brand logos (168×72) for Marquee Logo Strip. */
   logos: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8],
   /** Three abstract illustrations for Values & Features 004. */
   illustrations: [illus1, illus2, illus3],

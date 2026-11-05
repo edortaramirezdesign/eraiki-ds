@@ -5,7 +5,7 @@ keywords: ["marquee", "logos", "brands", "press", "social proof", "logo strip", 
 
 A centered intro over a continuously scrolling row of brand logos.
 
-Marquee 001 pairs a short, centered message — an eyebrow, a heading, a line of copy and a primary action — with a row of brand or press logos that scrolls continuously beneath it. The logos are muted to a single tint and split by thin dividers, so the strip reads as quiet social proof without competing with the message.
+Marquee Logo Strip pairs a short, centered message — an eyebrow, a heading, a line of copy and a primary action — with a row of brand or press logos that scrolls continuously beneath it. The logos are muted to a single tint and split by thin dividers, so the strip reads as quiet social proof without competing with the message.
 
 The intro uses the Text group component and the strip is a pure-CSS marquee (two duplicated logo groups looping seamlessly) that stops for users who prefer reduced motion. Use it to show the brands, press or partners you work with as an ambient band of logos.
 

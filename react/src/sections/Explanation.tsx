@@ -15,13 +15,13 @@ interface TextProps {
   className?: string;
 }
 
-export interface Explanation001Props extends TextProps, Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
+export interface ExplanationBannerCardProps extends TextProps, Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   /** Full-bleed background photo behind the card. */
   image?: string;
 }
 
-/** Explanation 001 — full-bleed image banner with a contained Text group card (top-left). */
-export function Explanation001({ label, title, children, primaryAction, onPrimaryAction, image = sectionImages.banner, className }: Explanation001Props) {
+/** Explanation Banner Card — full-bleed image banner with a contained Text group card (top-left). */
+export function ExplanationBannerCard({ label, title, children, primaryAction, onPrimaryAction, image = sectionImages.banner, className }: ExplanationBannerCardProps) {
   return (
     <div className={cx('ek-explain', className)} style={bg(image)}>
       <TextGroup kind="contained" label={label} title={title}
@@ -30,15 +30,15 @@ export function Explanation001({ label, title, children, primaryAction, onPrimar
   );
 }
 
-export interface Explanation002Props extends TextProps, SectionActions {
+export interface ExplanationSplitMediaProps extends TextProps, SectionActions {
   /** Supporting portrait photo (3:4). */
   image?: string;
   /** Which column leads: text on the left (default) or the image. */
   order?: 'text-image' | 'image-text';
 }
 
-/** Explanation 002 — two columns: text group (large heading, body, two actions) + a supporting image. */
-export function Explanation002({ label, title, children, image = sectionImages.portrait, order = 'text-image', className, ...actions }: Explanation002Props) {
+/** Explanation Split Media — two columns: text group (large heading, body, two actions) + a supporting image. */
+export function ExplanationSplitMedia({ label, title, children, image = sectionImages.portrait, order = 'text-image', className, ...actions }: ExplanationSplitMediaProps) {
   const text = (
     <div className="ek-textgroup ek-explain2__text">
       <div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div>
@@ -49,15 +49,15 @@ export function Explanation002({ label, title, children, image = sectionImages.p
   return <div className={cx('ek-explain2', className)}>{order === 'image-text' ? <>{media}{text}</> : <>{text}{media}</>}</div>;
 }
 
-export interface Explanation003Props extends TextProps, SectionActions {
+export interface ExplanationTwinCardsProps extends TextProps, SectionActions {
   /** Photo filling the image card. */
   image?: string;
   /** Which card leads: the text card (default) or the image card. */
   order?: 'text-image' | 'image-text';
 }
 
-/** Explanation 003 — two equal cards side by side: a tinted text card and an image card. */
-export function Explanation003({ label, title, children, image = sectionImages.landscape, order = 'text-image', className, ...actions }: Explanation003Props) {
+/** Explanation Twin Cards — two equal cards side by side: a tinted text card and an image card. */
+export function ExplanationTwinCards({ label, title, children, image = sectionImages.landscape, order = 'text-image', className, ...actions }: ExplanationTwinCardsProps) {
   const text = (
     <div className="ek-explain3__text"><div className="ek-textgroup">
       <div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div>
@@ -68,7 +68,7 @@ export function Explanation003({ label, title, children, image = sectionImages.l
   return <div className={cx('ek-explain3', className)}>{order === 'image-text' ? <>{media}{text}</> : <>{text}{media}</>}</div>;
 }
 
-export interface Explanation004Props extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
+export interface ExplanationTriplePanelProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   /** Section eyebrow (header). */
   label?: ReactNode;
   /** Section heading (header). */
@@ -84,8 +84,8 @@ export interface Explanation004Props extends Pick<SectionActions, 'primaryAction
   className?: string;
 }
 
-/** Explanation 004 — header over a row of three equal panels: two images and a text card with a primary action. */
-export function Explanation004({ label, title, cardLabel, cardTitle, children, primaryAction, onPrimaryAction, images = [sectionImages.portrait2, sectionImages.portrait3], className }: Explanation004Props) {
+/** Explanation Triple Panel — header over a row of three equal panels: two images and a text card with a primary action. */
+export function ExplanationTriplePanel({ label, title, cardLabel, cardTitle, children, primaryAction, onPrimaryAction, images = [sectionImages.portrait2, sectionImages.portrait3], className }: ExplanationTriplePanelProps) {
   return (
     <div className={cx('ek-explain4', className)}>
       <div className="ek-textgroup ek-explain4__head"><div className="ek-textgroup__top"><Head label={label} title={title} size="l" /></div></div>
@@ -100,13 +100,13 @@ export function Explanation004({ label, title, cardLabel, cardTitle, children, p
   );
 }
 
-export interface Explanation005Props extends TextProps {
+export interface ExplanationImageMarqueeProps extends TextProps {
   /** Photos of the scrolling row (the set loops seamlessly). Defaults to six samples. */
   images?: string[];
 }
 
-/** Explanation 005 — text intro (left half, heading XL, no action) over a full-bleed, continuously scrolling row of images. */
-export function Explanation005({ label, title, children, images, className }: Explanation005Props) {
+/** Explanation Image Marquee — text intro (left half, heading XL, no action) over a full-bleed, continuously scrolling row of images. */
+export function ExplanationImageMarquee({ label, title, children, images, className }: ExplanationImageMarqueeProps) {
   const imgs = images?.length ? images : Array(6).fill(sectionImages.portrait);
   const group = <div className="ek-explain5__mgroup">{imgs.map((src, i) => <div key={i} className="ek-explain5__img" style={bg(src)} />)}</div>;
   return (
@@ -119,15 +119,15 @@ export function Explanation005({ label, title, children, images, className }: Ex
   );
 }
 
-export interface Explanation006Props extends TextProps, Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
+export interface ExplanationDarkCardProps extends TextProps, Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   /** Full-bleed photo behind the dark card. */
   background?: string;
   /** Photo in the card's right column. */
   image?: string;
 }
 
-/** Explanation 006 — dark card over a full-bleed background image: heading top-left, body + primary action bottom-left, image on the right. */
-export function Explanation006({ label, title, children, primaryAction, onPrimaryAction, background = sectionImages.backdrop, image = sectionImages.portrait, className }: Explanation006Props) {
+/** Explanation Dark Card — dark card over a full-bleed background image: heading top-left, body + primary action bottom-left, image on the right. */
+export function ExplanationDarkCard({ label, title, children, primaryAction, onPrimaryAction, background = sectionImages.backdrop, image = sectionImages.portrait, className }: ExplanationDarkCardProps) {
   return (
     <div className={cx('ek-explain6', className)} style={bg(background)}>
       <div className="ek-explain6__card theme-dark">

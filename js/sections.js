@@ -118,9 +118,9 @@
         frameMobile: 'The stagger flattens and the three cards stack into one column.' },
     ] },
     { slug: 'explanations', name: 'Explanations', desc: 'Alternating text + media blocks that explain how something works.', versions: [
-      { slug: 'explanation-001', name: 'Explanation 001', shot: 'explanation-001', node: '1282-33698',
+      { slug: 'explanation-banner-card', name: 'Explanation Banner Card', shot: 'explanation-banner-card', node: '1282-33698',
         short: 'Full-bleed image banner with a contained text card that explains one idea.',
-        description: 'Explanation 001 introduces or explains a single idea by laying a contained text card over a full-bleed image. The image sets the context or mood; the card — an eyebrow, a heading, a short paragraph and one call to action — carries the message and keeps it readable on top of the photography.\n\nThe card is the Text group component in its contained variant, so its type scale, spacing and button states stay consistent with the rest of the system. Keep it to one clear message and a single primary action — the image is supporting context, not the content itself, so the copy should still make sense if the picture never loads.',
+        description: 'Explanation Banner Card introduces or explains a single idea by laying a contained text card over a full-bleed image. The image sets the context or mood; the card — an eyebrow, a heading, a short paragraph and one call to action — carries the message and keeps it readable on top of the photography.\n\nThe card is the Text group component in its contained variant, so its type scale, spacing and button states stay consistent with the rest of the system. Keep it to one clear message and a single primary action — the image is supporting context, not the content itself, so the copy should still make sense if the picture never loads.',
         keywords: ['explanation', 'card on image', 'image banner', 'overlay card', 'feature', 'text on image', 'editorial', 'storytelling', 'call to action', 'contained'],
         whenToUse: [
           'Explaining a single concept, feature or benefit with a supporting image behind it.',
@@ -136,9 +136,9 @@
         ],
         frameDesktop: 'The image spans the full width with the text card anchored to the top-left.',
         frameMobile: 'The banner narrows and the card sits at almost full width over the image.' },
-      { slug: 'explanation-002', name: 'Explanation 002', shot: 'explanation-002', node: '1282-33926',
+      { slug: 'explanation-split-media', name: 'Explanation Split Media', shot: 'explanation-split-media', node: '1282-33926',
         short: 'Two columns pairing a text block with a supporting image.',
-        description: 'Explanation 002 places a text block beside a supporting image to explain an idea while giving it a strong visual anchor. The text carries an eyebrow, a large heading, a short paragraph and up to two actions; the image sits in the opposite column and can lead or follow the text.\n\nBoth columns are built from existing components — the Text group and the Image — so type, spacing and button states stay consistent. Alternate the image side between consecutive sections to create rhythm down a long page, and keep each block focused on a single idea.',
+        description: 'Explanation Split Media places a text block beside a supporting image to explain an idea while giving it a strong visual anchor. The text carries an eyebrow, a large heading, a short paragraph and up to two actions; the image sits in the opposite column and can lead or follow the text.\n\nBoth columns are built from existing components — the Text group and the Image — so type, spacing and button states stay consistent. Alternate the image side between consecutive sections to create rhythm down a long page, and keep each block focused on a single idea.',
         keywords: ['explanation', 'text and image', 'image and text', 'two columns', 'feature', 'media', 'side by side', 'editorial', 'alternating', 'storytelling'],
         whenToUse: [
           'Explaining an idea that benefits from a single supporting image alongside it.',
@@ -159,9 +159,9 @@
         ],
         frameDesktop: 'Text and image sit side by side in two equal columns; the image can lead or follow.',
         frameMobile: 'The columns stack — image on top, text below — with the buttons in a vertical stack.' },
-      { slug: 'explanation-003', name: 'Explanation 003', shot: 'explanation-003', node: '1282-34004',
+      { slug: 'explanation-twin-cards', name: 'Explanation Twin Cards', shot: 'explanation-twin-cards', node: '1282-34004',
         short: 'Two equal cards: a text panel beside an image panel.',
-        description: 'Explanation 003 splits the section into two equal cards — one holding the copy, the other an image — sitting side by side with a hairline gap. The text card carries an eyebrow, a large heading, a short paragraph and up to two actions; the image card holds a single landscape photo cropped to fill.\n\nBoth cards share the same rounded shape and height, so the pairing reads as one balanced unit rather than a banner with an overlay. Use it to explain an idea that deserves equal weight for words and picture, and alternate the image side between sections to keep a long page moving.',
+        description: 'Explanation Twin Cards splits the section into two equal cards — one holding the copy, the other an image — sitting side by side with a hairline gap. The text card carries an eyebrow, a large heading, a short paragraph and up to two actions; the image card holds a single landscape photo cropped to fill.\n\nBoth cards share the same rounded shape and height, so the pairing reads as one balanced unit rather than a banner with an overlay. Use it to explain an idea that deserves equal weight for words and picture, and alternate the image side between sections to keep a long page moving.',
         keywords: ['explanation', 'two cards', 'text and image', 'image and text', 'split panel', 'feature', 'media', 'side by side', 'landscape', 'alternating'],
         whenToUse: [
           'Giving the copy and the image equal visual weight in one balanced unit.',
@@ -182,9 +182,9 @@
         ],
         frameDesktop: 'Two equal cards side by side — a text panel and an image panel — with a hairline gap.',
         frameMobile: 'The cards stack — the text panel on top, the image panel below it.' },
-      { slug: 'explanation-004', name: 'Explanation 004', shot: 'explanation-004', node: '1316-18477',
+      { slug: 'explanation-triple-panel', name: 'Explanation Triple Panel', shot: 'explanation-triple-panel', node: '1316-18477',
         short: 'A header over a three-panel row of two images and a text card.',
-        description: 'Explanation 004 leads with a short header — an eyebrow and a heading — and follows it with a row of three equal panels: two images and a text card carrying its own eyebrow, heading, paragraph and action. It works as a compact showcase where a couple of visuals and a message share equal billing.\n\nThe panels are built from the Image and Text group components and keep a consistent height and rounded shape, so the trio reads as one band. On narrow screens the row stacks into a single column. Use it to open a topic with supporting imagery, or to pair a gallery moment with a clear call to action.',
+        description: 'Explanation Triple Panel leads with a short header — an eyebrow and a heading — and follows it with a row of three equal panels: two images and a text card carrying its own eyebrow, heading, paragraph and action. It works as a compact showcase where a couple of visuals and a message share equal billing.\n\nThe panels are built from the Image and Text group components and keep a consistent height and rounded shape, so the trio reads as one band. On narrow screens the row stacks into a single column. Use it to open a topic with supporting imagery, or to pair a gallery moment with a clear call to action.',
         keywords: ['explanation', 'three panels', 'showcase', 'gallery', 'images and text', 'feature', 'media row', 'editorial', 'header', 'card'],
         whenToUse: [
           'Introducing a topic with a short header and a small set of supporting visuals.',
@@ -200,9 +200,9 @@
         ],
         frameDesktop: 'A header above three equal panels — two images and a text card — in one row.',
         frameMobile: 'The header stays on top and the three panels stack into a single column.' },
-      { slug: 'explanation-005', name: 'Explanation 005', shot: 'explanation-005', node: '1316-18630',
+      { slug: 'explanation-image-marquee', name: 'Explanation Image Marquee', shot: 'explanation-image-marquee', node: '1316-18630',
         short: 'A contained text intro above an auto-scrolling image marquee.',
-        description: 'Explanation 005 opens with a contained text block — an eyebrow, a large heading and a short paragraph set in the left half of the column — and follows it with a full-bleed image marquee that scrolls horizontally, edge to edge: images drift off the left and reappear from the right in a slow, seamless loop. The narrow measure keeps the copy readable while the moving strip gives the section an ambient, editorial finish.\n\nThe text uses the Text group component and the strip is built from the Image component. The marquee loops continuously with a pure-CSS animation (two duplicated groups) and stops for users who prefer reduced motion. Use it to introduce a topic and let a set of related visuals drift past to carry the mood — not to present images that need to be read or clicked.',
+        description: 'Explanation Image Marquee opens with a contained text block — an eyebrow, a large heading and a short paragraph set in the left half of the column — and follows it with a full-bleed image marquee that scrolls horizontally, edge to edge: images drift off the left and reappear from the right in a slow, seamless loop. The narrow measure keeps the copy readable while the moving strip gives the section an ambient, editorial finish.\n\nThe text uses the Text group component and the strip is built from the Image component. The marquee loops continuously with a pure-CSS animation (two duplicated groups) and stops for users who prefer reduced motion. Use it to introduce a topic and let a set of related visuals drift past to carry the mood — not to present images that need to be read or clicked.',
         keywords: ['explanation', 'text and marquee', 'image marquee', 'carousel', 'auto-scroll', 'infinite scroll', 'motion', 'full-bleed', 'editorial', 'contained'],
         whenToUse: [
           'Introducing a topic while a band of related images drifts slowly past.',
@@ -218,9 +218,9 @@
         ],
         frameDesktop: 'A contained text block on the left, then a full-width image marquee scrolling left.',
         frameMobile: 'The text spans the column with the image marquee scrolling below it.' },
-      { slug: 'explanation-006', name: 'Explanation 006', shot: 'explanation-006', node: '1316-20697',
+      { slug: 'explanation-dark-card', name: 'Explanation Dark Card', shot: 'explanation-dark-card', node: '1316-20697',
         short: 'A dark card with copy and an image, over a full-bleed background.',
-        description: "Explanation 006 sets a dark, self-contained card over a full-bleed background image. Inside the card the copy sits on the left — an eyebrow and a large heading at the top, a short paragraph and a primary action at the bottom — with a supporting image on the right. The dark surface and light text let it sit confidently on top of busy photography.\n\nThe card uses the complementary surface with the system's dark text tokens, and is built from the Text group, Button and Image components. Use it for a bold, focused statement over imagery — a single message and one action, not a dense block of content.",
+        description: "Explanation Dark Card sets a dark, self-contained card over a full-bleed background image. Inside the card the copy sits on the left — an eyebrow and a large heading at the top, a short paragraph and a primary action at the bottom — with a supporting image on the right. The dark surface and light text let it sit confidently on top of busy photography.\n\nThe card uses the complementary surface with the system's dark text tokens, and is built from the Text group, Button and Image components. Use it for a bold, focused statement over imagery — a single message and one action, not a dense block of content.",
         keywords: ['explanation', 'dark card', 'card on image', 'overlay', 'feature', 'hero', 'editorial', 'complementary', 'image background', 'statement'],
         whenToUse: [
           'Making a bold, focused statement over a background image.',
@@ -317,13 +317,13 @@
       const form = `<form class="ek-contact__form" onsubmit="return false">${field()}${field()}${field()}${textarea()}<div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></form>`;
       return `<div class="ek-contact">${kind === 'form-text' ? form + text : text + form}</div>`;
     },
-    // Explanation 001 — full-bleed image banner with a contained Text group card
+    // Explanation Banner Card — full-bleed image banner with a contained Text group card
     // (icon and secondary/tertiary buttons hidden in Figma → single primary button).
-    'explanation-001': () => `<div class="ek-explain" style="background-image:url('assets/sections/explanation-001-bg.jpg')">${EK_BUILD.textGroup({ icon: false, contained: true })}</div>`,
-    // Explanation 002 — two columns: Text group (eyebrow, large heading, body,
+    'explanation-banner-card': () => `<div class="ek-explain" style="background-image:url('assets/sections/explanation-001-bg.jpg')">${EK_BUILD.textGroup({ icon: false, contained: true })}</div>`,
+    // Explanation Split Media — two columns: Text group (eyebrow, large heading, body,
     // primary + secondary buttons) and a supporting image. kind: 'text-image'
     // (text left) or 'image-text' (image left).
-    'explanation-002': (kind) => {
+    'explanation-split-media': (kind) => {
       const text = `<div class="ek-textgroup ek-explain2__text">
         <div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
@@ -334,9 +334,9 @@
       const media = `<div class="ek-explain2__media"><img src="assets/sections/explanation-002-img.jpg" alt="" loading="lazy"></div>`;
       return `<div class="ek-explain2">${kind === 'image-text' ? media + text : text + media}</div>`;
     },
-    // Explanation 003 — two equal cards side by side: a text card + an image card.
+    // Explanation Twin Cards — two equal cards side by side: a text card + an image card.
     // kind: 'text-image' (text left) or 'image-text' (image left).
-    'explanation-003': (kind) => {
+    'explanation-twin-cards': (kind) => {
       const text = `<div class="ek-explain3__text"><div class="ek-textgroup">
         <div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
@@ -347,9 +347,9 @@
       const media = `<div class="ek-explain3__media" style="background-image:url('assets/sections/explanation-003-img.jpg')"></div>`;
       return `<div class="ek-explain3">${kind === 'image-text' ? media + text : text + media}</div>`;
     },
-    // Explanation 004 — header (eyebrow + heading only) over a row of three equal
+    // Explanation Triple Panel — header (eyebrow + heading only) over a row of three equal
     // panels: two images and a text card (eyebrow, heading, body, primary button).
-    'explanation-004': () => {
+    'explanation-triple-panel': () => {
       const head = `<div class="ek-textgroup ek-explain4__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum</h2></div></div></div>`;
       const img = (n) => `<div class="ek-explain4__img" style="background-image:url('assets/sections/explanation-004-img${n}.jpg')"></div>`;
       const card = `<div class="ek-explain4__card"><div class="ek-textgroup">
@@ -361,9 +361,9 @@
       </div></div>`;
       return `<div class="ek-explain4">${head}<div class="ek-explain4__block">${img(1)}${img(2)}${card}</div></div>`;
     },
-    // Explanation 005 — contained text intro (left half) over a full-bleed row of
+    // Explanation Image Marquee — contained text intro (left half) over a full-bleed row of
     // images (four on desktop, two on mobile). No button.
-    'explanation-005': () => {
+    'explanation-image-marquee': () => {
       const text = `<div class="ek-explain5__text ek-textgroup"><div class="ek-textgroup__top">
         <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
         <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
@@ -488,9 +488,9 @@
       </div>`;
       return `<div class="ek-values4">${intro}<div class="ek-values4__grid">${cards}</div></div>`;
     },
-    // Explanation 006 — dark (complementary) card over a full-bleed background image.
+    // Explanation Dark Card — dark (complementary) card over a full-bleed background image.
     // Left column: heading (top) + body & primary button (bottom); right: an image.
-    'explanation-006': () => `<div class="ek-explain6" style="background-image:url('assets/sections/explanation-006-bg.jpg')">
+    'explanation-dark-card': () => `<div class="ek-explain6" style="background-image:url('assets/sections/explanation-006-bg.jpg')">
       <div class="ek-explain6__card theme-dark">
         <div class="ek-explain6__col">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet</h2></div>

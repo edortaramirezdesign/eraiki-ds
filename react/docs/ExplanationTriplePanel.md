@@ -5,7 +5,7 @@ keywords: ["explanation", "three panels", "showcase", "gallery", "images and tex
 
 A header over a three-panel row of two images and a text card.
 
-Explanation 004 leads with a short header — an eyebrow and a heading — and follows it with a row of three equal panels: two images and a text card carrying its own eyebrow, heading, paragraph and action. It works as a compact showcase where a couple of visuals and a message share equal billing.
+Explanation Triple Panel leads with a short header — an eyebrow and a heading — and follows it with a row of three equal panels: two images and a text card carrying its own eyebrow, heading, paragraph and action. It works as a compact showcase where a couple of visuals and a message share equal billing.
 
 The panels are built from the Image and Text group components and keep a consistent height and rounded shape, so the trio reads as one band. On narrow screens the row stacks into a single column. Use it to open a topic with supporting imagery, or to pair a gallery moment with a clear call to action.
 

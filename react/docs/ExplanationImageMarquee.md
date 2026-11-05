@@ -5,7 +5,7 @@ keywords: ["explanation", "text and marquee", "image marquee", "carousel", "auto
 
 A contained text intro above an auto-scrolling image marquee.
 
-Explanation 005 opens with a contained text block — an eyebrow, a large heading and a short paragraph set in the left half of the column — and follows it with a full-bleed image marquee that scrolls horizontally, edge to edge: images drift off the left and reappear from the right in a slow, seamless loop. The narrow measure keeps the copy readable while the moving strip gives the section an ambient, editorial finish.
+Explanation Image Marquee opens with a contained text block — an eyebrow, a large heading and a short paragraph set in the left half of the column — and follows it with a full-bleed image marquee that scrolls horizontally, edge to edge: images drift off the left and reappear from the right in a slow, seamless loop. The narrow measure keeps the copy readable while the moving strip gives the section an ambient, editorial finish.
 
 The text uses the Text group component and the strip is built from the Image component. The marquee loops continuously with a pure-CSS animation (two duplicated groups) and stops for users who prefer reduced motion. Use it to introduce a topic and let a set of related visuals drift past to carry the mood — not to present images that need to be read or clicked.
 

@@ -52,19 +52,19 @@
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "Explanation001": {
+    "ExplanationBannerCard": {
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "Explanation004": {
+    "ExplanationTriplePanel": {
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "Explanation005": {
+    "ExplanationImageMarquee": {
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "Explanation006": {
+    "ExplanationDarkCard": {
       "cardMode": "single",
       "viewport": "1440x900"
     },
@@ -88,11 +88,11 @@
       "cardMode": "single",
       "viewport": "1440x900"
     },
-    "Explanation002": {
+    "ExplanationSplitMedia": {
       "cardMode": "column",
       "viewport": "1440x900"
     },
-    "Explanation003": {
+    "ExplanationTwinCards": {
       "cardMode": "column",
       "viewport": "1440x900"
     },

@@ -5,7 +5,7 @@ keywords: ["explanation", "two cards", "text and image", "image and text", "spli
 
 Two equal cards: a text panel beside an image panel.
 
-Explanation 003 splits the section into two equal cards — one holding the copy, the other an image — sitting side by side with a hairline gap. The text card carries an eyebrow, a large heading, a short paragraph and up to two actions; the image card holds a single landscape photo cropped to fill.
+Explanation Twin Cards splits the section into two equal cards — one holding the copy, the other an image — sitting side by side with a hairline gap. The text card carries an eyebrow, a large heading, a short paragraph and up to two actions; the image card holds a single landscape photo cropped to fill.
 
 Both cards share the same rounded shape and height, so the pairing reads as one balanced unit rather than a banner with an overlay. Use it to explain an idea that deserves equal weight for words and picture, and alternate the image side between sections to keep a long page moving.
 

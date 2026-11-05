@@ -32,12 +32,14 @@ export function sectionField(slug, field) {
   return (v && v[field]) || '';
 }
 
-// Written docs as Markdown — same order and labels as the component Docs pages: context, keywords, when to use, when not to use.
+// Written docs as Markdown, shown below the live section — same order and labels as the
+// component Docs pages: short, context, keywords, when to use, when not to use.
 export function sectionDoc(slug) {
   const v = BY_VER[slug];
   if (!v) return '';
   const out = [];
-  if (v.description) out.push(v.description);
+  if (v.short) out.push(v.short);
+  if (v.description) out.push('', v.description);
   if (v.keywords && v.keywords.length) out.push('', '### Keywords', '', v.keywords.join(' · '));
   if (v.whenToUse && v.whenToUse.length) out.push('', '### When to use', '', ...v.whenToUse.map((x) => `- ${x}`));
   if (v.whenNotToUse && v.whenNotToUse.length) out.push('', '### When not to use', '', ...v.whenNotToUse.map((x) => `- ${x}`));

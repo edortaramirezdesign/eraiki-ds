@@ -2,13 +2,11 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './Explanation006.stories.js';
-import { sectionDoc, sectionField } from '../_section.js';
+import { sectionDoc } from '../_section.js';
 
 <Meta title="Sections/Explanations/Explanation 006 - Documentation" />
 
 # Explanation 006
-
-<Markdown>{sectionField('explanation-006', 'short')}</Markdown>
 
 <Canvas of={Stories.Playground} sourceState="none" />
 

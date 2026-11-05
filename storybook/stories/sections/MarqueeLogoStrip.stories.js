@@ -3,8 +3,8 @@
 import { sectionRender } from '../_section.js';
 
 export default {
-  title: 'Sections/Marquee/Marquee 001 - Playground',
+  title: 'Sections/Marquee/Marquee Logo Strip - Playground',
   parameters: { layout: 'fullscreen' },
 };
 
-export const Playground = { name: 'Marquee 001 - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('marquee-001') };
+export const Playground = { name: 'Marquee Logo Strip - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('marquee-logo-strip') };

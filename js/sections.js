@@ -238,9 +238,9 @@
         frameMobile: 'The card fills the width with the text stacked above the image.' },
     ] },
     { slug: 'marquee', name: 'Marquee', desc: 'Continuously scrolling row of logos or text.', versions: [
-      { slug: 'marquee-001', name: 'Marquee 001', shot: 'marquee-001', node: '1282-33648',
+      { slug: 'marquee-logo-strip', name: 'Marquee Logo Strip', shot: 'marquee-logo-strip', node: '1282-33648',
         short: 'A centered intro over a continuously scrolling row of brand logos.',
-        description: 'Marquee 001 pairs a short, centered message — an eyebrow, a heading, a line of copy and a primary action — with a row of brand or press logos that scrolls continuously beneath it. The logos are muted to a single tint and split by thin dividers, so the strip reads as quiet social proof without competing with the message.\n\nThe intro uses the Text group component and the strip is a pure-CSS marquee (two duplicated logo groups looping seamlessly) that stops for users who prefer reduced motion. Use it to show the brands, press or partners you work with as an ambient band of logos.',
+        description: 'Marquee Logo Strip pairs a short, centered message — an eyebrow, a heading, a line of copy and a primary action — with a row of brand or press logos that scrolls continuously beneath it. The logos are muted to a single tint and split by thin dividers, so the strip reads as quiet social proof without competing with the message.\n\nThe intro uses the Text group component and the strip is a pure-CSS marquee (two duplicated logo groups looping seamlessly) that stops for users who prefer reduced motion. Use it to show the brands, press or partners you work with as an ambient band of logos.',
         keywords: ['marquee', 'logos', 'brands', 'press', 'social proof', 'logo strip', 'carousel', 'auto-scroll', 'partners', 'ticker'],
         whenToUse: [
           'Showing the brands, press or partners you work with as social proof.',
@@ -403,9 +403,9 @@
         </div>
       </div>
     </div>`,
-    // Marquee 001 — centered intro + a continuously scrolling row of brand logos
+    // Marquee Logo Strip — centered intro + a continuously scrolling row of brand logos
     // (exported from Figma as SVG, muted to one tint) split by dividers.
-    'marquee-001': () => {
+    'marquee-logo-strip': () => {
       const items = [1, 2, 3, 4, 5, 6, 7, 8].map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
       const grp = `<div class="ek-marquee1__group">${items}</div>`;
       const text = `<div class="ek-marquee1__text">

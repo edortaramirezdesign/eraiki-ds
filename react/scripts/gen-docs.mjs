@@ -74,7 +74,7 @@ const SECTIONS = {
   ValuesFeatures002: 'values-002',
   ValuesFeatures003: 'values-003',
   ValuesFeatures004: 'values-004',
-  Marquee001: 'marquee-001',
+  MarqueeLogoStrip: 'marquee-logo-strip',
   ContactSplitForm: 'contact-split-form',
 };
 
@@ -134,7 +134,7 @@ const PROPS_MAP = {
   ValuesFeatures002: 'Heading → `label` / `title`; feature list → `items` (`{icon, title, text}`); open item → `defaultActive` / `active`; photo → `image`.',
   ValuesFeatures003: 'Heading → `label` / `title`; numbered rows → `items` (`{title, text}`, numbers are automatic); photo → `image`.',
   ValuesFeatures004: 'Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; staggered cards → `items` (`{title, text, illustration}`).',
-  Marquee001: 'Intro → `label` / `title` / children / `primaryAction`; logo strip → `logos` (image URLs).',
+  MarqueeLogoStrip: 'Intro → `label` / `title` / children / `primaryAction`; logo strip → `logos` (image URLs).',
   ContactSplitForm: 'Text + Form / Form + Text → `order`; message → `label` / `title` / children; fields → `fields` (`{label, placeholder, type, multiline}`); button → `submitLabel` (+ `onSubmit`).',
   FileDrop: 'State Uploading → `status="uploading"` + `progress`; Upload failed → `status="error"`; Dragging is live on drag-over; Uploaded files → `files`.',
 };

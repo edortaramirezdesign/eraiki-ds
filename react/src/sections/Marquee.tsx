@@ -3,7 +3,7 @@ import { cx } from '../cx';
 import { Head, Body, Primary, type SectionActions } from './parts';
 import { sectionImages } from './images';
 
-export interface Marquee001Props extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
+export interface MarqueeLogoStripProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   label?: ReactNode;
   /** Heading (heading M), centered. */
   title?: ReactNode;
@@ -14,8 +14,8 @@ export interface Marquee001Props extends Pick<SectionActions, 'primaryAction' | 
   className?: string;
 }
 
-/** Marquee 001 — centered intro + a continuously scrolling strip of brand logos split by thin dividers. */
-export function Marquee001({ label, title, children, primaryAction, onPrimaryAction, logos = sectionImages.logos, className }: Marquee001Props) {
+/** Marquee Logo Strip — centered intro + a continuously scrolling strip of brand logos split by thin dividers. */
+export function MarqueeLogoStrip({ label, title, children, primaryAction, onPrimaryAction, logos = sectionImages.logos, className }: MarqueeLogoStripProps) {
   const group = (
     <div className="ek-marquee1__group">
       {logos.map((src, i) => (

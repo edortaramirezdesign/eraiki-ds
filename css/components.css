@@ -725,7 +725,7 @@
 .ek-explain6__foot .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
 .ek-explain6__media { min-height: 480px; background-position: center; background-size: cover; background-repeat: no-repeat; }
 
-/* Hero 001 — full-bleed image hero (dark scrim), content anchored to the bottom:
+/* Hero Image Slider — full-bleed image hero (dark scrim), content anchored to the bottom:
    a text block (lower-left) and an actions row (primary + prev/next arrows). */
 .ek-hero {
   display: flex; flex-direction: column; justify-content: flex-end; gap: var(--spacing-l);
@@ -737,7 +737,7 @@
 .ek-hero__actions { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-l); }
 .ek-hero__nav { display: flex; gap: var(--spacing-xs); }
 
-/* Hero 002 — full-screen image (dark scrim), two text columns anchored to the
+/* Hero Split Columns — full-screen image (dark scrim), two text columns anchored to the
    bottom: the headline (left) and a paragraph + CTA in a narrower column (right). */
 .ek-hero2 {
   display: flex; flex-direction: column; justify-content: flex-end;
@@ -858,10 +858,10 @@
   .ek-explain6__card { grid-template-columns: 1fr; gap: var(--spacing-xxl); padding: var(--spacing-l); }
   .ek-explain6__col { justify-content: flex-start; }
   .ek-explain6__media { min-height: 192px; }
-  /* Hero 001 — text spans the full width */
+  /* Hero Image Slider — text spans the full width */
   .ek-hero { min-height: 636px; }
   .ek-hero__row--text { grid-template-columns: 1fr; }
-  /* Hero 002 — stack the two columns (heading first, then paragraph + CTA) */
+  /* Hero Split Columns — stack the two columns (heading first, then paragraph + CTA) */
   .ek-hero2 { min-height: 542px; }
   .ek-hero2__row { flex-direction: column; align-items: stretch; gap: var(--spacing-xxl); }
   .ek-hero2__aside { flex: none; max-width: none; padding-top: 0; }

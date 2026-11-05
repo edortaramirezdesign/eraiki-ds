@@ -5,7 +5,7 @@ keywords: ["hero", "image hero", "full-bleed", "above the fold", "banner", "head
 
 Full-bleed image hero with the headline and actions anchored to the bottom.
 
-Hero 001 is a full-bleed image hero: a large photograph fills the block, a dark scrim keeps the copy legible, and the content sits at the bottom. The message — an eyebrow, a big heading and a short paragraph — occupies the lower-left, with a primary action and a pair of previous / next arrows along the base.
+Hero Image Slider is a full-bleed image hero: a large photograph fills the block, a dark scrim keeps the copy legible, and the content sits at the bottom. The message — an eyebrow, a big heading and a short paragraph — occupies the lower-left, with a primary action and a pair of previous / next arrows along the base.
 
 Text and controls use the system's dark (on-image) tokens, and it is built from the Text group and Button components. Use it above the fold to set the tone with a single strong image and one clear call to action; the arrows suit a rotating set of slides.
 

@@ -44,11 +44,11 @@
     "Pagination": {
       "cardMode": "column"
     },
-    "Hero001": {
+    "HeroImageSlider": {
       "cardMode": "column",
       "viewport": "1440x900"
     },
-    "Hero002": {
+    "HeroSplitColumns": {
       "cardMode": "single",
       "viewport": "1440x900"
     },

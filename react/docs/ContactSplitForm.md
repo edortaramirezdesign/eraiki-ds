@@ -2,7 +2,7 @@
 category: Sections
 ---
 
-Contact 001 is a two-column contact block: the message (eyebrow, heading and a short paragraph) on one side and a simple form on the other — labelled text fields, a message text area and a single primary submit button. On narrow screens the columns stack, message first. Use it at the end of a page to collect enquiries; keep the form short.
+Contact Split Form is a two-column contact block: the message (eyebrow, heading and a short paragraph) on one side and a simple form on the other — labelled text fields, a message text area and a single primary submit button. On narrow screens the columns stack, message first. Use it at the end of a page to collect enquiries; keep the form short.
 
 ## Layout
 - Desktop (> 1024px): Two columns side by side: the message and its supporting copy on the left, the form on the right.

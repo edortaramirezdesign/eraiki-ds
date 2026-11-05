@@ -75,12 +75,12 @@ const SECTIONS = {
   ValuesFeatures003: 'values-003',
   ValuesFeatures004: 'values-004',
   Marquee001: 'marquee-001',
-  Contact001: 'contact-001',
+  ContactSplitForm: 'contact-split-form',
 };
 
 const EXTRA = {
   EraikiProvider: 'App root for Eraiki. Renders the `.ek` root class (the body font family that inputs and plain text inherit) and applies the light/dark theme. Wrap every screen in it exactly once.',
-  Contact001: 'Contact 001 is a two-column contact block: the message (eyebrow, heading and a short paragraph) on one side and a simple form on the other — labelled text fields, a message text area and a single primary submit button. On narrow screens the columns stack, message first. Use it at the end of a page to collect enquiries; keep the form short.',
+  ContactSplitForm: 'Contact Split Form is a two-column contact block: the message (eyebrow, heading and a short paragraph) on one side and a simple form on the other — labelled text fields, a message text area and a single primary submit button. On narrow screens the columns stack, message first. Use it at the end of a page to collect enquiries; keep the form short.',
   Icon: 'Eraiki line icon: a 20×20, 1.5px-stroke glyph that inherits `currentColor`. Use `size="s"` for the 16px variant. The available names are listed in the `name` prop.',
 };
 
@@ -135,7 +135,7 @@ const PROPS_MAP = {
   ValuesFeatures003: 'Heading → `label` / `title`; numbered rows → `items` (`{title, text}`, numbers are automatic); photo → `image`.',
   ValuesFeatures004: 'Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; staggered cards → `items` (`{title, text, illustration}`).',
   Marquee001: 'Intro → `label` / `title` / children / `primaryAction`; logo strip → `logos` (image URLs).',
-  Contact001: 'Text + Form / Form + Text → `order`; message → `label` / `title` / children; fields → `fields` (`{label, placeholder, type, multiline}`); button → `submitLabel` (+ `onSubmit`).',
+  ContactSplitForm: 'Text + Form / Form + Text → `order`; message → `label` / `title` / children; fields → `fields` (`{label, placeholder, type, multiline}`); button → `submitLabel` (+ `onSubmit`).',
   FileDrop: 'State Uploading → `status="uploading"` + `progress`; Upload failed → `status="error"`; Dragging is live on drag-over; Uploaded files → `files`.',
 };
 

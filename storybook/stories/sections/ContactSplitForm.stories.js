@@ -3,8 +3,8 @@
 import { sectionRender } from '../_section.js';
 
 export default {
-  title: 'Sections/Contact/Contact 001 - Playground',
+  title: 'Sections/Contact/Contact Split Form - Playground',
   parameters: { layout: 'fullscreen' },
 };
 
-export const Playground = { name: 'Contact 001 - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('contact-001') };
+export const Playground = { name: 'Contact Split Form - Playground', parameters: { controls: { disable: true } }, render: () => sectionRender('contact-split-form') };

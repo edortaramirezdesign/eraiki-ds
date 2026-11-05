@@ -1,4 +1,4 @@
-import { Contact001 } from '@eraiki/react';
+import { ContactSplitForm } from '@eraiki/react';
 
 const fields = [
   { label: 'Full name:', placeholder: 'Ane Etxeberria' },
@@ -8,12 +8,12 @@ const fields = [
 ];
 
 export const TextForm = () => (
-  <Contact001 label="Contact" title="Let's talk about your project" fields={fields} submitLabel="Send message">
+  <ContactSplitForm label="Contact" title="Let's talk about your project" fields={fields} submitLabel="Send message">
     Tell us a little about what you have in mind and we will get back to you within two working days.
-  </Contact001>
+  </ContactSplitForm>
 );
 export const FormText = () => (
-  <Contact001 order="form-text" label="Visit us" title="Book a visit to the workshop" fields={fields.slice(0, 2).concat(fields[3])} submitLabel="Request a visit">
+  <ContactSplitForm order="form-text" label="Visit us" title="Book a visit to the workshop" fields={fields.slice(0, 2).concat(fields[3])} submitLabel="Request a visit">
     See the materials, meet the team and walk through a finished project with us.
-  </Contact001>
+  </ContactSplitForm>
 );

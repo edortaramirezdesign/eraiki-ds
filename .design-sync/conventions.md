@@ -27,7 +27,7 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 - Data display: Badge, Label, Avatar / AvatarGroup, Rating, Image, CellsRow + PlainCell / LinkableCell / FeaturedCell (tables)
 - Layout: TextGroup (eyebrow · title · body · action — the brick of marketing sections), Accordion, Divider, Placeholder
 - Commerce: ProductCard · Foundations: EraikiProvider, Icon
-- Sections (full-width page blocks): Hero001, Hero002, Explanation001–006, ValuesFeatures001–004, Marquee001, Contact001
+- Sections (full-width page blocks): Hero001, Hero002, Explanation001–006, ValuesFeatures001–004, Marquee001, ContactSplitForm
 
  Each has a `.d.ts` (exact props) and `.prompt.md` (when to use / when not). Key conventions:
 - Labels are uppercase by design and end with a colon: `label="Email:"`.
@@ -40,7 +40,7 @@ const { EraikiProvider, Button, TextField } = window.Eraiki;
 A landing page is a vertical stack of sections. Put them directly inside `EraikiProvider`, one after another — no wrapper, margins or gaps between them (each section carries its own padding and background).
 
 ```jsx
-const { EraikiProvider, Hero001, ValuesFeatures001, Explanation002, Marquee001, Contact001 } = window.Eraiki;
+const { EraikiProvider, Hero001, ValuesFeatures001, Explanation002, Marquee001, ContactSplitForm } = window.Eraiki;
 
 <EraikiProvider>
   <Hero001 label="New collection" title="Designed to last a lifetime" primaryAction="Explore">Handmade furniture from local oak.</Hero001>
@@ -49,11 +49,11 @@ const { EraikiProvider, Hero001, ValuesFeatures001, Explanation002, Marquee001, 
   <Explanation002 label="Materials" title="Natural materials" primaryAction="View materials" image="https://…/photo.jpg">Body copy.</Explanation002>
   <Explanation002 order="image-text" label="Craft" title="Cut by hand" primaryAction="Meet the team">Body copy.</Explanation002>
   <Marquee001 title="Trusted by" />
-  <Contact001 label="Contact" title="Let's talk" submitLabel="Send">We reply within two days.</Contact001>
+  <ContactSplitForm label="Contact" title="Let's talk" submitLabel="Send">We reply within two days.</ContactSplitForm>
 </EraikiProvider>
 ```
 - Content goes in props, never in custom markup: `label` (eyebrow), `title`, children (body copy), `primaryAction` / `secondaryAction` (button labels, + `onPrimaryAction` / `onSecondaryAction`), and `items` arrays for lists/cards.
-- Typical order: one hero first (Hero001 or Hero002) → values/features → explanations (alternate `order="text-image"` / `"image-text"` for rhythm) → marquee (social proof) → Contact001 last.
+- Typical order: one hero first (Hero001 or Hero002) → values/features → explanations (alternate `order="text-image"` / `"image-text"` for rhythm) → marquee (social proof) → ContactSplitForm last.
 - Images: `image` / `images` / `background` / `logos` take URLs. Every section ships with built-in sample images (also exposed as `sectionImages`), so omit them for a quick mock and pass real URLs for real content.
 - Sections reflow to a single column at ≤ 1024px viewport width (real media query) — design desktop at 1440px wide and mobile at 390px.
 - Use only one hero per page and at most one primary action per section.

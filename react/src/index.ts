@@ -77,5 +77,5 @@ export { ValuesFeatures001, ValuesFeatures002, ValuesFeatures003, ValuesFeatures
 export type { ValuesFeatures001Props, ValuesFeatures002Props, ValuesFeatures003Props, ValuesFeatures004Props, FeatureItem, NumberedItem, IllustratedItem } from './sections/ValuesFeatures';
 export { Marquee001 } from './sections/Marquee';
 export type { Marquee001Props } from './sections/Marquee';
-export { Contact001 } from './sections/Contact';
-export type { Contact001Props, ContactField } from './sections/Contact';
+export { ContactSplitForm } from './sections/Contact';
+export type { ContactSplitFormProps, ContactField } from './sections/Contact';

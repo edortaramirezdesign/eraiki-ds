@@ -623,7 +623,7 @@
 .ek-textgroup__body { font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-l); line-height: var(--line-height-body-l); color: var(--color-fill-plain-text-standard-l); margin: 0; }
 
 /* ---------- Patterns ---------- */
-/* Contact 001 — text group + form, two columns (stacks on narrow) */
+/* Contact Split Form — text group + form, two columns (stacks on narrow) */
 .ek-contact {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: start;
   background: var(--color-fill-plain-surface-base);
@@ -832,7 +832,7 @@
    breakpoint (Desktop >= 1025, Mobile <= 1024), driven by the real viewport
    inside each preview iframe (so tokens switch too). */
 @media (max-width: 1024px) {
-  /* Contact 001 — stack text over form */
+  /* Contact Split Form — stack text over form */
   .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-xl); padding: var(--spacing-xl); }
   /* Explanation 001 — shorter banner */
   .ek-explain { min-height: 422px; }

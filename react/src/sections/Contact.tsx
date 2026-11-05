@@ -18,7 +18,7 @@ export interface ContactField {
   required?: boolean;
 }
 
-export interface Contact001Props {
+export interface ContactSplitFormProps {
   label?: ReactNode;
   /** Heading (heading M). */
   title?: ReactNode;
@@ -41,8 +41,8 @@ const DEFAULT_FIELDS: ContactField[] = [
   { label: 'Message:', placeholder: 'How can we help?', name: 'message', multiline: true },
 ];
 
-/** Contact 001 — message (eyebrow, heading, copy) beside a form of fields + one primary submit button. */
-export function Contact001({ label, title, children, fields = DEFAULT_FIELDS, submitLabel = 'Send', onSubmit, order = 'text-form', className }: Contact001Props) {
+/** Contact Split Form — message (eyebrow, heading, copy) beside a form of fields + one primary submit button. */
+export function ContactSplitForm({ label, title, children, fields = DEFAULT_FIELDS, submitLabel = 'Send', onSubmit, order = 'text-form', className }: ContactSplitFormProps) {
   const text = (
     <div className="ek-textgroup ek-contact__text">
       <div className="ek-textgroup__top"><Head label={label} title={title} size="m" /><Body>{children}</Body></div>

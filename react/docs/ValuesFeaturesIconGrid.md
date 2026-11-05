@@ -5,7 +5,7 @@ keywords: ["values", "features", "benefits", "feature grid", "icon cards", "valu
 
 A centered intro above a row of four icon-led feature cards.
 
-Values & Features 001 leads with a short, centered message — an eyebrow, a heading, a line of copy and a pair of actions — and follows it with a row of four feature cards. Each card is a small icon box, a short title and a line of supporting copy, so a set of benefits reads as one calm, scannable grid rather than a wall of text.
+Values & Features Icon Grid leads with a short, centered message — an eyebrow, a heading, a line of copy and a pair of actions — and follows it with a row of four feature cards. Each card is a small icon box, a short title and a line of supporting copy, so a set of benefits reads as one calm, scannable grid rather than a wall of text.
 
 The intro is a Text group with a primary and a secondary action; the cards reuse the same icon-box, title and body building blocks on a muted surface. On smaller screens the four cards stack into a single column and the actions move under one another. Use it to summarise the core values or features of a product in one glanceable band.
 

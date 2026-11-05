@@ -5,7 +5,7 @@ keywords: ["values", "features", "staggered", "cards", "illustrations", "masonry
 
 A centered intro over three staggered illustrated cards.
 
-Values & Features 004 leads with a centered message — an eyebrow, a heading, a line of copy and a pair of actions — then presents three feature cards that step down the page in a staggered rhythm. Each card pairs a short heading with an abstract illustration and a line of supporting copy, so a small set of features reads as a light, editorial layout rather than a rigid row.
+Values & Features Staggered Cards leads with a centered message — an eyebrow, a heading, a line of copy and a pair of actions — then presents three feature cards that step down the page in a staggered rhythm. Each card pairs a short heading with an abstract illustration and a line of supporting copy, so a small set of features reads as a light, editorial layout rather than a rigid row.
 
 The intro reuses the Text group and Button components; the cards sit on a muted surface with illustrations exported from the design. On smaller screens the stagger flattens and the three cards stack into a single column. Use it to present three headline features with a more expressive, illustrated treatment.
 
@@ -17,7 +17,7 @@ The intro reuses the Text group and Button components; the cards sit on a muted 
 - Presenting three headline features with an illustrated, editorial feel.
 - When a staggered, less rigid layout suits the brand.
 - Pairing each feature with an abstract illustration rather than an icon.
-- A more expressive alternative to the even grid of Values 001.
+- A more expressive alternative to the even grid of Values & Features Icon Grid.
 
 ## When not to use
 - More than three items — the stagger and illustrations get unwieldy.

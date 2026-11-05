@@ -1,7 +1,7 @@
-import { ValuesFeatures003 } from '@eraiki/react';
+import { ValuesFeaturesNumberedList } from '@eraiki/react';
 
 export const Default = () => (
-  <ValuesFeatures003 label="Our principles" title="We build homes that are simple to live in and easy to care for"
+  <ValuesFeaturesNumberedList label="Our principles" title="We build homes that are simple to live in and easy to care for"
     items={[
       { title: 'Honest materials', text: 'Timber, stone and lime that look better with time and can be repaired on site.' },
       { title: 'Plenty of light', text: 'Windows placed for the sun path, so rooms stay bright without overheating.' },

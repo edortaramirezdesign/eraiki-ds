@@ -36,12 +36,8 @@ const preview = {
             'Radio buttons group', 'Rating', 'Search field', 'Switch',
             'Tabs group - Desktop', 'Tabs group - Mobile', 'Text group', 'Tooltip', '*',
           ],
-          'Sections', [
-            'Hero', 'Values & Features', 'Explanations', 'Marquee', 'Contact',
-            'Navigation Bar', 'Images & Galleries', 'Stats', 'Testimonials',
-            'Brands & Logos', 'Footer', 'CTA', 'Grids', 'FAQs', 'Team', 'Tabs',
-            'Process', 'Pricing', 'Video', '*',
-          ],
+          // Sections: no explicit order — sorted alphabetically.
+          'Sections',
           '*',
         ],
       },

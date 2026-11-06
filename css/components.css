@@ -749,6 +749,38 @@
 /* aside sits 40px lower than the heading (Figma column padding-top) */
 .ek-hero2__aside { flex: 0 0 400px; max-width: 400px; padding-top: var(--spacing-xxl); display: flex; flex-direction: column; gap: var(--spacing-l); align-items: flex-start; }
 
+/* Hero Marquee Gallery — centered intro over a full-bleed, continuously scrolling row of
+   images in alternating sizes (square / tall, top-aligned), then progress tabs. The active
+   tab's bar fills on a loop; the React component advances to the next tab on each fill. */
+.ek-hero3 {
+  display: flex; flex-direction: column; align-items: center; gap: calc(var(--spacing-xxl) + var(--spacing-m));
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0 var(--spacing-xxl); overflow: hidden;
+}
+.ek-hero3__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-hero3__head { display: flex; flex-direction: column; align-items: center; }
+.ek-hero3__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
+.ek-hero3__strip { overflow: hidden; width: 100%; }
+.ek-hero3__lane { display: flex; gap: var(--spacing-m); width: max-content; }
+.ek-hero3__group { display: flex; align-items: flex-start; gap: var(--spacing-m); flex-shrink: 0; --marquee-gap: var(--spacing-m); animation: ek-marquee 60s linear infinite; }
+.ek-hero3__img { display: block; flex: 0 0 auto; width: 240px; height: 240px; object-fit: cover; }
+.ek-hero3__img--tall { width: 310px; height: 388px; }
+.ek-hero3__tabs { display: flex; gap: var(--spacing-xs); width: 400px; max-width: calc(100% - 2 * var(--spacing-l)); }
+.ek-hero3__tab {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: var(--spacing-xs); padding: 0; border: 0; background: none; cursor: pointer;
+  font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-l); line-height: var(--line-height-body-l);
+  color: var(--color-fill-plain-text-standard-s); text-align: center; transition: color .14s ease;
+}
+.ek-hero3__tab:hover { color: var(--color-fill-plain-text-standard-m); }
+.ek-hero3__tab.is-active { color: var(--color-fill-plain-text-standard-l); font-weight: var(--font-weight-body-bold); }
+.ek-hero3__track { position: relative; display: block; height: 3px; border-radius: var(--radius-circle); background: var(--color-fill-plain-surface-standard-m); overflow: hidden; }
+.ek-hero3__progress { position: absolute; top: 0; left: 0; bottom: 0; width: 0; border-radius: var(--radius-circle); background: var(--color-fill-plain-surface-accent); }
+.ek-hero3__tab.is-active .ek-hero3__progress { animation: ek-hero3-progress var(--ek-hero3-duration, 6s) linear infinite; }
+@keyframes ek-hero3-progress { from { width: 0; } to { width: 100%; } }
+@media (prefers-reduced-motion: reduce) {
+  .ek-hero3__group { animation: none; }
+  .ek-hero3__tab.is-active .ek-hero3__progress { animation: none; width: 100%; }
+}
+
 /* Marquee Logo Strip — centered intro over a continuously scrolling row of brand logos
    (muted to one tint, split by thin dividers). Pure-CSS infinite marquee. */
 .ek-marquee1 {
@@ -865,6 +897,11 @@
   .ek-hero2 { min-height: 542px; }
   .ek-hero2__row { flex-direction: column; align-items: stretch; gap: var(--spacing-xxl); }
   .ek-hero2__aside { flex: none; max-width: none; padding-top: 0; }
+  /* Hero Marquee Gallery — tighter padding, smaller images, tabs span the width */
+  .ek-hero3 { padding: var(--spacing-xl) 0; gap: var(--spacing-xxl); }
+  .ek-hero3__img { width: 200px; height: 212px; }
+  .ek-hero3__img--tall { width: 280px; height: 350px; }
+  .ek-hero3__tabs { width: calc(100% - 2 * var(--spacing-l)); }
   /* Values & Features Icon Grid — the four cards stack; the actions stack too */
   .ek-values1__boxes { grid-template-columns: 1fr; }
   .ek-values1__intro .ek-btn-group { flex-direction: column; align-items: stretch; width: 100%; }

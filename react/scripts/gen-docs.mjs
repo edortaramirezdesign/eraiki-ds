@@ -64,6 +64,7 @@ const MAP = {
 const SECTIONS = {
   HeroImageSlider: 'hero-image-slider',
   HeroSplitColumns: 'hero-split-columns',
+  HeroMarqueeGallery: 'hero-marquee-gallery',
   ExplanationBannerCard: 'explanation-banner-card',
   ExplanationSplitMedia: 'explanation-split-media',
   ExplanationTwinCards: 'explanation-twin-cards',
@@ -124,6 +125,7 @@ const PROPS_MAP = {
   RadioGroup: 'Label → `label`; options → `options`; Selected → `value` / `defaultValue`; State Disabled → `disabled` (group) or per-option `disabled`.',
   HeroImageSlider: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; arrows → `showNav` (+ `onPrevious` / `onNext`); photo → `image`.',
   HeroSplitColumns: 'Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; photo → `image`.',
+  HeroMarqueeGallery: 'Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; progress tabs → `tabs` (`{label, images}`); active tab → `defaultActive` / `active`; fill time → `interval` (s); rotation → `autoAdvance`.',
   ExplanationBannerCard: 'Text group card → `label` / `title` / children / `primaryAction`; background photo → `image`.',
   ExplanationSplitMedia: 'Text + image / Image + text → `order`; text → `label` / `title` / children; buttons → `primaryAction` / `secondaryAction`; photo → `image`.',
   ExplanationTwinCards: 'Text + image / Image + text → `order`; text card → `label` / `title` / children / `primaryAction` / `secondaryAction`; image card → `image`.',

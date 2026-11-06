@@ -42,6 +42,24 @@
         ],
         frameDesktop: 'The headline sits bottom-left; the paragraph and CTA sit bottom-right.',
         frameMobile: 'The columns stack — heading first, then the paragraph and CTA.' },
+      { slug: 'hero-marquee-gallery', name: 'Hero Marquee Gallery', shot: 'hero-marquee-gallery', node: '1484-30375',
+        short: 'A centered intro over a full-bleed image marquee switched by progress tabs.',
+        description: "Hero Marquee Gallery opens a page with a centered intro — an eyebrow, a large title, a short paragraph and two actions — above a full-bleed row of images in alternating sizes that runs past both edges. Below it, a set of tabs with a progress bar switches the gallery between topics (for example Buy, Sell and Rent), moving to the next one as each bar fills.\n\nThe intro is built from the Text group and Button components on the light surface tokens, and the active tab's progress bar uses the accent colour.",
+        keywords: ['hero', 'image gallery', 'marquee', 'tabs', 'progress tabs', 'centered intro', 'full-bleed', 'above the fold', 'cta', 'categories'],
+        whenToUse: [
+          'Opening a page that serves several paths or audiences with one shared message.',
+          'Showing the breadth of a catalogue or service through imagery rather than copy.',
+          'Letting visitors preview each path (e.g. buy, sell, rent) without leaving the hero.',
+          'A lighter, image-led alternative to a full-screen photo hero.',
+        ],
+        whenNotToUse: [
+          'When there is only one path — use Hero Image Slider or Hero Split Columns.',
+          "When there aren't enough quality images to fill every tab.",
+          'When the tab content must be read or compared side by side — rotating tabs hide it.',
+          'When motion has to be kept to a minimum.',
+        ],
+        frameDesktop: 'The intro and both CTAs sit centered above an edge-to-edge row of mixed-size images; the tabs sit centered below.',
+        frameMobile: 'Same order, narrower: the intro stays centered, the image row shows about two images at a time and the tabs span the width.' },
     ] },
     { slug: 'values-features', name: 'Values & Features', desc: 'Grids and lists that communicate product value and features.', versions: [
       { slug: 'values-icon-grid', name: 'Values & Features Icon Grid', shot: 'values-icon-grid', node: '1316-18293',
@@ -403,6 +421,23 @@
         </div>
       </div>
     </div>`,
+    // Hero Marquee Gallery — centered intro (eyebrow, heading XL, body, primary + secondary)
+    // over a full-bleed, continuously scrolling row of images in alternating sizes
+    // (square / tall), then progress tabs. The active tab's bar fills on a loop.
+    'hero-marquee-gallery': () => {
+      const imgs = [2, 1, 3, 4, 5, 1].map((n, i) => `<img class="ek-hero3__img${i % 2 ? ' ek-hero3__img--tall' : ''}" src="assets/sections/hero-marquee-gallery-${n}.jpg" alt="" loading="lazy">`).join('');
+      const group = `<div class="ek-hero3__group">${imgs}</div>`;
+      const tabs = ['Comprar', 'Vender', 'Alquilar'].map((t, i) => `<button type="button" role="tab" aria-selected="${i === 0}" class="ek-hero3__tab${i === 0 ? ' is-active' : ''}"><span class="ek-hero3__tab-label">${t}</span><span class="ek-hero3__track"><span class="ek-hero3__progress"></span></span></button>`).join('');
+      return `<div class="ek-hero3">
+        <div class="ek-hero3__intro">
+          <div class="ek-hero3__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet consecte adipiscing</h2></div>
+          <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
+          <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
+        </div>
+        <div class="ek-hero3__strip"><div class="ek-hero3__lane">${group}${group}</div></div>
+        <div class="ek-hero3__tabs" role="tablist">${tabs}</div>
+      </div>`;
+    },
     // Marquee Logo Strip — centered intro + a continuously scrolling row of brand logos
     // (exported from Figma as SVG, muted to one tint) split by dividers.
     'marquee-logo-strip': () => {

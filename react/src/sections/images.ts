@@ -7,6 +7,11 @@ import photoBackdrop from './assets/explanation-006-bg.webp';
 import photoPortrait from './assets/explanation-002-img.webp';
 import photoPortrait2 from './assets/explanation-004-img1.webp';
 import photoPortrait3 from './assets/explanation-004-img2.webp';
+import gallery1 from './assets/hero-marquee-gallery-1.webp';
+import gallery2 from './assets/hero-marquee-gallery-2.webp';
+import gallery3 from './assets/hero-marquee-gallery-3.webp';
+import gallery4 from './assets/hero-marquee-gallery-4.webp';
+import gallery5 from './assets/hero-marquee-gallery-5.webp';
 import logo1 from '../../../assets/sections/marquee-logo-1.svg';
 import logo2 from '../../../assets/sections/marquee-logo-2.svg';
 import logo3 from '../../../assets/sections/marquee-logo-3.svg';
@@ -31,6 +36,8 @@ export const sectionImages = {
   portrait: photoPortrait,
   portrait2: photoPortrait2,
   portrait3: photoPortrait3,
+  /** Five interior photos for the Hero Marquee Gallery image row. */
+  gallery: [gallery1, gallery2, gallery3, gallery4, gallery5],
   /** Eight monochrome brand logos (168×72) for Marquee Logo Strip. */
   logos: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8],
   /** Three abstract illustrations for Values & Features Staggered Cards. */

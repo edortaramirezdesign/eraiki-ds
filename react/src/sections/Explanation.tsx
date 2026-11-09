@@ -108,7 +108,7 @@ export interface ExplanationImageMarqueeProps extends TextProps {
 /** Explanation Image Marquee — text intro (left half, heading XL, no action) over a full-bleed, continuously scrolling row of images. */
 export function ExplanationImageMarquee({ label, title, children, images, className }: ExplanationImageMarqueeProps) {
   const imgs = images?.length ? images : Array(6).fill(sectionImages.portrait);
-  const group = <div className="ek-explain5__mgroup">{imgs.map((src, i) => <div key={i} className="ek-explain5__img" style={bg(src)} />)}</div>;
+  const group = <div className="ek-explain5__mgroup" style={{ ['--ek-marquee-items' as string]: imgs.length }}>{imgs.map((src, i) => <div key={i} className="ek-explain5__img" style={bg(src)} />)}</div>;
   return (
     <div className={cx('ek-explain5', className)}>
       <div className="ek-explain5__contained">

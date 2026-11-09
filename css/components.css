@@ -699,15 +699,17 @@
    scroll left; group 2 seamlessly takes group 1's place (translate = own width + gap). */
 .ek-explain5__fluid { overflow: hidden; width: 100%; }
 .ek-explain5__marquee { display: flex; gap: var(--spacing-xs); width: max-content; }
-.ek-explain5__mgroup { display: flex; gap: var(--spacing-xs); flex-shrink: 0; --marquee-gap: var(--spacing-xs); --ek-marquee-distance: 1968; animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+.ek-explain5__mgroup { display: flex; gap: var(--spacing-xs); flex-shrink: 0; --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 328; /* image 320 + gap 8 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
 .ek-explain5__img { flex: 0 0 auto; width: 320px; border-radius: var(--radius-standard); min-height: 456px; background-position: center; background-size: cover; background-repeat: no-repeat; }
 /* Shared marquee keyframe — each group translates by its own width + the gap to
    the next group, so the duplicate seamlessly takes its place. Gap is per-marquee. */
-/* All marquees scroll at one shared speed (px per second). Each row declares how far one
-   loop travels (--ek-marquee-distance, unitless px: one group's width + its gap) and the
-   duration follows from it, so rows of different lengths still move at the same pace. */
+/* All marquees scroll at one shared, perceived speed (--ek-marquee-speed, px per second),
+   whatever the number of items. Each row declares the space one item takes
+   (--ek-marquee-pitch, unitless px: item + gap) and the markup sets how many items a group
+   holds (--ek-marquee-items); one loop travels items × pitch, so the duration grows with
+   the content and 3 or 30 items pass by at the same pace. */
 :root { --ek-marquee-speed: 40; }
-.ek-explain5__mgroup, .ek-marquee1__group, .ek-hero3__group { --ek-marquee-duration: calc(var(--ek-marquee-distance) / var(--ek-marquee-speed) * 1s); }
+.ek-explain5__mgroup, .ek-marquee1__group, .ek-hero3__group { --ek-marquee-duration: calc(var(--ek-marquee-items, 6) * var(--ek-marquee-pitch) / var(--ek-marquee-speed) * 1s); }
 @keyframes ek-marquee { to { transform: translateX(calc(-100% - var(--marquee-gap, 0px))); } }
 @media (prefers-reduced-motion: reduce) { .ek-explain5__mgroup, .ek-marquee1__group { animation: none; } }
 
@@ -766,7 +768,7 @@
 .ek-hero3__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-hero3__strip { overflow: hidden; width: 100%; }
 .ek-hero3__lane { display: flex; gap: var(--spacing-m); width: max-content; }
-.ek-hero3__group { display: flex; align-items: flex-start; gap: var(--spacing-m); flex-shrink: 0; --marquee-gap: var(--spacing-m); --ek-marquee-distance: 1746; animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+.ek-hero3__group { display: flex; align-items: flex-start; gap: var(--spacing-m); flex-shrink: 0; --marquee-gap: var(--spacing-m); --ek-marquee-pitch: 291; /* avg of square 240 / tall 310 + gap 16 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
 .ek-hero3__img { display: block; flex: 0 0 auto; width: 240px; height: 240px; object-fit: cover; }
 .ek-hero3__img--tall { width: 310px; height: 388px; }
 .ek-hero3__tabs { display: flex; gap: var(--spacing-xs); width: 400px; max-width: calc(100% - 2 * var(--spacing-l)); }
@@ -797,7 +799,7 @@
 .ek-marquee1__text .ek-btn { margin-top: var(--spacing-xs); }
 .ek-marquee1__strip { overflow: hidden; width: 100%; }
 .ek-marquee1__lane { display: flex; gap: var(--spacing-xxl); width: max-content; }
-.ek-marquee1__group { display: flex; align-items: center; gap: var(--spacing-xxl); flex-shrink: 0; --marquee-gap: var(--spacing-xxl); --ek-marquee-distance: 1996; animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+.ek-marquee1__group { display: flex; align-items: center; gap: var(--spacing-xxl); flex-shrink: 0; --marquee-gap: var(--spacing-xxl); --ek-marquee-pitch: 249.5; /* logo 168 + divider 1.5 + two gaps of 40 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
 .ek-marquee1__logo { flex: 0 0 auto; width: 168px; height: 72px; }
 .ek-marquee1__divider { flex: 0 0 auto; width: var(--border-width-default); align-self: stretch; background: var(--color-stroke-plain-shape-standard-m); }
 
@@ -906,7 +908,7 @@
   .ek-hero3 { padding: var(--spacing-xl) 0; gap: var(--spacing-xxl); }
   .ek-hero3__img { width: 200px; height: 212px; }
   .ek-hero3__img--tall { width: 280px; height: 350px; }
-  .ek-hero3__group { --ek-marquee-distance: 1536; }
+  .ek-hero3__group { --ek-marquee-pitch: 256; } /* avg of 200 / 280 + gap 16 */
   .ek-hero3__tabs { width: calc(100% - 2 * var(--spacing-l)); }
   /* Values & Features Icon Grid — the four cards stack; the actions stack too */
   .ek-values1__boxes { grid-template-columns: 1fr; }

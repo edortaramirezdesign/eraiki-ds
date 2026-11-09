@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ValuesFeaturesStaggeredCards.stories.js';
-import { sectionDoc } from '../_section.js';
+import { sectionDoc, SectionOptions } from '../_section.js';
 
 <Meta title="Sections/Values & Features/Values & Features Staggered Cards - Documentation" />
 
@@ -10,4 +10,8 @@ import { sectionDoc } from '../_section.js';
 
 <Canvas of={Stories.Playground} sourceState="none" />
 
-<Markdown>{sectionDoc('values-staggered-cards')}</Markdown>
+<Markdown>{sectionDoc('values-staggered-cards', 'short')}</Markdown>
+
+<SectionOptions slug="values-staggered-cards" />
+
+<Markdown>{sectionDoc('values-staggered-cards', 'body')}</Markdown>

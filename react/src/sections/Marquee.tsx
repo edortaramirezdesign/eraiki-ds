@@ -17,7 +17,7 @@ export interface MarqueeLogoStripProps extends Pick<SectionActions, 'primaryActi
 /** Marquee Logo Strip — centered intro + a continuously scrolling strip of brand logos split by thin dividers. */
 export function MarqueeLogoStrip({ label, title, children, primaryAction, onPrimaryAction, logos = sectionImages.logos, className }: MarqueeLogoStripProps) {
   const group = (
-    <div className="ek-marquee1__group">
+    <div className="ek-marquee1__group" style={{ ['--ek-marquee-items' as string]: logos.length }}>
       {logos.map((src, i) => (
         <Fragment key={i}>
           <img className="ek-marquee1__logo" src={src} alt="" loading="lazy" />

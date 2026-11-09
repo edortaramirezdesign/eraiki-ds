@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ValuesFeaturesHighlightList.stories.js';
-import { sectionDoc } from '../_section.js';
+import { sectionDoc, SectionOptions } from '../_section.js';
 
 <Meta title="Sections/Values & Features/Values & Features Highlight List - Documentation" />
 
@@ -10,4 +10,8 @@ import { sectionDoc } from '../_section.js';
 
 <Canvas of={Stories.Playground} sourceState="none" />
 
-<Markdown>{sectionDoc('values-highlight-list')}</Markdown>
+<Markdown>{sectionDoc('values-highlight-list', 'short')}</Markdown>
+
+<SectionOptions slug="values-highlight-list" />
+
+<Markdown>{sectionDoc('values-highlight-list', 'body')}</Markdown>

@@ -113,7 +113,7 @@ export function HeroMarqueeGallery({ label, title, children, primaryAction, onPr
   const select = (i: number) => { setInner(i); onActiveChange?.(i); };
   const images = tabs[current]?.images ?? [];
   const group = (
-    <div className="ek-hero3__group">
+    <div className="ek-hero3__group" style={{ ['--ek-marquee-items' as string]: images.length }}>
       {images.map((src, i) => <img key={i} className={cx('ek-hero3__img', i % 2 === 1 && 'ek-hero3__img--tall')} src={src} alt="" loading="lazy" />)}
     </div>
   );

@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ExplanationSplitMedia.stories.js';
-import { sectionDoc } from '../_section.js';
+import { sectionDoc, SectionOptions } from '../_section.js';
 
 <Meta title="Sections/Explanations/Explanation Split Media - Documentation" />
 
@@ -10,4 +10,8 @@ import { sectionDoc } from '../_section.js';
 
 <Canvas of={Stories.Playground} sourceState="none" />
 
-<Markdown>{sectionDoc('explanation-split-media')}</Markdown>
+<Markdown>{sectionDoc('explanation-split-media', 'short')}</Markdown>
+
+<SectionOptions slug="explanation-split-media" />
+
+<Markdown>{sectionDoc('explanation-split-media', 'body')}</Markdown>

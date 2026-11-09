@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ExplanationTwinCards.stories.js';
-import { sectionDoc } from '../_section.js';
+import { sectionDoc, SectionOptions } from '../_section.js';
 
 <Meta title="Sections/Explanations/Explanation Twin Cards - Documentation" />
 
@@ -10,4 +10,8 @@ import { sectionDoc } from '../_section.js';
 
 <Canvas of={Stories.Playground} sourceState="none" />
 
-<Markdown>{sectionDoc('explanation-twin-cards')}</Markdown>
+<Markdown>{sectionDoc('explanation-twin-cards', 'short')}</Markdown>
+
+<SectionOptions slug="explanation-twin-cards" />
+
+<Markdown>{sectionDoc('explanation-twin-cards', 'body')}</Markdown>

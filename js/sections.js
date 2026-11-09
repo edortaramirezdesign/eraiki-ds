@@ -387,7 +387,7 @@
         <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
       </div></div>`;
       const img = `<div class="ek-explain5__img" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div>`;
-      const group = `<div class="ek-explain5__mgroup">${img.repeat(6)}</div>`;
+      const group = `<div class="ek-explain5__mgroup" style="--ek-marquee-items:6">${img.repeat(6)}</div>`;
       return `<div class="ek-explain5"><div class="ek-explain5__contained">${text}</div><div class="ek-explain5__fluid"><div class="ek-explain5__marquee">${group}${group}</div></div></div>`;
     },
     // Hero Image Slider — full-bleed image hero (dark scrim), content anchored bottom:
@@ -425,8 +425,9 @@
     // over a full-bleed, continuously scrolling row of images in alternating sizes
     // (square / tall), then progress tabs. The active tab's bar fills on a loop.
     'hero-marquee-gallery': () => {
-      const imgs = [2, 1, 3, 4, 5, 1].map((n, i) => `<img class="ek-hero3__img${i % 2 ? ' ek-hero3__img--tall' : ''}" src="assets/sections/hero-marquee-gallery-${n}.jpg" alt="" loading="lazy">`).join('');
-      const group = `<div class="ek-hero3__group">${imgs}</div>`;
+      const order = [2, 1, 3, 4, 5, 1];
+      const imgs = order.map((n, i) => `<img class="ek-hero3__img${i % 2 ? ' ek-hero3__img--tall' : ''}" src="assets/sections/hero-marquee-gallery-${n}.jpg" alt="" loading="lazy">`).join('');
+      const group = `<div class="ek-hero3__group" style="--ek-marquee-items:${order.length}">${imgs}</div>`;
       const tabs = ['Comprar', 'Vender', 'Alquilar'].map((t, i) => `<button type="button" role="tab" aria-selected="${i === 0}" class="ek-hero3__tab${i === 0 ? ' is-active' : ''}"><span class="ek-hero3__tab-label">${t}</span><span class="ek-hero3__track"><span class="ek-hero3__progress"></span></span></button>`).join('');
       return `<div class="ek-hero3">
         <div class="ek-hero3__intro">
@@ -441,8 +442,9 @@
     // Marquee Logo Strip — centered intro + a continuously scrolling row of brand logos
     // (exported from Figma as SVG, muted to one tint) split by dividers.
     'marquee-logo-strip': () => {
-      const items = [1, 2, 3, 4, 5, 6, 7, 8].map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
-      const grp = `<div class="ek-marquee1__group">${items}</div>`;
+      const logos = [1, 2, 3, 4, 5, 6, 7, 8];
+      const items = logos.map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
+      const grp = `<div class="ek-marquee1__group" style="--ek-marquee-items:${logos.length}">${items}</div>`;
       const text = `<div class="ek-marquee1__text">
         <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-m">Lorem ipsum</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>

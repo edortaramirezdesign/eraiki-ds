@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ContactSplitForm.stories.js';
-import { sectionDoc } from '../_section.js';
+import { sectionDoc, SectionOptions } from '../_section.js';
 
 <Meta title="Sections/Contact/Contact Split Form - Documentation" />
 
@@ -10,4 +10,8 @@ import { sectionDoc } from '../_section.js';
 
 <Canvas of={Stories.Playground} sourceState="none" />
 
-<Markdown>{sectionDoc('contact-split-form')}</Markdown>
+<Markdown>{sectionDoc('contact-split-form', 'short')}</Markdown>
+
+<SectionOptions slug="contact-split-form" />
+
+<Markdown>{sectionDoc('contact-split-form', 'body')}</Markdown>

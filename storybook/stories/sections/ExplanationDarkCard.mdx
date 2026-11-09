@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ExplanationDarkCard.stories.js';
-import { sectionDoc } from '../_section.js';
+import { sectionDoc, SectionOptions } from '../_section.js';
 
 <Meta title="Sections/Explanations/Explanation Dark Card - Documentation" />
 
@@ -10,4 +10,8 @@ import { sectionDoc } from '../_section.js';
 
 <Canvas of={Stories.Playground} sourceState="none" />
 
-<Markdown>{sectionDoc('explanation-dark-card')}</Markdown>
+<Markdown>{sectionDoc('explanation-dark-card', 'short')}</Markdown>
+
+<SectionOptions slug="explanation-dark-card" />
+
+<Markdown>{sectionDoc('explanation-dark-card', 'body')}</Markdown>

@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ValuesFeaturesIconGrid.stories.js';
-import { sectionDoc } from '../_section.js';
+import { sectionDoc, SectionOptions } from '../_section.js';
 
 <Meta title="Sections/Values & Features/Values & Features Icon Grid - Documentation" />
 
@@ -10,4 +10,8 @@ import { sectionDoc } from '../_section.js';
 
 <Canvas of={Stories.Playground} sourceState="none" />
 
-<Markdown>{sectionDoc('values-icon-grid')}</Markdown>
+<Markdown>{sectionDoc('values-icon-grid', 'short')}</Markdown>
+
+<SectionOptions slug="values-icon-grid" />
+
+<Markdown>{sectionDoc('values-icon-grid', 'body')}</Markdown>

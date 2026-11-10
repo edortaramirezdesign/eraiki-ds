@@ -346,7 +346,7 @@
         <div class="ek-input ek-textarea"><textarea placeholder="Lorem ipsum..."></textarea></div></div>`;
       const text = `<div class="ek-textgroup ek-contact__text">
           <div class="ek-textgroup__top">
-            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-m">Nam a bibendum nunc eget tincidunt eros</h2></div>
+            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-m">Nam a bibendum nunc eget tincidunt eros</h2></div>
             <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
           </div>
         </div>`;
@@ -355,7 +355,10 @@
     },
     // Explanation Banner Card — full-bleed image banner with a contained Text group card
     // (icon and secondary/tertiary buttons hidden in Figma → single primary button).
-    'explanation-banner-card': () => `<div class="ek-explain" style="background-image:url('assets/sections/explanation-001-bg.jpg')">${EK_BUILD.textGroup({ icon: false, contained: true })}</div>`,
+    'explanation-banner-card': () => `<div class="ek-explain" style="background-image:url('assets/sections/explanation-003-img.jpg')"><div class="ek-textgroup ek-textgroup--contained"><div class="ek-textgroup__top">
+      <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h3 class="ek-textgroup__title">Nam a bibendum nunc eget tincidunt eros</h3></div>
+      <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
+    </div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></div>`,
     // Explanation Split Media — two columns: Text group (eyebrow, large heading, body,
     // primary + secondary buttons) and a supporting image. kind: 'text-image'
     // (text left) or 'image-text' (image left).
@@ -375,7 +378,7 @@
     'explanation-twin-cards': (kind) => {
       const text = `<div class="ek-explain3__text"><div class="ek-textgroup">
         <div class="ek-textgroup__top">
-          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
+          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
           <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
         </div>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
@@ -386,11 +389,11 @@
     // Explanation Triple Panel — header (eyebrow + heading only) over a row of three equal
     // panels: two images and a text card (eyebrow, heading, body, primary button).
     'explanation-triple-panel': () => {
-      const head = `<div class="ek-textgroup ek-explain4__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum</h2></div></div></div>`;
+      const head = `<div class="ek-textgroup ek-explain4__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div></div>`;
       const img = (n) => `<div class="ek-explain4__img" style="background-image:url('assets/sections/explanation-004-img${n}.jpg')"></div>`;
       const card = `<div class="ek-explain4__card"><div class="ek-textgroup">
         <div class="ek-textgroup__top">
-          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h3 class="ek-textgroup__title">Lorem ipsum</h3></div>
+          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h3 class="ek-textgroup__title">Lorem ipsum dolor sit amet</h3></div>
           <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         </div>
         <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
@@ -401,7 +404,7 @@
     // images (four on desktop, two on mobile). No button.
     'explanation-image-marquee': () => {
       const text = `<div class="ek-explain5__text ek-textgroup"><div class="ek-textgroup__top">
-        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
+        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div>
         <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
       </div></div>`;
       const img = `<div class="ek-explain5__img" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div>`;
@@ -410,7 +413,7 @@
     },
     // Hero Image Slider — full-bleed image hero (dark scrim), content anchored bottom:
     // text (lower-left) + actions (primary button and prev/next arrows). Light text.
-    'hero-image-slider': () => `<div class="ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
+    'hero-image-slider': () => `<div class="ek-hero-frame"><div class="ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
       <div class="ek-hero__row--text">
         <div class="ek-textgroup ek-hero__text"><div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
@@ -424,7 +427,7 @@
           <button class="ek-btn ek-btn--secondary ek-btn--icon" aria-label="Next">${EK_ICONS.chevronRight}</button>
         </div>
       </div>
-    </div>`,
+    </div></div>`,
     // Hero Split Columns — full-screen image (dark scrim); two text columns anchored bottom:
     // heading (left) + paragraph & primary button (right). Light text.
     'hero-split-columns': () => `<div class="ek-hero2 theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
@@ -464,7 +467,7 @@
       const items = logos.map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
       const grp = `<div class="ek-marquee1__group" style="--ek-marquee-items:${logos.length}">${items}</div>`;
       const text = `<div class="ek-marquee1__text">
-        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-m">Lorem ipsum</h2></div>
+        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
       </div>`;
@@ -485,7 +488,7 @@
       };
       return `<div class="ek-marquee2">
         <div class="ek-marquee2__intro">
-          <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
+          <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
           <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
           <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
         </div>
@@ -497,10 +500,10 @@
     // short title and a line of copy.
     'values-icon-grid': () => {
       const cards = [
-        'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum.',
-        'Integer quis rhoncus leo. Fusce in sodales lorem, at fermentum massa. Donec auctor velit sit amet.',
-        'Pellentesque fringilla tellus dolor, a fermentum massa finibus id. Mauris cursus aliquet turpis non.',
-        'Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Cras lorem leo mollis non diam.',
+        'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.',
+        'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.',
+        'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.',
+        'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.',
       ].map(body => `<div class="ek-values1__card">
         <span class="ek-textgroup__icon">${EK_ICONS.info}</span>
         <h3 class="ek-textgroup__title">Lorem ipsum</h3>
@@ -519,16 +522,16 @@
     'values-highlight-list': () => {
       const feats = [
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
-        { t: 'Lorem ipsum dolor sit amet', b: 'Pellentesque fringilla tellus dolor, a fermentum massa finibus id. Integer quis rhoncus leo, vel dignissim.' },
-        { t: 'Lorem ipsum dolor sit amet', b: 'Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Cras lorem leo, mollis non diam eu.' },
-        { t: 'Lorem ipsum dolor sit amet', b: 'Fusce in sodales lorem, at fermentum massa. Nam scelerisque iaculis bibendum, quis rhoncus leo tempor.' },
+        { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
+        { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
+        { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
       ].map((it, i) => `<button type="button" class="ek-values2__item${i === 0 ? ' is-active' : ''}">
         <span class="ek-values2__icon">${EK_ICONS.info}</span>
-        <span class="ek-values2__text"><span class="ek-textgroup__title">${it.t}</span><span class="ek-values2__body"><span class="ek-values2__body-inner"><span class="ek-textgroup__body">${it.b}</span></span></span></span>
+        <span class="ek-values2__text"><span class="ek-textgroup__title">${it.t}</span><span class="ek-values2__body"><span class="ek-values2__body-inner"><span class="ek-textgroup__body ek-body-m">${it.b}</span></span></span></span>
       </button>`).join('');
       return `<div class="ek-values2"><div class="ek-values2__inner"><div class="ek-values2__row">
         <div class="ek-values2__col">
-          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet</h2></div></div>
+          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div>
           <div class="ek-values2__list">${feats}</div>
         </div>
         <div class="ek-values2__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div>
@@ -542,7 +545,7 @@
         <p class="ek-values3__desc ek-body-m">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.</p>
       </div>`).join('');
       return `<div class="ek-values3"><div class="ek-values3__inner">
-        <div class="ek-values3__head"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">We help expert-led teams structure their communication</h2></div></div>
+        <div class="ek-values3__head"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div>
         <div class="ek-values3__row">
           <div class="ek-values3__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div>
           <div class="ek-values3__list">${items}</div>
@@ -570,7 +573,7 @@
     'explanation-dark-card': () => `<div class="ek-explain6" style="background-image:url('assets/sections/explanation-006-bg.jpg')">
       <div class="ek-explain6__card theme-dark">
         <div class="ek-explain6__col">
-          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet</h2></div>
+          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div>
           <div class="ek-explain6__foot"><p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div>
         </div>
         <div class="ek-explain6__media" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div>

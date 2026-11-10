@@ -6,12 +6,13 @@ import { Button, ButtonGroup } from '../Button';
 
 export type HeadingSize = 'xl' | 'l' | 'm';
 
-export function Head({ label, title, size, className }: { label?: ReactNode; title?: ReactNode; size?: HeadingSize; className?: string }) {
+/** `mobileSize`: a different heading size at ≤1024px, when the Figma mobile frame uses another style. */
+export function Head({ label, title, size, mobileSize, className }: { label?: ReactNode; title?: ReactNode; size?: HeadingSize; mobileSize?: HeadingSize; className?: string }) {
   if (!label && !title) return null;
   return (
     <div className={cx('ek-textgroup__head', className)}>
       {label && <div className="ek-textgroup__eyebrow">{label}</div>}
-      {title && <h2 className={cx('ek-textgroup__title', size && `ek-heading-${size}`)}>{title}</h2>}
+      {title && <h2 className={cx('ek-textgroup__title', size && `ek-heading-${size}`, mobileSize && `ek-mobile-heading-${mobileSize}`)}>{title}</h2>}
     </div>
   );
 }

@@ -75,7 +75,7 @@ export function ValuesFeaturesHighlightList({ label, title, items, defaultActive
               <span className="ek-values2__icon"><Icon name={it.icon ?? 'info'} /></span>
               <span className="ek-values2__text">
                 <span className="ek-textgroup__title">{it.title}</span>
-                <span className="ek-values2__body"><span className="ek-values2__body-inner"><span className="ek-textgroup__body">{it.text}</span></span></span>
+                <span className="ek-values2__body"><span className="ek-values2__body-inner"><span className="ek-textgroup__body ek-body-m">{it.text}</span></span></span>
               </span>
             </button>
           ))}

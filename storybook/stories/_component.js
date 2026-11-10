@@ -67,5 +67,12 @@ export function playgroundRender(slug, args) {
   } else {
     html = pg.render(args || {}); // args are keyed by prop name = the render's state shape
   }
-  return `<div style="padding:28px 24px;font-family:var(--font-family-body);display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">${html}</div>`;
+  return `<div class="ek-sb-stage">${html}</div>`;
 }
+
+// "Show code" / "Copy code": drop the Storybook-only stage wrapper so the copied markup is
+// just the component. Idempotent, since Storybook may run the transform more than once.
+export const componentSourceTransform = (code) => {
+  const m = String(code).trim().match(/^<div class="ek-sb-stage">([\s\S]*)<\/div>$/);
+  return m ? m[1].trim() : String(code).trim();
+};

@@ -3,6 +3,12 @@
 import '../../tokens.css';        // the token definition (single source of truth)
 import '../../css/components.css'; // component styles, built on those tokens
 import '../../js/eraiki.js';       // optional runtime for interactive components
+import './stage.css';              // centers component stories in their frame
+
+// Stories embedded in the Docs preview block (stories/_preview.js) load with ?ek-embed=1.
+if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('ek-embed')) {
+  document.documentElement.classList.add('ek-embed');
+}
 
 /** @type { import('@storybook/html-vite').Preview } */
 const preview = {

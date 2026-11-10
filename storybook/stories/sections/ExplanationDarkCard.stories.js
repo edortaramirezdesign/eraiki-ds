@@ -4,7 +4,7 @@ import { sectionRender, sectionControls, sectionSourceTransform } from '../_sect
 
 export default {
   title: 'Sections/Explanations/Explanation Dark Card - Playground',
-  parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } } },
+  parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'explanation-dark-card' } },
 };
 
 // Versions with layout options (Figma "Options") get an Option control; the rest none.

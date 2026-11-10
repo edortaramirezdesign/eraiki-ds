@@ -2,13 +2,13 @@
 // Connected to the repo's single sources:
 //  - Docs page: written documentation from js/components-data.js
 //  - Playground: prop-driven live emulator from js/playgrounds.js
-import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown } from '../_component.js';
+import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown, componentSourceTransform } from '../_component.js';
 import { DocsPage } from '../_docspage.js';
 
 export default {
   title: 'Components/Checkbox group',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('checkbox-group') } } },
+  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('checkbox-group') }, source: { transform: componentSourceTransform } }, ek: { kind: 'component', slug: 'checkbox-group' } },
 };
 
 export const Playground = { name: 'Playground', argTypes: playgroundArgTypes('checkbox-group'), args: playgroundArgs('checkbox-group'), render: (a) => playgroundRender('checkbox-group', a) };

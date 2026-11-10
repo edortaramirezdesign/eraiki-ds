@@ -4,7 +4,7 @@ import { sectionRender, sectionControls, sectionSourceTransform } from '../_sect
 
 export default {
   title: 'Sections/Hero/Hero Marquee Gallery - Playground',
-  parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } } },
+  parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'hero-marquee-gallery' } },
 };
 
 // Versions with layout options (Figma "Options") get an Option control; the rest none.

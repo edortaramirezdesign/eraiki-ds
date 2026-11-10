@@ -821,7 +821,7 @@
   display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
   background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0;
 }
-.ek-marquee1__text { max-width: 600px; margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-marquee1__text { max-width: calc(600px + 2 * var(--spacing-l)); margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-marquee1__head { display: flex; flex-direction: column; align-items: center; }
 .ek-marquee1__text .ek-btn { margin-top: var(--spacing-xs); }
 .ek-marquee1__strip { overflow: hidden; width: 100%; }
@@ -901,7 +901,7 @@
   /* Contact Split Form — stack text over form */
   .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-6xl); padding: var(--spacing-4xl) var(--spacing-l); } /* gap 80 (Figma, unbound) = 6XL on mobile */
   /* Explanation Banner Card — shorter banner */
-  .ek-explain { min-height: 486px; }
+  .ek-explain { min-height: 0; } /* Figma mobile: hugs its content */
   .ek-explain > .ek-textgroup { width: 100%; }
   /* Explanation Split Media — stack image over text */
   .ek-explain2 { grid-template-columns: 1fr; gap: var(--spacing-4xl); padding: var(--spacing-4xl) var(--spacing-l); }
@@ -925,10 +925,10 @@
   .ek-explain6__col { justify-content: flex-start; gap: var(--spacing-m); }
   .ek-explain6__media { min-height: 192px; }
   /* Hero Image Slider — text spans the full width */
-  .ek-hero { min-height: 518px; padding: var(--spacing-xxl) var(--spacing-l); }
+  .ek-hero { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); } /* Figma mobile: hugs its content */
   .ek-hero__row--text { grid-template-columns: 1fr; }
   /* Hero Split Columns — stack the two columns (heading first, then paragraph + CTA) */
-  .ek-hero2 { min-height: 516px; padding: var(--spacing-xxl) var(--spacing-l); }
+  .ek-hero2 { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); } /* Figma mobile: hugs its content */
   .ek-hero2__row { flex-direction: column; align-items: stretch; gap: var(--spacing-xxl); }
   .ek-hero2__heading-group { flex: none; }
   .ek-hero2__aside { flex: none; max-width: none; padding-top: 0; }

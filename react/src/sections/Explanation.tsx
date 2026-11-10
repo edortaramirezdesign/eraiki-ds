@@ -112,7 +112,7 @@ export function ExplanationImageMarquee({ label, title, children, images, classN
   return (
     <div className={cx('ek-explain5', className)}>
       <div className="ek-explain5__contained">
-        <div className="ek-explain5__text ek-textgroup"><div className="ek-textgroup__top"><Head label={label} title={title} size="xl" /><Body>{children}</Body></div></div>
+        <div className="ek-explain5__text ek-textgroup"><div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div></div>
       </div>
       <div className="ek-explain5__fluid"><div className="ek-explain5__marquee">{group}{group}</div></div>
     </div>

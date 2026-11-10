@@ -21,8 +21,8 @@
       ['M', 'ek-label-m', 10, 18, 10, 18, 600],
     ] },
     { h: 'Body', desc: 'We will use Body text sizes when constructing long sentences or paragraphs. By default we will use size M, although size L can be used for impactful statements we want to highlight.', rows: [
-      ['L Bold', 'ek-body-l ek-strong', 18, 26, 18, 26, 600],
-      ['L Regular', 'ek-body-l', 18, 26, 18, 26, 400],
+      ['L Bold', 'ek-body-l ek-strong', 16, 24, 16, 24, 600],
+      ['L Regular', 'ek-body-l', 16, 24, 16, 24, 400],
       ['M Bold', 'ek-body-m ek-strong', 14, 22, 14, 22, 600],
       ['M Regular', 'ek-body-m', 14, 22, 14, 22, 400],
     ] },

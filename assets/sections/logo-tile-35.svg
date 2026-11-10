@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shape-35">
+<g id="shape-35_2">
+<path d="M14 4H24L34 14V24L24 14L14 4Z" fill="#9BA0A5"/>
+<path d="M14 14H24L14 24L4 34V24L14 14Z" fill="#9BA0A5"/>
+<path d="M14 34V24L24 34L34 44H24L14 34Z" fill="#9BA0A5"/>
+<path d="M34 34H24L34 24L44 14V24L34 34Z" fill="#9BA0A5"/>
+<path d="M34 34V44H44V34H34Z" fill="#9BA0A5"/>
+<path d="M14 34H4V44H14V34Z" fill="#9BA0A5"/>
+<path d="M14 14H4V4H14V14Z" fill="#9BA0A5"/>
+<path d="M44 14H34V4H44V14Z" fill="#9BA0A5"/>
+</g>
+</g>
+</svg>

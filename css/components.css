@@ -709,7 +709,7 @@
    holds (--ek-marquee-items); one loop travels items × pitch, so the duration grows with
    the content and 3 or 30 items pass by at the same pace. */
 :root { --ek-marquee-speed: 40; }
-.ek-explain5__mgroup, .ek-marquee1__group, .ek-hero3__group { --ek-marquee-duration: calc(var(--ek-marquee-items, 6) * var(--ek-marquee-pitch) / var(--ek-marquee-speed) * 1s); }
+.ek-explain5__mgroup, .ek-marquee1__group, .ek-hero3__group, .ek-marquee2__group { --ek-marquee-duration: calc(var(--ek-marquee-items, 6) * var(--ek-marquee-pitch) / var(--ek-marquee-speed) * 1s); }
 @keyframes ek-marquee { to { transform: translateX(calc(-100% - var(--marquee-gap, 0px))); } }
 @media (prefers-reduced-motion: reduce) { .ek-explain5__mgroup, .ek-marquee1__group { animation: none; } }
 
@@ -787,6 +787,30 @@
   .ek-hero3__group { animation: none; }
   .ek-hero3__tab.is-active .ek-hero3__progress { animation: none; width: 100%; }
 }
+
+/* Marquee Logo Tiles — centered intro over two rows of square logo tiles that scroll in
+   opposite directions (the second row runs the shared ek-marquee keyframes in reverse)
+   and fade into the background at both edges. */
+.ek-marquee2 {
+  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3xl);
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-6xl) 0; overflow: hidden;
+  --ek-marquee2-fade: 180px;
+}
+.ek-marquee2__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-marquee2__head { display: flex; flex-direction: column; align-items: center; }
+.ek-marquee2__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
+.ek-marquee2__strip { position: relative; width: 100%; overflow: hidden; display: flex; flex-direction: column; gap: var(--spacing-m); }
+.ek-marquee2__strip::before, .ek-marquee2__strip::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: var(--ek-marquee2-fade); z-index: 1; pointer-events: none;
+}
+.ek-marquee2__strip::before { left: 0; background: linear-gradient(to right, var(--color-fill-plain-surface-base), transparent); }
+.ek-marquee2__strip::after { right: 0; background: linear-gradient(to left, var(--color-fill-plain-surface-base), transparent); }
+.ek-marquee2__lane { display: flex; gap: var(--spacing-m); width: max-content; }
+.ek-marquee2__group { display: flex; gap: var(--spacing-m); flex-shrink: 0; --marquee-gap: var(--spacing-m); --ek-marquee-pitch: 104; /* tile 88 + gap 16 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+.ek-marquee2__lane--reverse .ek-marquee2__group { animation-direction: reverse; }
+.ek-marquee2__tile { flex: 0 0 auto; width: 88px; height: 88px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-standard); background: var(--color-fill-plain-surface-standard-s); }
+.ek-marquee2__tile img { display: block; width: 48px; height: 48px; }
+@media (prefers-reduced-motion: reduce) { .ek-marquee2__group { animation: none; } }
 
 /* Marquee Logo Strip — centered intro over a continuously scrolling row of brand logos
    (muted to one tint, split by thin dividers). Pure-CSS infinite marquee. */
@@ -910,6 +934,8 @@
   .ek-hero3__img--tall { width: 280px; height: 350px; }
   .ek-hero3__group { --ek-marquee-pitch: 256; } /* avg of 200 / 280 + gap 16 */
   .ek-hero3__tabs { width: calc(100% - 2 * var(--spacing-l)); }
+  /* Marquee Logo Tiles — narrower edge fades (padding and gap follow the mobile spacing tokens) */
+  .ek-marquee2 { --ek-marquee2-fade: 80px; }
   /* Values & Features Icon Grid — the four cards stack; the actions stack too */
   .ek-values1__boxes { grid-template-columns: 1fr; }
   .ek-values1__intro .ek-btn-group { flex-direction: column; align-items: stretch; width: 100%; }

@@ -76,6 +76,7 @@ const SECTIONS = {
   ValuesFeaturesNumberedList: 'values-numbered-list',
   ValuesFeaturesStaggeredCards: 'values-staggered-cards',
   MarqueeLogoStrip: 'marquee-logo-strip',
+  MarqueeLogoTiles: 'marquee-logo-tiles',
   ContactSplitForm: 'contact-split-form',
 };
 
@@ -137,6 +138,7 @@ const PROPS_MAP = {
   ValuesFeaturesNumberedList: 'Heading → `label` / `title`; numbered rows → `items` (`{title, text}`, numbers are automatic); photo → `image`.',
   ValuesFeaturesStaggeredCards: 'Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; staggered cards → `items` (`{title, text, illustration}`).',
   MarqueeLogoStrip: 'Intro → `label` / `title` / children / `primaryAction`; logo strip → `logos` (image URLs).',
+  MarqueeLogoTiles: 'Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; two logo rows → `rows` (`[row1, row2]` of image URLs; row 1 scrolls left, row 2 right).',
   ContactSplitForm: 'Text + Form / Form + Text → `order`; message → `label` / `title` / children; fields → `fields` (`{label, placeholder, type, multiline}`); button → `submitLabel` (+ `onSubmit`).',
   FileDrop: 'State Uploading → `status="uploading"` + `progress`; Upload failed → `status="error"`; Dragging is live on drag-over; Uploaded files → `files`.',
 };

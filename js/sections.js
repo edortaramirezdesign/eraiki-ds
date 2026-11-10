@@ -274,6 +274,24 @@
         ],
         frameDesktop: 'A centered intro above a full-width row of logos scrolling left.',
         frameMobile: 'The intro narrows and the logo row keeps scrolling below it.' },
+      { slug: 'marquee-logo-tiles', name: 'Marquee Logo Tiles', shot: 'marquee-logo-tiles', node: '1494-3311',
+        short: 'A centered intro over two rows of logo tiles scrolling in opposite directions.',
+        description: 'Marquee Logo Tiles pairs a centered intro — an eyebrow, a large title, a short paragraph and two actions — with two full-width rows of square logo tiles that scroll continuously in opposite directions. Each logo keeps its own colours inside a soft tile, and both edges fade into the background so the rows feel endless.\n\nThe intro is built from the Text group and Button components, and the rows are a pure-CSS marquee that moves at the same speed as every other marquee in the system and stops for users who prefer reduced motion. Use it when you have many partners, integrations or clients and want them to read as a rich, lively wall rather than a single quiet strip.',
+        keywords: ['marquee', 'logos', 'logo wall', 'tiles', 'brands', 'partners', 'integrations', 'clients', 'social proof', 'auto-scroll'],
+        whenToUse: [
+          'Showing a large set of partners, integrations or clients at a glance.',
+          'When the logos should keep their own colours and read as a lively wall.',
+          'A colourful band of social proof under a short, centered intro.',
+          'Filling a wide screen without building a static, cramped logo grid.',
+        ],
+        whenNotToUse: [
+          'Just a handful of logos — use Marquee Logo Strip or a static row.',
+          'When each logo must be read carefully or clicked — motion makes that hard.',
+          'When the logos must look muted and uniform — Marquee Logo Strip tints them to one colour.',
+          'When motion would distract from a primary conversion goal.',
+        ],
+        frameDesktop: 'A centered intro with two actions above two full-width rows of logo tiles; the rows scroll in opposite directions and fade at both edges.',
+        frameMobile: 'The intro narrows and the two rows show about three tiles at a time, still scrolling and fading at the edges.' },
     ] },
     { slug: 'contact', name: 'Contact', desc: 'Contact section pairing copy with a form or details.',
       description: 'A Contact section pairs a short, persuasive message with a form so people can reach out without leaving the page. On one side a text group sets the intent — an eyebrow, a headline and a line of supporting copy; on the other, a compact form collects the essentials and closes with a single primary action.\n\nIt is composed entirely from existing components (Text group, Input field, Text area, Button), so labels, states, spacing and focus behaviour stay consistent with the rest of the system. Keep the form short — every extra field lowers completion — and reserve it for genuine two-way contact rather than long applications.',
@@ -451,6 +469,28 @@
         <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
       </div>`;
       return `<div class="ek-marquee1">${text}<div class="ek-marquee1__strip"><div class="ek-marquee1__lane">${grp}${grp}</div></div></div>`;
+    },
+    // Marquee Logo Tiles — centered intro (eyebrow, heading XL, body, primary + secondary)
+    // over two rows of square logo tiles that scroll in opposite directions and fade
+    // out at both edges. Logos are the Figma shapes, kept in their own colours.
+    'marquee-logo-tiles': () => {
+      const rows = [
+        Array.from({ length: 19 }, (_, i) => i + 1),
+        [1, ...Array.from({ length: 18 }, (_, i) => i + 20), 19],
+      ];
+      const tile = n => `<span class="ek-marquee2__tile"><img src="assets/sections/logo-tile-${String(n).padStart(2, '0')}.svg" alt="" loading="lazy"></span>`;
+      const row = (logos, i) => {
+        const grp = `<div class="ek-marquee2__group" style="--ek-marquee-items:${logos.length}">${logos.map(tile).join('')}</div>`;
+        return `<div class="ek-marquee2__lane${i ? ' ek-marquee2__lane--reverse' : ''}">${grp}${grp}</div>`;
+      };
+      return `<div class="ek-marquee2">
+        <div class="ek-marquee2__intro">
+          <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
+          <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
+          <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
+        </div>
+        <div class="ek-marquee2__strip">${rows.map(row).join('')}</div>
+      </div>`;
     },
     // Values & Features Icon Grid — a centered intro (eyebrow, heading, body, primary +
     // secondary actions) above a row of four feature cards, each an icon box, a

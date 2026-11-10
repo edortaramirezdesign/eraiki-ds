@@ -75,7 +75,7 @@ export { ExplanationBannerCard, ExplanationSplitMedia, ExplanationTwinCards, Exp
 export type { ExplanationBannerCardProps, ExplanationSplitMediaProps, ExplanationTwinCardsProps, ExplanationTriplePanelProps, ExplanationImageMarqueeProps, ExplanationDarkCardProps } from './sections/Explanation';
 export { ValuesFeaturesIconGrid, ValuesFeaturesHighlightList, ValuesFeaturesNumberedList, ValuesFeaturesStaggeredCards } from './sections/ValuesFeatures';
 export type { ValuesFeaturesIconGridProps, ValuesFeaturesHighlightListProps, ValuesFeaturesNumberedListProps, ValuesFeaturesStaggeredCardsProps, FeatureItem, NumberedItem, IllustratedItem } from './sections/ValuesFeatures';
-export { MarqueeLogoStrip } from './sections/Marquee';
-export type { MarqueeLogoStripProps } from './sections/Marquee';
+export { MarqueeLogoStrip, MarqueeLogoTiles } from './sections/Marquee';
+export type { MarqueeLogoStripProps, MarqueeLogoTilesProps } from './sections/Marquee';
 export { ContactSplitForm } from './sections/Contact';
 export type { ContactSplitFormProps, ContactField } from './sections/Contact';

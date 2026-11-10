@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shape-02">
+<g id="shape-02_2">
+<path d="M24 16L16 8L24 0L32 8L24 16Z" fill="#6EBEA0"/>
+<path d="M40 16H32V8H40V16Z" fill="#6EBEA0"/>
+<path d="M40 32L48 24L40 16L32 24L40 32Z" fill="#6EBEA0"/>
+<path d="M32 40H40V32H32V40Z" fill="#6EBEA0"/>
+<path d="M16 40L24 48L32 40L24 32L16 40Z" fill="#6EBEA0"/>
+<path d="M8 32V40H16V32H8Z" fill="#6EBEA0"/>
+<path d="M8 16L16 24L8 32L0 24L8 16Z" fill="#6EBEA0"/>
+<path d="M8 16V8H16V16H8Z" fill="#6EBEA0"/>
+</g>
+</g>
+</svg>

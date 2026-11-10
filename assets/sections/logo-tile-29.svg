@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="shape-29">
+<g id="shape-29_2">
+<path d="M24 12L32 4H44V16L36 24V12H24Z" fill="#9BA0A5"/>
+<path d="M24 24H36L44 32V44H32L24 36V24ZM32 36H36V32H32V36Z" fill-rule="evenodd" clip-rule="evenodd" fill="#9BA0A5"/>
+<path d="M12 24L4 16V4H16L24 12V24H12ZM12 16H16V12H12V16Z" fill-rule="evenodd" clip-rule="evenodd" fill="#9BA0A5"/>
+<path d="M12 24L4 32V44H16L24 36H12V24Z" fill="#9BA0A5"/>
+</g>
+</g>
+</svg>

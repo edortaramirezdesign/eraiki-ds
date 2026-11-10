@@ -103,3 +103,11 @@ export const SectionOptions = ({ slug }) => {
       h('p', null, o.desc),
       h(SectionPreview, { slug, kind: o.kind }))));
 };
+
+// "Show code" / "Copy code" on the section docs: drop the preview-only max-width wrapper
+// that sectionRender adds, so the copied markup is just the section itself.
+// Storybook may run the transform more than once, so only unwrap when the wrapper is there.
+export const sectionSourceTransform = (code) => {
+  const m = String(code).trim().match(/^<div style="max-width:\d+px;margin:0 auto">([\s\S]*)<\/div>$/);
+  return m ? m[1].trim() : String(code).trim();
+};

@@ -4,7 +4,7 @@ import { sectionRender, sectionControls, sectionSourceTransform } from '../_sect
 
 export default {
   title: 'Sections/Explanations/Explanation Split Media - Playground',
-  parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } } },
+  parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'explanation-split-media' } },
 };
 
 // Versions with layout options (Figma "Options") get an Option control; the rest none.

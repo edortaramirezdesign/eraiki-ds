@@ -2,13 +2,13 @@
 // Connected to the repo's single sources:
 //  - Docs page: written documentation from js/components-data.js
 //  - Playground: prop-driven live emulator from js/playgrounds.js
-import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown } from '../_component.js';
+import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown, componentSourceTransform } from '../_component.js';
 import { DocsPage } from '../_docspage.js';
 
 export default {
   title: 'Components/Cell - Plain',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('cell-plain') } } },
+  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('cell-plain') }, source: { transform: componentSourceTransform } }, ek: { kind: 'component', slug: 'cell-plain' } },
 };
 
 export const Playground = { name: 'Playground', argTypes: playgroundArgTypes('cell-plain'), args: playgroundArgs('cell-plain'), render: (a) => playgroundRender('cell-plain', a) };

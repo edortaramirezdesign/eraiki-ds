@@ -1,0 +1,46 @@
+/* Stage that wraps every component story (see playgroundRender in stories/_component.js).
+   Components sit in the middle of the frame they are shown in: centered horizontally on
+   the Docs page, and centered both ways when the story fills the canvas (Playground).
+   The backdrop is the lightest background grey of the system (Fill / Plain / Surface /
+   Standard S), laid over the base surface because that token is translucent. */
+.ek-sb-stage {
+  box-sizing: border-box;
+  padding: 28px 24px;
+  font-family: var(--font-family-body);
+  display: flex; flex-wrap: wrap; gap: 28px;
+  justify-content: center; align-items: center; align-content: center;
+  background: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s)), var(--color-fill-plain-surface-base);
+}
+#storybook-root > .ek-sb-stage { min-height: 100vh; }
+
+/* Embedded preview (iframe inside the Docs preview block, ?ek-embed=1): size to content
+   instead of filling the viewport, so the block can match the iframe to its height. */
+.ek-embed #storybook-root > .ek-sb-stage { min-height: 0; }
+
+/* Eraiki preview block on the Docs pages (stories/_preview.js): toolbar with Theme,
+   Breakpoint and View, then the live preview (iframe) or the code. Neutral Storybook-like
+   chrome, independent of the theme being previewed. */
+.ek-pv { margin: 25px 0 40px; border: 1px solid rgba(38, 85, 115, 0.15); border-radius: 4px; overflow: hidden; background: #fff; box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0; }
+.ek-pv__bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 8px 12px; border-bottom: 1px solid rgba(38, 85, 115, 0.15); background: #fff; }
+.ek-pv__spacer { flex: 1 1 auto; }
+.ek-pv__group { display: inline-flex; padding: 2px; border-radius: 6px; background: #f2f4f5; }
+.ek-pv__btn { appearance: none; border: 0; background: transparent; padding: 5px 12px; border-radius: 4px; cursor: pointer;
+  font: 600 12px/16px "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #5c6870; }
+.ek-pv__btn:hover { color: #2e3438; }
+.ek-pv__btn.is-active { background: #fff; color: #029cfd; box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0; }
+.ek-pv__btn:focus-visible { outline: 2px solid #029cfd; outline-offset: 1px; }
+.ek-pv__stage { display: flex; justify-content: center; background: #fff; }
+.ek-pv__fit { width: 100%; overflow: hidden; }
+.ek-pv__stage.is-mobile .ek-pv__fit { width: auto; overflow: visible; }
+.ek-pv__stage.is-mobile { padding: 24px 16px; background: #f6f9fc; }
+.ek-pv__stage.is-mobile .ek-pv__frame { box-shadow: rgba(0, 0, 0, 0.12) 0 2px 10px 0; border-radius: 4px; }
+.ek-pv__frame { display: block; border: 0; }
+.ek-pv__code { margin: 0; max-height: 640px; overflow: auto; background: #202020; }
+.ek-pv__code .docblock-source { margin: 0; border: 0; border-radius: 0; box-shadow: none; }
+.ek-pv__copy { appearance: none; border: 1px solid rgba(38, 85, 115, 0.15); background: #fff; padding: 5px 12px; border-radius: 4px; cursor: pointer;
+  font: 600 12px/16px "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: #2e3438; }
+.ek-pv__copy:hover { border-color: #029cfd; color: #029cfd; }
+/* Sections break out of the ~1000px Docs column and use the whole window width (up to the
+   1440px design width), so Desktop shows the section at real size with its own responsive
+   rules — the column alone would always fall under the 1024px breakpoint. */
+.ek-pv--wide { width: min(1440px, calc(100vw - 48px)); position: relative; left: 50%; transform: translateX(-50%); }

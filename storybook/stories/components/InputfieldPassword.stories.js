@@ -2,13 +2,13 @@
 // Connected to the repo's single sources:
 //  - Docs page: written documentation from js/components-data.js
 //  - Playground: prop-driven live emulator from js/playgrounds.js
-import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown } from '../_component.js';
+import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown, componentSourceTransform } from '../_component.js';
 import { DocsPage } from '../_docspage.js';
 
 export default {
   title: 'Components/Input field - Password',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('input-field-password') } } },
+  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('input-field-password') }, source: { transform: componentSourceTransform } }, ek: { kind: 'component', slug: 'input-field-password' } },
 };
 
 export const Playground = { name: 'Playground', argTypes: playgroundArgTypes('input-field-password'), args: playgroundArgs('input-field-password'), render: (a) => playgroundRender('input-field-password', a) };

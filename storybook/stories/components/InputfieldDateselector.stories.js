@@ -2,13 +2,13 @@
 // Connected to the repo's single sources:
 //  - Docs page: written documentation from js/components-data.js
 //  - Playground: prop-driven live emulator from js/playgrounds.js
-import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown } from '../_component.js';
+import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown, componentSourceTransform } from '../_component.js';
 import { DocsPage } from '../_docspage.js';
 
 export default {
   title: 'Components/Input field - Date selector',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('input-field-date-selector') } } },
+  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('input-field-date-selector') }, source: { transform: componentSourceTransform } }, ek: { kind: 'component', slug: 'input-field-date-selector' } },
 };
 
 export const Playground = { name: 'Playground', argTypes: playgroundArgTypes('input-field-date-selector'), args: playgroundArgs('input-field-date-selector'), render: (a) => playgroundRender('input-field-date-selector', a) };

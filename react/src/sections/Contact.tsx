@@ -45,7 +45,7 @@ const DEFAULT_FIELDS: ContactField[] = [
 export function ContactSplitForm({ label, title, children, fields = DEFAULT_FIELDS, submitLabel = 'Send', onSubmit, order = 'text-form', className }: ContactSplitFormProps) {
   const text = (
     <div className="ek-textgroup ek-contact__text">
-      <div className="ek-textgroup__top"><Head label={label} title={title} size="m" /><Body>{children}</Body></div>
+      <div className="ek-textgroup__top"><Head label={label} title={title} size="l" mobileSize="m" /><Body>{children}</Body></div>
     </div>
   );
   const form = (

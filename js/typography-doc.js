@@ -17,7 +17,7 @@
       ['S', 'ek-heading-s', 24, 32, 24, 32, 500],
     ] },
     { h: 'Labels', desc: 'Labels are a size we will use both to identify small elements or subsections, as well as for CTA-type elements: buttons, dropdowns, pills… We will avoid constructing sentences; they should consist of just a few words.', rows: [
-      ['L', 'ek-label-l', 12, 18, 12, 18, 600],
+      ['L', 'ek-label-l', 12, 20, 12, 20, 600],
       ['M', 'ek-label-m', 10, 18, 10, 18, 600],
     ] },
     { h: 'Body', desc: 'We will use Body text sizes when constructing long sentences or paragraphs. By default we will use size M, although size L can be used for impactful statements we want to highlight.', rows: [

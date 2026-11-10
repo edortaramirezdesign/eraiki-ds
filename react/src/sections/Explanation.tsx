@@ -21,7 +21,7 @@ export interface ExplanationBannerCardProps extends TextProps, Pick<SectionActio
 }
 
 /** Explanation Banner Card — full-bleed image banner with a contained Text group card (top-left). */
-export function ExplanationBannerCard({ label, title, children, primaryAction, onPrimaryAction, image = sectionImages.banner, className }: ExplanationBannerCardProps) {
+export function ExplanationBannerCard({ label, title, children, primaryAction, onPrimaryAction, image = sectionImages.landscape, className }: ExplanationBannerCardProps) {
   return (
     <div className={cx('ek-explain', className)} style={bg(image)}>
       <TextGroup kind="contained" label={label} title={title}
@@ -60,7 +60,7 @@ export interface ExplanationTwinCardsProps extends TextProps, SectionActions {
 export function ExplanationTwinCards({ label, title, children, image = sectionImages.landscape, order = 'text-image', className, ...actions }: ExplanationTwinCardsProps) {
   const text = (
     <div className="ek-explain3__text"><div className="ek-textgroup">
-      <div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div>
+      <div className="ek-textgroup__top"><Head label={label} title={title} size="l" mobileSize="xl" /><Body>{children}</Body></div>
       <Actions {...actions} />
     </div></div>
   );
@@ -132,7 +132,7 @@ export function ExplanationDarkCard({ label, title, children, primaryAction, onP
     <div className={cx('ek-explain6', className)} style={bg(background)}>
       <div className="ek-explain6__card theme-dark">
         <div className="ek-explain6__col">
-          <Head label={label} title={title} size="xl" />
+          <Head label={label} title={title} size="l" />
           <div className="ek-explain6__foot"><Body>{children}</Body><Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} /></div>
         </div>
         <div className="ek-explain6__media" style={bg(image)} />

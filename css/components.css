@@ -625,9 +625,9 @@
 /* ---------- Patterns ---------- */
 /* Contact Split Form — text group + form, two columns (stacks on narrow) */
 .ek-contact {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: start;
   background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-3xl);
+  padding: var(--spacing-4xl) var(--spacing-5xl);
 }
 .ek-contact__text { max-width: none; }
 .ek-contact__form { display: flex; flex-direction: column; gap: var(--spacing-l); }
@@ -639,7 +639,9 @@
   border-radius: var(--radius-standard);
   background-position: center; background-size: cover; background-repeat: no-repeat;
 }
-.ek-explain > .ek-textgroup { width: 400px; max-width: 100%; }
+.ek-explain > .ek-textgroup { width: 400px; max-width: 100%; gap: var(--spacing-xl); }
+/* Card heading is Heading M (Figma); the Text group component defaults to Heading S. */
+.ek-explain > .ek-textgroup .ek-textgroup__title, .ek-explain4__card .ek-textgroup__title { font-size: var(--font-size-heading-m); line-height: var(--line-height-heading-m); }
 
 /* Explanation Split Media — two columns: text group + supporting image (either side) */
 .ek-explain2 {
@@ -660,7 +662,7 @@
 }
 .ek-explain3__text {
   background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard);
-  padding: var(--spacing-3xl); display: flex; flex-direction: column; justify-content: center;
+  padding: var(--spacing-4xl) var(--spacing-3xl); display: flex; flex-direction: column; justify-content: center;
 }
 .ek-explain3__text .ek-textgroup { max-width: none; }
 .ek-explain3__media {
@@ -670,12 +672,12 @@
 
 /* Explanation Triple Panel — header over a row of three equal panels (2 images + text card) */
 .ek-explain4 {
-  display: flex; flex-direction: column; gap: var(--spacing-3xl);
+  display: flex; flex-direction: column; gap: var(--spacing-xxl);
   background: var(--color-fill-plain-surface-base);
   padding: var(--spacing-4xl) var(--spacing-5xl);
   border-radius: var(--radius-standard);
 }
-.ek-explain4__head { max-width: none; }
+.ek-explain4__head { max-width: 680px; }
 .ek-explain4__block { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-xs); align-items: stretch; }
 .ek-explain4__img {
   border-radius: var(--radius-standard); min-height: 526px;
@@ -699,8 +701,8 @@
    scroll left; group 2 seamlessly takes group 1's place (translate = own width + gap). */
 .ek-explain5__fluid { overflow: hidden; width: 100%; }
 .ek-explain5__marquee { display: flex; gap: var(--spacing-xs); width: max-content; }
-.ek-explain5__mgroup { display: flex; gap: var(--spacing-xs); flex-shrink: 0; --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 328; /* image 320 + gap 8 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
-.ek-explain5__img { flex: 0 0 auto; width: 320px; border-radius: var(--radius-standard); min-height: 456px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ek-explain5__mgroup { display: flex; gap: var(--spacing-xs); flex-shrink: 0; --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 350; /* image 342 + gap 8 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+.ek-explain5__img { flex: 0 0 auto; width: 342px; border-radius: var(--radius-standard); min-height: 456px; background-position: center; background-size: cover; background-repeat: no-repeat; }
 /* Shared marquee keyframe — each group translates by its own width + the gap to
    the next group, so the duplicate seamlessly takes its place. Gap is per-marquee. */
 /* All marquees scroll at one shared, perceived speed (--ek-marquee-speed, px per second),
@@ -730,10 +732,11 @@
 .ek-explain6__col { display: flex; flex-direction: column; justify-content: space-between; gap: var(--spacing-l); }
 .ek-explain6__foot { display: flex; flex-direction: column; gap: var(--spacing-l); align-items: flex-start; }
 .ek-explain6__foot .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
-.ek-explain6__media { min-height: 480px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ek-explain6__media { min-height: 487px; background-position: center; background-size: cover; background-repeat: no-repeat; }
 
-/* Hero Image Slider — full-bleed image hero (dark scrim), content anchored to the bottom:
-   a text block (lower-left) and an actions row (primary + prev/next arrows). */
+/* Hero Image Slider — image hero (dark scrim) inset by a 16px frame, content anchored to the
+   bottom: a text block (lower-left) and an actions row (primary + prev/next arrows). */
+.ek-hero-frame { padding: var(--spacing-m); background: var(--color-fill-plain-surface-base); }
 .ek-hero {
   display: flex; flex-direction: column; justify-content: flex-end; gap: var(--spacing-l);
   min-height: 708px; padding: var(--spacing-xxl); border-radius: var(--radius-standard);
@@ -760,7 +763,7 @@
    images in alternating sizes (square / tall, top-aligned), then progress tabs. The active
    tab's bar fills on a loop; the React component advances to the next tab on each fill. */
 .ek-hero3 {
-  display: flex; flex-direction: column; align-items: center; gap: calc(var(--spacing-xxl) + var(--spacing-m));
+  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
   background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0 var(--spacing-xxl); overflow: hidden;
 }
 .ek-hero3__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
@@ -792,8 +795,8 @@
    opposite directions (the second row runs the shared ek-marquee keyframes in reverse)
    and fade into the background at both edges. */
 .ek-marquee2 {
-  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3xl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-6xl) 0; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0; overflow: hidden;
   --ek-marquee2-fade: 180px;
 }
 .ek-marquee2__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
@@ -855,14 +858,14 @@
 .ek-values2__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .28s ease; }
 .ek-values2__item.is-active .ek-values2__body { grid-template-rows: 1fr; }
 .ek-values2__body-inner { overflow: hidden; }
-.ek-values2__body-inner .ek-textgroup__body { padding-top: var(--spacing-xs); }
+.ek-values2__body-inner .ek-textgroup__body { padding-top: var(--spacing-m); } /* Body M, 16 below the title (Figma) */
 .ek-values2__media { border-radius: var(--radius-standard); overflow: hidden; aspect-ratio: 1 / 1; }
 .ek-values2__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* Values & Features Numbered List — a heading, then an image beside a numbered list; each
    row pairs a number + title with a description, split by thin dividers. */
 .ek-values3 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0; }
-.ek-values3__inner { max-width: 1360px; margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; gap: var(--spacing-3xl); }
+.ek-values3__inner { max-width: 1360px; margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; gap: var(--spacing-xxl); }
 .ek-values3__head { max-width: 624px; }
 .ek-values3__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: stretch; }
 /* The image fills the row height (matching the list on the right) rather than a
@@ -877,7 +880,7 @@
    ek-body-m); these keep only the section-specific colour — no per-section type. */
 .ek-values3__num { color: var(--color-fill-plain-text-standard-s); }
 .ek-values3__title { color: var(--color-fill-plain-text-standard-l); }
-.ek-values3__desc { color: var(--color-fill-plain-text-standard-m); }
+.ek-values3__desc { color: var(--color-fill-plain-text-standard-m); margin: 0; }
 
 /* Values & Features Staggered Cards — a centered intro over three staggered cards, each with
    a heading, an illustration and a line of copy (columns step down 0/80/160). */
@@ -896,58 +899,66 @@
    inside each preview iframe (so tokens switch too). */
 @media (max-width: 1024px) {
   /* Contact Split Form — stack text over form */
-  .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-xl); padding: var(--spacing-xl); }
+  .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-6xl); padding: var(--spacing-4xl) var(--spacing-l); } /* gap 80 (Figma, unbound) = 6XL on mobile */
   /* Explanation Banner Card — shorter banner */
-  .ek-explain { min-height: 422px; }
+  .ek-explain { min-height: 486px; }
   .ek-explain > .ek-textgroup { width: 100%; }
   /* Explanation Split Media — stack image over text */
-  .ek-explain2 { grid-template-columns: 1fr; gap: var(--spacing-3xl); padding: var(--spacing-3xl) var(--spacing-l); }
+  .ek-explain2 { grid-template-columns: 1fr; gap: var(--spacing-4xl); padding: var(--spacing-4xl) var(--spacing-l); }
   .ek-explain2__media { order: -1; }
   .ek-explain2__media img { width: 100%; }
   .ek-explain2 .ek-btn-group { flex-direction: column; align-items: flex-start; }
   /* Explanation Twin Cards — stack text card over image card */
-  .ek-explain3 { grid-template-columns: 1fr; padding: var(--spacing-3xl) var(--spacing-m); }
-  .ek-explain3__text { padding: var(--spacing-l); }
+  .ek-explain3 { grid-template-columns: 1fr; padding: var(--spacing-4xl) var(--spacing-m); }
+  .ek-explain3__text { padding: var(--spacing-4xl) var(--spacing-l); }
   .ek-explain3__media { min-height: 220px; }
-  .ek-explain3 .ek-btn-group { flex-direction: column; align-items: flex-start; }
   /* Explanation Triple Panel — stack the three panels into one column */
   .ek-explain4 { padding-left: var(--spacing-l); padding-right: var(--spacing-l); }
   .ek-explain4__block { grid-template-columns: 1fr; }
   .ek-explain4__img { min-height: 245px; }
   /* Explanation Image Marquee — text full width; image strip goes full-bleed and drops to two */
   .ek-explain5__contained { grid-template-columns: 1fr; }
-  .ek-explain5__img { min-height: 245px; }
+  .ek-explain5__img { width: 184px; min-height: 245px; }
+  .ek-explain5__mgroup { --ek-marquee-pitch: 192; } /* image 184 + gap 8 */
   /* Explanation Dark Card — stack text over image inside the card */
   .ek-explain6__card { grid-template-columns: 1fr; gap: var(--spacing-xxl); padding: var(--spacing-l); }
-  .ek-explain6__col { justify-content: flex-start; }
+  .ek-explain6__col { justify-content: flex-start; gap: var(--spacing-m); }
   .ek-explain6__media { min-height: 192px; }
   /* Hero Image Slider — text spans the full width */
-  .ek-hero { min-height: 636px; }
+  .ek-hero { min-height: 518px; padding: var(--spacing-xxl) var(--spacing-l); }
   .ek-hero__row--text { grid-template-columns: 1fr; }
   /* Hero Split Columns — stack the two columns (heading first, then paragraph + CTA) */
-  .ek-hero2 { min-height: 542px; }
+  .ek-hero2 { min-height: 516px; padding: var(--spacing-xxl) var(--spacing-l); }
   .ek-hero2__row { flex-direction: column; align-items: stretch; gap: var(--spacing-xxl); }
   .ek-hero2__aside { flex: none; max-width: none; padding-top: 0; }
   /* Hero Marquee Gallery — tighter padding, smaller images, tabs span the width */
   .ek-hero3 { padding: var(--spacing-xl) 0; gap: var(--spacing-xxl); }
-  .ek-hero3__img { width: 200px; height: 212px; }
+  .ek-hero3__img { width: 200px; height: 200px; }
   .ek-hero3__img--tall { width: 280px; height: 350px; }
   .ek-hero3__group { --ek-marquee-pitch: 256; } /* avg of 200 / 280 + gap 16 */
   .ek-hero3__tabs { width: calc(100% - 2 * var(--spacing-l)); }
   /* Marquee Logo Tiles — narrower edge fades (padding and gap follow the mobile spacing tokens) */
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
   /* Values & Features Icon Grid — the four cards stack; the actions stack too */
+  .ek-values1 { gap: 64px; } /* Figma: 64 (unbound) on mobile too */
   .ek-values1__boxes { grid-template-columns: 1fr; }
   .ek-values1__intro .ek-btn-group { flex-direction: column; align-items: stretch; width: 100%; }
   /* Values & Features Highlight List — stack the list over the image */
   .ek-values2__row { grid-template-columns: 1fr; gap: var(--spacing-3xl); }
-  .ek-values2__col { justify-content: flex-start; gap: var(--spacing-xl); }
+  .ek-values2__col { justify-content: flex-start; gap: var(--spacing-xxl); }
+  .ek-values2__item { padding: var(--spacing-l); }
   /* Values & Features Numbered List — image over the list; each row stacks title over body */
   .ek-values3__row { grid-template-columns: 1fr; gap: var(--spacing-l); }
   .ek-values3__media { aspect-ratio: 1 / 1; }
+  .ek-values3__list { gap: var(--spacing-m); }
   .ek-values3__item { grid-template-columns: 1fr; gap: var(--spacing-xs); }
   /* Values & Features Staggered Cards — cards stack (no stagger); actions stack too */
+  .ek-values4 { gap: 64px; } /* Figma: 64 (unbound) on mobile too */
   .ek-values4__grid { grid-template-columns: 1fr; gap: var(--spacing-m); }
+  .ek-values4__illus { min-height: 120px; }
+  .ek-values4__card:nth-child(1) .ek-values4__illus img { height: 78px; }
+  .ek-values4__card:nth-child(2) .ek-values4__illus img { height: 60px; }
+  .ek-values4__card:nth-child(3) .ek-values4__illus img { height: 81px; }
   .ek-values4__card:nth-child(2), .ek-values4__card:nth-child(3) { margin-top: 0; }
   .ek-values4__intro .ek-btn-group { flex-direction: column; align-items: stretch; width: 100%; }
 }
@@ -963,6 +974,13 @@
 .ek-heading-l { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); font-size: var(--font-size-heading-l); line-height: var(--line-height-heading-l); }
 .ek-heading-m { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); font-size: var(--font-size-heading-m); line-height: var(--line-height-heading-m); }
 .ek-heading-s { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); font-size: var(--font-size-heading-s); line-height: var(--line-height-heading-s); }
+/* Mobile-only heading size, for sections whose Figma mobile frame uses a different heading
+   style than desktop (e.g. Contact: Heading L → Heading M). Same tokens, ≤1024px only. */
+@media (max-width: 1024px) {
+  .ek-mobile-heading-xl { font-size: var(--font-size-heading-xl); line-height: var(--line-height-heading-xl); }
+  .ek-mobile-heading-l { font-size: var(--font-size-heading-l); line-height: var(--line-height-heading-l); }
+  .ek-mobile-heading-m { font-size: var(--font-size-heading-m); line-height: var(--line-height-heading-m); }
+}
 .ek-body-l { font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-l); line-height: var(--line-height-body-l); }
 .ek-body-m { font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-m); line-height: var(--line-height-body-m); }
 .ek-body-l.ek-strong, .ek-body-m.ek-strong { font-weight: var(--font-weight-body-bold); }

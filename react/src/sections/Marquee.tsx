@@ -29,7 +29,7 @@ export function MarqueeLogoStrip({ label, title, children, primaryAction, onPrim
   return (
     <div className={cx('ek-marquee1', className)}>
       <div className="ek-marquee1__text">
-        <Head label={label} title={title} size="m" className="ek-marquee1__head" />
+        <Head label={label} title={title} size="l" className="ek-marquee1__head" />
         <Body>{children}</Body>
         <Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} />
       </div>
@@ -57,7 +57,7 @@ export function MarqueeLogoTiles({ label, title, children, primaryAction, onPrim
   return (
     <div className={cx('ek-marquee2', className)}>
       <div className="ek-marquee2__intro">
-        <Head label={label} title={title} size="xl" className="ek-marquee2__head" />
+        <Head label={label} title={title} size="l" className="ek-marquee2__head" />
         <Body>{children}</Body>
         <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
       </div>

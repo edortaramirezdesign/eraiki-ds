@@ -23,7 +23,8 @@ export interface HeroImageSliderProps extends Pick<SectionActions, 'primaryActio
 /** Hero Image Slider — full-bleed image hero; text lower-left, primary action + prev/next arrows along the base. */
 export function HeroImageSlider({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, showNav = true, onPrevious, onNext, className }: HeroImageSliderProps) {
   return (
-    <div className={cx('ek-hero theme-dark', className)} style={scrim(image)}>
+    <div className={cx('ek-hero-frame', className)}>
+    <div className="ek-hero theme-dark" style={scrim(image)}>
       <div className="ek-hero__row--text">
         <div className="ek-textgroup ek-hero__text"><div className="ek-textgroup__top">
           <Head label={label} title={title} size="xl" />
@@ -39,6 +40,7 @@ export function HeroImageSlider({ label, title, children, image = sectionImages.
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }

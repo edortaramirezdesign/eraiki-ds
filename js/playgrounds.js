@@ -13,33 +13,29 @@
   // open/close it (only one open at a time), and choose its state when open.
   P['accordion'] = {
     custom: true,
-    // 4 fixed fragments; the controls only affect the selected one (the rest stay put).
-    state: () => ({ sel: 0, items: [
-      { open: true, state: 'Default' }, { open: false, state: 'Default' },
-      { open: false, state: 'Default' }, { open: false, state: 'Default' },
-    ] }),
+    // 4 fixed fragments, only one open at a time (as in the component): Fragment picks
+    // which one is open, Open closes it (all collapsed), State styles the open one.
+    state: () => ({ sel: 0, open: true, state: 'Default' }),
     controls: (st) => {
-      const f = st.items[st.sel];
       const ctrls = [
         { name: 'Fragment', type: 'enum', options: ['1', '2', '3', '4'], value: String(st.sel + 1) },
-        { name: 'Open', type: 'bool', value: f.open },
+        { name: 'Open', type: 'bool', value: st.open },
       ];
-      if (f.open) ctrls.push({ name: 'State', type: 'enum', options: ['Default', 'Hover', 'Pressed'], value: f.state });
+      if (st.open) ctrls.push({ name: 'State', type: 'enum', options: ['Default', 'Hover', 'Pressed'], value: st.state });
       return ctrls;
     },
     onChange: (st, prop, val) => {
       if (prop === 'Fragment') st.sel = parseInt(val, 10) - 1;
-      else if (prop === 'Open') st.items[st.sel].open = val;      // only the selected one
-      else if (prop === 'State') st.items[st.sel].state = val;
+      else if (prop === 'Open') st.open = val;
+      else if (prop === 'State') st.state = val;
     },
     render: (st) => {
       const item = (i) => {
-        const f = st.items[i];
         const cls = ['ek-accordion__item'];
-        if (f.open) {
+        if (st.open && i === st.sel) {
           cls.push('is-open');
-          if (f.state === 'Hover') cls.push('is-hover');
-          if (f.state === 'Pressed') cls.push('is-pressed');
+          if (st.state === 'Hover') cls.push('is-hover');
+          if (st.state === 'Pressed') cls.push('is-pressed');
         }
         return `<div class="${cls.join(' ')}"><button type="button" class="ek-accordion__head"><span class="ek-accordion__title">Fragment ${i + 1}</span><span class="ek-btn ek-btn--tertiary ek-btn--sm ek-btn--icon">${chevron}</span></button><div class="ek-accordion__body">Progressive-disclosure content for fragment ${i + 1}.</div></div>`;
       };
@@ -234,9 +230,10 @@
     render: (s) => {
       const icons = { Info: I.info, Error: I.error, Alert: I.alert, Success: I.success };
       const desc = s.Description ? `<div class="ek-banner__body">A longer description accompanies the title to give more context.</div>` : '';
-      const btn = s.Button ? `<button class="ek-btn ek-btn--tertiary ek-btn--sm" style="align-self:center">Action</button>` : '';
-      const close = s.Closable ? `<span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm" data-ek-dismiss style="margin-left:auto">${I.closeSm}</span>` : '';
-      return `<div class="ek-banner ek-banner--${s.Kind.toLowerCase()}"><span class="ek-banner__ico">${icons[s.Kind]}</span><div style="flex:1"><div class="ek-banner__title">Heads up</div>${desc}</div>${btn}${close}</div>`;
+      const btn = s.Button ? `<button class="ek-btn ek-btn--tertiary ek-btn--sm">Action</button>` : '';
+      const close = s.Closable ? `<span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm" data-ek-dismiss>${I.closeSm}</span>` : '';
+      const aside = (btn || close) ? `<div class="ek-banner__aside">${btn}${close}</div>` : '';
+      return `<div class="ek-banner ek-banner--${s.Kind.toLowerCase()}"><span class="ek-banner__ico">${icons[s.Kind]}</span><div style="flex:1"><div class="ek-banner__title">Heads up</div>${desc}</div>${aside}</div>`;
     },
   };
 
@@ -507,7 +504,6 @@
               <span class="ek-ddinput__value ${isPh ? 'is-placeholder' : ''}">${face}</span>
               <span class="ek-ddinput__right">${badge}<span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm ek-ddinput__toggle">${chevron}</span></span>
             </div>
-            <div class="ek-dropdown__menu"><div class="ek-opt">Lorem ipsum</div><div class="ek-opt">Dolor sit amet</div><div class="ek-opt">Consectetur</div></div>
           </div>
           ${tip}
         </div>
@@ -572,7 +568,7 @@
       let r = map[s['Aspect ratio']];
       if (s.Orientation === 'Vertical') { const p = r.split('/'); r = p[1] + '/' + p[0]; }
       const w = s.Orientation === 'Vertical' ? '150px' : '240px';
-      return `<span class="ek-image" style="width:${w};aspect-ratio:${r}"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80" alt=""></span>`;
+      return `<span class="ek-image" style="width:${w};aspect-ratio:${r}"><img src="assets/sections/explanation-002-img.jpg" alt=""></span>`;
     },
   };
 

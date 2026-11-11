@@ -72,17 +72,17 @@
 .ek-badge--alert { background: var(--color-semantic-alert-m); color: var(--color-fill-plain-text-standard-l); }
 
 /* ---------- Avatar ---------- */
-.ek-avatar { position: relative; display: inline-grid; place-items: center; border-radius: var(--radius-circle); background-color: var(--color-fill-plain-surface-base); background-image: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s)); box-shadow: 0 0 0 var(--stroke-size-m-default) var(--color-fill-plain-text-oncolor); color: var(--color-fill-plain-text-standard-m); font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-m); }
+.ek-avatar { position: relative; display: inline-grid; place-items: center; border-radius: var(--radius-circle); background-color: var(--color-fill-plain-surface-base); background-image: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s)); box-shadow: 0 0 0 var(--stroke-size-m-default) var(--color-stroke-plain-shape-inverse); color: var(--color-fill-plain-text-standard-m); font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-m); }
 .ek-avatar > img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-circle); }
 .ek-avatar--sm { width: 24px; height: 24px; }
 .ek-avatar--md { width: 40px; height: 40px; }
 .ek-avatar--lg { width: 56px; height: 56px; font-size: var(--font-size-body-l); line-height: var(--line-height-body-l); }
-.ek-avatar__badge { position: absolute; top: 14.6%; left: 85.4%; right: auto; bottom: auto; transform: translate(-50%, -50%); box-shadow: 0 0 0 var(--stroke-size-m-default) var(--color-fill-plain-text-oncolor); }
+.ek-avatar__badge { position: absolute; top: 14.6%; left: 85.4%; right: auto; bottom: auto; transform: translate(-50%, -50%); box-shadow: 0 0 0 var(--stroke-size-m-default) var(--color-stroke-plain-shape-inverse); }
 .ek-avatar__badge.ek-badge--dot { width: 8px; height: 8px; }
 .ek-avatar__ph { width: 20px; height: 20px; color: var(--color-stroke-plain-icons-standard-s); display: grid; place-items: center; }
 .ek-avatar__ph svg { width: 100%; height: 100%; }
 .ek-avatar--sm .ek-avatar__ph { width: 12px; height: 12px; }
-/* Avatar group — el anillo blanco (oncolor) lo aporta ya .ek-avatar */
+/* Avatar group — el anillo (Stroke/Plain/Shape/Inverse: blanco en light, #1E1F24 en dark) lo aporta ya .ek-avatar */
 .ek-avatar-group { display: inline-flex; }
 .ek-avatar-group .ek-avatar--sm + .ek-avatar { margin-left: calc(-1 * var(--spacing-xxs)); }
 .ek-avatar-group .ek-avatar--md + .ek-avatar { margin-left: calc(-1 * var(--spacing-xs)); }
@@ -230,6 +230,10 @@
 .ek-input--select .ek-ddinput__right { display: flex; align-items: center; gap: var(--spacing-xxs); flex-shrink: 0; }
 .ek-input--select .ek-ddinput__badge { width: 8px; height: 8px; border-radius: var(--radius-circle); background: var(--color-fill-plain-surface-accent); box-shadow: 0 0 0 var(--stroke-size-m-default) var(--color-fill-plain-text-oncolor); }
 .ek-input--select .ek-ddinput__toggle { flex-shrink: 0; }
+/* Chevron points down at rest and up when open / active (Dropdown Open=Yes, Dropdown
+   input Active). */
+.ek-input--select .ek-ddinput__toggle svg { transition: transform .14s ease; }
+.ek-dropdown.is-open .ek-ddinput__toggle svg { transform: rotate(180deg); }
 .ek-dropdown:not(.is-open) > .ek-input--select:not(.is-disabled):not(.is-error):not(.is-hover):not(.is-focus):hover { border-color: var(--color-stroke-link-input-hover); }
 
 /* ---------- Input field: Date range (segmented DD | MM | AAAA) ---------- */
@@ -325,7 +329,11 @@
    and close on one line; a multi-line banner keeps them beside the title. */
 .ek-banner__ico { flex-shrink: 0; display: inline-flex; align-items: center; height: var(--line-height-body-m); }
 .ek-banner > .ek-btn { height: var(--line-height-body-m); align-self: flex-start; }
-.ek-banner__title { font-weight: var(--font-weight-body-bold); margin-bottom: 2px; }
+/* Aside (Figma "Column" on the right): the optional action sits just left of the close
+   button, 4px apart (XXS), aligned to the title line. */
+.ek-banner__aside { display: flex; align-items: center; gap: var(--spacing-xxs); margin-left: auto; flex-shrink: 0; height: var(--line-height-body-m); }
+.ek-banner__aside > .ek-btn { height: var(--line-height-body-m); }
+.ek-banner__title { font-weight: var(--font-weight-body-bold); margin-bottom: 2px; color: var(--color-fill-plain-text-standard-l); }
 .ek-banner__body { color: var(--color-fill-plain-text-standard-m); }
 .ek-banner--info { background: var(--color-semantic-info-s); border-color: var(--color-semantic-info-m); }
 .ek-banner--info .ek-banner__ico { color: var(--color-semantic-info-m); }
@@ -444,7 +452,13 @@
 .ek-pin__cell { position: relative; width: 48px; height: 48px; border: var(--border-width-default) solid var(--color-stroke-link-input-default); border-radius: var(--radius-standard); background: var(--color-fill-plain-surface-base); transition: border-color .12s, background-color .12s; }
 .ek-pin__cell input { width: 100%; height: 100%; border: none; background: none; outline: none; text-align: center; font-family: var(--font-family-body); font-size: var(--font-size-body-m); color: transparent; caret-color: var(--color-fill-plain-text-standard-l); }
 /* entered digit is masked as an 8px dot (like a password) */
-.ek-pin__dot { position: absolute; inset: 0; margin: auto; width: 8px; height: 8px; border-radius: var(--radius-circle); background: var(--color-fill-plain-text-standard-l); display: none; }
+.ek-pin__dot { position: absolute; inset: 0; margin: auto; width: 8px; height: 8px; border-radius: var(--radius-circle); background: var(--color-fill-plain-surface-standard-xl); display: none; }
+/* Empty cell shows a "-" placeholder (Body M, link text); the active empty cell shows a "|"
+   caret instead (Figma). While really focused, the native caret takes its place. */
+.ek-pin__cell::before { content: "-"; position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-m); line-height: var(--line-height-body-m); color: var(--color-fill-link-text-default); }
+.ek-pin__cell.is-active::before { content: "|"; color: var(--color-fill-link-text-hover); }
+.ek-pin__cell.is-filled::before, .ek-pin__cell:focus-within::before { content: none; }
+.ek-pin__cell.is-disabled::before { color: var(--color-fill-link-text-disabled); }
 .ek-pin__cell.is-filled .ek-pin__dot { display: block; }
 .ek-pin__cell.is-filled input { caret-color: transparent; }
 .ek-pin__cell:not(.is-error):not(.is-disabled):not(:focus-within):not(.is-active):hover,
@@ -452,7 +466,7 @@
 .ek-pin__cell:focus-within, .ek-pin__cell.is-active { border-color: var(--color-stroke-link-input-active); }
 .ek-pin__cell.is-error { border-color: var(--color-stroke-link-input-error); }
 .ek-pin__cell.is-disabled { background: var(--color-fill-plain-surface-standard-s); border-color: var(--color-stroke-link-input-disabled); }
-.ek-pin__cell.is-disabled .ek-pin__dot { background: var(--color-fill-plain-text-standard-s); }
+.ek-pin__cell.is-disabled .ek-pin__dot { background: var(--color-fill-plain-surface-standard-l); }
 
 /* ---------- Rating ---------- */
 .ek-rating { display: inline-flex; gap: var(--spacing-xxs); }

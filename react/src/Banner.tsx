@@ -8,7 +8,7 @@ export interface BannerProps {
   title: ReactNode;
   /** Optional supporting text. */
   children?: ReactNode;
-  /** Optional action, rendered as a direct child: `<Button variant="tertiary" size="small" style={{alignSelf:'center'}}>`. */
+  /** Optional action, shown just left of the close button: `<Button variant="tertiary" size="small">`. */
   action?: ReactNode;
   /** Shows the close button; the banner hides itself on click. */
   closable?: boolean;
@@ -29,12 +29,16 @@ export function Banner({ kind = 'info', title, children, action, closable, onClo
         <div className="ek-banner__title">{title}</div>
         {children && <div className="ek-banner__body">{children}</div>}
       </div>
-      {action}
-      {closable && (
-        <button type="button" aria-label="Close" className="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm" style={{ marginLeft: 'auto' }}
-          onClick={() => { setOpen(false); onClose?.(); }}>
-          <Icon name="closeSm" size="s" />
-        </button>
+      {(action || closable) && (
+        <div className="ek-banner__aside">
+          {action}
+          {closable && (
+            <button type="button" aria-label="Close" className="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm"
+              onClick={() => { setOpen(false); onClose?.(); }}>
+              <Icon name="closeSm" size="s" />
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

@@ -118,7 +118,7 @@
   const ddOptions = (n = 5) => `<div class="ek-dropdown__menu">${Array.from({ length: n }, () => '<div class="ek-opt">Lorem ipsum</div>').join('')}</div>`;
   const ddInput = (o = {}) => {
     const { label = true, mand = false, icon = false, badge = false, tooltip = false,
-            detail = false, filled = true, state = '', open = false, full = false } = o;
+            detail = false, filled = true, state = '', open = false, full = false, menu = true } = o;
     const err = state === 'is-error';
     const isPh = !filled;
     const face = filled ? 'Lorem ipsum' : 'Lorem ipsum...';
@@ -131,13 +131,14 @@
             <span class="ek-ddinput__value ${isPh ? 'is-placeholder' : ''}">${face}</span>
             <span class="ek-ddinput__right">${badge ? '<span class="ek-ddinput__badge"></span>' : ''}<span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm ek-ddinput__toggle">${I.chevronDown}</span></span>
           </div>
-          ${ddOptions(5)}
+          ${menu ? ddOptions(5) : ''}
         </div>
         ${tooltip ? `<span class="ek-ddinput__tooltip">${I.info}</span>` : ''}
       </div>
       ${(detail || err) ? `<span class="ek-ddinput__detail ${err ? 'is-error' : ''}">Lorem ipsum sit amet.</span>` : ''}
     </div>`;
   };
+  const ddSelector = (o = {}) => ddInput(Object.assign({}, o, { menu: false }));
 
   // Plain text field — shared field chrome (.ek-datefield) + a 40px .ek-input--field box (functional).
   const textField = (o = {}) => {
@@ -244,7 +245,7 @@
   ]);
   P['dropdown-input'] = () => ([
     { title: 'Dropdown input', opts: 'label · value · detail', html:
-      ddInput({ label: true, detail: true, filled: true }), stage:'stage--start' },
+      ddInput({ label: true, detail: true, filled: true, menu: false }), stage:'stage--start' },
   ]);
   P['dropdown-options'] = () => ([
     { title: 'Option kinds', opts: 'Plain · Selected · With icon · With badge · Multi', html:
@@ -388,7 +389,7 @@
     fileDrop({ state: 'Default', docs: 3 }) }]);
 
   // Single sample photo reused across every Image example (crops per aspect ratio via object-fit).
-  const SAMPLE_IMG = 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80';
+  const SAMPLE_IMG = 'assets/sections/explanation-002-img.jpg';
   const sampleImg = `<img src="${SAMPLE_IMG}" alt="">`;
   P['image'] = () => ([{ title: 'Aspect ratios', opts: 'Square · Wide · Circle', html:
     `${specimen('Square', `<span class="ek-image ek-image--sq">${sampleImg}</span>`)}
@@ -475,10 +476,11 @@
   // ---- banner ----
   const banner = (mod, ico, title, body, opts) => {
     opts = opts || {};
-    const btnHtml = opts.button ? `<button class="ek-btn ek-btn--tertiary ek-btn--sm" style="margin-left:auto">Action</button>` : '';
-    const closeHtml = opts.close ? `<span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm" data-ek-dismiss style="margin-left:auto">${I.close.replace('ek-ic','ek-ic ek-ic--s')}</span>` : '';
+    const btnHtml = opts.button ? `<button class="ek-btn ek-btn--tertiary ek-btn--sm">Action</button>` : '';
+    const closeHtml = opts.close ? `<span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm" data-ek-dismiss>${I.close.replace('ek-ic','ek-ic ek-ic--s')}</span>` : '';
+    const asideHtml = (btnHtml || closeHtml) ? `<div class="ek-banner__aside">${btnHtml}${closeHtml}</div>` : '';
     const bodyHtml = body ? `<div class="ek-banner__body">${body}</div>` : '';
-    return `<div class="ek-banner ek-banner--${mod}"><span class="ek-banner__ico">${ico}</span><div style="flex:1"><div class="ek-banner__title">${title}</div>${bodyHtml}</div>${btnHtml}${closeHtml}</div>`;
+    return `<div class="ek-banner ek-banner--${mod}"><span class="ek-banner__ico">${ico}</span><div style="flex:1"><div class="ek-banner__title">${title}</div>${bodyHtml}</div>${asideHtml}</div>`;
   };
   ITEM['banner'] = (sec, name) => {
     const m = {
@@ -740,6 +742,8 @@
     return pick(m, name, ddInput({ label: true, filled: true }));
   };
   ITEM['dropdown-input'] = (sec, name) => {
+    // Dropdown input documents the selector only — never its options list.
+    const ddInput = (o = {}) => ddSelector(o);
     const m = {
       // Kinds
       'Empty': ddInput({ filled: false }),

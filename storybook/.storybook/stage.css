@@ -12,6 +12,10 @@
   background: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s)), var(--color-fill-plain-surface-base);
 }
 #storybook-root > .ek-sb-stage { min-height: 100vh; }
+/* Dropdown lists float (position: absolute) over the page in real use. In a preview there
+   is nothing under them, so let an open list take real space: the frame grows to show it
+   (Docs preview) and the centering accounts for it (Playground) instead of cutting it off. */
+.ek-sb-stage .ek-dropdown.is-open .ek-dropdown__menu { position: static; }
 
 /* Embedded preview (iframe inside the Docs preview block, ?ek-embed=1): size to content
    instead of filling the viewport, so the block can match the iframe to its height. */

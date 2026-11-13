@@ -36,6 +36,8 @@ export { Calendar } from './Calendar';
 export type { CalendarProps } from './Calendar';
 export { PlainCell, LinkableCell, FeaturedCell, CellsRow } from './Cells';
 export type { PlainCellProps, LinkableCellProps, FeaturedCellProps, CellsRowProps, CellKind } from './Cells';
+export { Container, CONTAINER_STRUCTURES } from './Container';
+export type { ContainerProps, ContainerStructure } from './Container';
 export { Divider } from './Divider';
 export type { DividerProps } from './Divider';
 export { DropdownInput } from './DropdownInput';

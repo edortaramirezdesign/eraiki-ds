@@ -16,6 +16,8 @@ import { sectionRender, sectionSourceTransform } from './_section.js';
 
 const h = React.createElement;
 const MOBILE_WIDTH = 375;
+// Layout components shown at real width like the sections (they only make sense ≥1025px).
+const WIDE_COMPONENTS = ['container'];
 const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr']);
 
 // Readable HTML: one tag per line, indented by depth (text stays on its tag's line).
@@ -129,5 +131,5 @@ export const EkPreview = ({ of }) => {
     : h('div', { className: 'ek-pv__stage' + (bp === 'mobile' ? ' is-mobile' : '') },
       h(StoryFrame, { key: `${theme}-${bp}`, storyId: story.id, theme, width: bp === 'mobile' ? MOBILE_WIDTH : null }));
 
-  return h('div', { className: 'ek-pv sb-unstyled' + (ek && ek.kind === 'section' ? ' ek-pv--wide' : '') }, toolbar, body);
+  return h('div', { className: 'ek-pv sb-unstyled' + (ek && (ek.kind === 'section' || WIDE_COMPONENTS.includes(ek.slug)) ? ' ek-pv--wide' : '') }, toolbar, body);
 };

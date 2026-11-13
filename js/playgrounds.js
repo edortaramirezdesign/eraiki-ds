@@ -774,6 +774,25 @@
   };
 
   // ---- Placeholder ----
+  // ---- Container ----
+  // Structure → column spans on the 12-column grid (Figma variants). Slots hold Placeholders.
+  const CONTAINER_SPANS = {
+    '100%': [12], '50% + 50%': [6, 6], '33% + 33% + 33%': [4, 4, 4], '25% + 25% + 25% + 25%': [3, 3, 3, 3],
+    '8% + 84% + 8%': [1, 10, 1], '16% + 66% + 16%': [2, 8, 2], '25% + 50% + 25%': [3, 6, 3],
+    '8% + 42% + 42% + 8%': [1, 5, 5, 1], '16% + 34% + 34% + 16%': [2, 4, 4, 2],
+    '42% + 58%': [5, 7], '34% + 66%': [4, 8], '25% + 75%': [3, 9], '16% + 84%': [2, 10],
+    '58% + 42%': [7, 5], '66% + 34%': [8, 4], '75% + 25%': [9, 3], '84% + 16%': [10, 2],
+  };
+  P['container'] = {
+    props: [
+      { name: 'Structure', type: 'enum', options: Object.keys(CONTAINER_SPANS), value: '33% + 33% + 33%' },
+    ],
+    render: (s) => {
+      const cols = (CONTAINER_SPANS[s.Structure] || [12]).map(n => `<div class="ek-container__col" style="--ek-span:${n}"><span class="ek-placeholder">Replace this content</span></div>`).join('');
+      return `<div class="ek-container" style="width:1440px;max-width:100%">${cols}</div>`;
+    },
+  };
+
   P['placeholder'] = {
     props: [
       { name: 'Text', type: 'bool', value: true },

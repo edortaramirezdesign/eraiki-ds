@@ -918,6 +918,73 @@ window.ERAIKI_COMPONENTS = [
   "propertiesNote": "Composed component — a container with a group label and repeated Checkbox items (no exposed variant properties on the group itself)."
  },
  {
+  "name": "Container",
+  "slug": "container",
+  "short": "A layout frame that arranges content into columns of set proportions on a 12-column grid, with consistent margins and gutters.",
+  "context": "The Container is the layout frame that holds a page's content and divides it into columns. It sits on a 12-column grid with consistent outer margins and gutters, and each structure fixes how many columns there are and how wide each one is — from a single full-width column to symmetric and asymmetric splits of two, three or four columns.\n\nEach column is a slot that accepts any content (components, sections or other layouts), so the same frame can host cards, forms, media or text while keeping alignment and spacing consistent across the page. Choose the structure by the relationship between the contents: equal columns for peers, wider columns for the main content, and narrow side columns to frame or inset it.",
+  "keywords": [
+   "container",
+   "layout",
+   "grid",
+   "columns",
+   "gutter",
+   "margin",
+   "structure"
+  ],
+  "whenToUse": [
+   "Laying out page content on the shared 12-column grid with consistent margins and gutters.",
+   "Placing related blocks side by side in equal or weighted columns.",
+   "Centering and constraining content, such as reading-width text, with side columns.",
+   "Building sections and pages that need to stay aligned with each other."
+  ],
+  "whenNotToUse": [
+   "Spacing elements inside a component — use the component's own spacing tokens.",
+   "Small inline groups such as buttons or tags — use their group components.",
+   "Content that must scroll horizontally, like carousels or marquees.",
+   "Narrow screens below 1025px, where content should stack in a single column."
+  ],
+  "properties": [
+   {
+    "property": "Structure",
+    "raw": "100%, 50% + 50%, 33% + 33% + 33%, 25% + 25% + 25% + 25%, 8% + 84% + 8%, 16% + 66% + 16%, 25% + 50% + 25%, 8% + 42% + 42% + 8%, 16% + 34% + 34% + 16%, 42% + 58%, 34% + 66%, 25% + 75%, 16% + 84%, 58% + 42%, 66% + 34%, 75% + 25%, 84% + 16%",
+    "options": [
+     "100%",
+     "50% + 50%",
+     "33% + 33% + 33%",
+     "25% + 25% + 25% + 25%",
+     "8% + 84% + 8%",
+     "16% + 66% + 16%",
+     "25% + 50% + 25%",
+     "8% + 42% + 42% + 8%",
+     "16% + 34% + 34% + 16%",
+     "42% + 58%",
+     "34% + 66%",
+     "25% + 75%",
+     "16% + 84%",
+     "58% + 42%",
+     "66% + 34%",
+     "75% + 25%",
+     "84% + 16%"
+    ]
+   },
+   {
+    "property": "Gutter",
+    "raw": "Yes",
+    "options": [
+     "Yes"
+    ]
+   },
+   {
+    "property": "Margin",
+    "raw": "Yes",
+    "options": [
+     "Yes"
+    ]
+   }
+  ],
+  "propertiesNote": "Each column is a slot (Column 01–04) that accepts any content."
+ },
+ {
   "name": "Divider",
   "slug": "divider",
   "short": "A thin rule that visually separates content into groups, horizontally or vertically.",

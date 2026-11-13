@@ -291,6 +291,16 @@
 .ek-pwbox.is-revealed .ek-pwbox__eye .ek-pwbox__off { display: none; }
 
 /* ---------- Divider ---------- */
+/* Container — layout frame on a 12-column grid: outer margin 4XL, gutter 3XL (Figma).
+   Each column is a slot spanning N of the 12 grid columns (--ek-span); below the
+   desktop breakpoint the columns stack in a single column. */
+.ek-container { box-sizing: border-box; width: 100%; max-width: 2560px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--spacing-3xl); row-gap: var(--spacing-xxl); padding: var(--spacing-4xl); background: var(--color-fill-plain-surface-base); }
+.ek-container__col { grid-column: span var(--ek-span, 12); min-width: 0; display: flex; flex-direction: column; }
+.ek-container__col > .ek-placeholder { width: 100%; flex: 1 1 auto; min-height: 212px; }
+@media (max-width: 1024px) {
+  .ek-container { grid-template-columns: minmax(0, 1fr); }
+  .ek-container__col { grid-column: auto; }
+}
 .ek-divider { border: none; border-top: var(--border-width-default) solid var(--color-stroke-plain-shape-standard-l); width: 100%; }
 .ek-divider--v { border-top: none; border-left: var(--border-width-default) solid var(--color-stroke-plain-shape-standard-l); height: 40px; width: 0; }
 .ek-divider-label { display: flex; align-items: center; gap: var(--spacing-m); width: 100%; color: var(--color-fill-plain-text-standard-m); font-size: var(--font-size-detail-m); }
@@ -639,9 +649,9 @@
 /* ---------- Patterns ---------- */
 /* Contact Split Form — text group + form, two columns (stacks on narrow) */
 .ek-contact {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-5xl); align-items: start;
   background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-4xl) var(--spacing-5xl);
+  padding: var(--spacing-5xl) var(--spacing-6xl);
 }
 .ek-contact__text { max-width: none; }
 .ek-contact__form { display: flex; flex-direction: column; gap: var(--spacing-l); }
@@ -659,9 +669,9 @@
 
 /* Explanation Split Media — two columns: text group + supporting image (either side) */
 .ek-explain2 {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-5xl); align-items: start;
   background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-4xl) var(--spacing-5xl);
+  padding: var(--spacing-5xl) var(--spacing-6xl);
 }
 .ek-explain2__text { max-width: none; }
 .ek-explain2__media { display: flex; justify-content: center; }
@@ -671,12 +681,12 @@
 .ek-explain3 {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xs); align-items: stretch;
   background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-4xl) var(--spacing-l);
+  padding: var(--spacing-5xl) var(--spacing-l);
   border-radius: var(--radius-standard);
 }
 .ek-explain3__text {
   background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard);
-  padding: var(--spacing-4xl) var(--spacing-3xl); display: flex; flex-direction: column; justify-content: center;
+  padding: var(--spacing-5xl) var(--spacing-4xl); display: flex; flex-direction: column; justify-content: center;
 }
 .ek-explain3__text .ek-textgroup { max-width: none; }
 .ek-explain3__media {
@@ -688,7 +698,7 @@
 .ek-explain4 {
   display: flex; flex-direction: column; gap: var(--spacing-xxl);
   background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-4xl) var(--spacing-5xl);
+  padding: var(--spacing-5xl) var(--spacing-6xl);
   border-radius: var(--radius-standard);
 }
 .ek-explain4__head { max-width: 680px; }
@@ -706,10 +716,10 @@
 /* Explanation Image Marquee — contained text intro (left half) + full-bleed row of images */
 .ek-explain5 {
   display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0;
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0;
   border-radius: var(--radius-standard);
 }
-.ek-explain5__contained { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); width: 100%; max-width: 1360px; padding: 0 var(--spacing-l); }
+.ek-explain5__contained { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); width: 100%; max-width: 1360px; padding: 0 var(--spacing-l); }
 .ek-explain5__text { max-width: none; }
 /* Fluid row is an infinite horizontal marquee — two identical image groups that
    scroll left; group 2 seamlessly takes group 1's place (translate = own width + gap). */
@@ -733,15 +743,15 @@
    background image. The card carries .theme-dark so text/tokens invert to light. */
 .ek-explain6 {
   display: flex; justify-content: center;
-  padding: var(--spacing-4xl) var(--spacing-l);
+  padding: var(--spacing-5xl) var(--spacing-l);
   background-position: center; background-size: cover; background-repeat: no-repeat;
   border-radius: var(--radius-standard);
 }
 .ek-explain6__card {
   width: 100%; max-width: 1360px;
   background: var(--color-fill-plain-surface-complementary);
-  border-radius: var(--radius-standard); padding: var(--spacing-3xl);
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: stretch;
+  border-radius: var(--radius-standard); padding: var(--spacing-4xl);
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: stretch;
 }
 .ek-explain6__col { display: flex; flex-direction: column; justify-content: space-between; gap: var(--spacing-l); }
 .ek-explain6__foot { display: flex; flex-direction: column; gap: var(--spacing-l); align-items: flex-start; }
@@ -778,7 +788,7 @@
    tab's bar fills on a loop; the React component advances to the next tab on each fill. */
 .ek-hero3 {
   display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0 var(--spacing-xxl); overflow: hidden;
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0 var(--spacing-xxl); overflow: hidden;
 }
 .ek-hero3__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-hero3__head { display: flex; flex-direction: column; align-items: center; }
@@ -810,7 +820,7 @@
    and fade into the background at both edges. */
 .ek-marquee2 {
   display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0; overflow: hidden;
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-6xl) 0; overflow: hidden;
   --ek-marquee2-fade: 180px;
 }
 .ek-marquee2__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
@@ -833,7 +843,7 @@
    (muted to one tint, split by thin dividers). Pure-CSS infinite marquee. */
 .ek-marquee1 {
   display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0;
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0;
 }
 .ek-marquee1__text { max-width: calc(600px + 2 * var(--spacing-l)); margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-marquee1__head { display: flex; flex-direction: column; align-items: center; }
@@ -846,8 +856,8 @@
 
 /* Values & Features Icon Grid — centered intro + a row of feature cards (icon, title, body) */
 .ek-values1 {
-  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3xl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) var(--spacing-l);
+  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-4xl);
+  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) var(--spacing-l);
 }
 .ek-values1__intro { max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-values1__head { display: flex; flex-direction: column; align-items: center; }
@@ -857,9 +867,9 @@
 
 /* Values & Features Highlight List — a heading over a vertical feature list on the left
    (the first item highlighted, with body copy) beside a tall image on the right. */
-.ek-values2 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0; }
+.ek-values2 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0; }
 .ek-values2__inner { max-width: 1360px; margin: 0 auto; padding: 0 var(--spacing-l); }
-.ek-values2__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: stretch; }
+.ek-values2__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: stretch; }
 .ek-values2__col { display: flex; flex-direction: column; justify-content: space-between; gap: var(--spacing-m); }
 .ek-values2__intro { display: flex; flex-direction: column; gap: var(--spacing-l); }
 .ek-values2__list { display: flex; flex-direction: column; gap: var(--spacing-m); }
@@ -878,10 +888,10 @@
 
 /* Values & Features Numbered List — a heading, then an image beside a numbered list; each
    row pairs a number + title with a description, split by thin dividers. */
-.ek-values3 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) 0; }
+.ek-values3 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0; }
 .ek-values3__inner { max-width: 1360px; margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; gap: var(--spacing-xxl); }
 .ek-values3__head { max-width: 624px; }
-.ek-values3__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: stretch; }
+.ek-values3__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: stretch; }
 /* The image fills the row height (matching the list on the right) rather than a
    fixed aspect ratio — the absolute img lets the cell stretch to the list. */
 .ek-values3__media { position: relative; border-radius: var(--radius-standard); overflow: hidden; }
@@ -898,12 +908,12 @@
 
 /* Values & Features Staggered Cards — a centered intro over three staggered cards, each with
    a heading, an illustration and a line of copy (columns step down 0/80/160). */
-.ek-values4 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-4xl) var(--spacing-l); display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3xl); }
+.ek-values4 { background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) var(--spacing-l); display: flex; flex-direction: column; align-items: center; gap: var(--spacing-4xl); }
 .ek-values4__intro { max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-values4__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-values4__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-l); width: 100%; max-width: 1380px; align-items: start; }
-.ek-values4__card:nth-child(2) { margin-top: var(--spacing-4xl); }
-.ek-values4__card:nth-child(3) { margin-top: calc(var(--spacing-4xl) * 2); }
+.ek-values4__card:nth-child(2) { margin-top: var(--spacing-5xl); }
+.ek-values4__card:nth-child(3) { margin-top: calc(var(--spacing-5xl) * 2); }
 .ek-values4__card { background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard); padding: var(--spacing-l); display: flex; flex-direction: column; gap: var(--spacing-l); }
 .ek-values4__illus { display: flex; align-items: center; justify-content: center; min-height: 200px; }
 .ek-values4__illus img { display: block; }
@@ -913,18 +923,18 @@
    inside each preview iframe (so tokens switch too). */
 @media (max-width: 1024px) {
   /* Contact Split Form — stack text over form */
-  .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-6xl); padding: var(--spacing-4xl) var(--spacing-l); } /* gap 80 (Figma, unbound) = 6XL on mobile */
+  .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-7xl); padding: var(--spacing-5xl) var(--spacing-l); } /* gap 80 (Figma, unbound) = 7XL on mobile */
   /* Explanation Banner Card — shorter banner */
   .ek-explain { min-height: 0; } /* Figma mobile: hugs its content */
   .ek-explain > .ek-textgroup { width: 100%; }
   /* Explanation Split Media — stack image over text */
-  .ek-explain2 { grid-template-columns: 1fr; gap: var(--spacing-4xl); padding: var(--spacing-4xl) var(--spacing-l); }
+  .ek-explain2 { grid-template-columns: 1fr; gap: var(--spacing-5xl); padding: var(--spacing-5xl) var(--spacing-l); }
   .ek-explain2__media { order: -1; }
   .ek-explain2__media img { width: 100%; }
   .ek-explain2 .ek-btn-group { flex-direction: column; align-items: flex-start; }
   /* Explanation Twin Cards — stack text card over image card */
-  .ek-explain3 { grid-template-columns: 1fr; padding: var(--spacing-4xl) var(--spacing-m); }
-  .ek-explain3__text { padding: var(--spacing-4xl) var(--spacing-l); }
+  .ek-explain3 { grid-template-columns: 1fr; padding: var(--spacing-5xl) var(--spacing-m); }
+  .ek-explain3__text { padding: var(--spacing-5xl) var(--spacing-l); }
   .ek-explain3__media { min-height: 220px; }
   /* Explanation Triple Panel — stack the three panels into one column */
   .ek-explain4 { padding-left: var(--spacing-l); padding-right: var(--spacing-l); }
@@ -959,7 +969,7 @@
   .ek-values1__boxes { grid-template-columns: 1fr; }
   .ek-values1__intro .ek-btn-group { flex-direction: column; align-items: stretch; width: 100%; }
   /* Values & Features Highlight List — stack the list over the image */
-  .ek-values2__row { grid-template-columns: 1fr; gap: var(--spacing-3xl); }
+  .ek-values2__row { grid-template-columns: 1fr; gap: var(--spacing-4xl); }
   .ek-values2__col { justify-content: flex-start; gap: var(--spacing-xxl); }
   .ek-values2__item { padding: var(--spacing-l); }
   /* Values & Features Numbered List — image over the list; each row stacks title over body */

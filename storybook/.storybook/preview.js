@@ -34,7 +34,7 @@ const preview = {
           'Components', [
             'Accordion', 'Avatar', 'Avatar group', 'Badge', 'Banner', 'Breadcrumb',
             'Button', 'Buttons group', 'Calendar', 'Card - Product', 'Cell - Featured',
-            'Cell - Linkable', 'Cell - Plain', 'Cells row', 'Checkbox', 'Checkbox group',
+            'Cell - Linkable', 'Cell - Plain', 'Cells row', 'Checkbox', 'Checkbox group', 'Container',
             'Divider', 'Dropdown', 'Dropdown input', 'Dropdown options', 'File drop',
             'Image', 'Input field - Date range', 'Input field - Date selector',
             'Input field - Password', 'Input field - Text', 'Input field - Text area',

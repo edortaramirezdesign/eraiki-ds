@@ -177,10 +177,11 @@
   --spacing-l: 24px;
   --spacing-xl: 32px;
   --spacing-xxl: 40px;
-  --spacing-3xl: 64px;
-  --spacing-4xl: 80px;
-  --spacing-5xl: 120px;
-  --spacing-6xl: 200px;
+  --spacing-3xl: 56px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 80px;
+  --spacing-6xl: 120px;
+  --spacing-7xl: 200px;
 
   /* ===== RADIUS ===== */
   --radius-standard: var(--brand-radius);
@@ -294,10 +295,11 @@
       --line-height-heading-m: 32px;
 
       /* spacing (mobile) */
-      --spacing-3xl: 48px;
-      --spacing-4xl: 52px;
-      --spacing-5xl: 64px;
-      --spacing-6xl: 80px;
+      --spacing-3xl: 56px;
+      --spacing-4xl: 48px;
+      --spacing-5xl: 52px;
+      --spacing-6xl: 64px;
+      --spacing-7xl: 80px;
 
       /* canvas width (mobile) */
       --width-max: 1024px;

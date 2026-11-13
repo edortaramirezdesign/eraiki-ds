@@ -1,6 +1,6 @@
 // Shared bits of the section markup (js/sections.js): the text-group head with an
 // h2 at a heading size, and the primary / secondary button pair.
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { cx } from '../cx';
 import { Button, ButtonGroup } from '../Button';
 
@@ -47,3 +47,9 @@ export function Actions(a: SectionActions) {
 
 export const bg = (src: string) => ({ backgroundImage: `url("${src}")` });
 export const scrim = (src: string) => ({ backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url("${src}")` });
+
+/** One Container column (.ek-container__col) spanning `span` of the 12-column grid — for
+ *  sections built on Container whose columns carry their own class or background. */
+export function Col({ span, className, style, children }: { span: number; className?: string; style?: CSSProperties; children?: ReactNode }) {
+  return <div className={cx('ek-container__col', className)} style={{ ['--ek-span' as string]: span, ...style }}>{children}</div>;
+}

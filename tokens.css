@@ -184,7 +184,9 @@
   --spacing-7xl: 200px;
 
   /* ===== RADIUS ===== */
+  --radius-zero: 0;
   --radius-standard: var(--brand-radius);
+  --radius-m: 16px;
   --radius-circle: 99999px;
 
   /* ===== STROKE / BORDER ===== */

@@ -647,86 +647,58 @@
 .ek-textgroup__body { font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-l); line-height: var(--line-height-body-l); color: var(--color-fill-plain-text-standard-l); margin: 0; }
 
 /* ---------- Patterns ---------- */
-/* Contact Split Form — text group + form, two columns (stacks on narrow) */
-.ek-contact {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-5xl); align-items: start;
-  background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-5xl) var(--spacing-6xl);
-}
+/* Sections built on Container (.ek-container): the section IS the Container, with the
+   Structure set by each column's --ek-span; overrides of margin/gutter mirror the
+   instance overrides in Figma (always spacing tokens). */
+/* Contact Split Form — Container 50% + 50%: text group + form */
 .ek-contact__text { max-width: none; }
 .ek-contact__form { display: flex; flex-direction: column; gap: var(--spacing-l); }
-
-/* Explanation Banner Card — full-bleed image banner with a contained text card (left) */
-.ek-explain {
-  display: flex; align-items: flex-start;
-  min-height: 520px; padding: var(--spacing-xxl);
-  border-radius: var(--radius-standard);
-  background-position: center; background-size: cover; background-repeat: no-repeat;
-}
-.ek-explain > .ek-textgroup { width: 400px; max-width: 100%; gap: var(--spacing-xl); }
+/* Explanation Banner Card — Container 100% over a full-bleed image, in Dark mode: the
+   contained Text group card is the dark surface. */
+.ek-explain { background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ek-explain > .ek-container__col { justify-content: center; }
+.ek-explain .ek-textgroup--contained { width: 400px; max-width: 100%; gap: var(--spacing-xl); }
 /* Card heading is Heading M (Figma); the Text group component defaults to Heading S. */
-.ek-explain > .ek-textgroup .ek-textgroup__title, .ek-explain4__card .ek-textgroup__title { font-size: var(--font-size-heading-m); line-height: var(--line-height-heading-m); }
-
-/* Explanation Split Media — two columns: text group + supporting image (either side) */
-.ek-explain2 {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-5xl); align-items: start;
-  background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-5xl) var(--spacing-6xl);
-}
+.ek-explain .ek-textgroup__title, .ek-explain4__card .ek-textgroup__title { font-size: var(--font-size-heading-m); line-height: var(--line-height-heading-m); }
+/* Explanation Split Media — Container 8% + 42% + 42% + 8%: text group + image (either
+   side), both centred in their column; the 8% columns are an empty inset. */
+.ek-explain2__textcol { justify-content: center; }
 .ek-explain2__text { max-width: none; }
-.ek-explain2__media { display: flex; justify-content: center; }
+.ek-explain2__media { align-items: center; justify-content: center; }
 .ek-explain2__media img { width: 320px; max-width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
-
-/* Explanation Twin Cards — two equal cards side by side: a text card + an image card */
-.ek-explain3 {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xs); align-items: stretch;
-  background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-5xl) var(--spacing-l);
-  border-radius: var(--radius-standard);
-}
-.ek-explain3__text {
-  background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard);
-  padding: var(--spacing-5xl) var(--spacing-4xl); display: flex; flex-direction: column; justify-content: center;
-}
+/* Explanation Twin Cards — Container 50% + 50% with no margin and no gutter: a full-bleed
+   image half + a text half (5XL inset), edge to edge. */
+.ek-explain3 { padding: 0; column-gap: 0; }
+.ek-explain3__text { padding: var(--spacing-5xl); justify-content: center; }
 .ek-explain3__text .ek-textgroup { max-width: none; }
-.ek-explain3__media {
-  border-radius: var(--radius-standard); min-height: 400px;
-  background-position: center; background-size: cover; background-repeat: no-repeat;
-}
-
-/* Explanation Triple Panel — header over a row of three equal panels (2 images + text card) */
-.ek-explain4 {
-  display: flex; flex-direction: column; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base);
-  padding: var(--spacing-5xl) var(--spacing-6xl);
-  border-radius: var(--radius-standard);
-}
+.ek-explain3__media { background-position: center; background-size: cover; background-repeat: no-repeat; }
+/* Explanation Triple Panel — two Containers: 100% (header) over 33% + 33% + 33% (two
+   images + a text card, M gutter). Panels use Corner radius M. */
+.ek-explain4 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
+.ek-explain4__top { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); }
 .ek-explain4__head { max-width: 680px; }
-.ek-explain4__block { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-xs); align-items: stretch; }
+.ek-explain4__block { padding: var(--spacing-l) var(--spacing-4xl) var(--spacing-5xl); column-gap: var(--spacing-m); row-gap: var(--spacing-m); }
 .ek-explain4__img {
-  border-radius: var(--radius-standard); min-height: 526px;
+  flex: 1 1 auto; border-radius: var(--radius-m); min-height: 533px;
   background-position: center; background-size: cover; background-repeat: no-repeat;
 }
 .ek-explain4__card {
-  background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard);
-  padding: var(--spacing-l); display: flex;
+  flex: 1 1 auto; background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-m);
+  padding: var(--spacing-xl); display: flex;
 }
 .ek-explain4__card .ek-textgroup { max-width: none; width: 100%; }
 
-/* Explanation Image Marquee — contained text intro (left half) + full-bleed row of images */
-.ek-explain5 {
-  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0;
-  border-radius: var(--radius-standard);
-}
-.ek-explain5__contained { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); width: 100%; max-width: 1360px; padding: 0 var(--spacing-l); }
-.ek-explain5__text { max-width: none; }
+/* Explanation Image Marquee — header on Container 100% (text group 680 wide) over a
+   full-bleed infinite marquee of images (M gutter, Corner radius M). */
+.ek-explain5 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
+.ek-explain5__contained { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); }
+.ek-explain5__text { max-width: 680px; }
 /* Fluid row is an infinite horizontal marquee — two identical image groups that
    scroll left; group 2 seamlessly takes group 1's place (translate = own width + gap). */
-.ek-explain5__fluid { overflow: hidden; width: 100%; }
-.ek-explain5__marquee { display: flex; gap: var(--spacing-xs); width: max-content; }
-.ek-explain5__mgroup { display: flex; gap: var(--spacing-xs); flex-shrink: 0; --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 350; /* image 342 + gap 8 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
-.ek-explain5__img { flex: 0 0 auto; width: 342px; border-radius: var(--radius-standard); min-height: 456px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ek-explain5__fluid { overflow: hidden; width: 100%; padding: var(--spacing-m) 0; }
+.ek-explain5__marquee { display: flex; gap: var(--spacing-m); width: max-content; }
+.ek-explain5__mgroup { display: flex; gap: var(--spacing-m); flex-shrink: 0; --marquee-gap: var(--spacing-m); --ek-marquee-pitch: 355; /* image 339 + gap 16 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+.ek-explain5__img { flex: 0 0 auto; width: 339px; border-radius: var(--radius-m); min-height: 452px; background-position: center; background-size: cover; background-repeat: no-repeat; }
 /* Shared marquee keyframe — each group translates by its own width + the gap to
    the next group, so the duplicate seamlessly takes its place. Gap is per-marquee. */
 /* All marquees scroll at one shared, perceived speed (--ek-marquee-speed, px per second),
@@ -739,24 +711,15 @@
 @keyframes ek-marquee { to { transform: translateX(calc(-100% - var(--marquee-gap, 0px))); } }
 @media (prefers-reduced-motion: reduce) { .ek-explain5__mgroup, .ek-marquee1__group { animation: none; } }
 
-/* Explanation Dark Card — dark (complementary) card with text + image, over a full-bleed
-   background image. The card carries .theme-dark so text/tokens invert to light. */
-.ek-explain6 {
-  display: flex; justify-content: center;
-  padding: var(--spacing-5xl) var(--spacing-l);
-  background-position: center; background-size: cover; background-repeat: no-repeat;
-  border-radius: var(--radius-standard);
-}
-.ek-explain6__card {
-  width: 100%; max-width: 1360px;
-  background: var(--color-fill-plain-surface-complementary);
-  border-radius: var(--radius-standard); padding: var(--spacing-4xl);
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4xl); align-items: stretch;
-}
-.ek-explain6__col { display: flex; flex-direction: column; justify-content: space-between; gap: var(--spacing-l); }
-.ek-explain6__foot { display: flex; flex-direction: column; gap: var(--spacing-l); align-items: flex-start; }
-.ek-explain6__foot .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
-.ek-explain6__media { min-height: 487px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+/* Explanation Dark Card — Container 100% over a full-bleed background image, in Dark
+   mode: the column is the dark card (4XL inset) with a Text group and a square image. */
+.ek-explain6 { background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ek-explain6__card { flex-direction: row; gap: var(--spacing-xl); padding: var(--spacing-4xl); background: var(--color-fill-plain-surface-base); }
+.ek-explain6__col, .ek-explain6__mediacol { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+.ek-explain6__mediacol { align-items: center; justify-content: center; }
+.ek-explain6__text { max-width: none; }
+.ek-explain6__text .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
+.ek-explain6__media { width: 466px; max-width: 100%; aspect-ratio: 1; background-position: center; background-size: cover; background-repeat: no-repeat; }
 
 /* Hero Image Slider — image hero (dark scrim) inset by a 16px frame, content anchored to the
    bottom: a text block (lower-left) and an actions row (primary + prev/next arrows). */
@@ -923,31 +886,40 @@
    inside each preview iframe (so tokens switch too). */
 @media (max-width: 1024px) {
   /* Contact Split Form — stack text over form */
-  .ek-contact { grid-template-columns: 1fr; gap: var(--spacing-7xl); padding: var(--spacing-5xl) var(--spacing-l); } /* gap 80 (Figma, unbound) = 7XL on mobile */
-  /* Explanation Banner Card — shorter banner */
-  .ek-explain { min-height: 0; } /* Figma mobile: hugs its content */
-  .ek-explain > .ek-textgroup { width: 100%; }
-  /* Explanation Split Media — stack image over text */
-  .ek-explain2 { grid-template-columns: 1fr; gap: var(--spacing-5xl); padding: var(--spacing-5xl) var(--spacing-l); }
+  /* Sections on Container: Container stacks its columns on mobile; each section keeps its
+     own mobile margins and gaps (mobile frames in Figma are not built on Container yet). */
+  .ek-contact { row-gap: var(--spacing-7xl); padding: var(--spacing-5xl) var(--spacing-l); } /* gap 80 (Figma, unbound) = 7XL on mobile */
+  /* Explanation Banner Card — hugs its content */
+  .ek-explain { padding: var(--spacing-xxl); border-radius: var(--radius-standard); }
+  .ek-explain .ek-textgroup--contained { width: 100%; }
+  /* Explanation Split Media — stack image over text; the 8% inset columns disappear */
+  .ek-explain2 { row-gap: var(--spacing-5xl); padding: var(--spacing-5xl) var(--spacing-l); }
+  .ek-explain2__spacer { display: none; }
   .ek-explain2__media { order: -1; }
   .ek-explain2__media img { width: 100%; }
   .ek-explain2 .ek-btn-group { flex-direction: column; align-items: flex-start; }
   /* Explanation Twin Cards — stack text card over image card */
-  .ek-explain3 { grid-template-columns: 1fr; padding: var(--spacing-5xl) var(--spacing-m); }
-  .ek-explain3__text { padding: var(--spacing-5xl) var(--spacing-l); }
-  .ek-explain3__media { min-height: 220px; }
+  .ek-explain3 { row-gap: var(--spacing-xs); padding: var(--spacing-5xl) var(--spacing-m); border-radius: var(--radius-standard); }
+  .ek-explain3__text { padding: var(--spacing-5xl) var(--spacing-l); background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard); }
+  .ek-explain3__media { min-height: 220px; border-radius: var(--radius-standard); }
   /* Explanation Triple Panel — stack the three panels into one column */
-  .ek-explain4 { padding-left: var(--spacing-l); padding-right: var(--spacing-l); }
-  .ek-explain4__block { grid-template-columns: 1fr; }
-  .ek-explain4__img { min-height: 245px; }
+  .ek-explain4 { border-radius: var(--radius-standard); }
+  .ek-explain4__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
+  .ek-explain4__block { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); row-gap: var(--spacing-xs); }
+  .ek-explain4__img { min-height: 245px; border-radius: var(--radius-standard); }
+  .ek-explain4__card { padding: var(--spacing-l); border-radius: var(--radius-standard); }
   /* Explanation Image Marquee — text full width; image strip goes full-bleed and drops to two */
-  .ek-explain5__contained { grid-template-columns: 1fr; }
-  .ek-explain5__img { width: 184px; min-height: 245px; }
-  .ek-explain5__mgroup { --ek-marquee-pitch: 192; } /* image 184 + gap 8 */
+  .ek-explain5 { border-radius: var(--radius-standard); }
+  .ek-explain5__contained { padding: var(--spacing-5xl) var(--spacing-l) 0; }
+  .ek-explain5__text { max-width: none; }
+  .ek-explain5__fluid { padding: var(--spacing-xxl) 0 var(--spacing-5xl); }
+  .ek-explain5__marquee { gap: var(--spacing-xs); }
+  .ek-explain5__mgroup { gap: var(--spacing-xs); --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 192; } /* image 184 + gap 8 */
+  .ek-explain5__img { width: 184px; min-height: 245px; border-radius: var(--radius-standard); }
   /* Explanation Dark Card — stack text over image inside the card */
-  .ek-explain6__card { grid-template-columns: 1fr; gap: var(--spacing-xxl); padding: var(--spacing-l); }
-  .ek-explain6__col { justify-content: flex-start; gap: var(--spacing-m); }
-  .ek-explain6__media { min-height: 192px; }
+  .ek-explain6 { padding: var(--spacing-5xl) var(--spacing-l); border-radius: var(--radius-standard); }
+  .ek-explain6__card { flex-direction: column; gap: var(--spacing-xxl); padding: var(--spacing-l); border-radius: var(--radius-standard); }
+  .ek-explain6__media { width: 100%; aspect-ratio: auto; min-height: 192px; }
   /* Hero Image Slider — text spans the full width */
   .ek-hero { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); } /* Figma mobile: hugs its content */
   .ek-hero__row--text { grid-template-columns: 1fr; }

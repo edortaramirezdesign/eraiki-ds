@@ -721,45 +721,46 @@
 .ek-explain6__text .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
 .ek-explain6__media { width: 466px; max-width: 100%; aspect-ratio: 1; background-position: center; background-size: cover; background-repeat: no-repeat; }
 
-/* Hero Image Slider — image hero (dark scrim) inset by a 16px frame, content anchored to the
-   bottom: a text block (lower-left) and an actions row (primary + prev/next arrows). */
-.ek-hero-frame { padding: var(--spacing-m); background: var(--color-fill-plain-surface-base); }
-.ek-hero {
-  display: flex; flex-direction: column; justify-content: flex-end; gap: var(--spacing-l);
-  min-height: 708px; padding: var(--spacing-xxl); border-radius: var(--radius-standard);
-  background-position: center; background-size: cover; background-repeat: no-repeat;
-}
-.ek-hero__row--text { display: grid; grid-template-columns: 1fr 1fr; }
+/* Copy that differs between the desktop and mobile frames in Figma. */
+@media (min-width: 1025px) { .ek-hide-desktop { display: none !important; } }
+@media (max-width: 1024px) { .ek-hide-mobile { display: none !important; } }
+
+/* Centered-intro sections (Hero Marquee Gallery, Marquee Logo Strip / Tiles): two
+   Containers 100% — the intro (6XL top, L bottom, Text group centred up to 820) and the
+   full-bleed strip (no side margin; L top, 6XL bottom). */
+.ek-sec-intro { padding: var(--spacing-6xl) var(--spacing-4xl) var(--spacing-l); row-gap: var(--spacing-l); }
+.ek-sec-intro > .ek-container__col { align-items: center; }
+.ek-sec-strip { padding: var(--spacing-l) 0 var(--spacing-6xl); column-gap: 0; }
+
+/* Hero Image Slider — Container 50% + 50% over a full-bleed image (dark scrim), in Dark
+   mode: text group + primary button anchored bottom-left, prev/next arrows bottom-right. */
+.ek-hero { min-height: 700px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ek-hero__textcol { justify-content: flex-end; }
 .ek-hero__text { max-width: none; }
-.ek-hero__actions { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-l); }
+.ek-hero .ek-textgroup__body, .ek-hero2 .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
+.ek-hero__navcol { justify-content: flex-end; align-items: flex-end; }
 .ek-hero__nav { display: flex; gap: var(--spacing-xs); }
 
-/* Hero Split Columns — full-screen image (dark scrim), two text columns anchored to the
-   bottom: the headline (left) and a paragraph + CTA in a narrower column (right). */
-.ek-hero2 {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  min-height: 740px; padding: var(--spacing-xxl);
-  background-position: center; background-size: cover; background-repeat: no-repeat;
-}
-.ek-hero2__row { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--spacing-xl); }
-.ek-hero2__heading-group { flex: 0 1 680px; min-width: 0; display: flex; flex-direction: column; } /* Figma: heading column 680 */
-/* aside sits 40px lower than the heading (Figma column padding-top) */
-.ek-hero2__aside { flex: 0 0 400px; max-width: 400px; padding-top: var(--spacing-xxl); display: flex; flex-direction: column; gap: var(--spacing-l); align-items: flex-start; }
+/* Hero Split Columns — Container 50% + 50% over a full-bleed image (dark scrim), in Dark
+   mode: the headline bottom-left (3XL above the bottom margin) and a paragraph + CTA
+   bottom-right, at most 480 wide. */
+.ek-hero2 { min-height: 700px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ek-hero2__headcol { justify-content: flex-end; padding-bottom: var(--spacing-3xl); }
+.ek-hero2__heading-group { display: flex; flex-direction: column; }
+.ek-hero2__asidecol { justify-content: flex-end; align-items: flex-end; }
+.ek-hero2__aside { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: var(--spacing-l); align-items: flex-start; }
 
 /* Hero Marquee Gallery — centered intro over a full-bleed, continuously scrolling row of
-   images in alternating sizes (square / tall, top-aligned), then progress tabs. The active
-   tab's bar fills on a loop; the React component advances to the next tab on each fill. */
-.ek-hero3 {
-  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0 var(--spacing-xxl); overflow: hidden;
-}
-.ek-hero3__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+   images in alternating sizes (square / tall, top-aligned, Corner radius M). Mobile adds
+   progress tabs: the active tab's bar fills on a loop; the React component advances on each fill. */
+.ek-hero3 { display: flex; flex-direction: column; align-items: center; background: var(--color-fill-plain-surface-base); overflow: hidden; }
+.ek-hero3__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-hero3__head { display: flex; flex-direction: column; align-items: center; }
 .ek-hero3__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-hero3__strip { overflow: hidden; width: 100%; }
 .ek-hero3__lane { display: flex; gap: var(--spacing-m); width: max-content; }
 .ek-hero3__group { display: flex; align-items: flex-start; gap: var(--spacing-m); flex-shrink: 0; --marquee-gap: var(--spacing-m); --ek-marquee-pitch: 291; /* avg of square 240 / tall 310 + gap 16 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
-.ek-hero3__img { display: block; flex: 0 0 auto; width: 240px; height: 240px; object-fit: cover; }
+.ek-hero3__img { display: block; flex: 0 0 auto; width: 240px; height: 240px; object-fit: cover; border-radius: var(--radius-m); }
 .ek-hero3__img--tall { width: 310px; height: 388px; }
 .ek-hero3__tabs { display: flex; gap: var(--spacing-xs); width: 400px; max-width: calc(100% - 2 * var(--spacing-l)); }
 .ek-hero3__tab {
@@ -781,12 +782,8 @@
 /* Marquee Logo Tiles — centered intro over two rows of square logo tiles that scroll in
    opposite directions (the second row runs the shared ek-marquee keyframes in reverse)
    and fade into the background at both edges. */
-.ek-marquee2 {
-  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-6xl) 0; overflow: hidden;
-  --ek-marquee2-fade: 180px;
-}
-.ek-marquee2__intro { width: calc(100% - 2 * var(--spacing-l)); max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-marquee2 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); overflow: hidden; --ek-marquee2-fade: 180px; }
+.ek-marquee2__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-marquee2__head { display: flex; flex-direction: column; align-items: center; }
 .ek-marquee2__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-marquee2__strip { position: relative; width: 100%; overflow: hidden; display: flex; flex-direction: column; gap: var(--spacing-m); }
@@ -804,16 +801,14 @@
 
 /* Marquee Logo Strip — centered intro over a continuously scrolling row of brand logos
    (muted to one tint, split by thin dividers). Pure-CSS infinite marquee. */
-.ek-marquee1 {
-  display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xxl);
-  background: var(--color-fill-plain-surface-base); padding: var(--spacing-5xl) 0;
-}
-.ek-marquee1__text { max-width: calc(600px + 2 * var(--spacing-l)); margin: 0 auto; padding: 0 var(--spacing-l); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-marquee1 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
+.ek-marquee1__text { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-marquee1__head { display: flex; flex-direction: column; align-items: center; }
-.ek-marquee1__text .ek-btn { margin-top: var(--spacing-xs); }
+.ek-marquee1__text .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-marquee1__strip { overflow: hidden; width: 100%; }
-.ek-marquee1__lane { display: flex; gap: var(--spacing-xxl); width: max-content; }
-.ek-marquee1__group { display: flex; align-items: center; gap: var(--spacing-xxl); flex-shrink: 0; --marquee-gap: var(--spacing-xxl); --ek-marquee-pitch: 249.5; /* logo 168 + divider 1.5 + two gaps of 40 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+/* Logo spacing 48 (Figma, unbound). */
+.ek-marquee1__lane { display: flex; gap: 48px; width: max-content; }
+.ek-marquee1__group { display: flex; align-items: center; gap: 48px; flex-shrink: 0; --marquee-gap: 48px; --ek-marquee-pitch: 265.5; /* logo 168 + divider 1.5 + two gaps of 48 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
 .ek-marquee1__logo { flex: 0 0 auto; width: 168px; height: 72px; }
 .ek-marquee1__divider { flex: 0 0 auto; width: var(--border-width-default); align-self: stretch; background: var(--color-stroke-plain-shape-standard-m); }
 
@@ -920,21 +915,35 @@
   .ek-explain6 { padding: var(--spacing-5xl) var(--spacing-l); border-radius: var(--radius-standard); }
   .ek-explain6__card { flex-direction: column; gap: var(--spacing-xxl); padding: var(--spacing-l); border-radius: var(--radius-standard); }
   .ek-explain6__media { width: 100%; aspect-ratio: auto; min-height: 192px; }
-  /* Hero Image Slider — text spans the full width */
-  .ek-hero { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); } /* Figma mobile: hugs its content */
-  .ek-hero__row--text { grid-template-columns: 1fr; }
+  /* Hero Image Slider — inset by a 16 frame; the arrows share the button's row (bottom-right) */
+  .ek-hero-frame { padding: var(--spacing-m); background: var(--color-fill-plain-surface-base); }
+  .ek-hero { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); border-radius: var(--radius-standard); }
+  .ek-hero__textcol { grid-area: 1 / 1; }
+  .ek-hero__navcol { grid-area: 1 / 1; align-self: end; justify-self: end; }
   /* Hero Split Columns — stack the two columns (heading first, then paragraph + CTA) */
-  .ek-hero2 { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); } /* Figma mobile: hugs its content */
-  .ek-hero2__row { flex-direction: column; align-items: stretch; gap: var(--spacing-xxl); }
-  .ek-hero2__heading-group { flex: none; }
-  .ek-hero2__aside { flex: none; max-width: none; padding-top: 0; }
-  /* Hero Marquee Gallery — tighter padding, smaller images, tabs span the width */
-  .ek-hero3 { padding: var(--spacing-xl) 0; gap: var(--spacing-xxl); }
-  .ek-hero3__img { width: 200px; height: 200px; }
+  .ek-hero2 { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); row-gap: var(--spacing-xxl); }
+  .ek-hero2__headcol { padding-bottom: 0; }
+  .ek-hero2__asidecol { align-items: stretch; }
+  .ek-hero2__aside { max-width: none; }
+  /* Hero Marquee Gallery — tighter padding, smaller square-cornered images, tabs span the width */
+  .ek-hero3 { padding-bottom: var(--spacing-xl); gap: var(--spacing-xxl); }
+  .ek-hero3 .ek-sec-intro { padding: var(--spacing-xl) var(--spacing-l) 0; }
+  .ek-hero3 .ek-sec-strip { padding: 0; }
+  .ek-hero3__intro { max-width: 640px; }
+  .ek-hero3__img { width: 200px; height: 200px; border-radius: 0; }
   .ek-hero3__img--tall { width: 280px; height: 350px; }
   .ek-hero3__group { --ek-marquee-pitch: 256; } /* avg of 200 / 280 + gap 16 */
   .ek-hero3__tabs { width: calc(100% - 2 * var(--spacing-l)); }
-  /* Marquee Logo Tiles — narrower edge fades (padding and gap follow the mobile spacing tokens) */
+  /* Marquee Logo Strip — 40 between logos on mobile */
+  .ek-marquee1 .ek-sec-intro { padding: var(--spacing-5xl) var(--spacing-l) 0; }
+  .ek-marquee1 .ek-sec-strip { padding: var(--spacing-xxl) 0 var(--spacing-5xl); }
+  .ek-marquee1__text { max-width: 600px; }
+  .ek-marquee1__lane { gap: var(--spacing-xxl); }
+  .ek-marquee1__group { gap: var(--spacing-xxl); --marquee-gap: var(--spacing-xxl); --ek-marquee-pitch: 249.5; } /* logo 168 + divider 1.5 + two gaps of 40 */
+  /* Marquee Logo Tiles — narrower edge fades */
+  .ek-marquee2 .ek-sec-intro { padding: var(--spacing-6xl) var(--spacing-l) 0; }
+  .ek-marquee2 .ek-sec-strip { padding: var(--spacing-xxl) 0 var(--spacing-6xl); }
+  .ek-marquee2__intro { max-width: 640px; }
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
   /* Values & Features Icon Grid — the four cards stack; the actions stack too */
   .ek-values1 { gap: 64px; } /* Figma: 64 (unbound) on mobile too */

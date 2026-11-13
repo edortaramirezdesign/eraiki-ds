@@ -526,17 +526,18 @@
         'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.',
         'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.',
         'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.',
-      ].map(body => `<div class="ek-values1__card">
+      ].map(body => `<div class="ek-container__col" style="--ek-span:3"><div class="ek-values1__card">
         <span class="ek-textgroup__icon">${EK_ICONS.info}</span>
         <h3 class="ek-textgroup__title">Lorem ipsum</h3>
         <p class="ek-textgroup__body">${body}</p>
-      </div>`).join('');
+      </div></div>`).join('');
       const intro = `<div class="ek-values1__intro">
-        <div class="ek-values1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
-        <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum.</p>
+        <div class="ek-values1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l"><span class="ek-hide-mobile">Lorem ipsum dolor sit amet consecte</span><span class="ek-hide-desktop">Nam a bibendum nunc eget tincidunt eros</span></h2></div>
+        <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
-      return `<div class="ek-values1">${intro}<div class="ek-values1__boxes">${cards}</div></div>`;
+      // Two Containers: 100% (intro) over 25% × 4 (cards, M gutter).
+      return `<div class="ek-values1"><div class="ek-container ek-values1__top"><div class="ek-container__col" style="--ek-span:12">${intro}</div></div><div class="ek-container ek-values1__boxes">${cards}</div></div>`;
     },
     // Values & Features Highlight List — heading + a vertical feature list on the left (first
     // item highlighted, with body copy; the rest are title-only rows) next to a
@@ -551,12 +552,13 @@
         <span class="ek-values2__icon">${EK_ICONS.info}</span>
         <span class="ek-values2__text"><span class="ek-textgroup__title">${it.t}</span><span class="ek-values2__body"><span class="ek-values2__body-inner"><span class="ek-textgroup__body ek-body-m">${it.b}</span></span></span></span>
       </button>`).join('');
-      return `<div class="ek-values2"><div class="ek-values2__inner"><div class="ek-values2__row">
+      // Container 100% with no margin; its column carries the 4XL inset around the row.
+      return `<div class="ek-container ek-values2"><div class="ek-container__col ek-values2__inner" style="--ek-span:12"><div class="ek-values2__row">
         <div class="ek-values2__col">
-          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div>
+          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l"><span class="ek-hide-mobile">Lorem ipsum dolor sit amet, consecte adipiscing</span><span class="ek-hide-desktop">Nam a bibendum nunc eget tincidunt eros</span></h2></div></div>
           <div class="ek-values2__list">${feats}</div>
         </div>
-        <div class="ek-values2__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div>
+        <div class="ek-values2__mediacol"><div class="ek-values2__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
       </div></div></div>`;
     },
     // Values & Features Numbered List — a heading, then an image beside a numbered list.
@@ -566,29 +568,31 @@
         <div class="ek-values3__label"><span class="ek-values3__num ek-label-m">${n}.</span><span class="ek-values3__title ek-body-l ek-strong">Lorem ipsum dolor</span></div>
         <p class="ek-values3__desc ek-body-m">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.</p>
       </div>`).join('');
-      return `<div class="ek-values3"><div class="ek-values3__inner">
-        <div class="ek-values3__head"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div>
-        <div class="ek-values3__row">
-          <div class="ek-values3__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div>
-          <div class="ek-values3__list">${items}</div>
+      // Two Containers: 100% (heading) over 50% + 50% (image + list).
+      return `<div class="ek-values3">
+        <div class="ek-container ek-values3__top"><div class="ek-container__col" style="--ek-span:12"><div class="ek-values3__head"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div></div></div>
+        <div class="ek-container ek-values3__row">
+          <div class="ek-container__col" style="--ek-span:6"><div class="ek-values3__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
+          <div class="ek-container__col ek-values3__listcol" style="--ek-span:6"><div class="ek-values3__list">${items}</div></div>
         </div>
-      </div></div>`;
+      </div>`;
     },
     // Values & Features Staggered Cards — a centered intro over three staggered cards, each a
     // heading, an abstract illustration (exported from Figma) and a line of copy.
     'values-staggered-cards': () => {
       const body = 'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.';
-      const cards = [1, 2, 3].map(n => `<div class="ek-values4__card">
+      const cards = [1, 2, 3].map(n => `<div class="ek-container__col ek-values4__col" style="--ek-span:4"><div class="ek-values4__card">
         <h3 class="ek-textgroup__title">Lorem ipsum</h3>
         <div class="ek-values4__illus"><img src="assets/sections/values-004-illus-${n}.svg" alt=""></div>
         <p class="ek-textgroup__body">${body}</p>
-      </div>`).join('');
+      </div></div>`).join('');
       const intro = `<div class="ek-values4__intro">
-        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
+        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l"><span class="ek-hide-mobile">Lorem ipsum dolor sit amet consecte</span><span class="ek-hide-desktop">Nam a bibendum nunc eget tincidunt eros</span></h2></div>
         <p class="ek-textgroup__body">${body}</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
-      return `<div class="ek-values4">${intro}<div class="ek-values4__grid">${cards}</div></div>`;
+      // Two Containers: 100% (intro) over 33% × 3 (cards, stepped down XXL / 5XL).
+      return `<div class="ek-values4"><div class="ek-container ek-values4__top"><div class="ek-container__col" style="--ek-span:12">${intro}</div></div><div class="ek-container ek-values4__grid">${cards}</div></div>`;
     },
     // Explanation Dark Card — dark (complementary) card over a full-bleed background image.
     // Left column: heading (top) + body & primary button (bottom); right: an image.

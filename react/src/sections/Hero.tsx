@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { cx } from '../cx';
 import { Button } from '../Button';
-import { Head, Body, Primary, Actions, scrim, type SectionActions } from './parts';
+import { Head, Body, Primary, Actions, Col, scrim, type SectionActions } from './parts';
 import { sectionImages } from './images';
 
 export interface HeroImageSliderProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
@@ -20,27 +20,26 @@ export interface HeroImageSliderProps extends Pick<SectionActions, 'primaryActio
   className?: string;
 }
 
-/** Hero Image Slider — full-bleed image hero; text lower-left, primary action + prev/next arrows along the base. */
+/** Hero Image Slider — Container 50% + 50% over a full-bleed image: text + primary action lower-left, prev/next arrows lower-right. */
 export function HeroImageSlider({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, showNav = true, onPrevious, onNext, className }: HeroImageSliderProps) {
   return (
     <div className={cx('ek-hero-frame', className)}>
-    <div className="ek-hero theme-dark" style={scrim(image)}>
-      <div className="ek-hero__row--text">
-        <div className="ek-textgroup ek-hero__text"><div className="ek-textgroup__top">
-          <Head label={label} title={title} size="xl" />
-          <Body>{children}</Body>
-        </div></div>
-      </div>
-      <div className="ek-hero__actions">
-        {primaryAction ? <Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} /> : <span />}
-        {showNav && (
-          <div className="ek-hero__nav">
-            <Button variant="secondary" icon="chevronLeft" aria-label="Previous" onClick={onPrevious} />
-            <Button variant="secondary" icon="chevronRight" aria-label="Next" onClick={onNext} />
+      <div className="ek-container ek-hero theme-dark" style={scrim(image)}>
+        <Col span={6} className="ek-hero__textcol">
+          <div className="ek-textgroup ek-hero__text">
+            <div className="ek-textgroup__top"><Head label={label} title={title} size="xl" /><Body>{children}</Body></div>
+            <Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} />
           </div>
-        )}
+        </Col>
+        <Col span={6} className="ek-hero__navcol">
+          {showNav && (
+            <div className="ek-hero__nav">
+              <Button variant="secondary" icon="chevronLeft" aria-label="Previous" onClick={onPrevious} />
+              <Button variant="secondary" icon="chevronRight" aria-label="Next" onClick={onNext} />
+            </div>
+          )}
+        </Col>
       </div>
-    </div>
     </div>
   );
 }
@@ -56,20 +55,22 @@ export interface HeroSplitColumnsProps extends Pick<SectionActions, 'primaryActi
   className?: string;
 }
 
-/** Hero Split Columns — full-screen image; headline bottom-left, paragraph + primary action in a column on the right. */
+/** Hero Split Columns — Container 50% + 50% over a full-screen image; headline bottom-left, paragraph + primary action bottom-right (max 480). */
 export function HeroSplitColumns({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, className }: HeroSplitColumnsProps) {
   return (
-    <div className={cx('ek-hero2 theme-dark', className)} style={scrim(image)}>
-      <div className="ek-hero2__row">
+    <div className={cx('ek-container ek-hero2 theme-dark', className)} style={scrim(image)}>
+      <Col span={6} className="ek-hero2__headcol">
         <div className="ek-hero2__heading-group">
           {label && <div className="ek-textgroup__eyebrow">{label}</div>}
           {title && <h2 className="ek-textgroup__title ek-heading-xl">{title}</h2>}
         </div>
+      </Col>
+      <Col span={6} className="ek-hero2__asidecol">
         <div className="ek-hero2__aside">
           <Body>{children}</Body>
           <Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} />
         </div>
-      </div>
+      </Col>
     </div>
   );
 }
@@ -83,18 +84,18 @@ export interface GalleryTab {
 
 const g = sectionImages.gallery;
 const DEFAULT_GALLERY_TABS: GalleryTab[] = [
-  { label: 'Comprar', images: [g[1], g[0], g[2], g[3], g[4], g[0]] },
+  { label: 'Comprar', images: [g[1], g[0], g[2], g[3], g[4], g[0], g[2], g[3]] },
   { label: 'Vender', images: [g[2], g[3], g[4], g[0], g[1], g[3]] },
   { label: 'Alquilar', images: [g[4], g[0], g[1], g[3], g[2], g[0]] },
 ];
 
 export interface HeroMarqueeGalleryProps extends SectionActions {
   label?: ReactNode;
-  /** Headline (heading XL), centered. */
+  /** Headline (heading L on desktop, XL on mobile), centered. */
   title?: ReactNode;
   /** Centered intro paragraph. */
   children?: ReactNode;
-  /** Progress tabs; each one swaps the images of the scrolling row. */
+  /** Progress tabs (shown on mobile only, as in Figma); each one swaps the images of the scrolling row. */
   tabs?: GalleryTab[];
   /** Index of the tab active initially (uncontrolled). */
   defaultActive?: number;
@@ -108,7 +109,7 @@ export interface HeroMarqueeGalleryProps extends SectionActions {
   className?: string;
 }
 
-/** Hero Marquee Gallery — centered intro over a full-bleed scrolling row of mixed-size images, switched by progress tabs. */
+/** Hero Marquee Gallery — two Containers 100%: centered intro over a full-bleed scrolling row of mixed-size images (switched by progress tabs on mobile). */
 export function HeroMarqueeGallery({ label, title, children, primaryAction, onPrimaryAction, secondaryAction, onSecondaryAction, tabs = DEFAULT_GALLERY_TABS, defaultActive = 0, active, onActiveChange, interval = 6, autoAdvance = true, className }: HeroMarqueeGalleryProps) {
   const [inner, setInner] = useState(defaultActive);
   const current = Math.min(active ?? inner, Math.max(tabs.length - 1, 0));
@@ -121,14 +122,18 @@ export function HeroMarqueeGallery({ label, title, children, primaryAction, onPr
   );
   return (
     <div className={cx('ek-hero3', className)} style={{ ['--ek-hero3-duration' as string]: `${interval}s` }}>
-      <div className="ek-hero3__intro">
-        <Head label={label} title={title} size="xl" className="ek-hero3__head" />
-        <Body>{children}</Body>
-        <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
-      </div>
-      <div className="ek-hero3__strip"><div key={current} className="ek-hero3__lane">{group}{group}</div></div>
+      <div className="ek-container ek-sec-intro"><Col span={12}>
+        <div className="ek-hero3__intro">
+          <Head label={label} title={title} size="l" mobileSize="xl" className="ek-hero3__head" />
+          <Body>{children}</Body>
+          <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
+        </div>
+      </Col></div>
+      <div className="ek-container ek-sec-strip"><Col span={12}>
+        <div className="ek-hero3__strip"><div key={current} className="ek-hero3__lane">{group}{group}</div></div>
+      </Col></div>
       {tabs.length > 0 && (
-        <div className="ek-hero3__tabs" role="tablist">
+        <div className="ek-hero3__tabs ek-hide-desktop" role="tablist">
           {tabs.map((t, i) => (
             <button key={i} type="button" role="tab" aria-selected={i === current} className={cx('ek-hero3__tab', i === current && 'is-active')} onClick={() => select(i)}>
               <span className="ek-hero3__tab-label">{t.label}</span>

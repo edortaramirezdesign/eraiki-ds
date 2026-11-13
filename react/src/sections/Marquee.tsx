@@ -1,11 +1,11 @@
 import { Fragment, type ReactNode } from 'react';
 import { cx } from '../cx';
-import { Head, Body, Primary, Actions, type SectionActions } from './parts';
+import { Head, Body, Actions, Col, type SectionActions } from './parts';
 import { sectionImages } from './images';
 
-export interface MarqueeLogoStripProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
+export interface MarqueeLogoStripProps extends SectionActions {
   label?: ReactNode;
-  /** Heading (heading M), centered. */
+  /** Heading (heading L), centered. */
   title?: ReactNode;
   /** Centered intro paragraph. */
   children?: ReactNode;
@@ -14,8 +14,8 @@ export interface MarqueeLogoStripProps extends Pick<SectionActions, 'primaryActi
   className?: string;
 }
 
-/** Marquee Logo Strip — centered intro + a continuously scrolling strip of brand logos split by thin dividers. */
-export function MarqueeLogoStrip({ label, title, children, primaryAction, onPrimaryAction, logos = sectionImages.logos, className }: MarqueeLogoStripProps) {
+/** Marquee Logo Strip — two Containers 100%: centered intro + a continuously scrolling strip of brand logos split by thin dividers. */
+export function MarqueeLogoStrip({ label, title, children, primaryAction, onPrimaryAction, secondaryAction, onSecondaryAction, logos = sectionImages.logos, className }: MarqueeLogoStripProps) {
   const group = (
     <div className="ek-marquee1__group" style={{ ['--ek-marquee-items' as string]: logos.length }}>
       {logos.map((src, i) => (
@@ -28,19 +28,23 @@ export function MarqueeLogoStrip({ label, title, children, primaryAction, onPrim
   );
   return (
     <div className={cx('ek-marquee1', className)}>
-      <div className="ek-marquee1__text">
-        <Head label={label} title={title} size="l" className="ek-marquee1__head" />
-        <Body>{children}</Body>
-        <Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} />
-      </div>
-      <div className="ek-marquee1__strip"><div className="ek-marquee1__lane">{group}{group}</div></div>
+      <div className="ek-container ek-sec-intro"><Col span={12}>
+        <div className="ek-marquee1__text">
+          <Head label={label} title={title} size="l" className="ek-marquee1__head" />
+          <Body>{children}</Body>
+          <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
+        </div>
+      </Col></div>
+      <div className="ek-container ek-sec-strip"><Col span={12}>
+        <div className="ek-marquee1__strip"><div className="ek-marquee1__lane">{group}{group}</div></div>
+      </Col></div>
     </div>
   );
 }
 
 export interface MarqueeLogoTilesProps extends SectionActions {
   label?: ReactNode;
-  /** Heading (heading XL), centered. */
+  /** Heading (heading L), centered. */
   title?: ReactNode;
   /** Centered intro paragraph. */
   children?: ReactNode;
@@ -52,15 +56,18 @@ export interface MarqueeLogoTilesProps extends SectionActions {
   className?: string;
 }
 
-/** Marquee Logo Tiles — centered intro + two rows of logo tiles scrolling in opposite directions, faded at the edges. */
+/** Marquee Logo Tiles — two Containers 100%: centered intro + two rows of logo tiles scrolling in opposite directions, faded at the edges. */
 export function MarqueeLogoTiles({ label, title, children, primaryAction, onPrimaryAction, secondaryAction, onSecondaryAction, rows = sectionImages.logoTiles, className }: MarqueeLogoTilesProps) {
   return (
     <div className={cx('ek-marquee2', className)}>
-      <div className="ek-marquee2__intro">
-        <Head label={label} title={title} size="l" className="ek-marquee2__head" />
-        <Body>{children}</Body>
-        <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
-      </div>
+      <div className="ek-container ek-sec-intro"><Col span={12}>
+        <div className="ek-marquee2__intro">
+          <Head label={label} title={title} size="l" className="ek-marquee2__head" />
+          <Body>{children}</Body>
+          <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
+        </div>
+      </Col></div>
+      <div className="ek-container ek-sec-strip"><Col span={12}>
       <div className="ek-marquee2__strip">
         {rows.map((logos, r) => {
           const group = (
@@ -71,6 +78,7 @@ export function MarqueeLogoTiles({ label, title, children, primaryAction, onPrim
           return <div key={r} className={cx('ek-marquee2__lane', r === 1 && 'ek-marquee2__lane--reverse')}>{group}{group}</div>;
         })}
       </div>
+      </Col></div>
     </div>
   );
 }

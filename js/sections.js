@@ -421,71 +421,79 @@
       // Header on Container 100%; the image row stays an infinite marquee (full bleed).
       return `<div class="ek-explain5"><div class="ek-container ek-explain5__contained"><div class="ek-container__col" style="--ek-span:12">${text}</div></div><div class="ek-explain5__fluid"><div class="ek-explain5__marquee">${group}${group}</div></div></div>`;
     },
-    // Hero Image Slider — full-bleed image hero (dark scrim), content anchored bottom:
-    // text (lower-left) + actions (primary button and prev/next arrows). Light text.
-    'hero-image-slider': () => `<div class="ek-hero-frame"><div class="ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
-      <div class="ek-hero__row--text">
+    // Hero Image Slider — Container 50% + 50% over a full-bleed image (dark scrim), in Dark
+    // mode: text group with primary button (bottom-left) + prev/next arrows (bottom-right).
+    // The frame is only a mobile inset (16) — desktop runs edge to edge.
+    'hero-image-slider': () => `<div class="ek-hero-frame"><div class="ek-container ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
+      <div class="ek-container__col ek-hero__textcol" style="--ek-span:6">
         <div class="ek-textgroup ek-hero__text"><div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
           <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
-        </div></div>
+        </div>
+        <button class="ek-btn ek-btn--primary"><span class="ek-hide-mobile">Lorem ipsum</span><span class="ek-hide-desktop">Mauris id lectus</span></button></div>
       </div>
-      <div class="ek-hero__actions">
-        <button class="ek-btn ek-btn--primary">Mauris id lectus</button>
+      <div class="ek-container__col ek-hero__navcol" style="--ek-span:6">
         <div class="ek-hero__nav">
           <button class="ek-btn ek-btn--secondary ek-btn--icon" aria-label="Previous">${EK_ICONS.chevronLeft}</button>
           <button class="ek-btn ek-btn--secondary ek-btn--icon" aria-label="Next">${EK_ICONS.chevronRight}</button>
         </div>
       </div>
     </div></div>`,
-    // Hero Split Columns — full-screen image (dark scrim); two text columns anchored bottom:
-    // heading (left) + paragraph & primary button (right). Light text.
-    'hero-split-columns': () => `<div class="ek-hero2 theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
-      <div class="ek-hero2__row">
+    // Hero Split Columns — Container 50% + 50% over a full-bleed image (dark scrim), in Dark
+    // mode: heading (bottom-left, 3XL above the bottom) + paragraph & primary button (bottom-right, 480 wide).
+    'hero-split-columns': () => `<div class="ek-container ek-hero2 theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
+      <div class="ek-container__col ek-hero2__headcol" style="--ek-span:6">
         <div class="ek-hero2__heading-group">
           <div class="ek-textgroup__eyebrow">Lorem ipsum</div>
-          <h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2>
+          <h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing<span class="ek-hide-desktop"> elit</span></h2>
         </div>
+      </div>
+      <div class="ek-container__col ek-hero2__asidecol" style="--ek-span:6">
         <div class="ek-hero2__aside">
           <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
           <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
         </div>
       </div>
     </div>`,
-    // Hero Marquee Gallery — centered intro (eyebrow, heading XL, body, primary + secondary)
-    // over a full-bleed, continuously scrolling row of images in alternating sizes
-    // (square / tall), then progress tabs. The active tab's bar fills on a loop.
+    // Hero Marquee Gallery — two Containers 100%: centered intro (eyebrow, heading L, body,
+    // primary + secondary) over a full-bleed, continuously scrolling row of images in
+    // alternating sizes (square / tall). Mobile adds progress tabs (the active bar fills on a loop).
     'hero-marquee-gallery': () => {
-      const order = [2, 1, 3, 4, 5, 1];
+      const order = [2, 1, 3, 4, 5, 1, 3, 4];
       const imgs = order.map((n, i) => `<img class="ek-hero3__img${i % 2 ? ' ek-hero3__img--tall' : ''}" src="assets/sections/hero-marquee-gallery-${n}.jpg" alt="" loading="lazy">`).join('');
       const group = `<div class="ek-hero3__group" style="--ek-marquee-items:${order.length}">${imgs}</div>`;
       const tabs = ['Comprar', 'Vender', 'Alquilar'].map((t, i) => `<button type="button" role="tab" aria-selected="${i === 0}" class="ek-hero3__tab${i === 0 ? ' is-active' : ''}"><span class="ek-hero3__tab-label">${t}</span><span class="ek-hero3__track"><span class="ek-hero3__progress"></span></span></button>`).join('');
       return `<div class="ek-hero3">
-        <div class="ek-hero3__intro">
-          <div class="ek-hero3__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet consecte</h2></div>
-          <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
-          <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
-        </div>
-        <div class="ek-hero3__strip"><div class="ek-hero3__lane">${group}${group}</div></div>
-        <div class="ek-hero3__tabs" role="tablist">${tabs}</div>
+        <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
+          <div class="ek-hero3__intro">
+            <div class="ek-hero3__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-xl">Lorem ipsum dolor sit amet consecte</h2></div>
+            <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
+            <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
+          </div>
+        </div></div>
+        <div class="ek-container ek-sec-strip"><div class="ek-container__col" style="--ek-span:12">
+          <div class="ek-hero3__strip"><div class="ek-hero3__lane">${group}${group}</div></div>
+        </div></div>
+        <div class="ek-hero3__tabs ek-hide-desktop" role="tablist">${tabs}</div>
       </div>`;
     },
-    // Marquee Logo Strip — centered intro + a continuously scrolling row of brand logos
-    // (exported from Figma as SVG, muted to one tint) split by dividers.
+    // Marquee Logo Strip — two Containers 100%: centered intro (eyebrow, heading L, body,
+    // primary + secondary) over a continuously scrolling row of brand logos (exported from
+    // Figma as SVG, muted to one tint) split by dividers. Mobile: shorter heading, one button.
     'marquee-logo-strip': () => {
       const logos = [1, 2, 3, 4, 5, 6, 7, 8];
       const items = logos.map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
       const grp = `<div class="ek-marquee1__group" style="--ek-marquee-items:${logos.length}">${items}</div>`;
       const text = `<div class="ek-marquee1__text">
-        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet</h2></div>
+        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet<span class="ek-hide-mobile"> consecte</span></h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
-        <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
+        <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary ek-hide-mobile">Lorem ipsum</button></div>
       </div>`;
-      return `<div class="ek-marquee1">${text}<div class="ek-marquee1__strip"><div class="ek-marquee1__lane">${grp}${grp}</div></div></div>`;
+      return `<div class="ek-marquee1"><div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">${text}</div></div><div class="ek-container ek-sec-strip"><div class="ek-container__col" style="--ek-span:12"><div class="ek-marquee1__strip"><div class="ek-marquee1__lane">${grp}${grp}</div></div></div></div></div>`;
     },
-    // Marquee Logo Tiles — centered intro (eyebrow, heading XL, body, primary + secondary)
-    // over two rows of square logo tiles that scroll in opposite directions and fade
-    // out at both edges. Logos are the Figma shapes, kept in their own colours.
+    // Marquee Logo Tiles — two Containers 100%: centered intro (eyebrow, heading L, body,
+    // primary + secondary) over two rows of square logo tiles that scroll in opposite
+    // directions and fade out at both edges. Logos are the Figma shapes, in their own colours.
     'marquee-logo-tiles': () => {
       const rows = [
         Array.from({ length: 19 }, (_, i) => i + 1),
@@ -497,12 +505,16 @@
         return `<div class="ek-marquee2__lane${i ? ' ek-marquee2__lane--reverse' : ''}">${grp}${grp}</div>`;
       };
       return `<div class="ek-marquee2">
-        <div class="ek-marquee2__intro">
-          <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
-          <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
-          <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
-        </div>
-        <div class="ek-marquee2__strip">${rows.map(row).join('')}</div>
+        <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
+          <div class="ek-marquee2__intro">
+            <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet<span class="ek-hide-desktop">,</span> consecte<span class="ek-hide-desktop"> adipiscing elit</span></h2></div>
+            <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
+            <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
+          </div>
+        </div></div>
+        <div class="ek-container ek-sec-strip"><div class="ek-container__col" style="--ek-span:12">
+          <div class="ek-marquee2__strip">${rows.map(row).join('')}</div>
+        </div></div>
       </div>`;
     },
     // Values & Features Icon Grid — a centered intro (eyebrow, heading, body, primary +

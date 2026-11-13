@@ -3,7 +3,7 @@ import { cx } from '../cx';
 import { Button } from '../Button';
 import { TextField } from '../TextField';
 import { TextArea } from '../TextArea';
-import { Head, Body } from './parts';
+import { Head, Body, Col } from './parts';
 
 export interface ContactField {
   /** Uppercase label (ends with a colon by convention, e.g. "Email:"). */
@@ -56,5 +56,6 @@ export function ContactSplitForm({ label, title, children, fields = DEFAULT_FIEL
       <div><Button type="submit">{submitLabel}</Button></div>
     </form>
   );
-  return <div className={cx('ek-contact', className)}>{order === 'form-text' ? <>{form}{text}</> : <>{text}{form}</>}</div>;
+  // Built on Container 50% + 50%.
+  return <div className={cx('ek-container ek-contact', className)}>{(order === 'form-text' ? [form, text] : [text, form]).map((c, i) => <Col key={i} span={6}>{c}</Col>)}</div>;
 }

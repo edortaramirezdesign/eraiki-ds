@@ -351,14 +351,16 @@
           </div>
         </div>`;
       const form = `<form class="ek-contact__form" onsubmit="return false">${field()}${field()}${field()}${textarea()}<div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></form>`;
-      return `<div class="ek-contact">${kind === 'form-text' ? form + text : text + form}</div>`;
+      const cols = kind === 'form-text' ? [form, text] : [text, form];
+      return `<div class="ek-container ek-contact">${cols.map((c) => `<div class="ek-container__col" style="--ek-span:6">${c}</div>`).join('')}</div>`;
     },
     // Explanation Banner Card — full-bleed image banner with a contained Text group card
     // (icon and secondary/tertiary buttons hidden in Figma → single primary button).
-    'explanation-banner-card': () => `<div class="ek-explain" style="background-image:url('assets/sections/explanation-003-img.jpg')"><div class="ek-textgroup ek-textgroup--contained"><div class="ek-textgroup__top">
+    // Built on Container (100%) in Figma's Dark mode, so the card is the dark surface.
+    'explanation-banner-card': () => `<div class="ek-container ek-explain theme-dark" style="background-image:url('assets/sections/explanation-003-img.jpg')"><div class="ek-container__col" style="--ek-span:12"><div class="ek-textgroup ek-textgroup--contained"><div class="ek-textgroup__top">
       <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h3 class="ek-textgroup__title">Nam a bibendum nunc eget tincidunt eros</h3></div>
       <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
-    </div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></div>`,
+    </div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></div></div>`,
     // Explanation Split Media — two columns: Text group (eyebrow, large heading, body,
     // primary + secondary buttons) and a supporting image. kind: 'text-image'
     // (text left) or 'image-text' (image left).
@@ -370,21 +372,26 @@
         </div>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
-      const media = `<div class="ek-explain2__media"><img src="assets/sections/explanation-002-img.jpg" alt="" loading="lazy"></div>`;
-      return `<div class="ek-explain2">${kind === 'image-text' ? media + text : text + media}</div>`;
+      const media = `<img src="assets/sections/explanation-002-img.jpg" alt="" loading="lazy">`;
+      // Container 8% + 42% + 42% + 8%: the outer 8% columns stay empty (inset).
+      const [a, b] = kind === 'image-text' ? [media, text] : [text, media];
+      const col = (c, cls) => `<div class="ek-container__col ${cls}" style="--ek-span:5">${c}</div>`;
+      return `<div class="ek-container ek-explain2"><div class="ek-container__col ek-explain2__spacer" style="--ek-span:1"></div>${col(a, a === media ? 'ek-explain2__media' : 'ek-explain2__textcol')}${col(b, b === media ? 'ek-explain2__media' : 'ek-explain2__textcol')}<div class="ek-container__col ek-explain2__spacer" style="--ek-span:1"></div></div>`;
     },
     // Explanation Twin Cards — two equal cards side by side: a text card + an image card.
     // kind: 'text-image' (text left) or 'image-text' (image left).
     'explanation-twin-cards': (kind) => {
-      const text = `<div class="ek-explain3__text"><div class="ek-textgroup">
+      const text = `<div class="ek-container__col ek-explain3__text" style="--ek-span:6"><div class="ek-textgroup">
         <div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
           <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
         </div>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div></div>`;
-      const media = `<div class="ek-explain3__media" style="background-image:url('assets/sections/explanation-003-img.jpg')"></div>`;
-      return `<div class="ek-explain3">${kind === 'image-text' ? media + text : text + media}</div>`;
+      const media = `<div class="ek-container__col ek-explain3__media" style="--ek-span:6;background-image:url('assets/sections/explanation-003-img.jpg')"></div>`;
+      // Container 50% + 50% with no margin and no gutter: both halves run edge to edge.
+      const cols = kind === 'image-text' ? [media, text] : [text, media];
+      return `<div class="ek-container ek-explain3">${cols.join('')}</div>`;
     },
     // Explanation Triple Panel — header (eyebrow + heading only) over a row of three equal
     // panels: two images and a text card (eyebrow, heading, body, primary button).
@@ -398,7 +405,9 @@
         </div>
         <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
       </div></div>`;
-      return `<div class="ek-explain4">${head}<div class="ek-explain4__block">${img(1)}${img(2)}${card}</div></div>`;
+      // Two Containers: 100% (header) over 33% + 33% + 33% (panels).
+      const col = (c, span) => `<div class="ek-container__col" style="--ek-span:${span}">${c}</div>`;
+      return `<div class="ek-explain4"><div class="ek-container ek-explain4__top">${col(head, 12)}</div><div class="ek-container ek-explain4__block">${col(img(1), 4)}${col(img(2), 4)}${col(card, 4)}</div></div>`;
     },
     // Explanation Image Marquee — contained text intro (left half) over a full-bleed row of
     // images (four on desktop, two on mobile). No button.
@@ -409,7 +418,8 @@
       </div></div>`;
       const img = `<div class="ek-explain5__img" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div>`;
       const group = `<div class="ek-explain5__mgroup" style="--ek-marquee-items:6">${img.repeat(6)}</div>`;
-      return `<div class="ek-explain5"><div class="ek-explain5__contained">${text}</div><div class="ek-explain5__fluid"><div class="ek-explain5__marquee">${group}${group}</div></div></div>`;
+      // Header on Container 100%; the image row stays an infinite marquee (full bleed).
+      return `<div class="ek-explain5"><div class="ek-container ek-explain5__contained"><div class="ek-container__col" style="--ek-span:12">${text}</div></div><div class="ek-explain5__fluid"><div class="ek-explain5__marquee">${group}${group}</div></div></div>`;
     },
     // Hero Image Slider — full-bleed image hero (dark scrim), content anchored bottom:
     // text (lower-left) + actions (primary button and prev/next arrows). Light text.
@@ -570,13 +580,20 @@
     },
     // Explanation Dark Card — dark (complementary) card over a full-bleed background image.
     // Left column: heading (top) + body & primary button (bottom); right: an image.
-    'explanation-dark-card': () => `<div class="ek-explain6" style="background-image:url('assets/sections/explanation-006-bg.jpg')">
-      <div class="ek-explain6__card theme-dark">
+    // Built on Container (100%) in Figma's Dark mode: the column is the dark card, holding a
+    // Text group (eyebrow, heading, body, primary button) and a square image.
+    'explanation-dark-card': () => `<div class="ek-container ek-explain6 theme-dark" style="background-image:url('assets/sections/explanation-006-bg.jpg')">
+      <div class="ek-container__col ek-explain6__card" style="--ek-span:12">
         <div class="ek-explain6__col">
-          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div>
-          <div class="ek-explain6__foot"><p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div>
+          <div class="ek-textgroup ek-explain6__text">
+            <div class="ek-textgroup__top">
+              <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div>
+              <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
+            </div>
+            <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
+          </div>
         </div>
-        <div class="ek-explain6__media" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div>
+        <div class="ek-explain6__mediacol"><div class="ek-explain6__media" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div></div>
       </div>
     </div>`,
   };

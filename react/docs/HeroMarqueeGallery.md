@@ -1,31 +1,31 @@
 ---
 category: Marketing sections
-keywords: ["hero", "image gallery", "marquee", "tabs", "progress tabs", "centered intro", "full-bleed", "above the fold", "cta", "categories"]
+keywords: ["hero", "image gallery", "marquee", "auto-scroll", "centered intro", "full-bleed", "above the fold", "cta", "editorial", "carousel"]
 ---
 
-A centered intro over a full-bleed image marquee switched by progress tabs.
+A centered intro over a full-bleed, auto-scrolling image marquee.
 
-Hero Marquee Gallery opens a page with a centered intro — an eyebrow, a large title, a short paragraph and two actions — above a full-bleed row of images in alternating sizes that runs past both edges. Below it, a set of tabs with a progress bar switches the gallery between topics (for example Buy, Sell and Rent), moving to the next one as each bar fills.
+Hero Marquee Gallery opens a page with a centered intro — an eyebrow, a large title, a short paragraph and two actions — above a full-bleed row of images in alternating sizes (square and tall) that scrolls slowly past both edges in a seamless loop.
 
-The intro is built from the Text group and Button components on the light surface tokens, and the active tab's progress bar uses the accent colour.
+The intro is built from the Text group and Button components on a Container 100%, and the images use Corner radius M. The marquee stops for users who prefer reduced motion. Use it to open a page with one shared message and an image-led, editorial feel.
 
 ## Layout
-- Desktop (> 1024px): The intro and both CTAs sit centered above an edge-to-edge row of mixed-size images; the tabs sit centered below.
-- Mobile (≤ 1024px): Same order, narrower: the intro stays centered, the image row shows about two images at a time and the tabs span the width.
+- Desktop (> 1024px): The intro and both CTAs sit centered above an edge-to-edge row of mixed-size images scrolling left.
+- Mobile (≤ 1024px): Same order, narrower: the intro stays centered and the image row shows about two images at a time.
 
 ## When to use
-- Opening a page that serves several paths or audiences with one shared message.
+- Opening a page with one centered message and an image-led, editorial feel.
 - Showing the breadth of a catalogue or service through imagery rather than copy.
-- Letting visitors preview each path (e.g. buy, sell, rent) without leaving the hero.
+- Adding subtle, ambient motion above the fold.
 - A lighter, image-led alternative to a full-screen photo hero.
 
 ## When not to use
-- When there is only one path — use Hero Image Slider or Hero Split Columns.
-- When there aren't enough quality images to fill every tab.
-- When the tab content must be read or compared side by side — rotating tabs hide it.
+- When a single strong photo should carry the hero — use Hero Image Slider or Hero Split Columns.
+- When there aren't enough quality images to fill the row.
+- When each image must be read, captioned or clicked — motion makes that hard.
 - When motion has to be kept to a minimum.
 
 ## Design properties → React props
-Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; progress tabs → `tabs` (`{label, images}`); active tab → `defaultActive` / `active`; fill time → `interval` (s); rotation → `autoAdvance`.
+Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; image row → `images` (alternating square / tall, looped).
 
 Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

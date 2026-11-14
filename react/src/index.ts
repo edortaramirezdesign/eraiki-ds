@@ -72,7 +72,7 @@ export { TextGroup } from './TextGroup';
 export type { TextGroupProps } from './TextGroup';
 export { sectionImages } from './sections/images';
 export { HeroImageSlider, HeroSplitColumns, HeroMarqueeGallery } from './sections/Hero';
-export type { HeroImageSliderProps, HeroSplitColumnsProps, HeroMarqueeGalleryProps, GalleryTab } from './sections/Hero';
+export type { HeroImageSliderProps, HeroSplitColumnsProps, HeroMarqueeGalleryProps } from './sections/Hero';
 export { ExplanationBannerCard, ExplanationSplitMedia, ExplanationTwinCards, ExplanationTriplePanel, ExplanationImageMarquee, ExplanationDarkCard } from './sections/Explanation';
 export type { ExplanationBannerCardProps, ExplanationSplitMediaProps, ExplanationTwinCardsProps, ExplanationTriplePanelProps, ExplanationImageMarqueeProps, ExplanationDarkCardProps } from './sections/Explanation';
 export { ValuesFeaturesIconGrid, ValuesFeaturesHighlightList, ValuesFeaturesNumberedList, ValuesFeaturesStaggeredCards } from './sections/ValuesFeatures';

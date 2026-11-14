@@ -114,7 +114,7 @@ export function ValuesFeaturesNumberedList({ label, title, items, image = sectio
     <div className={cx('ek-section ek-values3', className)}>
       <div className="ek-container ek-values3__top"><Col span={12}><div className="ek-values3__head"><Head label={label} title={title} size="l" /></div></Col></div>
       <div className="ek-container ek-values3__row">
-        <Col span={6}><div className="ek-values3__media"><img src={image} alt="" loading="lazy" /></div></Col>
+        <Col span={6} className="ek-values3__mediacol"><div className="ek-values3__media"><img src={image} alt="" loading="lazy" /></div></Col>
         <Col span={6} className="ek-values3__listcol"><div className="ek-values3__list">
           {items.map((it, i) => (
             <div key={i} className="ek-values3__item">

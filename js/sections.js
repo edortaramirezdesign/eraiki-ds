@@ -623,7 +623,7 @@
       return `<div class="ek-values3">
         <div class="ek-container ek-values3__top"><div class="ek-container__col" style="--ek-span:12"><div class="ek-values3__head"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div></div></div>
         <div class="ek-container ek-values3__row">
-          <div class="ek-container__col" style="--ek-span:6"><div class="ek-values3__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
+          <div class="ek-container__col ek-values3__mediacol" style="--ek-span:6"><div class="ek-values3__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
           <div class="ek-container__col ek-values3__listcol" style="--ek-span:6"><div class="ek-values3__list">${items}</div></div>
         </div>
       </div>`;

@@ -860,7 +860,10 @@
 .ek-values3__top { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); }
 .ek-values3__head { max-width: 680px; }
 .ek-values3__row { padding: var(--spacing-l) var(--spacing-4xl) var(--spacing-5xl); row-gap: var(--spacing-m); }
-.ek-values3__media { overflow: hidden; aspect-ratio: 5 / 4; }
+/* The image is the column's background (Figma: image fill, Corner radius M): it covers 100%
+   of the column's width and height — as tall as the numbered list beside it. */
+.ek-values3__mediacol { position: relative; }
+.ek-values3__media { position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius-m); }
 .ek-values3__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .ek-values3__listcol { justify-content: center; }
 .ek-values3__list { display: flex; flex-direction: column; }
@@ -1069,7 +1072,7 @@
   /* Values & Features Numbered List — image over the list; each row stacks title over body */
   .ek-values3__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
   .ek-values3__row { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); row-gap: var(--spacing-l); }
-  .ek-values3__media { aspect-ratio: 1 / 1; border-radius: var(--radius-standard); }
+  .ek-values3__media { position: relative; inset: auto; width: 100%; aspect-ratio: 1 / 1; } /* square, as in Figma */
   .ek-values3__list { gap: var(--spacing-m); }
   .ek-values3__item { grid-template-columns: 1fr; gap: var(--spacing-xs); }
   .ek-values3__num { color: var(--color-fill-plain-text-standard-s); }

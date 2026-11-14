@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["hero", "image hero", "full-screen", "two columns", "split heading", "above the fold", "headline", "cta", "scrim", "editorial"]
 ---
 
@@ -28,4 +28,4 @@ The two columns share the same on-image (dark) tokens and are built from the Tex
 ## Design properties → React props
 Eyebrow → `label`; heading → `title`; paragraph → children; button → `primaryAction`; photo → `image`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["marquee", "logos", "logo wall", "tiles", "brands", "partners", "integrations", "clients", "social proof", "auto-scroll"]
 ---
 
@@ -28,4 +28,4 @@ The intro is built from the Text group and Button components, and the rows are a
 ## Design properties → React props
 Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; two logo rows → `rows` (`[row1, row2]` of image URLs; row 1 scrolls left, row 2 right).
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

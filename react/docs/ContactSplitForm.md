@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 ---
 
 Contact Split Form is a two-column contact block: the message (eyebrow, heading and a short paragraph) on one side and a simple form on the other — labelled text fields, a message text area and a single primary submit button. On narrow screens the columns stack, message first. Use it at the end of a page to collect enquiries; keep the form short.
@@ -15,4 +15,4 @@ Contact Split Form is a two-column contact block: the message (eyebrow, heading 
 ## Design properties → React props
 Text + Form / Form + Text → `order`; message → `label` / `title` / children; fields → `fields` (`{label, placeholder, type, multiline}`); button → `submitLabel` (+ `onSubmit`).
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["values", "features", "numbered list", "steps", "ordered list", "text + image", "principles", "index", "feature list", "dividers"]
 ---
 
@@ -28,4 +28,4 @@ The list reuses the Text group type styles: a muted number, a compact bold title
 ## Design properties → React props
 Heading → `label` / `title`; numbered rows → `items` (`{title, text}`, numbers are automatic); photo → `image`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

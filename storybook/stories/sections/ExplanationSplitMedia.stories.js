@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Explanations/Explanation Split Media - Playground',
+  title: 'Marketing sections/Explanations/Explanation Split Media - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'explanation-split-media' } },
 };
 

@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["values", "features", "feature list", "benefits", "text + image", "highlighted item", "icon list", "vertical list", "image", "showcase"]
 ---
 
@@ -28,4 +28,4 @@ Each row pairs an accent-filled icon box with its title, reusing the Text group 
 ## Design properties → React props
 Heading → `label` / `title`; feature list → `items` (`{icon, title, text}`); open item → `defaultActive` / `active`; photo → `image`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

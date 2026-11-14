@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["marquee", "logos", "brands", "press", "social proof", "logo strip", "carousel", "auto-scroll", "partners", "ticker"]
 ---
 
@@ -28,4 +28,4 @@ The intro uses the Text group component and the strip is a pure-CSS marquee (two
 ## Design properties → React props
 Intro → `label` / `title` / children / `primaryAction`; logo strip → `logos` (image URLs).
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

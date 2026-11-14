@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Values & Features/Values & Features Icon Grid - Playground',
+  title: 'Marketing sections/Values & Features/Values & Features Icon Grid - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'values-icon-grid' } },
 };
 

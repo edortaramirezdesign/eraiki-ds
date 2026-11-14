@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["values", "features", "staggered", "cards", "illustrations", "masonry", "feature cards", "editorial", "offset grid", "three columns"]
 ---
 
@@ -28,4 +28,4 @@ The intro reuses the Text group and Button components; the cards sit on a muted 
 ## Design properties → React props
 Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; staggered cards → `items` (`{title, text, illustration}`).
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

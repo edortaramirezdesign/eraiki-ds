@@ -42,8 +42,8 @@ const preview = {
             'Radio buttons group', 'Rating', 'Search field', 'Switch',
             'Tabs group - Desktop', 'Tabs group - Mobile', 'Text group', 'Tooltip', '*',
           ],
-          // Sections: no explicit order — sorted alphabetically.
-          'Sections',
+          // Marketing sections: no explicit order — sorted alphabetically.
+          'Marketing sections',
           '*',
         ],
       },

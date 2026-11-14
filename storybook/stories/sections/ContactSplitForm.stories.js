@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Contact/Contact Split Form - Playground',
+  title: 'Marketing sections/Contact/Contact Split Form - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'contact-split-form' } },
 };
 

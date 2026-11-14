@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Explanations/Explanation Triple Panel - Playground',
+  title: 'Marketing sections/Explanations/Explanation Triple Panel - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'explanation-triple-panel' } },
 };
 

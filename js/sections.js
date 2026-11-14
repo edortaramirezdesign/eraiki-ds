@@ -43,23 +43,23 @@
         frameDesktop: 'The headline sits bottom-left; the paragraph and CTA sit bottom-right.',
         frameMobile: 'The columns stack — heading first, then the paragraph and CTA.' },
       { slug: 'hero-marquee-gallery', name: 'Hero Marquee Gallery', shot: 'hero-marquee-gallery', node: '1484-30375',
-        short: 'A centered intro over a full-bleed image marquee switched by progress tabs.',
-        description: "Hero Marquee Gallery opens a page with a centered intro — an eyebrow, a large title, a short paragraph and two actions — above a full-bleed row of images in alternating sizes that runs past both edges. Below it, a set of tabs with a progress bar switches the gallery between topics (for example Buy, Sell and Rent), moving to the next one as each bar fills.\n\nThe intro is built from the Text group and Button components on the light surface tokens, and the active tab's progress bar uses the accent colour.",
-        keywords: ['hero', 'image gallery', 'marquee', 'tabs', 'progress tabs', 'centered intro', 'full-bleed', 'above the fold', 'cta', 'categories'],
+        short: 'A centered intro over a full-bleed, auto-scrolling image marquee.',
+        description: "Hero Marquee Gallery opens a page with a centered intro — an eyebrow, a large title, a short paragraph and two actions — above a full-bleed row of images in alternating sizes (square and tall) that scrolls slowly past both edges in a seamless loop.\n\nThe intro is built from the Text group and Button components on a Container 100%, and the images use Corner radius M. The marquee stops for users who prefer reduced motion. Use it to open a page with one shared message and an image-led, editorial feel.",
+        keywords: ['hero', 'image gallery', 'marquee', 'auto-scroll', 'centered intro', 'full-bleed', 'above the fold', 'cta', 'editorial', 'carousel'],
         whenToUse: [
-          'Opening a page that serves several paths or audiences with one shared message.',
+          'Opening a page with one centered message and an image-led, editorial feel.',
           'Showing the breadth of a catalogue or service through imagery rather than copy.',
-          'Letting visitors preview each path (e.g. buy, sell, rent) without leaving the hero.',
+          'Adding subtle, ambient motion above the fold.',
           'A lighter, image-led alternative to a full-screen photo hero.',
         ],
         whenNotToUse: [
-          'When there is only one path — use Hero Image Slider or Hero Split Columns.',
-          "When there aren't enough quality images to fill every tab.",
-          'When the tab content must be read or compared side by side — rotating tabs hide it.',
+          'When a single strong photo should carry the hero — use Hero Image Slider or Hero Split Columns.',
+          "When there aren't enough quality images to fill the row.",
+          'When each image must be read, captioned or clicked — motion makes that hard.',
           'When motion has to be kept to a minimum.',
         ],
-        frameDesktop: 'The intro and both CTAs sit centered above an edge-to-edge row of mixed-size images; the tabs sit centered below.',
-        frameMobile: 'Same order, narrower: the intro stays centered, the image row shows about two images at a time and the tabs span the width.' },
+        frameDesktop: 'The intro and both CTAs sit centered above an edge-to-edge row of mixed-size images scrolling left.',
+        frameMobile: 'Same order, narrower: the intro stays centered and the image row shows about two images at a time.' },
     ] },
     { slug: 'values-features', name: 'Values & Features', desc: 'Grids and lists that communicate product value and features.', versions: [
       { slug: 'values-icon-grid', name: 'Values & Features Icon Grid', shot: 'values-icon-grid', node: '1316-18293',
@@ -474,12 +474,11 @@
     </div>`,
     // Hero Marquee Gallery — two Containers 100%: centered intro (eyebrow, heading L, body,
     // primary + secondary) over a full-bleed, continuously scrolling row of images in
-    // alternating sizes (square / tall). Mobile adds progress tabs (the active bar fills on a loop).
+    // alternating sizes (square / tall), Corner radius M.
     'hero-marquee-gallery': () => {
       const order = [2, 1, 3, 4, 5, 1, 3, 4];
       const imgs = order.map((n, i) => `<img class="ek-hero3__img${i % 2 ? ' ek-hero3__img--tall' : ''}" src="assets/sections/hero-marquee-gallery-${n}.jpg" alt="" loading="lazy">`).join('');
       const group = `<div class="ek-hero3__group" style="--ek-marquee-items:${order.length}">${imgs}</div>`;
-      const tabs = ['Comprar', 'Vender', 'Alquilar'].map((t, i) => `<button type="button" role="tab" aria-selected="${i === 0}" class="ek-hero3__tab${i === 0 ? ' is-active' : ''}"><span class="ek-hero3__tab-label">${t}</span><span class="ek-hero3__track"><span class="ek-hero3__progress"></span></span></button>`).join('');
       return `<div class="ek-hero3">
         <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
           <div class="ek-hero3__intro">
@@ -491,7 +490,6 @@
         <div class="ek-container ek-sec-strip"><div class="ek-container__col" style="--ek-span:12">
           <div class="ek-hero3__strip"><div class="ek-hero3__lane">${group}${group}</div></div>
         </div></div>
-        <div class="ek-hero3__tabs ek-hide-desktop" role="tablist">${tabs}</div>
       </div>`;
     },
     // Marquee Logo Strip — two Containers 100%: centered intro (eyebrow, heading L, body,

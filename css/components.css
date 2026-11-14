@@ -658,8 +658,10 @@
 .ek-explain { background-position: center; background-size: cover; background-repeat: no-repeat; }
 .ek-explain > .ek-container__col { justify-content: center; }
 .ek-explain .ek-textgroup--contained { width: 400px; max-width: 100%; gap: var(--spacing-xl); }
-/* Card heading is Heading M (Figma); the Text group component defaults to Heading S. */
-.ek-explain .ek-textgroup__title, .ek-explain4__card .ek-textgroup__title { font-size: var(--font-size-heading-m); line-height: var(--line-height-heading-m); }
+/* Banner card heading is Heading L and the Triple Panel card heading Heading M (Figma); the
+   Text group component defaults to Heading S. */
+.ek-explain .ek-textgroup__title { font-size: var(--font-size-heading-l); line-height: var(--line-height-heading-l); }
+.ek-explain4__card .ek-textgroup__title { font-size: var(--font-size-heading-m); line-height: var(--line-height-heading-m); }
 /* Explanation Split Media — Container 8% + 42% + 42% + 8%: text group + image (either
    side), both centred in their column; the 8% columns are an empty inset. */
 .ek-explain2__textcol { justify-content: center; }
@@ -707,7 +709,7 @@
    holds (--ek-marquee-items); one loop travels items × pitch, so the duration grows with
    the content and 3 or 30 items pass by at the same pace. */
 :root { --ek-marquee-speed: 40; }
-.ek-explain5__mgroup, .ek-marquee1__group, .ek-hero3__group, .ek-marquee2__group { --ek-marquee-duration: calc(var(--ek-marquee-items, 6) * var(--ek-marquee-pitch) / var(--ek-marquee-speed) * 1s); }
+.ek-explain5__mgroup, .ek-marquee1__group, .ek-hero3__group, .ek-marquee2__group, .ek-testi2__group { --ek-marquee-duration: calc(var(--ek-marquee-items, 6) * var(--ek-marquee-pitch) / var(--ek-marquee-speed) * 1s); }
 @keyframes ek-marquee { to { transform: translateX(calc(-100% - var(--marquee-gap, 0px))); } }
 @media (prefers-reduced-motion: reduce) { .ek-explain5__mgroup, .ek-marquee1__group { animation: none; } }
 
@@ -875,6 +877,36 @@
 /* The card copy is not a Text group in Figma: it keeps Text/Standard-L. */
 .ek-values4__card .ek-textgroup__body { color: var(--color-fill-plain-text-standard-l); }
 
+/* Testimonials Quote Marquee — centered intro (ek-sec-intro) over a full-bleed, infinite
+   marquee of Quote cards (ek-sec-strip). Background: Surface Base under Surface Standard-S.
+   Card: 340×416, Surface Base, radius M, L inset; quote icon + Heading S quote at the top,
+   author (Avatar M, Body L Bold name, Detail M role) at the bottom. */
+.ek-testi2 {
+  display: flex; flex-direction: column; overflow: hidden;
+  background-color: var(--color-fill-plain-surface-base);
+  background-image: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s));
+}
+.ek-testi2 .ek-container { background: transparent; }
+.ek-testi2__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-testi2__intro .ek-textgroup__head { display: flex; flex-direction: column; align-items: center; }
+.ek-testi2__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
+.ek-testi2__strip { overflow: hidden; width: 100%; }
+.ek-testi2__lane { display: flex; gap: var(--spacing-xs); width: max-content; }
+.ek-testi2__group { display: flex; gap: var(--spacing-xs); flex-shrink: 0; --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 348; /* card 340 + gap 8 */ animation: ek-marquee var(--ek-marquee-duration) linear infinite; }
+.ek-testi2__card {
+  box-sizing: border-box; flex: 0 0 auto; width: 340px; height: 416px; margin: 0; padding: var(--spacing-l);
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--spacing-xxl);
+  border-radius: var(--radius-m); background: var(--color-fill-plain-surface-base);
+}
+.ek-testi2__quote { display: flex; flex-direction: column; gap: var(--spacing-l); }
+.ek-testi2__quote blockquote { margin: 0; color: var(--color-fill-plain-text-standard-l); }
+.ek-testi2__icon { display: inline-flex; color: var(--color-fill-plain-text-standard-m); }
+.ek-testi2__author { display: flex; align-items: center; gap: var(--spacing-s); }
+.ek-testi2__who { display: flex; flex-direction: column; }
+.ek-testi2__name { color: var(--color-fill-plain-text-standard-l); }
+.ek-testi2__role { color: var(--color-fill-plain-text-standard-m); }
+@media (prefers-reduced-motion: reduce) { .ek-testi2__group { animation: none; } }
+
 /* FAQs Split List — Container 34% + 66%: Text group (label + Heading L) left, FAQ items right
    (XS gap). Background = Surface Base under a Surface Standard-S layer (as in Figma). Each item:
    Surface Base, radius M, L inset; question Heading S + tertiary icon button; the answer
@@ -943,7 +975,7 @@
      own mobile margins and gaps (mobile frames in Figma are not built on Container yet). */
   .ek-contact { row-gap: var(--spacing-xxl); padding: var(--spacing-5xl) var(--spacing-l); }
   /* Explanation Banner Card — hugs its content */
-  .ek-explain { padding: var(--spacing-xxl); border-radius: var(--radius-standard); }
+  .ek-explain { padding: var(--spacing-7xl) var(--spacing-xl) var(--spacing-xl); border-radius: var(--radius-standard); }
   .ek-explain .ek-textgroup--contained { width: 100%; }
   /* Explanation Split Media — stack image over text; the 8% inset columns disappear */
   .ek-explain2 { row-gap: var(--spacing-5xl); padding: var(--spacing-5xl) var(--spacing-l); }
@@ -1000,6 +1032,11 @@
   .ek-marquee2 .ek-sec-strip { padding: var(--spacing-xxl) 0 var(--spacing-6xl); }
   .ek-marquee2__intro { max-width: 640px; }
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
+  /* Testimonials Quote Marquee — smaller 300×340 cards */
+  .ek-testi2 .ek-sec-intro { padding: var(--spacing-6xl) var(--spacing-l) 0; }
+  .ek-testi2 .ek-sec-strip { padding: var(--spacing-xxl) 0 var(--spacing-6xl); }
+  .ek-testi2__card { width: 300px; height: 340px; }
+  .ek-testi2__group { --ek-marquee-pitch: 308; } /* card 300 + gap 8 */
   /* FAQs Split List — the heading stacks above the questions */
   .ek-faq1 { padding: var(--spacing-6xl) var(--spacing-m); row-gap: var(--spacing-xxl); }
   /* Values & Features Bento Grid — the intro stays centered; the six cards stack */

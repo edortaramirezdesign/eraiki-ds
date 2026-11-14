@@ -6,7 +6,7 @@ import { cx } from './cx';
 export type IconName =
   | 'check' | 'chevronDown' | 'chevronRight' | 'chevronLeft' | 'search' | 'eye' | 'eyeOff'
   | 'calendar' | 'plus' | 'trash' | 'info' | 'alert' | 'success' | 'error' | 'upload'
-  | 'user' | 'image' | 'heart' | 'close' | 'closeXs' | 'closeSm' | 'minus';
+  | 'user' | 'image' | 'heart' | 'close' | 'closeXs' | 'closeSm' | 'minus' | 'quote';
 
 const inner = (name: string): string => {
   const src: string = ((globalThis as any).EK_ICONS || {})[name] || '';

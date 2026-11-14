@@ -352,6 +352,22 @@
         ],
         frameDesktop: 'The label and heading sit left with the prev/next arrows bottom-right; four portrait cards fill the 25% columns below, each with its quote and author over the photo.',
         frameMobile: 'The heading wraps on the left with the arrows beside it; the cards turn into a horizontal carousel, with the next card peeking in from the right.' },
+      { slug: 'testimonials-quote-marquee', name: 'Testimonials Quote Marquee', shot: 'testimonials-quote-marquee', node: '1595-5005',
+        short: 'A centered intro over an auto-scrolling row of quote cards with the author’s avatar.',
+        description: "Testimonials Quote Marquee shows a wall of social proof in motion: a centered intro — an eyebrow, a large heading, a short paragraph and two actions — above a full-bleed row of quote cards that drifts slowly past both edges in a seamless loop.\n\nEach card is a Quote card fragment — a quote icon, the quote in Heading S and the author with an Avatar, name and role — on the base surface with Corner radius M. The marquee stops for users who prefer reduced motion. Use it when you have many short testimonials and want them to feel abundant without taking much space.",
+        keywords: ['testimonials', 'reviews', 'social proof', 'quotes', 'marquee', 'auto-scroll', 'avatars', 'customers', 'trust', 'carousel'],
+        whenToUse: [
+          'Showing many short testimonials as a continuous wall of social proof.',
+          'Adding subtle motion to a landing page without competing with the main message.',
+          'Putting a face and a role to each quote with the author’s avatar.',
+        ],
+        whenNotToUse: [
+          'A few long or detailed testimonials — use Testimonials Image Cards or a case study.',
+          'When each quote must be read carefully — motion makes that harder; use a static grid.',
+          'When motion has to be kept to a minimum.',
+        ],
+        frameDesktop: 'The intro and both actions sit centered above a full-bleed row of quote cards that scrolls slowly to the left in a seamless loop.',
+        frameMobile: 'Same order, narrower: the intro stays centered and the row shows one card at a time, with the next one peeking in.' },
     ] },
     { slug: 'brands-logos', name: 'Brands & Logos', desc: 'Logo walls establishing credibility.', versions: [] },
     { slug: 'footer', name: 'Footer', desc: 'Site-wide footer with navigation and legal.', versions: [] },
@@ -395,7 +411,7 @@
         <div class="ek-input ek-textarea"><textarea placeholder="Lorem ipsum..."></textarea></div></div>`;
       const text = `<div class="ek-textgroup ek-contact__text">
           <div class="ek-textgroup__top">
-            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-m">Nam a bibendum nunc eget tincidunt eros</h2></div>
+            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
             <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
           </div>
         </div>`;
@@ -476,7 +492,7 @@
     'hero-image-slider': () => `<div class="ek-hero-frame"><div class="ek-container ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
       <div class="ek-container__col ek-hero__textcol" style="--ek-span:6">
         <div class="ek-textgroup ek-hero__text"><div class="ek-textgroup__top">
-          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Nam a bibendum nunc eget tincidunt eros</h2></div>
+          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
           <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         </div>
         <button class="ek-btn ek-btn--primary">Lorem ipsum</button></div>
@@ -494,7 +510,7 @@
       <div class="ek-container__col ek-hero2__headcol" style="--ek-span:6">
         <div class="ek-hero2__heading-group">
           <div class="ek-textgroup__eyebrow">Lorem ipsum</div>
-          <h2 class="ek-textgroup__title ek-heading-xl">Nam a bibendum nunc eget tincidunt eros</h2>
+          <h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2>
         </div>
       </div>
       <div class="ek-container__col ek-hero2__asidecol" style="--ek-span:6">
@@ -514,7 +530,7 @@
       return `<div class="ek-hero3">
         <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
           <div class="ek-hero3__intro">
-            <div class="ek-hero3__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-xl">Nam a bibendum nunc eget tincidunt eros</h2></div>
+            <div class="ek-hero3__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
             <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
             <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
           </div>
@@ -704,6 +720,30 @@
       return `<div class="ek-container ek-faq1">
         <div class="ek-container__col" style="--ek-span:4"><div class="ek-textgroup ek-faq1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div><p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p></div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></div>
         <div class="ek-container__col" style="--ek-span:8"><div class="ek-faq1__list">${[true, false, false, false, false, false].map(item).join('')}</div></div>
+      </div>`;
+    },
+    // Testimonials Quote Marquee — two Containers 100%: centered intro (eyebrow, Heading L, body,
+    // primary + secondary) over a full-bleed, auto-scrolling row of Quote cards (quote icon,
+    // quote in Heading S, author with Avatar + name + role).
+    'testimonials-quote-marquee': () => {
+      const quote = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lorem leo, mollis non diam eu, venenatis feugiat est.';
+      const card = (n) => `<figure class="ek-testi2__card">
+        <div class="ek-testi2__quote"><span class="ek-testi2__icon">${EK_ICONS.quote}</span><blockquote class="ek-heading-s">${quote}</blockquote></div>
+        <figcaption class="ek-testi2__author"><span class="ek-avatar ek-avatar--md"><img src="assets/sections/testimonials-001-img${n}.jpg" alt="" loading="lazy"></span><span class="ek-testi2__who"><span class="ek-testi2__name ek-body-l ek-strong">Lorem ipsum</span><span class="ek-testi2__role ek-detail-m">Lorem ipsum dolor</span></span></figcaption>
+      </figure>`;
+      const items = [1, 2, 3, 1, 2];
+      const group = `<div class="ek-testi2__group" style="--ek-marquee-items:${items.length}">${items.map(card).join('')}</div>`;
+      return `<div class="ek-testi2">
+        <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
+          <div class="ek-testi2__intro">
+            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
+            <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
+            <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
+          </div>
+        </div></div>
+        <div class="ek-container ek-sec-strip"><div class="ek-container__col" style="--ek-span:12">
+          <div class="ek-testi2__strip"><div class="ek-testi2__lane">${group}${group}</div></div>
+        </div></div>
       </div>`;
     },
     // Explanation Dark Card — dark (complementary) card over a full-bleed background image.

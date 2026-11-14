@@ -710,6 +710,16 @@
    the content and 3 or 30 items pass by at the same pace. */
 :root { --ek-marquee-speed: 40; }
 .ek-explain5__mgroup, .ek-marquee1__group, .ek-hero3__group, .ek-marquee2__group, .ek-testi2__group { --ek-marquee-duration: calc(var(--ek-marquee-items, 6) * var(--ek-marquee-pitch) / var(--ek-marquee-speed) * 1s); }
+/* Section entrance reveal (js/eraiki.js): the section canvas shows at once; what sits in
+   its Container columns fades in from a 12px blur (0.4s, opacity linear, blur outCirc),
+   200ms later and staggered 60ms, when the section scrolls into view. */
+@keyframes ek-reveal-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ek-reveal-blur { from { filter: blur(12px); } to { filter: blur(0); } }
+.ek-section[data-ek-reveal="pending"] [data-ek-reveal-item] { opacity: 0; }
+.ek-section[data-ek-reveal="in"] [data-ek-reveal-item] {
+  animation: ek-reveal-fade 400ms linear var(--ek-reveal-delay, 200ms) backwards,
+             ek-reveal-blur 400ms cubic-bezier(0.075, 0.82, 0.165, 1) var(--ek-reveal-delay, 200ms) backwards;
+}
 @keyframes ek-marquee { to { transform: translateX(calc(-100% - var(--marquee-gap, 0px))); } }
 @media (prefers-reduced-motion: reduce) { .ek-explain5__mgroup, .ek-marquee1__group { animation: none; } }
 

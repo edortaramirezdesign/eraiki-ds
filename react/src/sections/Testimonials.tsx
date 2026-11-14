@@ -46,7 +46,7 @@ const DEFAULT_ITEMS: Testimonial[] = [
 /** Testimonials Image Cards — a label + heading with prev/next arrows (Container 50% + 50%) over portrait cards with the quote and author (Container 25% × 4; a carousel on mobile). */
 export function TestimonialsImageCards({ label = 'Testimonials', title = 'Nam a bibendum nunc eget tincidunt eros', items = DEFAULT_ITEMS, showNav = true, previousDisabled = true, nextDisabled = false, onPrevious, onNext, className }: TestimonialsImageCardsProps) {
   return (
-    <div className={cx('ek-testi1', className)}>
+    <div className={cx('ek-section ek-testi1', className)}>
       <div className="ek-container ek-testi1__top">
         <Col span={6} className="ek-testi1__headcol">
           <div className="ek-textgroup ek-testi1__head"><div className="ek-textgroup__top"><Head label={label} title={title} size="l" /></div></div>
@@ -118,7 +118,7 @@ export function TestimonialsQuoteMarquee({ label = 'Lorem ipsum', title = 'Nam a
     </div>
   );
   return (
-    <div className={cx('ek-testi2', className)}>
+    <div className={cx('ek-section ek-testi2', className)}>
       <div className="ek-container ek-sec-intro"><Col span={12}>
         <div className="ek-testi2__intro">
           <Head label={label} title={title} size="l" />

@@ -37,7 +37,7 @@ export function FAQsSplitList({ label = 'Lorem ipsum', title = 'Nam a bibendum n
   const current = open !== undefined ? open : inner;
   const toggle = (i: number) => { const next = current === i ? null : i; setInner(next); onOpenChange?.(next); };
   return (
-    <div className={cx('ek-container ek-faq1', className)}>
+    <div className={cx('ek-section ek-container ek-faq1', className)}>
       <Col span={4}>
         <div className="ek-textgroup ek-faq1__head">
           <div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div>

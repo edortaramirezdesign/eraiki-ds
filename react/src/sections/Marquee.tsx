@@ -27,7 +27,7 @@ export function MarqueeLogoStrip({ label, title, children, primaryAction, onPrim
     </div>
   );
   return (
-    <div className={cx('ek-marquee1', className)}>
+    <div className={cx('ek-section ek-marquee1', className)}>
       <div className="ek-container ek-sec-intro"><Col span={12}>
         <div className="ek-marquee1__text">
           <Head label={label} title={title} size="l" className="ek-marquee1__head" />
@@ -59,7 +59,7 @@ export interface MarqueeLogoTilesProps extends SectionActions {
 /** Marquee Logo Tiles — two Containers 100%: centered intro + two rows of logo tiles scrolling in opposite directions, faded at the edges. */
 export function MarqueeLogoTiles({ label, title, children, primaryAction, onPrimaryAction, secondaryAction, onSecondaryAction, rows = sectionImages.logoTiles, className }: MarqueeLogoTilesProps) {
   return (
-    <div className={cx('ek-marquee2', className)}>
+    <div className={cx('ek-section ek-marquee2', className)}>
       <div className="ek-container ek-sec-intro"><Col span={12}>
         <div className="ek-marquee2__intro">
           <Head label={label} title={title} size="l" className="ek-marquee2__head" />

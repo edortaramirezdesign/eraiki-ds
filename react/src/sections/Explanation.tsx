@@ -23,7 +23,7 @@ export interface ExplanationBannerCardProps extends TextProps, Pick<SectionActio
 /** Explanation Banner Card — Container 100% over a full-bleed image, in dark mode: a dark contained Text group card (left). */
 export function ExplanationBannerCard({ label, title, children, primaryAction, onPrimaryAction, image = sectionImages.landscape, className }: ExplanationBannerCardProps) {
   return (
-    <div className={cx('ek-container ek-explain theme-dark', className)} style={bg(image)}>
+    <div className={cx('ek-section ek-container ek-explain theme-dark', className)} style={bg(image)}>
       <Col span={12}>
         <TextGroup kind="contained" label={label} title={title}
           action={primaryAction ? <Button onClick={onPrimaryAction}>{primaryAction}</Button> : undefined}>{children}</TextGroup>
@@ -50,7 +50,7 @@ export function ExplanationSplitMedia({ label, title, children, image = sectionI
   const textCol = <Col key="t" span={5} className="ek-explain2__textcol">{text}</Col>;
   const mediaCol = <Col key="m" span={5} className="ek-explain2__media"><img src={image} alt="" loading="lazy" /></Col>;
   return (
-    <div className={cx('ek-container ek-explain2', className)}>
+    <div className={cx('ek-section ek-container ek-explain2', className)}>
       <Col span={1} className="ek-explain2__spacer" />
       {order === 'image-text' ? [mediaCol, textCol] : [textCol, mediaCol]}
       <Col span={1} className="ek-explain2__spacer" />
@@ -74,7 +74,7 @@ export function ExplanationTwinCards({ label, title, children, image = sectionIm
     </div></Col>
   );
   const media = <Col key="m" span={6} className="ek-explain3__media" style={bg(image)} />;
-  return <div className={cx('ek-container ek-explain3', className)}>{order === 'image-text' ? [media, text] : [text, media]}</div>;
+  return <div className={cx('ek-section ek-container ek-explain3', className)}>{order === 'image-text' ? [media, text] : [text, media]}</div>;
 }
 
 export interface ExplanationTriplePanelProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
@@ -96,7 +96,7 @@ export interface ExplanationTriplePanelProps extends Pick<SectionActions, 'prima
 /** Explanation Triple Panel — two Containers: 100% header over 33% + 33% + 33% panels (two images and a text card with a primary action). */
 export function ExplanationTriplePanel({ label, title, cardLabel, cardTitle, children, primaryAction, onPrimaryAction, images = [sectionImages.portrait2, sectionImages.portrait3], className }: ExplanationTriplePanelProps) {
   return (
-    <div className={cx('ek-explain4', className)}>
+    <div className={cx('ek-section ek-explain4', className)}>
       <div className="ek-container ek-explain4__top">
         <Col span={12}><div className="ek-textgroup ek-explain4__head"><div className="ek-textgroup__top"><Head label={label} title={title} size="l" /></div></div></Col>
       </div>
@@ -123,7 +123,7 @@ export function ExplanationImageMarquee({ label, title, children, images, classN
   const imgs = images?.length ? images : Array(6).fill(sectionImages.portrait);
   const group = <div className="ek-explain5__mgroup" style={{ ['--ek-marquee-items' as string]: imgs.length }}>{imgs.map((src, i) => <div key={i} className="ek-explain5__img" style={bg(src)} />)}</div>;
   return (
-    <div className={cx('ek-explain5', className)}>
+    <div className={cx('ek-section ek-explain5', className)}>
       <div className="ek-container ek-explain5__contained">
         <Col span={12}><div className="ek-explain5__text ek-textgroup"><div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div></div></Col>
       </div>
@@ -142,7 +142,7 @@ export interface ExplanationDarkCardProps extends TextProps, Pick<SectionActions
 /** Explanation Dark Card — Container 100% over a full-bleed background image, in dark mode: a dark card with a text group (heading, body, primary action) and a square image. */
 export function ExplanationDarkCard({ label, title, children, primaryAction, onPrimaryAction, background = sectionImages.backdrop, image = sectionImages.portrait, className }: ExplanationDarkCardProps) {
   return (
-    <div className={cx('ek-container ek-explain6 theme-dark', className)} style={bg(background)}>
+    <div className={cx('ek-section ek-container ek-explain6 theme-dark', className)} style={bg(background)}>
       <Col span={12} className="ek-explain6__card">
         <div className="ek-explain6__col">
           <div className="ek-textgroup ek-explain6__text">

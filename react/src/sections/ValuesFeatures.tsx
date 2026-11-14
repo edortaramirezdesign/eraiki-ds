@@ -31,7 +31,7 @@ export interface ValuesFeaturesIconGridProps extends IntroProps, SectionActions 
 /** Values & Features Icon Grid — two Containers: centered intro with two actions (100%) above feature cards (25% × 4: icon, title, copy). */
 export function ValuesFeaturesIconGrid({ label, title, children, items, className, ...actions }: ValuesFeaturesIconGridProps) {
   return (
-    <div className={cx('ek-values1', className)}>
+    <div className={cx('ek-section ek-values1', className)}>
       <div className="ek-container ek-values1__top"><Col span={12}>
         <div className="ek-values1__intro">
           <Head label={label} title={title} size="l" className="ek-values1__head" />
@@ -74,7 +74,7 @@ export function ValuesFeaturesHighlightList({ label, title, items, defaultActive
   const current = active ?? inner;
   const select = (i: number) => { setInner(i); onActiveChange?.(i); };
   return (
-    <div className={cx('ek-container ek-values2', className)}><Col span={12} className="ek-values2__inner"><div className="ek-values2__row">
+    <div className={cx('ek-section ek-container ek-values2', className)}><Col span={12} className="ek-values2__inner"><div className="ek-values2__row">
       <div className="ek-values2__col">
         <div className="ek-values2__intro"><Head label={label} title={title} size="l" /></div>
         <div className="ek-values2__list">
@@ -111,7 +111,7 @@ export interface ValuesFeaturesNumberedListProps extends IntroProps {
 /** Values & Features Numbered List — two Containers: heading (100%), then an image beside a numbered list (50% + 50%). */
 export function ValuesFeaturesNumberedList({ label, title, items, image = sectionImages.portrait, className }: ValuesFeaturesNumberedListProps) {
   return (
-    <div className={cx('ek-values3', className)}>
+    <div className={cx('ek-section ek-values3', className)}>
       <div className="ek-container ek-values3__top"><Col span={12}><div className="ek-values3__head"><Head label={label} title={title} size="l" /></div></Col></div>
       <div className="ek-container ek-values3__row">
         <Col span={6}><div className="ek-values3__media"><img src={image} alt="" loading="lazy" /></div></Col>
@@ -148,7 +148,7 @@ export interface ValuesFeaturesStaggeredCardsProps extends IntroProps, SectionAc
 /** Values & Features Staggered Cards — two Containers: centered intro with two actions (100%) over three staggered cards (33% × 3: title, illustration, copy). */
 export function ValuesFeaturesStaggeredCards({ label, title, children, items, className, ...actions }: ValuesFeaturesStaggeredCardsProps) {
   return (
-    <div className={cx('ek-values4', className)}>
+    <div className={cx('ek-section ek-values4', className)}>
       <div className="ek-container ek-values4__top"><Col span={12}>
         <div className="ek-values4__intro">
           <Head label={label} title={title} size="l" />
@@ -191,7 +191,7 @@ export function ValuesFeaturesBentoGrid({ label, title, children, items = BENTO_
     </div>
   );
   return (
-    <div className={cx('ek-values5', className)}>
+    <div className={cx('ek-section ek-values5', className)}>
       <div className="ek-container ek-values5__top"><Col span={12}>
         <div className="ek-values5__intro">
           <Head label={label} title={title} size="l" />

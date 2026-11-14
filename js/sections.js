@@ -765,6 +765,11 @@
       </div>
     </div>`,
   };
+  // Every section root carries .ek-section — the hook for the entrance reveal in js/eraiki.js.
+  Object.keys(SECTION_BUILD).forEach(k => {
+    const build = SECTION_BUILD[k];
+    SECTION_BUILD[k] = (...a) => build(...a).replace(/^(\s*<[a-z]+ class=")/, '$1ek-section ');
+  });
   window.ERAIKI_SECTIONS = SECTIONS;
   window.ERAIKI_SECTIONS_BUILD = SECTION_BUILD;
 })();

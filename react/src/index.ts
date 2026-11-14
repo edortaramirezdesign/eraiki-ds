@@ -75,8 +75,8 @@ export { HeroImageSlider, HeroSplitColumns, HeroMarqueeGallery } from './section
 export type { HeroImageSliderProps, HeroSplitColumnsProps, HeroMarqueeGalleryProps } from './sections/Hero';
 export { ExplanationBannerCard, ExplanationSplitMedia, ExplanationTwinCards, ExplanationTriplePanel, ExplanationImageMarquee, ExplanationDarkCard } from './sections/Explanation';
 export type { ExplanationBannerCardProps, ExplanationSplitMediaProps, ExplanationTwinCardsProps, ExplanationTriplePanelProps, ExplanationImageMarqueeProps, ExplanationDarkCardProps } from './sections/Explanation';
-export { ValuesFeaturesIconGrid, ValuesFeaturesHighlightList, ValuesFeaturesNumberedList, ValuesFeaturesStaggeredCards, ValuesFeaturesBentoGrid } from './sections/ValuesFeatures';
-export type { ValuesFeaturesIconGridProps, ValuesFeaturesHighlightListProps, ValuesFeaturesNumberedListProps, ValuesFeaturesStaggeredCardsProps, ValuesFeaturesBentoGridProps, FeatureItem, NumberedItem, IllustratedItem } from './sections/ValuesFeatures';
+export { ValuesFeaturesIconGrid, ValuesFeaturesHighlightList, ValuesFeaturesNumberedList, ValuesFeaturesStaggeredCards } from './sections/ValuesFeatures';
+export type { ValuesFeaturesIconGridProps, ValuesFeaturesHighlightListProps, ValuesFeaturesNumberedListProps, ValuesFeaturesStaggeredCardsProps, FeatureItem, NumberedItem, IllustratedItem } from './sections/ValuesFeatures';
 export { MarqueeLogoStrip, MarqueeLogoTiles } from './sections/Marquee';
 export type { MarqueeLogoStripProps, MarqueeLogoTilesProps } from './sections/Marquee';
 export { TestimonialsImageCards, TestimonialsQuoteMarquee } from './sections/Testimonials';

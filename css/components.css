@@ -941,19 +941,6 @@
 .ek-faq1__a-inner .ek-textgroup__body { padding-top: var(--spacing-l); }
 @media (prefers-reduced-motion: reduce) { .ek-faq1__a { transition: none; } }
 
-/* Values & Features Bento Grid — two Containers: 100% centered intro (eyebrow, Heading L, body,
-   primary + secondary; up to 620) over 33% × 3 columns of Feature cards, two stacked per column
-   (XS gutter). On Surface Standard-S; each card is a Text group on Surface Base, radius M. */
-.ek-values5 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-standard-s); }
-.ek-values5__top { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); row-gap: var(--spacing-l); background: transparent; }
-.ek-values5__top > .ek-container__col { align-items: center; }
-.ek-values5__intro { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
-.ek-values5__intro .ek-textgroup__head { display: flex; flex-direction: column; align-items: center; }
-.ek-values5__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
-.ek-values5__grid { padding: var(--spacing-l) var(--spacing-4xl) var(--spacing-5xl); column-gap: var(--spacing-xs); row-gap: var(--spacing-xs); background: transparent; }
-.ek-values5__stack { display: flex; flex-direction: column; gap: var(--spacing-xs); }
-.ek-values5__card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--spacing-m); padding: var(--spacing-l); border-radius: var(--radius-m); background: var(--color-fill-plain-surface-base); }
-
 /* Testimonials Image Cards — two Containers: 50% + 50% header (Text group with label + Heading L
    on the left, prev / next arrows bottom-right) over four 25% portrait cards (XS gutter). Each
    card is a dark-mode photo with a bottom scrim; the quote and author sit at the bottom. */
@@ -1008,7 +995,7 @@
   .ek-explain5__contained { padding: var(--spacing-5xl) var(--spacing-l) 0; }
   .ek-explain5__text { max-width: none; }
   .ek-explain4__head { max-width: none; }
-  .ek-testi2__intro, .ek-values5__intro { max-width: 820px; }
+  .ek-testi2__intro { max-width: 820px; }
   .ek-explain5__fluid { padding: var(--spacing-xxl) 0 var(--spacing-5xl); }
   .ek-explain5__marquee { gap: var(--spacing-xs); }
   .ek-explain5__mgroup { gap: var(--spacing-xs); --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 188; } /* image 180 + gap 8 */
@@ -1051,9 +1038,6 @@
   .ek-testi2__group { --ek-marquee-pitch: 308; } /* card 300 + gap 8 */
   /* FAQs Split List — the heading stacks above the questions */
   .ek-faq1 { padding: var(--spacing-6xl) var(--spacing-m); row-gap: var(--spacing-xxl); }
-  /* Values & Features Bento Grid — the intro stays centered; the six cards stack */
-  .ek-values5__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
-  .ek-values5__grid { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); }
   /* Testimonials Image Cards — header keeps text left / arrows right (bottom-aligned); the
      cards become a horizontal carousel of 320px-wide 3:4 cards with the next one peeking in. */
   .ek-testi1 { padding: var(--spacing-6xl) 0; gap: var(--spacing-l); }

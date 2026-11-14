@@ -23,7 +23,7 @@ export interface HeroImageSliderProps extends Pick<SectionActions, 'primaryActio
 /** Hero Image Slider — Container 50% + 50% over a full-bleed image: text + primary action lower-left, prev/next arrows lower-right. */
 export function HeroImageSlider({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, showNav = true, onPrevious, onNext, className }: HeroImageSliderProps) {
   return (
-    <div className={cx('ek-hero-frame', className)}>
+    <div className={cx('ek-section ek-hero-frame', className)}>
       <div className="ek-container ek-hero theme-dark" style={scrim(image)}>
         <Col span={6} className="ek-hero__textcol">
           <div className="ek-textgroup ek-hero__text">
@@ -58,7 +58,7 @@ export interface HeroSplitColumnsProps extends Pick<SectionActions, 'primaryActi
 /** Hero Split Columns — Container 50% + 50% over a full-screen image; headline bottom-left, paragraph + primary action bottom-right (max 480). */
 export function HeroSplitColumns({ label, title, children, image = sectionImages.landscape, primaryAction, onPrimaryAction, className }: HeroSplitColumnsProps) {
   return (
-    <div className={cx('ek-container ek-hero2 theme-dark', className)} style={scrim(image)}>
+    <div className={cx('ek-section ek-container ek-hero2 theme-dark', className)} style={scrim(image)}>
       <Col span={6} className="ek-hero2__headcol">
         <div className="ek-hero2__heading-group">
           {label && <div className="ek-textgroup__eyebrow">{label}</div>}
@@ -97,7 +97,7 @@ export function HeroMarqueeGallery({ label, title, children, primaryAction, onPr
     </div>
   );
   return (
-    <div className={cx('ek-hero3', className)}>
+    <div className={cx('ek-section ek-hero3', className)}>
       <div className="ek-container ek-sec-intro"><Col span={12}>
         <div className="ek-hero3__intro">
           <Head label={label} title={title} size="l" className="ek-hero3__head" />

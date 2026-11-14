@@ -364,6 +364,57 @@
     if (drop) { e.preventDefault(); drop.classList.remove('is-dragging'); }
   }));
 
+  // ---------------- section entrance reveal ----------------
+  // The section canvas (.ek-section: background, padding) shows at once; what sits in its
+  // Container columns fades in from a 12px blur a moment later, the first time the section
+  // scrolls into view. Elements are only hidden once this script has armed the section,
+  // so markup without the runtime (or with reduced motion) simply renders static.
+  const REVEAL_DELAY = 200, REVEAL_STEP = 60, REVEAL_MAX_STEPS = 6, REVEAL_DURATION = 400;
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  function revealItems(root) {
+    const items = [];
+    const containers = [root.matches('.ek-container') ? root : null, ...root.querySelectorAll('.ek-container')]
+      .filter(c => c && (c === root || !c.parentElement.closest('.ek-container') || !root.contains(c.parentElement.closest('.ek-container'))));
+    containers.forEach(c => Array.from(c.children).forEach(col => {
+      if (col.children.length) items.push(...col.children); else items.push(col);
+    }));
+    if (!root.matches('.ek-container')) Array.from(root.children).forEach(ch => {
+      if (!ch.matches('.ek-container') && !ch.querySelector('.ek-container')) items.push(ch);
+    });
+    return items
+      .filter(el => getComputedStyle(el).animationName === 'none')
+      .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+  }
+  const revealIO = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const root = e.target; revealIO.unobserve(root);
+    root.setAttribute('data-ek-reveal', 'in');
+    const items = root.querySelectorAll('[data-ek-reveal-item]');
+    const last = REVEAL_DELAY + Math.min(items.length - 1, REVEAL_MAX_STEPS) * REVEAL_STEP + REVEAL_DURATION;
+    setTimeout(() => {
+      root.setAttribute('data-ek-reveal', 'done');
+      items.forEach(el => { el.removeAttribute('data-ek-reveal-item'); el.style.removeProperty('--ek-reveal-delay'); });
+    }, last + 50);
+  }), { threshold: 0.1 }) : null;
+  function armReveal(root) {
+    if (!revealIO || root.hasAttribute('data-ek-reveal') || (reduceMotion && reduceMotion.matches)) return;
+    revealItems(root).forEach((el, i) => {
+      el.setAttribute('data-ek-reveal-item', '');
+      el.style.setProperty('--ek-reveal-delay', (REVEAL_DELAY + Math.min(i, REVEAL_MAX_STEPS) * REVEAL_STEP) + 'ms');
+    });
+    root.setAttribute('data-ek-reveal', 'pending');
+    revealIO.observe(root);
+  }
+  function scanReveal(node) {
+    if (!node || node.nodeType !== 1) return;
+    if (node.matches('.ek-section')) armReveal(node);
+    node.querySelectorAll('.ek-section').forEach(armReveal);
+  }
+  scanReveal(document.documentElement);
+  // MutationObserver callbacks run before the next paint, so injected sections never flash.
+  new MutationObserver(list => list.forEach(m => m.addedNodes.forEach(scanReveal)))
+    .observe(document.documentElement, { childList: true, subtree: true });
+
   // expose a no-op init for parity with component libraries
   window.Eraiki = { init: function () {} };
 })();

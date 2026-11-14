@@ -644,7 +644,7 @@
 .ek-textgroup__head { display: flex; flex-direction: column; }
 .ek-textgroup__eyebrow { font-family: var(--font-family-label); font-weight: var(--font-weight-label); font-size: var(--font-size-label-m); line-height: var(--line-height-label-m); text-transform: uppercase; color: var(--color-fill-plain-text-accent); }
 .ek-textgroup__title { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); font-size: var(--font-size-heading-s); line-height: var(--line-height-heading-s); color: var(--color-fill-plain-text-standard-l); margin: 0; }
-.ek-textgroup__body { font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-l); line-height: var(--line-height-body-l); color: var(--color-fill-plain-text-standard-l); margin: 0; }
+.ek-textgroup__body { font-family: var(--font-family-body); font-weight: var(--font-weight-body); font-size: var(--font-size-body-l); line-height: var(--line-height-body-l); color: var(--color-fill-plain-text-standard-m); margin: 0; }
 
 /* ---------- Patterns ---------- */
 /* Sections built on Container (.ek-container): the section IS the Container, with the
@@ -713,13 +713,17 @@
 
 /* Explanation Dark Card — Container 100% over a full-bleed background image, in Dark
    mode: the column is the dark card (4XL inset) with a Text group and a square image. */
-.ek-explain6 { background-position: center; background-size: cover; background-repeat: no-repeat; }
+/* Background = Figma's crop: full width, the bottom 59% of the image (1 / 0.5917 = 169%). */
+.ek-explain6 { background-position: center bottom; background-size: 100% 169%; background-repeat: no-repeat; }
 .ek-explain6__card { flex-direction: row; gap: var(--spacing-xl); padding: var(--spacing-4xl); background: var(--color-fill-plain-surface-base); }
 .ek-explain6__col, .ek-explain6__mediacol { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
 .ek-explain6__mediacol { align-items: center; justify-content: center; }
 .ek-explain6__text { max-width: none; }
-.ek-explain6__text .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
 .ek-explain6__media { width: 466px; max-width: 100%; aspect-ratio: 1; background-position: center; background-size: cover; background-repeat: no-repeat; }
+
+/* Light text on dark surfaces: grayscale anti-aliasing, as Figma renders it (macOS'
+   default smoothing makes light-on-dark type look a weight heavier). */
+.theme-dark { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* Copy that differs between the desktop and mobile frames in Figma. */
 @media (min-width: 1025px) { .ek-hide-desktop { display: none !important; } }
@@ -737,7 +741,6 @@
 .ek-hero { min-height: 700px; background-position: center; background-size: cover; background-repeat: no-repeat; }
 .ek-hero__textcol { justify-content: flex-end; }
 .ek-hero__text { max-width: none; }
-.ek-hero .ek-textgroup__body, .ek-hero2 .ek-textgroup__body { color: var(--color-fill-plain-text-standard-m); }
 .ek-hero__navcol { justify-content: flex-end; align-items: flex-end; }
 .ek-hero__nav { display: flex; gap: var(--spacing-xs); }
 
@@ -842,9 +845,10 @@
 .ek-values2__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .28s ease; }
 .ek-values2__item.is-active .ek-values2__body { grid-template-rows: 1fr; }
 .ek-values2__body-inner { overflow: hidden; }
-.ek-values2__body-inner .ek-textgroup__body { padding-top: var(--spacing-m); } /* Body M, 16 below the title (Figma) */
-.ek-values2__mediacol { display: flex; align-items: center; justify-content: center; }
-.ek-values2__media { width: 586px; max-width: 100%; overflow: hidden; aspect-ratio: 1 / 1; }
+.ek-values2__body-inner .ek-textgroup__body { display: block; padding-top: var(--spacing-m); } /* Body M, 16 below the title (Figma) */
+.ek-values2__mediacol { position: relative; }
+/* Square image as tall as the text column (Figma: fill height), centred in its half. */
+.ek-values2__media { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 100%; overflow: hidden; aspect-ratio: 1 / 1; }
 .ek-values2__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* Values & Features Numbered List — two Containers: 100% (heading, up to 680) over 50% + 50%:
@@ -878,6 +882,8 @@
 .ek-values4__card { background: var(--color-fill-plain-surface-standard-s); border-radius: var(--radius-standard); padding: var(--spacing-l); display: flex; flex-direction: column; gap: var(--spacing-l); }
 .ek-values4__illus { display: flex; align-items: center; justify-content: center; min-height: 200px; }
 .ek-values4__illus img { display: block; }
+/* The card copy is not a Text group in Figma: it keeps Text/Standard-L. */
+.ek-values4__card .ek-textgroup__body { color: var(--color-fill-plain-text-standard-l); }
 
 /* Section responsive behaviour — one component that reflows at the 1024px
    breakpoint (Desktop >= 1025, Mobile <= 1024), driven by the real viewport
@@ -917,7 +923,7 @@
   /* Explanation Dark Card — stack text over image inside the card */
   .ek-explain6 { padding: var(--spacing-5xl) var(--spacing-l); border-radius: var(--radius-standard); }
   .ek-explain6__card { flex-direction: column; gap: var(--spacing-xxl); padding: var(--spacing-l); border-radius: var(--radius-standard); }
-  .ek-explain6__media { width: 100%; aspect-ratio: auto; min-height: 192px; }
+  .ek-explain6__media { width: 100%; aspect-ratio: auto; min-height: 192px; border-radius: var(--radius-m); }
   /* Hero Image Slider — inset by a 16 frame; the arrows share the button's row (bottom-right) */
   .ek-hero-frame { padding: var(--spacing-m); background: var(--color-fill-plain-surface-base); }
   .ek-hero { min-height: 0; padding: var(--spacing-xxl) var(--spacing-l); border-radius: var(--radius-standard); }
@@ -959,7 +965,8 @@
   .ek-values2__row { flex-direction: column; gap: var(--spacing-4xl); }
   .ek-values2__col { flex: none; gap: var(--spacing-xxl); }
   .ek-values2__mediacol { flex: none; }
-  .ek-values2__media { width: 100%; border-radius: var(--radius-standard); }
+  .ek-values2__mediacol { position: static; }
+  .ek-values2__media { position: static; transform: none; width: 100%; border-radius: var(--radius-standard); }
   .ek-values2__item { padding: var(--spacing-l); }
   /* Values & Features Numbered List — image over the list; each row stacks title over body */
   .ek-values3__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }

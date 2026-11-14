@@ -1,9 +1,9 @@
 // Sample imagery for the sections, inlined as data URLs so they render anywhere the
 // bundle loads (no asset hosting needed). Photos are compressed WebP copies of
-// ../../../assets/sections/*.jpg; logos and illustrations are the original SVGs.
+// ../../../assets/sections/ photos; logos and illustrations are the original SVGs.
 import photoLandscape from './assets/explanation-003-img.webp';
 import photoBanner from './assets/explanation-001-bg.webp';
-import photoBackdrop from './assets/explanation-006-bg.jpg'; // gradient backdrop (JPEG: no WebP encoder at hand)
+import photoBackdrop from './assets/explanation-006-bg.webp'; // gradient backdrop
 import photoPortrait from './assets/explanation-002-img.webp';
 import photoPortrait2 from './assets/explanation-004-img1.webp';
 import photoPortrait3 from './assets/explanation-004-img2.webp';

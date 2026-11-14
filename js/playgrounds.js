@@ -568,7 +568,7 @@
       let r = map[s['Aspect ratio']];
       if (s.Orientation === 'Vertical') { const p = r.split('/'); r = p[1] + '/' + p[0]; }
       const w = s.Orientation === 'Vertical' ? '150px' : '240px';
-      return `<span class="ek-image" style="width:${w};aspect-ratio:${r}"><img src="assets/sections/explanation-002-img.jpg" alt=""></span>`;
+      return `<span class="ek-image" style="width:${w};aspect-ratio:${r}"><img src="assets/sections/explanation-002-img.webp" alt=""></span>`;
     },
   };
 

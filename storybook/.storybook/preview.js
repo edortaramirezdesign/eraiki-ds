@@ -6,16 +6,17 @@ import '../../js/eraiki.js';       // optional runtime for interactive component
 import './stage.css';              // centers component stories in their frame
 
 // Stories embedded in the Docs preview block (stories/_preview.js) load with ?ek-embed=1.
-if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('ek-embed')) {
-  document.documentElement.classList.add('ek-embed');
-}
+const isEmbed = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('ek-embed');
+if (isEmbed) document.documentElement.classList.add('ek-embed');
 
 /** @type { import('@storybook/html-vite').Preview } */
 const preview = {
   parameters: {
     layout: 'centered',
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
-    a11y: { test: 'todo' },
+    // Embedded Docs previews skip the accessibility audit (axe): nobody reads it there and it
+    // costs every Docs page a heavy extra run. Stories still get it in the Accessibility tab.
+    a11y: isEmbed ? { test: 'off' } : { test: 'todo' },
     backgrounds: { disable: true },
     options: {
       // Sidebar order mirrors the custom repo's nav exactly (js/app.js buildNav +

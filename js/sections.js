@@ -407,7 +407,7 @@
     // Explanation Banner Card — full-bleed image banner with a contained Text group card
     // (icon and secondary/tertiary buttons hidden in Figma → single primary button).
     // Built on Container (100%) in Figma's Dark mode, so the card is the dark surface.
-    'explanation-banner-card': () => `<div class="ek-container ek-explain theme-dark" style="background-image:url('assets/sections/explanation-003-img.jpg')"><div class="ek-container__col" style="--ek-span:12"><div class="ek-textgroup ek-textgroup--contained"><div class="ek-textgroup__top">
+    'explanation-banner-card': () => `<div class="ek-container ek-explain theme-dark" style="background-image:url('assets/sections/explanation-003-img.webp')"><div class="ek-container__col" style="--ek-span:12"><div class="ek-textgroup ek-textgroup--contained"><div class="ek-textgroup__top">
       <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h3 class="ek-textgroup__title">Nam a bibendum nunc eget tincidunt eros</h3></div>
       <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
     </div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></div></div>`,
@@ -422,7 +422,7 @@
         </div>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
-      const media = `<img src="assets/sections/explanation-002-img.jpg" alt="" loading="lazy">`;
+      const media = `<img src="assets/sections/explanation-002-img.webp" alt="" loading="lazy">`;
       // Container 8% + 42% + 42% + 8%: the outer 8% columns stay empty (inset).
       const [a, b] = kind === 'image-text' ? [media, text] : [text, media];
       const col = (c, cls) => `<div class="ek-container__col ${cls}" style="--ek-span:5">${c}</div>`;
@@ -438,7 +438,7 @@
         </div>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div></div>`;
-      const media = `<div class="ek-container__col ek-explain3__media" style="--ek-span:6;background-image:url('assets/sections/explanation-003-img.jpg')"></div>`;
+      const media = `<div class="ek-container__col ek-explain3__media" style="--ek-span:6;background-image:url('assets/sections/explanation-003-img.webp')"></div>`;
       // Container 50% + 50% with no margin and no gutter: both halves run edge to edge.
       const cols = kind === 'image-text' ? [media, text] : [text, media];
       return `<div class="ek-container ek-explain3">${cols.join('')}</div>`;
@@ -447,7 +447,7 @@
     // panels: two images and a text card (eyebrow, heading, body, primary button).
     'explanation-triple-panel': () => {
       const head = `<div class="ek-textgroup ek-explain4__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div></div>`;
-      const img = (n) => `<div class="ek-explain4__img" style="background-image:url('assets/sections/explanation-004-img${n}.jpg')"></div>`;
+      const img = (n) => `<div class="ek-explain4__img" style="background-image:url('assets/sections/explanation-004-img${n}.webp')"></div>`;
       const card = `<div class="ek-explain4__card"><div class="ek-textgroup">
         <div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h3 class="ek-textgroup__title">Lorem ipsum dolor sit amet</h3></div>
@@ -466,7 +466,7 @@
         <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
       </div></div>`;
-      const img = `<div class="ek-explain5__img" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div>`;
+      const img = `<div class="ek-explain5__img" style="background-image:url('assets/sections/explanation-002-img.webp')"></div>`;
       const group = `<div class="ek-explain5__mgroup" style="--ek-marquee-items:6">${img.repeat(6)}</div>`;
       // Header on Container 100%; the image row stays an infinite marquee (full bleed).
       return `<div class="ek-explain5"><div class="ek-container ek-explain5__contained"><div class="ek-container__col" style="--ek-span:12">${text}</div></div><div class="ek-explain5__fluid"><div class="ek-explain5__marquee">${group}${group}</div></div></div>`;
@@ -474,7 +474,7 @@
     // Hero Image Slider — Container 50% + 50% over a full-bleed image (dark scrim), in Dark
     // mode: text group with primary button (bottom-left) + prev/next arrows (bottom-right).
     // The frame is only a mobile inset (16) — desktop runs edge to edge.
-    'hero-image-slider': () => `<div class="ek-hero-frame"><div class="ek-container ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
+    'hero-image-slider': () => `<div class="ek-hero-frame"><div class="ek-container ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.webp')">
       <div class="ek-container__col ek-hero__textcol" style="--ek-span:6">
         <div class="ek-textgroup ek-hero__text"><div class="ek-textgroup__top">
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
@@ -491,7 +491,7 @@
     </div></div>`,
     // Hero Split Columns — Container 50% + 50% over a full-bleed image (dark scrim), in Dark
     // mode: heading (bottom-left, 3XL above the bottom) + paragraph & primary button (bottom-right, 480 wide).
-    'hero-split-columns': () => `<div class="ek-container ek-hero2 theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
+    'hero-split-columns': () => `<div class="ek-container ek-hero2 theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.webp')">
       <div class="ek-container__col ek-hero2__headcol" style="--ek-span:6">
         <div class="ek-hero2__heading-group">
           <div class="ek-textgroup__eyebrow">Lorem ipsum</div>
@@ -510,7 +510,7 @@
     // alternating sizes (square / tall), Corner radius M.
     'hero-marquee-gallery': () => {
       const order = [2, 1, 3, 4, 5, 1, 3, 4];
-      const imgs = order.map((n, i) => `<img class="ek-hero3__img${i % 2 ? ' ek-hero3__img--tall' : ''}" src="assets/sections/hero-marquee-gallery-${n}.jpg" alt="" loading="lazy">`).join('');
+      const imgs = order.map((n, i) => `<img class="ek-hero3__img${i % 2 ? ' ek-hero3__img--tall' : ''}" src="assets/sections/hero-marquee-gallery-${n}.webp" alt="" loading="lazy">`).join('');
       const group = `<div class="ek-hero3__group" style="--ek-marquee-items:${order.length}">${imgs}</div>`;
       return `<div class="ek-hero3">
         <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
@@ -602,7 +602,7 @@
       </button>`).join('');
       // One image per feature, stacked; the active item's image fades in (js/eraiki.js).
       const media = ['values-002-img', 'explanation-004-img1', 'explanation-004-img2', 'explanation-003-img']
-        .map((f, i) => `<img class="ek-values2__img${i === 0 ? ' is-active' : ''}" src="assets/sections/${f}.jpg" alt="" loading="lazy">`).join('');
+        .map((f, i) => `<img class="ek-values2__img${i === 0 ? ' is-active' : ''}" src="assets/sections/${f}.webp" alt="" loading="lazy">`).join('');
       // Container 100% with no margin; its column carries the 4XL inset around the row.
       return `<div class="ek-container ek-values2"><div class="ek-container__col ek-values2__inner" style="--ek-span:12"><div class="ek-values2__row">
         <div class="ek-values2__col">
@@ -623,7 +623,7 @@
       return `<div class="ek-values3">
         <div class="ek-container ek-values3__top"><div class="ek-container__col" style="--ek-span:12"><div class="ek-values3__head"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div></div></div>
         <div class="ek-container ek-values3__row">
-          <div class="ek-container__col ek-values3__mediacol" style="--ek-span:6"><div class="ek-values3__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
+          <div class="ek-container__col ek-values3__mediacol" style="--ek-span:6"><div class="ek-values3__media"><img src="assets/sections/values-002-img.webp" alt="" loading="lazy"></div></div>
           <div class="ek-container__col ek-values3__listcol" style="--ek-span:6"><div class="ek-values3__list">${items}</div></div>
         </div>
       </div>`;
@@ -655,7 +655,7 @@
         { img: 3, quote: '“With their speedy shipping and eye-catching branding, we’ve truly distinguished ourselves”', name: 'Jessica Mercedes', role: 'Marketer at Amet' },
         { img: 1, quote: '“Their fast shipping & branding made us stand out. We save hours every day”', name: 'Julek Cesar', role: 'CEO of Lorem ipsum' },
       ];
-      const card = (it) => `<div class="ek-container__col" style="--ek-span:3"><figure class="ek-testi1__card theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.16) 0%,rgba(0,0,0,.1) 45%,rgba(0,0,0,.86) 100%),url('assets/sections/testimonials-001-img${it.img}.jpg')">
+      const card = (it) => `<div class="ek-container__col" style="--ek-span:3"><figure class="ek-testi1__card theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.16) 0%,rgba(0,0,0,.1) 45%,rgba(0,0,0,.86) 100%),url('assets/sections/testimonials-001-img${it.img}.webp')">
         <blockquote class="ek-testi1__quote ek-heading-s">${it.quote}</blockquote>
         <figcaption class="ek-testi1__author"><span class="ek-testi1__name ek-body-m ek-strong">${it.name}</span><span class="ek-testi1__role ek-detail-m">${it.role}</span></figcaption>
       </figure></div>`;
@@ -692,7 +692,7 @@
       const quote = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lorem leo, mollis non diam eu, venenatis feugiat est.';
       const card = (n) => `<figure class="ek-testi2__card">
         <div class="ek-testi2__quote"><span class="ek-testi2__icon">${EK_ICONS.quote}</span><blockquote class="ek-heading-s">${quote}</blockquote></div>
-        <figcaption class="ek-testi2__author"><span class="ek-avatar ek-avatar--md"><img src="assets/sections/testimonials-001-img${n}.jpg" alt="" loading="lazy"></span><span class="ek-testi2__who"><span class="ek-testi2__name ek-body-l ek-strong">Lorem ipsum</span><span class="ek-testi2__role ek-detail-m">Lorem ipsum dolor</span></span></figcaption>
+        <figcaption class="ek-testi2__author"><span class="ek-avatar ek-avatar--md"><img src="assets/sections/testimonials-001-img${n}.webp" alt="" loading="lazy"></span><span class="ek-testi2__who"><span class="ek-testi2__name ek-body-l ek-strong">Lorem ipsum</span><span class="ek-testi2__role ek-detail-m">Lorem ipsum dolor</span></span></figcaption>
       </figure>`;
       const items = [1, 2, 3, 1, 2];
       const group = `<div class="ek-testi2__group" style="--ek-marquee-items:${items.length}">${items.map(card).join('')}</div>`;
@@ -713,7 +713,7 @@
     // Left column: heading (top) + body & primary button (bottom); right: an image.
     // Built on Container (100%) in Figma's Dark mode: the column is the dark card, holding a
     // Text group (eyebrow, heading, body, primary button) and a square image.
-    'explanation-dark-card': () => `<div class="ek-container ek-explain6 theme-dark" style="background-image:url('assets/sections/explanation-006-bg.jpg')">
+    'explanation-dark-card': () => `<div class="ek-container ek-explain6 theme-dark" style="background-image:url('assets/sections/explanation-006-bg.webp')">
       <div class="ek-container__col ek-explain6__card" style="--ek-span:12">
         <div class="ek-explain6__col">
           <div class="ek-textgroup ek-explain6__text">
@@ -724,7 +724,7 @@
             <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
           </div>
         </div>
-        <div class="ek-explain6__mediacol"><div class="ek-explain6__media" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div></div>
+        <div class="ek-explain6__mediacol"><div class="ek-explain6__media" style="background-image:url('assets/sections/explanation-002-img.webp')"></div></div>
       </div>
     </div>`,
   };

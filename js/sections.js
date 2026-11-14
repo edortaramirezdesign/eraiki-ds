@@ -357,7 +357,24 @@
     { slug: 'footer', name: 'Footer', desc: 'Site-wide footer with navigation and legal.', versions: [] },
     { slug: 'cta', name: 'CTA', desc: 'Focused call-to-action band.', versions: [] },
     { slug: 'grids', name: 'Grids', desc: 'Reusable content grid layouts.', versions: [] },
-    { slug: 'faqs', name: 'FAQs', desc: 'Frequently asked questions, usually as accordions.', versions: [] },
+    { slug: 'faqs', name: 'FAQs', desc: 'Frequently asked questions, usually as accordions.', versions: [
+      { slug: 'faqs-split-list', name: 'FAQs Split List', shot: 'faqs-split-list', node: '1585-4732',
+        short: 'A heading on the left beside a list of expandable questions on the right.',
+        description: 'FAQs Split List answers common questions in a compact, scannable way: a heading — an eyebrow and a large title — sits in a narrow left column, and the questions stack in a wide right column as expandable cards. Opening a question reveals its answer and closes the one that was open, so the list stays short.\n\nThe layout is a Container 34% + 66%; each question is a FAQ item fragment — a question in Heading S with a tertiary icon button (plus / minus) and an answer in Body L — on the base surface with Corner radius M. On mobile the heading stacks above the list. Use it near the end of a page to clear up doubts before a call to action.',
+        keywords: ['faq', 'faqs', 'questions', 'answers', 'accordion', 'expandable', 'help', 'support', 'two columns', 'split'],
+        whenToUse: [
+          'Answering the questions people ask most, right where doubts arise.',
+          'Keeping long answers out of the way until someone asks for them.',
+          'Clearing up objections near a sign-up or purchase call to action.',
+        ],
+        whenNotToUse: [
+          'Content everyone needs to read — put it in the page, not behind a question.',
+          'Long help articles or documentation — link to a help centre instead.',
+          'A single question — use a plain text block.',
+        ],
+        frameDesktop: 'The heading sits in the narrow left column (34%) and the questions stack in the wide right column (66%); the open question shows its answer.',
+        frameMobile: 'The heading sits on top and the questions stack below it at full width.' },
+    ] },
     { slug: 'team', name: 'Team', desc: 'Team member profiles.', versions: [] },
     { slug: 'tabs', name: 'Tabs', desc: 'Tabbed content sections.', versions: [] },
     { slug: 'process', name: 'Process', desc: 'Step-by-step process or timeline.', versions: [] },
@@ -672,6 +689,21 @@
           </div>
         </div></div>
         <div class="ek-container ek-values5__grid">${col}${col}${col}</div>
+      </div>`;
+    },
+    // FAQs Split List — Container 34% + 66%: a Text group (label + Heading L) on the left and a
+    // list of FAQ items on the right. Each item: a question (Heading S) with a tertiary icon
+    // button (plus / minus); one item open at a time (js/eraiki.js).
+    'faqs-split-list': () => {
+      const q = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?';
+      const a = 'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.';
+      const item = (open) => `<div class="ek-faq1__item${open ? ' is-open' : ''}">
+        <div class="ek-faq1__q"><h3 class="ek-faq1__question ek-heading-s">${q}</h3><button type="button" class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm ek-faq1__toggle" aria-expanded="${open}" aria-label="Show answer"><span class="ek-faq1__plus">${EK_ICONS.plus}</span><span class="ek-faq1__minus">${EK_ICONS.minus}</span></button></div>
+        <div class="ek-faq1__a"><div class="ek-faq1__a-inner"><p class="ek-textgroup__body">${a}</p></div></div>
+      </div>`;
+      return `<div class="ek-container ek-faq1">
+        <div class="ek-container__col" style="--ek-span:4"><div class="ek-textgroup ek-faq1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet</h2></div></div></div></div>
+        <div class="ek-container__col" style="--ek-span:8"><div class="ek-faq1__list">${[true, false, false, false, false, false].map(item).join('')}</div></div>
       </div>`;
     },
     // Explanation Dark Card — dark (complementary) card over a full-bleed background image.

@@ -678,7 +678,7 @@
    images + a text card, M gutter). Panels use Corner radius M. */
 .ek-explain4 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
 .ek-explain4__top { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); }
-.ek-explain4__head { max-width: 680px; }
+.ek-explain4__head { max-width: 580px; }
 .ek-explain4__block { padding: var(--spacing-l) var(--spacing-4xl) var(--spacing-5xl); column-gap: var(--spacing-m); row-gap: var(--spacing-m); }
 .ek-explain4__img {
   flex: 1 1 auto; border-radius: var(--radius-m); min-height: 533px;
@@ -690,11 +690,11 @@
 }
 .ek-explain4__card .ek-textgroup { max-width: none; width: 100%; }
 
-/* Explanation Image Marquee — header on Container 100% (text group 680 wide) over a
+/* Explanation Image Marquee — header on Container 100% (text group 620 wide) over a
    full-bleed infinite marquee of images (M gutter, Corner radius M). */
 .ek-explain5 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
 .ek-explain5__contained { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); }
-.ek-explain5__text { max-width: 680px; }
+.ek-explain5__text { max-width: 620px; }
 /* Fluid row is an infinite horizontal marquee — two identical image groups that
    scroll left; group 2 seamlessly takes group 1's place (translate = own width + gap). */
 .ek-explain5__fluid { overflow: hidden; width: 100%; padding: var(--spacing-m) 0; }
@@ -732,7 +732,7 @@
 @media (max-width: 1024px) { .ek-hide-mobile { display: none !important; } }
 
 /* Centered-intro sections (Hero Marquee Gallery, Marquee Logo Strip / Tiles): two
-   Containers 100% — the intro (6XL top, L bottom, Text group centred up to 820) and the
+   Containers 100% — the intro (6XL top, L bottom, Text group centred up to 620) and the
    full-bleed strip (no side margin; L top, 6XL bottom). */
 .ek-sec-intro { padding: var(--spacing-6xl) var(--spacing-4xl) var(--spacing-l); row-gap: var(--spacing-l); }
 .ek-sec-intro > .ek-container__col { align-items: center; }
@@ -758,7 +758,7 @@
 /* Hero Marquee Gallery — centered intro over a full-bleed, continuously scrolling row of
    images in alternating sizes (square / tall, top-aligned, Corner radius M). */
 .ek-hero3 { display: flex; flex-direction: column; align-items: center; background: var(--color-fill-plain-surface-base); overflow: hidden; }
-.ek-hero3__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-hero3__intro { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-hero3__head { display: flex; flex-direction: column; align-items: center; }
 .ek-hero3__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-hero3__strip { overflow: hidden; width: 100%; }
@@ -774,7 +774,7 @@
    opposite directions (the second row runs the shared ek-marquee keyframes in reverse)
    and fade into the background at both edges. */
 .ek-marquee2 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); overflow: hidden; --ek-marquee2-fade: 180px; }
-.ek-marquee2__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-marquee2__intro { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-marquee2__head { display: flex; flex-direction: column; align-items: center; }
 .ek-marquee2__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-marquee2__strip { position: relative; width: 100%; overflow: hidden; display: flex; flex-direction: column; gap: var(--spacing-m); }
@@ -793,7 +793,7 @@
 /* Marquee Logo Strip — centered intro over a continuously scrolling row of brand logos
    (muted to one tint, split by thin dividers). Pure-CSS infinite marquee. */
 .ek-marquee1 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
-.ek-marquee1__text { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-marquee1__text { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-marquee1__head { display: flex; flex-direction: column; align-items: center; }
 .ek-marquee1__text .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-marquee1__strip { overflow: hidden; width: 100%; }
@@ -803,12 +803,12 @@
 .ek-marquee1__logo { flex: 0 0 auto; width: 168px; height: 72px; }
 .ek-marquee1__divider { flex: 0 0 auto; width: var(--border-width-default); align-self: stretch; background: var(--color-stroke-plain-shape-standard-m); }
 
-/* Values & Features Icon Grid — two Containers: 100% (centered intro, up to 820) over
+/* Values & Features Icon Grid — two Containers: 100% (centered intro, up to 620) over
    25% × 4 feature cards (icon, title, body) on Corner radius M, M gutter. */
 .ek-values1 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
 .ek-values1__top { padding: var(--spacing-6xl) var(--spacing-4xl) var(--spacing-xl); row-gap: var(--spacing-l); }
 .ek-values1__top > .ek-container__col, .ek-values4__top > .ek-container__col { align-items: center; }
-.ek-values1__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-values1__intro { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-values1__head { display: flex; flex-direction: column; align-items: center; }
 .ek-values1__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-values1__boxes { padding: var(--spacing-xl) var(--spacing-4xl) var(--spacing-6xl); column-gap: var(--spacing-m); row-gap: var(--spacing-l); }
@@ -862,11 +862,11 @@
 .ek-values3__title { color: var(--color-fill-plain-text-standard-l); }
 .ek-values3__desc { color: var(--color-fill-plain-text-standard-m); margin: 0; }
 
-/* Values & Features Staggered Cards — two Containers: 100% (centered intro, up to 820) over
+/* Values & Features Staggered Cards — two Containers: 100% (centered intro, up to 620) over
    33% × 3 cards, each a heading, an illustration and a line of copy; columns step down 0/XXL/5XL. */
 .ek-values4 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
 .ek-values4__top { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); row-gap: var(--spacing-l); }
-.ek-values4__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-values4__intro { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-values4__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-values4__grid { padding: var(--spacing-l) var(--spacing-4xl) var(--spacing-5xl); row-gap: var(--spacing-l); align-items: start; }
 .ek-values4__col:nth-child(2) { padding-top: var(--spacing-xxl); }
@@ -887,7 +887,7 @@
   background-image: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s));
 }
 .ek-testi2 .ek-container { background: transparent; }
-.ek-testi2__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-testi2__intro { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-testi2__intro .ek-textgroup__head { display: flex; flex-direction: column; align-items: center; }
 .ek-testi2__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-testi2__strip { overflow: hidden; width: 100%; }
@@ -932,12 +932,12 @@
 @media (prefers-reduced-motion: reduce) { .ek-faq1__a { transition: none; } }
 
 /* Values & Features Bento Grid — two Containers: 100% centered intro (eyebrow, Heading L, body,
-   primary + secondary; up to 820) over 33% × 3 columns of Feature cards, two stacked per column
+   primary + secondary; up to 620) over 33% × 3 columns of Feature cards, two stacked per column
    (XS gutter). On Surface Standard-S; each card is a Text group on Surface Base, radius M. */
 .ek-values5 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-standard-s); }
 .ek-values5__top { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); row-gap: var(--spacing-l); background: transparent; }
 .ek-values5__top > .ek-container__col { align-items: center; }
-.ek-values5__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-values5__intro { width: 100%; max-width: 620px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
 .ek-values5__intro .ek-textgroup__head { display: flex; flex-direction: column; align-items: center; }
 .ek-values5__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
 .ek-values5__grid { padding: var(--spacing-l) var(--spacing-4xl) var(--spacing-5xl); column-gap: var(--spacing-xs); row-gap: var(--spacing-xs); background: transparent; }
@@ -997,6 +997,8 @@
   .ek-explain5 { border-radius: var(--radius-standard); }
   .ek-explain5__contained { padding: var(--spacing-5xl) var(--spacing-l) 0; }
   .ek-explain5__text { max-width: none; }
+  .ek-explain4__head { max-width: none; }
+  .ek-testi2__intro, .ek-values5__intro { max-width: 820px; }
   .ek-explain5__fluid { padding: var(--spacing-xxl) 0 var(--spacing-5xl); }
   .ek-explain5__marquee { gap: var(--spacing-xs); }
   .ek-explain5__mgroup { gap: var(--spacing-xs); --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 188; } /* image 180 + gap 8 */
@@ -1017,7 +1019,7 @@
   .ek-hero2__aside { max-width: none; }
   /* Hero Marquee Gallery — same structure as desktop on mobile tokens; smaller images */
   .ek-hero3 .ek-sec-intro { padding: var(--spacing-6xl) var(--spacing-l) var(--spacing-l); }
-  .ek-hero3__intro { max-width: 640px; }
+  .ek-hero3__intro { max-width: none; }
   .ek-hero3__img { width: 200px; height: 200px; }
   .ek-hero3__img--tall { width: 280px; height: 350px; }
   .ek-hero3__group { --ek-marquee-pitch: 256; } /* avg of 200 / 280 + gap 16 */

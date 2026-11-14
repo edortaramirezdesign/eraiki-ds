@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["explanation", "text and image", "image and text", "two columns", "feature", "media", "side by side", "editorial", "alternating", "storytelling"]
 ---
 
@@ -32,4 +32,4 @@ Both columns are built from existing components — the Text group and the Image
 ## Design properties → React props
 Text + image / Image + text → `order`; text → `label` / `title` / children; buttons → `primaryAction` / `secondaryAction`; photo → `image`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

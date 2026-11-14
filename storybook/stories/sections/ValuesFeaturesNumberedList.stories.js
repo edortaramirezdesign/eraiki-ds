@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Values & Features/Values & Features Numbered List - Playground',
+  title: 'Marketing sections/Values & Features/Values & Features Numbered List - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'values-numbered-list' } },
 };
 

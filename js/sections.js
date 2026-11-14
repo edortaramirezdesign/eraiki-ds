@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Eraiki DS — Sections: config/docs + live markup builders. Single source for the
+   Eraiki DS — Marketing sections: config/docs + live markup builders. Single source for the
    portal (js/app.js) and the Storybook stories, so the two never drift.
    Depends on window.EK_ICONS (js/icons.js) and window.EK_BUILD (js/builders.js).
    ========================================================================== */

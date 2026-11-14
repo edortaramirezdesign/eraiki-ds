@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Marquee/Marquee Logo Strip - Playground',
+  title: 'Marketing sections/Marquee/Marquee Logo Strip - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'marquee-logo-strip' } },
 };
 

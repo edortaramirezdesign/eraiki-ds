@@ -1,8 +1,8 @@
 // Generate Storybook stories from the repo's single sources. Re-run after adding
 // components or sections:  node scripts/gen-stories.mjs
 //  - Components (js/components-data.js): one Docs + Playground per component.
-//  - Sections   (js/sections.js):        per BUILT version, a Documentation + Playground
-//    leaf grouped under its family (Sections/<Family>/<Version> - Documentation|Playground).
+//  - Marketing sections (js/sections.js):        per BUILT version, a Documentation + Playground
+//    leaf grouped under its family (Marketing sections/<Family>/<Version> - Documentation|Playground).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -36,7 +36,7 @@ for (const c of comps) {
 }
 console.log('generated', comps.length, 'component stories in', path.relative(root, outDir));
 
-// ---- Sections: one story per BUILT version (has a builder in SECTION_BUILD) ----
+// ---- Marketing sections: one story per BUILT version (has a builder in SECTION_BUILD) ----
 globalThis.window = globalThis; // so js/sections.js (bare `window`) loads under Node
 createRequire(import.meta.url)(path.join(root, 'js/sections.js'));
 const SECTIONS = globalThis.ERAIKI_SECTIONS || [];
@@ -52,7 +52,7 @@ for (const sec of SECTIONS) {
     if (!BUILD[v.slug]) continue; // only built versions
     const s = esc(v.slug);
     const base = v.name.replace(/[^A-Za-z0-9]+/g, '');
-    const group = `Sections/${esc(sec.name)}`;
+    const group = `Marketing sections/${esc(sec.name)}`;
     // Playground: one story whose name matches the title's last segment, so Storybook
     // hoists it to a single sidebar leaf ("Explanation Banner Card - Playground").
     const playground = `${esc(v.name)} - Playground`;

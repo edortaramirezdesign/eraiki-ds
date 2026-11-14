@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Explanations/Explanation Dark Card - Playground',
+  title: 'Marketing sections/Explanations/Explanation Dark Card - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'explanation-dark-card' } },
 };
 

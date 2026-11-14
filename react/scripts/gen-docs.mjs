@@ -8,7 +8,7 @@ const root = new URL('../../', import.meta.url);
 const ctx = { window: {} };
 vm.runInNewContext(readFileSync(new URL('js/components-data.js', root), 'utf8'), ctx);
 const BY_SLUG = Object.fromEntries(ctx.window.ERAIKI_COMPONENTS.map((c) => [c.slug, c]));
-// Sections: written docs live per version in js/sections.js (ERAIKI_SECTIONS).
+// Marketing sections: written docs live per version in js/sections.js (ERAIKI_SECTIONS).
 vm.runInNewContext(readFileSync(new URL('js/sections.js', root), 'utf8'), ctx);
 const SECTION_BY_SLUG = {};
 for (const sec of ctx.window.ERAIKI_SECTIONS) for (const v of sec.versions) SECTION_BY_SLUG[v.slug] = v;
@@ -61,7 +61,7 @@ const MAP = {
   FileDrop: ['file-drop', 'Forms'],
 };
 
-// React section -> js/sections.js version slug (category "Sections").
+// React section -> js/sections.js version slug (category "Marketing sections").
 const SECTIONS = {
   HeroImageSlider: 'hero-image-slider',
   HeroSplitColumns: 'hero-split-columns',
@@ -163,7 +163,7 @@ for (const [name, [slug, category]] of Object.entries(MAP)) {
 for (const [name, slug] of Object.entries(SECTIONS)) {
   const v = SECTION_BY_SLUG[slug];
   if (!v) throw new Error(`no section ${slug}`);
-  const out = ['---', 'category: Sections'];
+  const out = ['---', 'category: Marketing sections'];
   if (v.keywords?.length) out.push(`keywords: [${v.keywords.map((k) => JSON.stringify(k)).join(', ')}]`);
   out.push('---', '');
   if (v.short) out.push(v.short, '');
@@ -173,7 +173,7 @@ for (const [name, slug] of Object.entries(SECTIONS)) {
   if (v.whenToUse?.length) out.push('', '## When to use', ...v.whenToUse.map((x) => `- ${x}`));
   if (v.whenNotToUse?.length) out.push('', '## When not to use', ...v.whenNotToUse.map((x) => `- ${x}`));
   out.push('', '## Design properties → React props', PROPS_MAP[name]);
-  out.push('', 'Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.');
+  out.push('', 'Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.');
   writeFileSync(new URL(`docs/${name}.md`, new URL('../', import.meta.url)), out.join('\n') + '\n');
 }
 console.log(`  docs: ${Object.keys(MAP).length + Object.keys(SECTIONS).length} files written`);

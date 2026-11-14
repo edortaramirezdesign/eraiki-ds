@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["explanation", "two cards", "text and image", "image and text", "split panel", "feature", "media", "side by side", "landscape", "alternating"]
 ---
 
@@ -32,4 +32,4 @@ Both cards share the same rounded shape and height, so the pairing reads as one 
 ## Design properties → React props
 Text + image / Image + text → `order`; text card → `label` / `title` / children / `primaryAction` / `secondaryAction`; image card → `image`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

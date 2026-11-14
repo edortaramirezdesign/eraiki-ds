@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["explanation", "three panels", "showcase", "gallery", "images and text", "feature", "media row", "editorial", "header", "card"]
 ---
 
@@ -28,4 +28,4 @@ The panels are built from the Image and Text group components and keep a consist
 ## Design properties → React props
 Header → `label` / `title`; image panels → `images` (two); text card → `cardLabel` / `cardTitle` / children / `primaryAction`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

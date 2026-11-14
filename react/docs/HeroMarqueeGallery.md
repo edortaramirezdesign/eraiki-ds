@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["hero", "image gallery", "marquee", "tabs", "progress tabs", "centered intro", "full-bleed", "above the fold", "cta", "categories"]
 ---
 
@@ -28,4 +28,4 @@ The intro is built from the Text group and Button components on the light surfac
 ## Design properties → React props
 Intro → `label` / `title` / children / `primaryAction` / `secondaryAction`; progress tabs → `tabs` (`{label, images}`); active tab → `defaultActive` / `active`; fill time → `interval` (s); rotation → `autoAdvance`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Hero/Hero Split Columns - Playground',
+  title: 'Marketing sections/Hero/Hero Split Columns - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'hero-split-columns' } },
 };
 

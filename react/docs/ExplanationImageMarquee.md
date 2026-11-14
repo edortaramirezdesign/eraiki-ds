@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["explanation", "text and marquee", "image marquee", "carousel", "auto-scroll", "infinite scroll", "motion", "full-bleed", "editorial", "contained"]
 ---
 
@@ -28,4 +28,4 @@ The text uses the Text group component and the strip is built from the Image com
 ## Design properties → React props
 Intro → `label` / `title` / children; scrolling image row → `images`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

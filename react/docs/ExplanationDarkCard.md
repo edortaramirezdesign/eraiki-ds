@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["explanation", "dark card", "card on image", "overlay", "feature", "hero", "editorial", "complementary", "image background", "statement"]
 ---
 
@@ -28,4 +28,4 @@ The card uses the complementary surface with the system's dark text tokens, and 
 ## Design properties → React props
 Text → `label` / `title` / children / `primaryAction`; card image → `image`; full-bleed backdrop → `background`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

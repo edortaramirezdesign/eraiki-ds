@@ -38,4 +38,5 @@ npm run storybook   # http://localhost:6006
   Elevations, Breakpoints, Icons.
 - **Components** (41): each with a **Docs** page (live preview + written documentation)
   and a **Playground** (real prop controls).
-- **Sections** (14): each with a **Docs** page and a live **Preview**.
+- **Marketing sections** (16): sales-oriented page blocks, each with a **Docs** page and a
+  live **Playground**.

@@ -3,7 +3,7 @@
 import { sectionRender, sectionControls, sectionSourceTransform } from '../_section.js';
 
 export default {
-  title: 'Sections/Marquee/Marquee Logo Tiles - Playground',
+  title: 'Marketing sections/Marquee/Marquee Logo Tiles - Playground',
   parameters: { layout: 'fullscreen', docs: { source: { transform: sectionSourceTransform } }, ek: { kind: 'section', slug: 'marquee-logo-tiles' } },
 };
 

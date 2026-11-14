@@ -1,5 +1,5 @@
 ---
-category: Sections
+category: Marketing sections
 keywords: ["explanation", "card on image", "image banner", "overlay card", "feature", "text on image", "editorial", "storytelling", "call to action", "contained"]
 ---
 
@@ -28,4 +28,4 @@ The card is the Text group component in its contained variant, so its type scale
 ## Design properties → React props
 Text group card → `label` / `title` / children / `primaryAction`; background photo → `image`.
 
-Sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.
+Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.

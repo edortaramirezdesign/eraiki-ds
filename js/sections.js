@@ -134,7 +134,22 @@
         ],
         frameDesktop: 'A centered intro above three cards that step down 0/80/160px.',
         frameMobile: 'The stagger flattens and the three cards stack into one column.' },
-    ] },
+      { slug: 'values-bento-grid', name: 'Values & Features Bento Grid', shot: 'values-bento-grid', node: '1578-4318',
+        short: 'A centered intro over a grid of six feature cards in three columns.',
+        description: 'Values & Features Bento Grid presents six features or values as a grid of cards: a centered intro — an eyebrow, a large heading, a short paragraph and two actions — above three equal columns, each stacking two feature cards.\n\nEach card is a Text group — an icon tile, a short title and a line of copy — on the base surface with Corner radius M, over a light section background. Both rows are built on Containers, so margins and gutters match the rest of the system. On mobile the cards stack into a single column. Use it to summarise six key features or values at a glance.',
+        keywords: ['values', 'features', 'bento', 'grid', 'feature cards', 'benefits', 'icons', 'centered intro', 'cta', 'six cards'],
+        whenToUse: [
+          'Summarising six key features or values at a glance.',
+          'Pairing a short pitch and its actions with the features that back it up.',
+          'Giving every feature the same weight in a compact, scannable grid.',
+        ],
+        whenNotToUse: [
+          'Long or detailed feature descriptions — use a list or a dedicated section.',
+          'Four features or fewer — use the Icon Grid instead.',
+          'Features that need imagery to be understood — use an image-led section.',
+        ],
+        frameDesktop: 'A centered intro and two actions above six feature cards in three equal columns, two per column.',
+        frameMobile: 'The intro stays centered and the six cards stack into a single column.' },    ] },
     { slug: 'explanations', name: 'Explanations', desc: 'Alternating text + media blocks that explain how something works.', versions: [
       { slug: 'explanation-banner-card', name: 'Explanation Banner Card', shot: 'explanation-banner-card', node: '1282-33698',
         short: 'Full-bleed image banner with a contained text card that explains one idea.',
@@ -563,17 +578,20 @@
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
-      ].map((it, i) => `<button type="button" class="ek-values2__item${i === 0 ? ' is-active' : ''}">
+      ].map((it, i) => `<button type="button" class="ek-values2__item${i === 0 ? ' is-active' : ''}" aria-expanded="${i === 0}" data-index="${i}">
         <span class="ek-values2__icon">${EK_ICONS.info}</span>
         <span class="ek-values2__text"><span class="ek-textgroup__title">${it.t}</span><span class="ek-values2__body"><span class="ek-values2__body-inner"><span class="ek-textgroup__body ek-body-m">${it.b}</span></span></span></span>
       </button>`).join('');
+      // One image per feature, stacked; the active item's image fades in (js/eraiki.js).
+      const media = ['values-002-img', 'explanation-004-img1', 'explanation-004-img2', 'explanation-003-img']
+        .map((f, i) => `<img class="ek-values2__img${i === 0 ? ' is-active' : ''}" src="assets/sections/${f}.jpg" alt="" loading="lazy">`).join('');
       // Container 100% with no margin; its column carries the 4XL inset around the row.
       return `<div class="ek-container ek-values2"><div class="ek-container__col ek-values2__inner" style="--ek-span:12"><div class="ek-values2__row">
         <div class="ek-values2__col">
           <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div></div>
           <div class="ek-values2__list">${feats}</div>
         </div>
-        <div class="ek-values2__mediacol"><div class="ek-values2__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
+        <div class="ek-values2__mediacol"><div class="ek-values2__media">${media}</div></div>
       </div></div></div>`;
     },
     // Values & Features Numbered List — a heading, then an image beside a numbered list.
@@ -632,6 +650,28 @@
           </div></div>
         </div>
         <div class="ek-container ek-testi1__track">${items.map(card).join('')}</div>
+      </div>`;
+    },
+    // Values & Features Bento Grid — Container 100% centered intro (eyebrow, Heading L, body,
+    // primary + secondary) over a Container 33% × 3 of Feature cards, two stacked per column.
+    // Each card is a Text group (icon, title, body) on Surface Base with Corner radius M.
+    'values-bento-grid': () => {
+      const body = 'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.';
+      const card = `<div class="ek-values5__card">
+        <span class="ek-textgroup__icon">${EK_ICONS.info}</span>
+        <h3 class="ek-textgroup__title">Lorem ipsum</h3>
+        <p class="ek-textgroup__body">${body}</p>
+      </div>`;
+      const col = `<div class="ek-container__col" style="--ek-span:4"><div class="ek-values5__stack">${card}${card}</div></div>`;
+      return `<div class="ek-values5">
+        <div class="ek-container ek-values5__top"><div class="ek-container__col" style="--ek-span:12">
+          <div class="ek-values5__intro">
+            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
+            <p class="ek-textgroup__body">${body}</p>
+            <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
+          </div>
+        </div></div>
+        <div class="ek-container ek-values5__grid">${col}${col}${col}</div>
       </div>`;
     },
     // Explanation Dark Card — dark (complementary) card over a full-bleed background image.

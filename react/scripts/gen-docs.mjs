@@ -76,6 +76,7 @@ const SECTIONS = {
   ValuesFeaturesHighlightList: 'values-highlight-list',
   ValuesFeaturesNumberedList: 'values-numbered-list',
   ValuesFeaturesStaggeredCards: 'values-staggered-cards',
+  ValuesFeaturesBentoGrid: 'values-bento-grid',
   MarqueeLogoStrip: 'marquee-logo-strip',
   MarqueeLogoTiles: 'marquee-logo-tiles',
   ContactSplitForm: 'contact-split-form',

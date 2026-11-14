@@ -941,7 +941,7 @@
   /* Contact Split Form — stack text over form */
   /* Sections on Container: Container stacks its columns on mobile; each section keeps its
      own mobile margins and gaps (mobile frames in Figma are not built on Container yet). */
-  .ek-contact { row-gap: var(--spacing-7xl); padding: var(--spacing-5xl) var(--spacing-l); } /* gap 80 (Figma, unbound) = 7XL on mobile */
+  .ek-contact { row-gap: var(--spacing-xxl); padding: var(--spacing-5xl) var(--spacing-l); }
   /* Explanation Banner Card — hugs its content */
   .ek-explain { padding: var(--spacing-xxl); border-radius: var(--radius-standard); }
   .ek-explain .ek-textgroup--contained { width: 100%; }
@@ -958,7 +958,7 @@
   /* Explanation Triple Panel — stack the three panels into one column */
   .ek-explain4 { border-radius: var(--radius-standard); }
   .ek-explain4__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
-  .ek-explain4__block { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); row-gap: var(--spacing-xs); }
+  .ek-explain4__block { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); row-gap: var(--spacing-m); }
   .ek-explain4__img { min-height: 245px; border-radius: var(--radius-standard); }
   .ek-explain4__card { padding: var(--spacing-l); border-radius: var(--radius-standard); }
   /* Explanation Image Marquee — text full width; image strip goes full-bleed and drops to two */
@@ -967,8 +967,8 @@
   .ek-explain5__text { max-width: none; }
   .ek-explain5__fluid { padding: var(--spacing-xxl) 0 var(--spacing-5xl); }
   .ek-explain5__marquee { gap: var(--spacing-xs); }
-  .ek-explain5__mgroup { gap: var(--spacing-xs); --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 192; } /* image 184 + gap 8 */
-  .ek-explain5__img { width: 184px; min-height: 245px; border-radius: var(--radius-standard); }
+  .ek-explain5__mgroup { gap: var(--spacing-xs); --marquee-gap: var(--spacing-xs); --ek-marquee-pitch: 188; } /* image 180 + gap 8 */
+  .ek-explain5__img { width: 180px; min-height: 239px; border-radius: var(--radius-standard); }
   /* Explanation Dark Card — stack text over image inside the card */
   .ek-explain6 { padding: var(--spacing-5xl) var(--spacing-l); border-radius: var(--radius-standard); }
   .ek-explain6__card { flex-direction: column; gap: var(--spacing-xxl); padding: var(--spacing-l); border-radius: var(--radius-standard); }
@@ -1001,7 +1001,7 @@
   .ek-marquee2__intro { max-width: 640px; }
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
   /* FAQs Split List — the heading stacks above the questions */
-  .ek-faq1 { padding: var(--spacing-6xl) var(--spacing-m); row-gap: var(--spacing-xl); }
+  .ek-faq1 { padding: var(--spacing-6xl) var(--spacing-m); row-gap: var(--spacing-xxl); }
   /* Values & Features Bento Grid — the intro stays centered; the six cards stack */
   .ek-values5__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
   .ek-values5__grid { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); }

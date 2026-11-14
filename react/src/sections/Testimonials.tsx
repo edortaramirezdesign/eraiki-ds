@@ -43,7 +43,7 @@ const DEFAULT_ITEMS: Testimonial[] = [
 ];
 
 /** Testimonials Image Cards — a label + heading with prev/next arrows (Container 50% + 50%) over portrait cards with the quote and author (Container 25% × 4; a carousel on mobile). */
-export function TestimonialsImageCards({ label = 'Testimonials', title = 'Why entrepreneurs trust our templates?', items = DEFAULT_ITEMS, showNav = true, previousDisabled = true, nextDisabled = false, onPrevious, onNext, className }: TestimonialsImageCardsProps) {
+export function TestimonialsImageCards({ label = 'Testimonials', title = 'Nam a bibendum nunc eget tincidunt eros', items = DEFAULT_ITEMS, showNav = true, previousDisabled = true, nextDisabled = false, onPrevious, onNext, className }: TestimonialsImageCardsProps) {
   return (
     <div className={cx('ek-testi1', className)}>
       <div className="ek-container ek-testi1__top">

@@ -432,8 +432,8 @@
     'explanation-twin-cards': (kind) => {
       const text = `<div class="ek-container__col ek-explain3__text" style="--ek-span:6"><div class="ek-textgroup">
         <div class="ek-textgroup__top">
-          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
-          <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
+          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
+          <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         </div>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div></div>`;
@@ -476,8 +476,8 @@
     'hero-image-slider': () => `<div class="ek-hero-frame"><div class="ek-container ek-hero theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.64)),url('assets/sections/explanation-003-img.jpg')">
       <div class="ek-container__col ek-hero__textcol" style="--ek-span:6">
         <div class="ek-textgroup ek-hero__text"><div class="ek-textgroup__top">
-          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
-          <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
+          <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Nam a bibendum nunc eget tincidunt eros</h2></div>
+          <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         </div>
         <button class="ek-btn ek-btn--primary">Lorem ipsum</button></div>
       </div>
@@ -494,12 +494,12 @@
       <div class="ek-container__col ek-hero2__headcol" style="--ek-span:6">
         <div class="ek-hero2__heading-group">
           <div class="ek-textgroup__eyebrow">Lorem ipsum</div>
-          <h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing</h2>
+          <h2 class="ek-textgroup__title ek-heading-xl">Nam a bibendum nunc eget tincidunt eros</h2>
         </div>
       </div>
       <div class="ek-container__col ek-hero2__asidecol" style="--ek-span:6">
         <div class="ek-hero2__aside">
-          <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
+          <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
           <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
         </div>
       </div>
@@ -514,7 +514,7 @@
       return `<div class="ek-hero3">
         <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
           <div class="ek-hero3__intro">
-            <div class="ek-hero3__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-xl">Lorem ipsum dolor sit amet consecte</h2></div>
+            <div class="ek-hero3__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l ek-mobile-heading-xl">Nam a bibendum nunc eget tincidunt eros</h2></div>
             <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
             <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
           </div>
@@ -532,7 +532,7 @@
       const items = logos.map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
       const grp = `<div class="ek-marquee1__group" style="--ek-marquee-items:${logos.length}">${items}</div>`;
       const text = `<div class="ek-marquee1__text">
-        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
+        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
@@ -554,7 +554,7 @@
       return `<div class="ek-marquee2">
         <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
           <div class="ek-marquee2__intro">
-            <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
+            <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
             <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
             <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
           </div>
@@ -579,7 +579,7 @@
         <p class="ek-textgroup__body">${body}</p>
       </div></div>`).join('');
       const intro = `<div class="ek-values1__intro">
-        <div class="ek-values1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
+        <div class="ek-values1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
@@ -605,7 +605,7 @@
       // Container 100% with no margin; its column carries the 4XL inset around the row.
       return `<div class="ek-container ek-values2"><div class="ek-container__col ek-values2__inner" style="--ek-span:12"><div class="ek-values2__row">
         <div class="ek-values2__col">
-          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div></div>
+          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div>
           <div class="ek-values2__list">${feats}</div>
         </div>
         <div class="ek-values2__mediacol"><div class="ek-values2__media">${media}</div></div>
@@ -637,7 +637,7 @@
         <p class="ek-textgroup__body">${body}</p>
       </div></div>`).join('');
       const intro = `<div class="ek-values4__intro">
-        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
+        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
         <p class="ek-textgroup__body">${body}</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
@@ -660,7 +660,7 @@
       </figure></div>`;
       return `<div class="ek-testi1">
         <div class="ek-container ek-testi1__top">
-          <div class="ek-container__col ek-testi1__headcol" style="--ek-span:6"><div class="ek-textgroup ek-testi1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Testimonials</div><h2 class="ek-textgroup__title ek-heading-l">Why entrepreneurs trust our templates?</h2></div></div></div></div>
+          <div class="ek-container__col ek-testi1__headcol" style="--ek-span:6"><div class="ek-textgroup ek-testi1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Testimonials</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div></div></div>
           <div class="ek-container__col ek-testi1__navcol" style="--ek-span:6"><div class="ek-testi1__nav">
             <button class="ek-btn ek-btn--secondary ek-btn--icon is-disabled" aria-label="Previous" disabled>${EK_ICONS.chevronLeft}</button>
             <button class="ek-btn ek-btn--secondary ek-btn--icon" aria-label="Next">${EK_ICONS.chevronRight}</button>
@@ -683,7 +683,7 @@
       return `<div class="ek-values5">
         <div class="ek-container ek-values5__top"><div class="ek-container__col" style="--ek-span:12">
           <div class="ek-values5__intro">
-            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
+            <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
             <p class="ek-textgroup__body">${body}</p>
             <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
           </div>
@@ -691,7 +691,7 @@
         <div class="ek-container ek-values5__grid">${col}${col}${col}</div>
       </div>`;
     },
-    // FAQs Split List — Container 34% + 66%: a Text group (label + Heading L) on the left and a
+    // FAQs Split List — Container 34% + 66%: a Text group (label, Heading L, body, primary) on the left and a
     // list of FAQ items on the right. Each item: a question (Heading S) with a tertiary icon
     // button (plus / minus); one item open at a time (js/eraiki.js).
     'faqs-split-list': () => {
@@ -702,7 +702,7 @@
         <div class="ek-faq1__a"><div class="ek-faq1__a-inner"><p class="ek-textgroup__body">${a}</p></div></div>
       </div>`;
       return `<div class="ek-container ek-faq1">
-        <div class="ek-container__col" style="--ek-span:4"><div class="ek-textgroup ek-faq1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet</h2></div></div></div></div>
+        <div class="ek-container__col" style="--ek-span:4"><div class="ek-textgroup ek-faq1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div><p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p></div><button class="ek-btn ek-btn--primary">Lorem ipsum</button></div></div>
         <div class="ek-container__col" style="--ek-span:8"><div class="ek-faq1__list">${[true, false, false, false, false, false].map(item).join('')}</div></div>
       </div>`;
     },
@@ -715,8 +715,8 @@
         <div class="ek-explain6__col">
           <div class="ek-textgroup ek-explain6__text">
             <div class="ek-textgroup__top">
-              <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div>
-              <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
+              <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
+              <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
             </div>
             <button class="ek-btn ek-btn--primary">Lorem ipsum</button>
           </div>

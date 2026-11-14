@@ -69,7 +69,7 @@ export interface ExplanationTwinCardsProps extends TextProps, SectionActions {
 export function ExplanationTwinCards({ label, title, children, image = sectionImages.landscape, order = 'text-image', className, ...actions }: ExplanationTwinCardsProps) {
   const text = (
     <Col key="t" span={6} className="ek-explain3__text"><div className="ek-textgroup">
-      <div className="ek-textgroup__top"><Head label={label} title={title} size="l" mobileSize="xl" /><Body>{children}</Body></div>
+      <div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div>
       <Actions {...actions} />
     </div></Col>
   );

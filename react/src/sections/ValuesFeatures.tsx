@@ -170,3 +170,40 @@ export function ValuesFeaturesStaggeredCards({ label, title, children, items, cl
     </div>
   );
 }
+
+export interface ValuesFeaturesBentoGridProps extends IntroProps, SectionActions {
+  /** Intro paragraph under the heading. */
+  children?: ReactNode;
+  /** Six feature cards, in reading order: two per column, three columns (one column on mobile). */
+  items?: FeatureItem[];
+}
+
+const BENTO_TEXT = 'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.';
+const BENTO_DEFAULT: FeatureItem[] = Array.from({ length: 6 }, () => ({ title: 'Lorem ipsum', text: BENTO_TEXT }));
+
+/** Values & Features Bento Grid — two Containers: a centered intro with two actions (100%) over six feature cards (33% × 3, two stacked per column). */
+export function ValuesFeaturesBentoGrid({ label, title, children, items = BENTO_DEFAULT, className, ...actions }: ValuesFeaturesBentoGridProps) {
+  const card = (it: FeatureItem, i: number) => (
+    <div key={i} className="ek-values5__card">
+      <span className="ek-textgroup__icon"><Icon name={it.icon ?? 'info'} /></span>
+      <h3 className="ek-textgroup__title">{it.title}</h3>
+      {it.text && <p className="ek-textgroup__body">{it.text}</p>}
+    </div>
+  );
+  return (
+    <div className={cx('ek-values5', className)}>
+      <div className="ek-container ek-values5__top"><Col span={12}>
+        <div className="ek-values5__intro">
+          <Head label={label} title={title} size="l" />
+          <Body>{children}</Body>
+          <Actions {...actions} />
+        </div>
+      </Col></div>
+      <div className="ek-container ek-values5__grid">
+        {[0, 2, 4].map((start) => (
+          <Col key={start} span={4}><div className="ek-values5__stack">{items.slice(start, start + 2).map((it, i) => card(it, start + i))}</div></Col>
+        ))}
+      </div>
+    </div>
+  );
+}

@@ -875,6 +875,19 @@
 /* The card copy is not a Text group in Figma: it keeps Text/Standard-L. */
 .ek-values4__card .ek-textgroup__body { color: var(--color-fill-plain-text-standard-l); }
 
+/* Values & Features Bento Grid — two Containers: 100% centered intro (eyebrow, Heading L, body,
+   primary + secondary; up to 820) over 33% × 3 columns of Feature cards, two stacked per column
+   (XS gutter). On Surface Standard-S; each card is a Text group on Surface Base, radius M. */
+.ek-values5 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-standard-s); }
+.ek-values5__top { padding: var(--spacing-5xl) var(--spacing-4xl) var(--spacing-l); row-gap: var(--spacing-l); background: transparent; }
+.ek-values5__top > .ek-container__col { align-items: center; }
+.ek-values5__intro { width: 100%; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--spacing-m); }
+.ek-values5__intro .ek-textgroup__head { display: flex; flex-direction: column; align-items: center; }
+.ek-values5__intro .ek-btn-group { margin-top: var(--spacing-xs); justify-content: center; }
+.ek-values5__grid { padding: var(--spacing-l) var(--spacing-4xl) var(--spacing-5xl); column-gap: var(--spacing-xs); row-gap: var(--spacing-xs); background: transparent; }
+.ek-values5__stack { display: flex; flex-direction: column; gap: var(--spacing-xs); }
+.ek-values5__card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--spacing-m); padding: var(--spacing-l); border-radius: var(--radius-m); background: var(--color-fill-plain-surface-base); }
+
 /* Testimonials Image Cards — two Containers: 50% + 50% header (Text group with label + Heading L
    on the left, prev / next arrows bottom-right) over four 25% portrait cards (XS gutter). Each
    card is a dark-mode photo with a bottom scrim; the quote and author sit at the bottom. */
@@ -963,6 +976,9 @@
   .ek-marquee2 .ek-sec-strip { padding: var(--spacing-xxl) 0 var(--spacing-6xl); }
   .ek-marquee2__intro { max-width: 640px; }
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
+  /* Values & Features Bento Grid — the intro stays centered; the six cards stack */
+  .ek-values5__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
+  .ek-values5__grid { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); }
   /* Testimonials Image Cards — header keeps text left / arrows right (bottom-aligned); the
      cards become a horizontal carousel of 320px-wide 3:4 cards with the next one peeking in. */
   .ek-testi1 { padding: var(--spacing-6xl) 0; gap: var(--spacing-l); }

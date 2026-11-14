@@ -882,7 +882,7 @@
 .ek-testi1__nav { display: flex; gap: var(--spacing-xs); }
 .ek-testi1__track { padding: var(--spacing-m) var(--spacing-4xl) var(--spacing-6xl); column-gap: var(--spacing-xs); row-gap: var(--spacing-xs); }
 .ek-testi1__card {
-  box-sizing: border-box; margin: 0; height: 421px; padding: var(--spacing-xl);
+  box-sizing: border-box; margin: 0; aspect-ratio: 3 / 4; padding: var(--spacing-xl); /* vertical 3:4 at any width */
   display: flex; flex-direction: column; justify-content: flex-end; gap: var(--spacing-m);
   border-radius: var(--radius-m); overflow: hidden;
   background-color: var(--color-fill-plain-surface-base);
@@ -960,7 +960,7 @@
   .ek-marquee2__intro { max-width: 640px; }
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
   /* Testimonials Image Cards — header keeps text left / arrows right (bottom-aligned); the
-     cards become a horizontal carousel of 320×420 cards with the next one peeking in. */
+     cards become a horizontal carousel of 320px-wide 3:4 cards with the next one peeking in. */
   .ek-testi1 { padding: var(--spacing-6xl) 0; gap: var(--spacing-l); }
   .ek-testi1__top { display: flex; align-items: flex-end; gap: var(--spacing-m); padding: 0 var(--spacing-m); }
   .ek-testi1__headcol { flex: 1 1 auto; }
@@ -971,7 +971,7 @@
   }
   .ek-testi1__track::-webkit-scrollbar { display: none; }
   .ek-testi1__track > .ek-container__col { flex: 0 0 320px; scroll-snap-align: start; }
-  .ek-testi1__card { height: 420px; padding: var(--spacing-l); }
+  .ek-testi1__card { padding: var(--spacing-l); }
   /* Values & Features Icon Grid — the four cards stack; the actions stack too */
   .ek-values1__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
   .ek-values1__intro { max-width: 640px; }

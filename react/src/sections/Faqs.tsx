@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { cx } from '../cx';
 import { Button } from '../Button';
-import { Head, Col } from './parts';
+import { Head, Body, Primary, Col, type SectionActions } from './parts';
 
 export interface FaqItem {
   /** The question (heading S). */
@@ -10,11 +10,13 @@ export interface FaqItem {
   answer: ReactNode;
 }
 
-export interface FAQsSplitListProps {
+export interface FAQsSplitListProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   /** Uppercase eyebrow above the heading. */
   label?: ReactNode;
   /** Section heading (heading L), left column. */
   title?: ReactNode;
+  /** Paragraph under the heading. */
+  children?: ReactNode;
   /** Questions in the right column. */
   items?: FaqItem[];
   /** Index open initially (uncontrolled); `null` starts with all closed. */
@@ -29,15 +31,18 @@ const Q = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?';
 const A = 'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.';
 const DEFAULT_ITEMS: FaqItem[] = Array.from({ length: 6 }, () => ({ question: Q, answer: A }));
 
-/** FAQs Split List — Container 34% + 66%: a heading on the left and expandable questions on the right (one open at a time). */
-export function FAQsSplitList({ label = 'Lorem ipsum', title = 'Lorem ipsum dolor sit amet', items = DEFAULT_ITEMS, defaultOpen = 0, open, onOpenChange, className }: FAQsSplitListProps) {
+/** FAQs Split List — Container 34% + 66%: a heading, paragraph and primary action on the left and expandable questions on the right (one open at a time). */
+export function FAQsSplitList({ label = 'Lorem ipsum', title = 'Nam a bibendum nunc eget tincidunt eros', children = A, primaryAction = 'Lorem ipsum', onPrimaryAction, items = DEFAULT_ITEMS, defaultOpen = 0, open, onOpenChange, className }: FAQsSplitListProps) {
   const [inner, setInner] = useState<number | null>(defaultOpen);
   const current = open !== undefined ? open : inner;
   const toggle = (i: number) => { const next = current === i ? null : i; setInner(next); onOpenChange?.(next); };
   return (
     <div className={cx('ek-container ek-faq1', className)}>
       <Col span={4}>
-        <div className="ek-textgroup ek-faq1__head"><div className="ek-textgroup__top"><Head label={label} title={title} size="l" /></div></div>
+        <div className="ek-textgroup ek-faq1__head">
+          <div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div>
+          <Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} />
+        </div>
       </Col>
       <Col span={8}>
         <div className="ek-faq1__list">

@@ -885,6 +885,28 @@
 /* The card copy is not a Text group in Figma: it keeps Text/Standard-L. */
 .ek-values4__card .ek-textgroup__body { color: var(--color-fill-plain-text-standard-l); }
 
+/* Testimonials Image Cards — two Containers: 50% + 50% header (Text group with label + Heading L
+   on the left, prev / next arrows bottom-right) over four 25% portrait cards (XS gutter). Each
+   card is a dark-mode photo with a bottom scrim; the quote and author sit at the bottom. */
+.ek-testi1 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
+.ek-testi1__top { padding: var(--spacing-6xl) var(--spacing-4xl) var(--spacing-m); row-gap: var(--spacing-l); }
+.ek-testi1__headcol { justify-content: flex-end; }
+.ek-testi1__head { max-width: none; }
+.ek-testi1__navcol { justify-content: flex-end; align-items: flex-end; }
+.ek-testi1__nav { display: flex; gap: var(--spacing-xs); }
+.ek-testi1__track { padding: var(--spacing-m) var(--spacing-4xl) var(--spacing-6xl); column-gap: var(--spacing-xs); row-gap: var(--spacing-xs); }
+.ek-testi1__card {
+  box-sizing: border-box; margin: 0; height: 421px; padding: var(--spacing-xl);
+  display: flex; flex-direction: column; justify-content: flex-end; gap: var(--spacing-m);
+  border-radius: var(--radius-m); overflow: hidden;
+  background-color: var(--color-fill-plain-surface-base);
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+}
+.ek-testi1__quote { margin: 0; color: var(--color-fill-plain-text-standard-l); }
+.ek-testi1__author { display: flex; flex-direction: column; }
+.ek-testi1__name { color: var(--color-fill-plain-text-standard-l); }
+.ek-testi1__role { color: var(--color-fill-plain-text-standard-m); }
+
 /* Section responsive behaviour — one component that reflows at the 1024px
    breakpoint (Desktop >= 1025, Mobile <= 1024), driven by the real viewport
    inside each preview iframe (so tokens switch too). */
@@ -954,6 +976,19 @@
   .ek-marquee2 .ek-sec-strip { padding: var(--spacing-xxl) 0 var(--spacing-6xl); }
   .ek-marquee2__intro { max-width: 640px; }
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
+  /* Testimonials Image Cards — header keeps text left / arrows right (bottom-aligned); the
+     cards become a horizontal carousel of 320×420 cards with the next one peeking in. */
+  .ek-testi1 { padding: var(--spacing-6xl) 0; gap: var(--spacing-l); }
+  .ek-testi1__top { display: flex; align-items: flex-end; gap: var(--spacing-m); padding: 0 var(--spacing-m); }
+  .ek-testi1__headcol { flex: 1 1 auto; }
+  .ek-testi1__navcol { flex: 0 0 auto; }
+  .ek-testi1__track {
+    display: flex; gap: var(--spacing-xs); padding: 0 var(--spacing-m);
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: var(--spacing-m); scrollbar-width: none;
+  }
+  .ek-testi1__track::-webkit-scrollbar { display: none; }
+  .ek-testi1__track > .ek-container__col { flex: 0 0 320px; scroll-snap-align: start; }
+  .ek-testi1__card { height: 420px; padding: var(--spacing-l); }
   /* Values & Features Icon Grid — the four cards stack; the actions stack too */
   .ek-values1__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
   .ek-values1__intro { max-width: 640px; }

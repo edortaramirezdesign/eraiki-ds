@@ -79,5 +79,7 @@ export { ValuesFeaturesIconGrid, ValuesFeaturesHighlightList, ValuesFeaturesNumb
 export type { ValuesFeaturesIconGridProps, ValuesFeaturesHighlightListProps, ValuesFeaturesNumberedListProps, ValuesFeaturesStaggeredCardsProps, FeatureItem, NumberedItem, IllustratedItem } from './sections/ValuesFeatures';
 export { MarqueeLogoStrip, MarqueeLogoTiles } from './sections/Marquee';
 export type { MarqueeLogoStripProps, MarqueeLogoTilesProps } from './sections/Marquee';
+export { TestimonialsImageCards } from './sections/Testimonials';
+export type { TestimonialsImageCardsProps, Testimonial } from './sections/Testimonials';
 export { ContactSplitForm } from './sections/Contact';
 export type { ContactSplitFormProps, ContactField } from './sections/Contact';

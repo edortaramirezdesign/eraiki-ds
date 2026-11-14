@@ -79,6 +79,7 @@ const SECTIONS = {
   MarqueeLogoStrip: 'marquee-logo-strip',
   MarqueeLogoTiles: 'marquee-logo-tiles',
   ContactSplitForm: 'contact-split-form',
+  TestimonialsImageCards: 'testimonials-image-cards',
 };
 
 const EXTRA = {

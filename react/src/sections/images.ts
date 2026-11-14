@@ -57,6 +57,9 @@ import tile34 from '../../../assets/sections/logo-tile-34.svg';
 import tile35 from '../../../assets/sections/logo-tile-35.svg';
 import tile36 from '../../../assets/sections/logo-tile-36.svg';
 import tile37 from '../../../assets/sections/logo-tile-37.svg';
+import testi1 from './assets/testimonials-001-img1.jpg';
+import testi2 from './assets/testimonials-001-img2.jpg';
+import testi3 from './assets/testimonials-001-img3.jpg';
 import illus1 from '../../../assets/sections/values-004-illus-1.svg';
 import illus2 from '../../../assets/sections/values-004-illus-2.svg';
 import illus3 from '../../../assets/sections/values-004-illus-3.svg';
@@ -81,4 +84,6 @@ export const sectionImages = {
   logoTiles: [[tile01, tile02, tile03, tile04, tile05, tile06, tile07, tile08, tile09, tile10, tile11, tile12, tile13, tile14, tile15, tile16, tile17, tile18, tile19], [tile01, tile20, tile21, tile22, tile23, tile24, tile25, tile26, tile27, tile28, tile29, tile30, tile31, tile32, tile33, tile34, tile35, tile36, tile37, tile19]] as [string[], string[]],
   /** Three abstract illustrations for Values & Features Staggered Cards. */
   illustrations: [illus1, illus2, illus3],
+  /** Three portraits for Testimonials Image Cards. */
+  testimonials: [testi1, testi2, testi3],
 };

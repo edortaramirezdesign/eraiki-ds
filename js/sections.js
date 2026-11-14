@@ -220,7 +220,7 @@
         frameMobile: 'The header stays on top and the three panels stack into a single column.' },
       { slug: 'explanation-image-marquee', name: 'Explanation Image Marquee', shot: 'explanation-image-marquee', node: '1316-18630',
         short: 'A contained text intro above an auto-scrolling image marquee.',
-        description: 'Explanation Image Marquee opens with a contained text block — an eyebrow, a large heading and a short paragraph set in the left half of the column — and follows it with a full-bleed image marquee that scrolls horizontally, edge to edge: images drift off the left and reappear from the right in a slow, seamless loop. The narrow measure keeps the copy readable while the moving strip gives the section an ambient, editorial finish.\n\nThe text uses the Text group component and the strip is built from the Image component. The marquee loops continuously with a pure-CSS animation (two duplicated groups) and stops for users who prefer reduced motion. Use it to introduce a topic and let a set of related visuals drift past to carry the mood — not to present images that need to be read or clicked.',
+        description: 'Explanation Image Marquee opens with a contained text block — an eyebrow, a large heading and a short paragraph — and follows it with a full-bleed image marquee that scrolls horizontally, edge to edge: images drift off the left and reappear from the right in a slow, seamless loop. The narrow measure keeps the copy readable while the moving strip gives the section an ambient, editorial finish.\n\nThe text uses the Text group component and the strip is built from the Image component. The marquee loops continuously and stops for users who prefer reduced motion. Use it to introduce a topic and let a set of related visuals drift past to carry the mood — not to present images that need to be read or clicked.',
         keywords: ['explanation', 'text and marquee', 'image marquee', 'carousel', 'auto-scroll', 'infinite scroll', 'motion', 'full-bleed', 'editorial', 'contained'],
         whenToUse: [
           'Introducing a topic while a band of related images drifts slowly past.',
@@ -234,12 +234,12 @@
           'Dense content that needs the full width for the text.',
           'When motion would distract from the primary message or task.',
         ],
-        frameDesktop: 'A contained text block on the left, then a full-width image marquee scrolling left.',
+        frameDesktop: 'A contained text block, then a full-width image marquee scrolling left.',
         frameMobile: 'The text spans the column with the image marquee scrolling below it.' },
       { slug: 'explanation-dark-card', name: 'Explanation Dark Card', shot: 'explanation-dark-card', node: '1316-20697',
         short: 'A dark card with copy and an image, over a full-bleed background.',
-        description: "Explanation Dark Card sets a dark, self-contained card over a full-bleed background image. Inside the card the copy sits on the left — an eyebrow and a large heading at the top, a short paragraph and a primary action at the bottom — with a supporting image on the right. The dark surface and light text let it sit confidently on top of busy photography.\n\nThe card uses the complementary surface with the system's dark text tokens, and is built from the Text group, Button and Image components. Use it for a bold, focused statement over imagery — a single message and one action, not a dense block of content.",
-        keywords: ['explanation', 'dark card', 'card on image', 'overlay', 'feature', 'hero', 'editorial', 'complementary', 'image background', 'statement'],
+        description: "Explanation Dark Card sets a dark, self-contained card over a full-bleed background image. Inside the card the copy sits on the left — an eyebrow, a large heading, a short paragraph and a primary action — with a supporting image on the right. The dark surface and light text let it sit confidently on top of busy photography.\n\nThe card uses the dark surface with the system's dark text tokens, and is built from the Container, Text group, Button and Image components. Use it for a bold, focused statement over imagery — a single message and one action, not a dense block of content.",
+        keywords: ['explanation', 'dark card', 'card on image', 'overlay', 'feature', 'hero', 'editorial', 'dark mode', 'image background', 'statement'],
         whenToUse: [
           'Making a bold, focused statement over a background image.',
           'Pairing a short message and one action with a supporting image.',
@@ -320,7 +320,24 @@
     { slug: 'navigation-bar', name: 'Navigation Bar', desc: 'Top-level site navigation with brand, links and actions.', versions: [] },
     { slug: 'images-galleries', name: 'Images & Galleries', desc: 'Layouts for showcasing single images or galleries.', versions: [] },
     { slug: 'stats', name: 'Stats', desc: 'Highlighted metrics and key numbers.', versions: [] },
-    { slug: 'testimonials', name: 'Testimonials', desc: 'Customer quotes and social proof.', versions: [] },
+    { slug: 'testimonials', name: 'Testimonials', desc: 'Customer quotes and social proof.', versions: [
+      { slug: 'testimonials-image-cards', name: 'Testimonials Image Cards', shot: 'testimonials-image-cards', node: '1282-33518',
+        short: 'Portrait cards with customer quotes under a heading with slider arrows.',
+        description: "Testimonials Image Cards builds trust by putting real customers front and centre: each card pairs a portrait with a short quote and the author's name and role, while the label and heading frame the social proof. Use it on landing and product pages close to a call to action, where credibility helps people decide.\n\nThe header is a Container 50% + 50% — a Text group (label + heading) on the left and previous / next arrows (Button) on the right — over a Container of four 25% cards. Each card is a dark portrait with a bottom scrim so the quote stays legible. On mobile the cards become a horizontal carousel with the next card peeking in.",
+        keywords: ['testimonials', 'reviews', 'social proof', 'quotes', 'customers', 'trust', 'carousel', 'slider', 'portraits', 'endorsement'],
+        whenToUse: [
+          'Showing short quotes from customers, partners or users to build credibility.',
+          'Putting a face to each endorsement so it feels personal and real.',
+          'Supporting a sales or sign-up page right before or after a call to action.',
+        ],
+        whenNotToUse: [
+          'Long case studies or detailed reviews — use an article or a case-study section.',
+          'Ratings, scores or aggregated reviews — use a stats or rating pattern.',
+          'Quotes without a photo of the person — use a text-only quote or a simple card grid.',
+        ],
+        frameDesktop: 'The label and heading sit left with the prev/next arrows bottom-right; four portrait cards fill the 25% columns below, each with its quote and author over the photo.',
+        frameMobile: 'The heading wraps on the left with the arrows beside it; the cards turn into a horizontal carousel, with the next card peeking in from the right.' },
+    ] },
     { slug: 'brands-logos', name: 'Brands & Logos', desc: 'Logo walls establishing credibility.', versions: [] },
     { slug: 'footer', name: 'Footer', desc: 'Site-wide footer with navigation and legal.', versions: [] },
     { slug: 'cta', name: 'CTA', desc: 'Focused call-to-action band.', versions: [] },
@@ -430,7 +447,7 @@
           <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing elit</h2></div>
           <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
         </div>
-        <button class="ek-btn ek-btn--primary"><span class="ek-hide-mobile">Lorem ipsum</span><span class="ek-hide-desktop">Mauris id lectus</span></button></div>
+        <button class="ek-btn ek-btn--primary">Lorem ipsum</button></div>
       </div>
       <div class="ek-container__col ek-hero__navcol" style="--ek-span:6">
         <div class="ek-hero__nav">
@@ -445,7 +462,7 @@
       <div class="ek-container__col ek-hero2__headcol" style="--ek-span:6">
         <div class="ek-hero2__heading-group">
           <div class="ek-textgroup__eyebrow">Lorem ipsum</div>
-          <h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing<span class="ek-hide-desktop"> elit</span></h2>
+          <h2 class="ek-textgroup__title ek-heading-xl">Lorem ipsum dolor sit amet, consecte adipiscing</h2>
         </div>
       </div>
       <div class="ek-container__col ek-hero2__asidecol" style="--ek-span:6">
@@ -479,7 +496,7 @@
     },
     // Marquee Logo Strip — two Containers 100%: centered intro (eyebrow, heading L, body,
     // primary + secondary) over a continuously scrolling row of brand logos (exported from
-    // Figma as SVG, muted to one tint) split by dividers. Mobile: shorter heading, one button.
+    // Figma as SVG, muted to one tint) split by dividers.
     'marquee-logo-strip': () => {
       const logos = [1, 2, 3, 4, 5, 6, 7, 8];
       const items = logos.map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
@@ -487,7 +504,7 @@
       const text = `<div class="ek-marquee1__text">
         <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
-        <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary ek-hide-mobile">Lorem ipsum</button></div>
+        <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
       return `<div class="ek-marquee1"><div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">${text}</div></div><div class="ek-container ek-sec-strip"><div class="ek-container__col" style="--ek-span:12"><div class="ek-marquee1__strip"><div class="ek-marquee1__lane">${grp}${grp}</div></div></div></div></div>`;
     },
@@ -593,6 +610,31 @@
       </div>`;
       // Two Containers: 100% (intro) over 33% × 3 (cards, stepped down XXL / 5XL).
       return `<div class="ek-values4"><div class="ek-container ek-values4__top"><div class="ek-container__col" style="--ek-span:12">${intro}</div></div><div class="ek-container ek-values4__grid">${cards}</div></div>`;
+    },
+    // Testimonials Image Cards — Container 50% + 50% header (Text group: label + heading L;
+    // prev / next arrows bottom-right) over a Container of four 25% portrait cards (quote +
+    // author over a dark photo with a bottom scrim). Mobile: the cards become a carousel.
+    'testimonials-image-cards': () => {
+      const items = [
+        { img: 1, quote: '“Their fast shipping & branding made us stand out. We save hours every day”', name: 'Julek Cesar', role: 'CEO of Lorem ipsum' },
+        { img: 2, quote: '“We’ve really made a mark in the market. It’s incredible how much time we save each day!”', name: 'Klaudia Czarna', role: 'CEO of Dolor sit' },
+        { img: 3, quote: '“With their speedy shipping and eye-catching branding, we’ve truly distinguished ourselves”', name: 'Jessica Mercedes', role: 'Marketer at Amet' },
+        { img: 1, quote: '“Their fast shipping & branding made us stand out. We save hours every day”', name: 'Julek Cesar', role: 'CEO of Lorem ipsum' },
+      ];
+      const card = (it) => `<div class="ek-container__col" style="--ek-span:3"><figure class="ek-testi1__card theme-dark" style="background-image:linear-gradient(to bottom,rgba(0,0,0,.16) 0%,rgba(0,0,0,.1) 45%,rgba(0,0,0,.86) 100%),url('assets/sections/testimonials-001-img${it.img}.jpg')">
+        <blockquote class="ek-testi1__quote ek-heading-s">${it.quote}</blockquote>
+        <figcaption class="ek-testi1__author"><span class="ek-testi1__name ek-body-m ek-strong">${it.name}</span><span class="ek-testi1__role ek-detail-m">${it.role}</span></figcaption>
+      </figure></div>`;
+      return `<div class="ek-testi1">
+        <div class="ek-container ek-testi1__top">
+          <div class="ek-container__col ek-testi1__headcol" style="--ek-span:6"><div class="ek-textgroup ek-testi1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Testimonials</div><h2 class="ek-textgroup__title ek-heading-l">Why entrepreneurs trust our templates?</h2></div></div></div></div>
+          <div class="ek-container__col ek-testi1__navcol" style="--ek-span:6"><div class="ek-testi1__nav">
+            <button class="ek-btn ek-btn--secondary ek-btn--icon is-disabled" aria-label="Previous" disabled>${EK_ICONS.chevronLeft}</button>
+            <button class="ek-btn ek-btn--secondary ek-btn--icon" aria-label="Next">${EK_ICONS.chevronRight}</button>
+          </div></div>
+        </div>
+        <div class="ek-container ek-testi1__track">${items.map(card).join('')}</div>
+      </div>`;
     },
     // Explanation Dark Card — dark (complementary) card over a full-bleed background image.
     // Left column: heading (top) + body & primary button (bottom); right: an image.

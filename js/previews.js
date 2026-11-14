@@ -389,7 +389,7 @@
     fileDrop({ state: 'Default', docs: 3 }) }]);
 
   // Single sample photo reused across every Image example (crops per aspect ratio via object-fit).
-  const SAMPLE_IMG = 'assets/sections/explanation-002-img.jpg';
+  const SAMPLE_IMG = 'assets/sections/explanation-002-img.webp';
   const sampleImg = `<img src="${SAMPLE_IMG}" alt="">`;
   P['image'] = () => ([{ title: 'Aspect ratios', opts: 'Square · Wide · Circle', html:
     `${specimen('Square', `<span class="ek-image ek-image--sq">${sampleImg}</span>`)}

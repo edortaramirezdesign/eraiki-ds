@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { cx } from '../cx';
 import { Button } from '../Button';
-import { Head, Col } from './parts';
+import { Head, Body, Actions, Col, type SectionActions } from './parts';
+import { Icon } from '../Icon';
 import { sectionImages } from './images';
 
 export interface Testimonial {
@@ -72,6 +73,62 @@ export function TestimonialsImageCards({ label = 'Testimonials', title = 'Nam a 
           </Col>
         ))}
       </div>
+    </div>
+  );
+}
+
+export interface QuoteTestimonial {
+  /** The quote (heading S). */
+  quote: ReactNode;
+  /** Author's name. */
+  name: ReactNode;
+  /** Author's role or company. */
+  role?: ReactNode;
+  /** Author's photo (Avatar, medium). */
+  avatar?: string;
+}
+
+export interface TestimonialsQuoteMarqueeProps extends SectionActions {
+  label?: ReactNode;
+  /** Section heading (heading L), centered. */
+  title?: ReactNode;
+  /** Intro paragraph. */
+  children?: ReactNode;
+  /** Quote cards of the auto-scrolling row (the set loops seamlessly). */
+  items?: QuoteTestimonial[];
+  className?: string;
+}
+
+const Q2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lorem leo, mollis non diam eu, venenatis feugiat est.';
+const QUOTE_DEFAULT: QuoteTestimonial[] = [0, 1, 2, 0, 1].map((i) => ({ quote: Q2, name: 'Lorem ipsum', role: 'Lorem ipsum dolor', avatar: t[i] }));
+
+/** Testimonials Quote Marquee — a centered intro over a full-bleed, auto-scrolling row of quote cards with the author's avatar. */
+export function TestimonialsQuoteMarquee({ label = 'Lorem ipsum', title = 'Nam a bibendum nunc eget tincidunt eros', children = 'Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.', primaryAction = 'Lorem ipsum', secondaryAction = 'Lorem ipsum', onPrimaryAction, onSecondaryAction, items = QUOTE_DEFAULT, className }: TestimonialsQuoteMarqueeProps) {
+  const group = (
+    <div className="ek-testi2__group" style={{ ['--ek-marquee-items' as string]: items.length }}>
+      {items.map((it, i) => (
+        <figure key={i} className="ek-testi2__card">
+          <div className="ek-testi2__quote"><span className="ek-testi2__icon"><Icon name="quote" /></span><blockquote className="ek-heading-s">{it.quote}</blockquote></div>
+          <figcaption className="ek-testi2__author">
+            <span className="ek-avatar ek-avatar--md">{it.avatar && <img src={it.avatar} alt="" loading="lazy" />}</span>
+            <span className="ek-testi2__who"><span className="ek-testi2__name ek-body-l ek-strong">{it.name}</span>{it.role && <span className="ek-testi2__role ek-detail-m">{it.role}</span>}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+  return (
+    <div className={cx('ek-testi2', className)}>
+      <div className="ek-container ek-sec-intro"><Col span={12}>
+        <div className="ek-testi2__intro">
+          <Head label={label} title={title} size="l" />
+          <Body>{children}</Body>
+          <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
+        </div>
+      </Col></div>
+      <div className="ek-container ek-sec-strip"><Col span={12}>
+        <div className="ek-testi2__strip"><div className="ek-testi2__lane">{group}{group}</div></div>
+      </Col></div>
     </div>
   );
 }

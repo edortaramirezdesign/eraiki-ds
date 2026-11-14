@@ -7,7 +7,7 @@ import { sectionImages } from './images';
 export interface HeroImageSliderProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   /** Uppercase eyebrow above the headline. */
   label?: ReactNode;
-  /** Headline (heading XL). */
+  /** Headline (heading L). */
   title?: ReactNode;
   /** Supporting paragraph. */
   children?: ReactNode;
@@ -27,7 +27,7 @@ export function HeroImageSlider({ label, title, children, image = sectionImages.
       <div className="ek-container ek-hero theme-dark" style={scrim(image)}>
         <Col span={6} className="ek-hero__textcol">
           <div className="ek-textgroup ek-hero__text">
-            <div className="ek-textgroup__top"><Head label={label} title={title} size="xl" /><Body>{children}</Body></div>
+            <div className="ek-textgroup__top"><Head label={label} title={title} size="l" /><Body>{children}</Body></div>
             <Primary primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} />
           </div>
         </Col>
@@ -46,7 +46,7 @@ export function HeroImageSlider({ label, title, children, image = sectionImages.
 
 export interface HeroSplitColumnsProps extends Pick<SectionActions, 'primaryAction' | 'onPrimaryAction'> {
   label?: ReactNode;
-  /** Headline (heading XL), left column. */
+  /** Headline (heading L), left column. */
   title?: ReactNode;
   /** Paragraph in the narrower right column, above the button. */
   children?: ReactNode;
@@ -62,7 +62,7 @@ export function HeroSplitColumns({ label, title, children, image = sectionImages
       <Col span={6} className="ek-hero2__headcol">
         <div className="ek-hero2__heading-group">
           {label && <div className="ek-textgroup__eyebrow">{label}</div>}
-          {title && <h2 className="ek-textgroup__title ek-heading-xl">{title}</h2>}
+          {title && <h2 className="ek-textgroup__title ek-heading-l">{title}</h2>}
         </div>
       </Col>
       <Col span={6} className="ek-hero2__asidecol">
@@ -80,7 +80,7 @@ const DEFAULT_GALLERY: string[] = [g[1], g[0], g[2], g[3], g[4], g[0], g[2], g[3
 
 export interface HeroMarqueeGalleryProps extends SectionActions {
   label?: ReactNode;
-  /** Headline (heading L on desktop, XL on mobile), centered. */
+  /** Headline (heading L), centered. */
   title?: ReactNode;
   /** Centered intro paragraph. */
   children?: ReactNode;
@@ -100,7 +100,7 @@ export function HeroMarqueeGallery({ label, title, children, primaryAction, onPr
     <div className={cx('ek-hero3', className)}>
       <div className="ek-container ek-sec-intro"><Col span={12}>
         <div className="ek-hero3__intro">
-          <Head label={label} title={title} size="l" mobileSize="xl" className="ek-hero3__head" />
+          <Head label={label} title={title} size="l" className="ek-hero3__head" />
           <Body>{children}</Body>
           <Actions primaryAction={primaryAction} onPrimaryAction={onPrimaryAction} secondaryAction={secondaryAction} onSecondaryAction={onSecondaryAction} />
         </div>

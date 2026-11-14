@@ -79,8 +79,8 @@ export { ValuesFeaturesIconGrid, ValuesFeaturesHighlightList, ValuesFeaturesNumb
 export type { ValuesFeaturesIconGridProps, ValuesFeaturesHighlightListProps, ValuesFeaturesNumberedListProps, ValuesFeaturesStaggeredCardsProps, ValuesFeaturesBentoGridProps, FeatureItem, NumberedItem, IllustratedItem } from './sections/ValuesFeatures';
 export { MarqueeLogoStrip, MarqueeLogoTiles } from './sections/Marquee';
 export type { MarqueeLogoStripProps, MarqueeLogoTilesProps } from './sections/Marquee';
-export { TestimonialsImageCards } from './sections/Testimonials';
-export type { TestimonialsImageCardsProps, Testimonial } from './sections/Testimonials';
+export { TestimonialsImageCards, TestimonialsQuoteMarquee } from './sections/Testimonials';
+export type { TestimonialsImageCardsProps, Testimonial, TestimonialsQuoteMarqueeProps, QuoteTestimonial } from './sections/Testimonials';
 export { FAQsSplitList } from './sections/Faqs';
 export type { FAQsSplitListProps, FaqItem } from './sections/Faqs';
 export { ContactSplitForm } from './sections/Contact';

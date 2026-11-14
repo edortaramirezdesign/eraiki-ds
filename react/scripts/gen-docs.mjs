@@ -82,6 +82,7 @@ const SECTIONS = {
   ContactSplitForm: 'contact-split-form',
   FAQsSplitList: 'faqs-split-list',
   TestimonialsImageCards: 'testimonials-image-cards',
+  TestimonialsQuoteMarquee: 'testimonials-quote-marquee',
 };
 
 const EXTRA = {

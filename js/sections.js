@@ -413,8 +413,8 @@
     // images (four on desktop, two on mobile). No button.
     'explanation-image-marquee': () => {
       const text = `<div class="ek-explain5__text ek-textgroup"><div class="ek-textgroup__top">
-        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div>
-        <p class="ek-textgroup__body">Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat. Pellentesque fringilla tellus dolor, a fermentum massa finibus id.</p>
+        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div>
+        <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
       </div></div>`;
       const img = `<div class="ek-explain5__img" style="background-image:url('assets/sections/explanation-002-img.jpg')"></div>`;
       const group = `<div class="ek-explain5__mgroup" style="--ek-marquee-items:6">${img.repeat(6)}</div>`;
@@ -485,7 +485,7 @@
       const items = logos.map(n => `<img class="ek-marquee1__logo" src="assets/sections/marquee-logo-${n}.svg" alt="" loading="lazy"><span class="ek-marquee1__divider" aria-hidden="true"></span>`).join('');
       const grp = `<div class="ek-marquee1__group" style="--ek-marquee-items:${logos.length}">${items}</div>`;
       const text = `<div class="ek-marquee1__text">
-        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet<span class="ek-hide-mobile"> consecte</span></h2></div>
+        <div class="ek-marquee1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary ek-hide-mobile">Lorem ipsum</button></div>
       </div>`;
@@ -507,7 +507,7 @@
       return `<div class="ek-marquee2">
         <div class="ek-container ek-sec-intro"><div class="ek-container__col" style="--ek-span:12">
           <div class="ek-marquee2__intro">
-            <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet<span class="ek-hide-desktop">,</span> consecte<span class="ek-hide-desktop"> adipiscing elit</span></h2></div>
+            <div class="ek-marquee2__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
             <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
             <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
           </div>
@@ -532,7 +532,7 @@
         <p class="ek-textgroup__body">${body}</p>
       </div></div>`).join('');
       const intro = `<div class="ek-values1__intro">
-        <div class="ek-values1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l"><span class="ek-hide-mobile">Lorem ipsum dolor sit amet consecte</span><span class="ek-hide-desktop">Nam a bibendum nunc eget tincidunt eros</span></h2></div>
+        <div class="ek-values1__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
         <p class="ek-textgroup__body">Cras lorem leo, mollis non diam eu, venenatis feugiat est. Nam scelerisque iaculis bibendum. Integer quis rhoncus leo. Fusce in sodales lorem.</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;
@@ -555,7 +555,7 @@
       // Container 100% with no margin; its column carries the 4XL inset around the row.
       return `<div class="ek-container ek-values2"><div class="ek-container__col ek-values2__inner" style="--ek-span:12"><div class="ek-values2__row">
         <div class="ek-values2__col">
-          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l"><span class="ek-hide-mobile">Lorem ipsum dolor sit amet, consecte adipiscing</span><span class="ek-hide-desktop">Nam a bibendum nunc eget tincidunt eros</span></h2></div></div>
+          <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div></div>
           <div class="ek-values2__list">${feats}</div>
         </div>
         <div class="ek-values2__mediacol"><div class="ek-values2__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
@@ -587,7 +587,7 @@
         <p class="ek-textgroup__body">${body}</p>
       </div></div>`).join('');
       const intro = `<div class="ek-values4__intro">
-        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l"><span class="ek-hide-mobile">Lorem ipsum dolor sit amet consecte</span><span class="ek-hide-desktop">Nam a bibendum nunc eget tincidunt eros</span></h2></div>
+        <div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet consecte</h2></div>
         <p class="ek-textgroup__body">${body}</p>
         <div class="ek-btn-group"><button class="ek-btn ek-btn--primary">Lorem ipsum</button><button class="ek-btn ek-btn--secondary">Lorem ipsum</button></div>
       </div>`;

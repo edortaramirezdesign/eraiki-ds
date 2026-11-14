@@ -139,8 +139,8 @@
 
   /* ===== TYPOGRAPHY — font size (desktop) ===== */
   --font-size-display-m: 64px;
-  --font-size-heading-xl: 48px;
-  --font-size-heading-l: 40px;
+  --font-size-heading-xl: 44px;
+  --font-size-heading-l: 38px;
   --font-size-heading-m: 32px;
   --font-size-heading-s: 24px;
   --font-size-label-l: 12px;
@@ -152,8 +152,8 @@
 
   /* ===== TYPOGRAPHY — line height (desktop) ===== */
   --line-height-display-m: 72px;
-  --line-height-heading-xl: 56px;
-  --line-height-heading-l: 48px;
+  --line-height-heading-xl: 52px;
+  --line-height-heading-l: 44px;
   --line-height-heading-m: 40px;
   --line-height-heading-s: 32px;
   --line-height-label-l: 20px;
@@ -286,14 +286,14 @@
   :root {
       /* font size (mobile) */
       --font-size-display-m: 40px;
-      --font-size-heading-xl: 40px;
-      --font-size-heading-l: 34px;
+      --font-size-heading-xl: 38px;
+      --font-size-heading-l: 32px;
       --font-size-heading-m: 28px;
 
       /* line height (mobile) */
       --line-height-display-m: 46px;
-      --line-height-heading-xl: 46px;
-      --line-height-heading-l: 40px;
+      --line-height-heading-xl: 42px;
+      --line-height-heading-l: 36px;
       --line-height-heading-m: 32px;
 
       /* spacing (mobile) */

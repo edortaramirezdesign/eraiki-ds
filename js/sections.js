@@ -563,17 +563,20 @@
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
         { t: 'Lorem ipsum dolor sit amet', b: 'Mauris cursus aliquet turpis non placerat. Donec auctor velit sit amet orci pretium, ut semper arcu consequat.' },
-      ].map((it, i) => `<button type="button" class="ek-values2__item${i === 0 ? ' is-active' : ''}">
+      ].map((it, i) => `<button type="button" class="ek-values2__item${i === 0 ? ' is-active' : ''}" aria-expanded="${i === 0}" data-index="${i}">
         <span class="ek-values2__icon">${EK_ICONS.info}</span>
         <span class="ek-values2__text"><span class="ek-textgroup__title">${it.t}</span><span class="ek-values2__body"><span class="ek-values2__body-inner"><span class="ek-textgroup__body ek-body-m">${it.b}</span></span></span></span>
       </button>`).join('');
+      // One image per feature, stacked; the active item's image fades in (js/eraiki.js).
+      const media = ['values-002-img', 'explanation-004-img1', 'explanation-004-img2', 'explanation-003-img']
+        .map((f, i) => `<img class="ek-values2__img${i === 0 ? ' is-active' : ''}" src="assets/sections/${f}.jpg" alt="" loading="lazy">`).join('');
       // Container 100% with no margin; its column carries the 4XL inset around the row.
       return `<div class="ek-container ek-values2"><div class="ek-container__col ek-values2__inner" style="--ek-span:12"><div class="ek-values2__row">
         <div class="ek-values2__col">
           <div class="ek-values2__intro"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Lorem ipsum dolor sit amet, consecte adipiscing</h2></div></div>
           <div class="ek-values2__list">${feats}</div>
         </div>
-        <div class="ek-values2__mediacol"><div class="ek-values2__media"><img src="assets/sections/values-002-img.jpg" alt="" loading="lazy"></div></div>
+        <div class="ek-values2__mediacol"><div class="ek-values2__media">${media}</div></div>
       </div></div></div>`;
     },
     // Values & Features Numbered List — a heading, then an image beside a numbered list.

@@ -108,6 +108,18 @@
       return;
     }
 
+    // Values & Features Highlight List — one feature open at a time; the image on the right
+    // switches to the open feature's image (cross-fade).
+    const feat = closest(t, '.ek-values2__item');
+    if (feat) {
+      const sec = feat.closest('.ek-values2');
+      const items = [...sec.querySelectorAll('.ek-values2__item')];
+      const idx = items.indexOf(feat);
+      items.forEach((it, i) => { it.classList.toggle('is-active', i === idx); it.setAttribute('aria-expanded', String(i === idx)); });
+      sec.querySelectorAll('.ek-values2__img').forEach((img, i) => img.classList.toggle('is-active', i === idx));
+      return;
+    }
+
     // Accordion — one open at a time within its container
     const accHead = closest(t, '.ek-accordion__head');
     if (accHead) {

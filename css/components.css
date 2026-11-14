@@ -836,6 +836,10 @@
 /* Square image as tall as the text column (Figma: fill height), centred in its half. */
 .ek-values2__media { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 100%; overflow: hidden; aspect-ratio: 1 / 1; }
 .ek-values2__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* One image per feature, stacked; only the open feature's image is visible (cross-fade). */
+.ek-values2__img { position: absolute; inset: 0; opacity: 0; transition: opacity .4s ease; }
+.ek-values2__img.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .ek-values2__img { transition: none; } }
 
 /* Values & Features Numbered List — two Containers: 100% (heading, up to 680) over 50% + 50%:
    a 5:4 image beside a numbered list (number + title | description, split by dividers). */
@@ -984,7 +988,7 @@
   .ek-values2__col { flex: none; gap: var(--spacing-xxl); }
   .ek-values2__mediacol { flex: none; }
   .ek-values2__mediacol { position: static; }
-  .ek-values2__media { position: static; transform: none; width: 100%; border-radius: var(--radius-standard); }
+  .ek-values2__media { position: relative; inset: auto; transform: none; width: 100%; border-radius: var(--radius-standard); }
   .ek-values2__item { padding: var(--spacing-l); }
   /* Values & Features Numbered List — image over the list; each row stacks title over body */
   .ek-values3__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }

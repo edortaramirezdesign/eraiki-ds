@@ -108,6 +108,16 @@
       return;
     }
 
+    // FAQs Split List — one question open at a time; clicking the open one closes it.
+    const faqQ = closest(t, '.ek-faq1__q');
+    if (faqQ) {
+      const item = faqQ.closest('.ek-faq1__item');
+      const willOpen = !item.classList.contains('is-open');
+      item.closest('.ek-faq1__list').querySelectorAll('.ek-faq1__item').forEach(i => { i.classList.remove('is-open'); const b = i.querySelector('.ek-faq1__toggle'); if (b) b.setAttribute('aria-expanded', 'false'); });
+      if (willOpen) { item.classList.add('is-open'); const b = item.querySelector('.ek-faq1__toggle'); if (b) b.setAttribute('aria-expanded', 'true'); }
+      return;
+    }
+
     // Values & Features Highlight List — one feature open at a time; the image on the right
     // switches to the open feature's image (cross-fade).
     const feat = closest(t, '.ek-values2__item');

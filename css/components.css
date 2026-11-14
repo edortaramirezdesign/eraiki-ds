@@ -875,6 +875,30 @@
 /* The card copy is not a Text group in Figma: it keeps Text/Standard-L. */
 .ek-values4__card .ek-textgroup__body { color: var(--color-fill-plain-text-standard-l); }
 
+/* FAQs Split List — Container 34% + 66%: Text group (label + Heading L) left, FAQ items right
+   (XS gap). Background = Surface Base under a Surface Standard-S layer (as in Figma). Each item:
+   Surface Base, radius M, L inset; question Heading S + tertiary icon button; the answer
+   (Body L, Standard-M) expands below. One item open at a time (js/eraiki.js). */
+.ek-faq1 {
+  padding: var(--spacing-6xl) var(--spacing-4xl); column-gap: var(--spacing-3xl); row-gap: var(--spacing-xl);
+  background-color: var(--color-fill-plain-surface-base);
+  background-image: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s));
+}
+.ek-faq1__head { max-width: none; }
+.ek-faq1__list { display: flex; flex-direction: column; gap: var(--spacing-xs); }
+.ek-faq1__item { padding: var(--spacing-l); border-radius: var(--radius-m); background: var(--color-fill-plain-surface-base); }
+.ek-faq1__q { display: flex; align-items: center; gap: var(--spacing-xl); cursor: pointer; }
+.ek-faq1__question { flex: 1 1 auto; min-width: 0; margin: 0; color: var(--color-fill-plain-text-standard-l); }
+.ek-faq1__toggle { flex-shrink: 0; }
+.ek-faq1__toggle > span { display: inline-flex; }
+.ek-faq1__minus, .ek-faq1__item.is-open .ek-faq1__plus { display: none !important; }
+.ek-faq1__item.is-open .ek-faq1__minus { display: inline-flex !important; }
+.ek-faq1__a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .28s ease; }
+.ek-faq1__item.is-open .ek-faq1__a { grid-template-rows: 1fr; }
+.ek-faq1__a-inner { overflow: hidden; }
+.ek-faq1__a-inner .ek-textgroup__body { padding-top: var(--spacing-l); }
+@media (prefers-reduced-motion: reduce) { .ek-faq1__a { transition: none; } }
+
 /* Values & Features Bento Grid — two Containers: 100% centered intro (eyebrow, Heading L, body,
    primary + secondary; up to 820) over 33% × 3 columns of Feature cards, two stacked per column
    (XS gutter). On Surface Standard-S; each card is a Text group on Surface Base, radius M. */
@@ -976,6 +1000,8 @@
   .ek-marquee2 .ek-sec-strip { padding: var(--spacing-xxl) 0 var(--spacing-6xl); }
   .ek-marquee2__intro { max-width: 640px; }
   .ek-marquee2 { --ek-marquee2-fade: 80px; }
+  /* FAQs Split List — the heading stacks above the questions */
+  .ek-faq1 { padding: var(--spacing-6xl) var(--spacing-m); row-gap: var(--spacing-xl); }
   /* Values & Features Bento Grid — the intro stays centered; the six cards stack */
   .ek-values5__top { padding: var(--spacing-5xl) var(--spacing-l) 0; }
   .ek-values5__grid { padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-5xl); }

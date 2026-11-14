@@ -81,5 +81,7 @@ export { MarqueeLogoStrip, MarqueeLogoTiles } from './sections/Marquee';
 export type { MarqueeLogoStripProps, MarqueeLogoTilesProps } from './sections/Marquee';
 export { TestimonialsImageCards } from './sections/Testimonials';
 export type { TestimonialsImageCardsProps, Testimonial } from './sections/Testimonials';
+export { FAQsSplitList } from './sections/Faqs';
+export type { FAQsSplitListProps, FaqItem } from './sections/Faqs';
 export { ContactSplitForm } from './sections/Contact';
 export type { ContactSplitFormProps, ContactField } from './sections/Contact';

@@ -80,6 +80,7 @@ const SECTIONS = {
   MarqueeLogoStrip: 'marquee-logo-strip',
   MarqueeLogoTiles: 'marquee-logo-tiles',
   ContactSplitForm: 'contact-split-form',
+  FAQsSplitList: 'faqs-split-list',
   TestimonialsImageCards: 'testimonials-image-cards',
 };
 

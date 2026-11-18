@@ -56,13 +56,22 @@ export function FeaturedCell({ children, className }: FeaturedCellProps) {
   );
 }
 
-export interface CellsRowProps {
-  /** PlainCell / LinkableCell / FeaturedCell children, laid out as equal columns. */
+export interface CellsColumnProps {
+  /** Header text, shown in a FeaturedCell at the top. Pass `null` for the empty header; omit for no header. */
+  header?: ReactNode | null;
+  /** PlainCell children, one per row — use one `kind` per column. */
   children?: ReactNode;
+  /** `fixed` (default, 145px — override with `className`/CSS) or `fill` to take the available width. */
+  width?: 'fixed' | 'fill';
   className?: string;
 }
 
-/** Horizontal row of cells (a table row). */
-export function CellsRow({ children, className }: CellsRowProps) {
-  return <div className={cx('ek-cells-row', className)} style={{ width: '100%' }}>{children}</div>;
+/** Vertical column of cells (a table column): a Featured header over Plain cells. */
+export function CellsColumn({ header, children, width = 'fixed', className }: CellsColumnProps) {
+  return (
+    <div className={cx('ek-cells-column', width === 'fill' && 'ek-cells-column--fill', className)}>
+      {header !== undefined && <FeaturedCell>{header === null ? undefined : header}</FeaturedCell>}
+      {children}
+    </div>
+  );
 }

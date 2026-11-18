@@ -350,8 +350,8 @@
   P['cell-plain'] = () => ([{ title: 'Cell — Plain', opts: '', stage:'stage--start', html: `<div class="ek-cell-plain"><span class="ek-cell-plain__content">Lorem ipsum</span></div>` }]);
   P['cell-linkable'] = () => ([{ title: 'Cell — Linkable', opts: '', stage:'stage--start', html: `<div class="ek-cell-linkable"><span class="ek-cell-linkable__content">Lorem</span></div>` }]);
   P['cell-featured'] = () => ([{ title: 'Cell — Featured', opts: '', stage:'stage--start', html: `<div class="ek-cell-featured"><span class="ek-cell-featured__value">Lorem ipsum</span></div>` }]);
-  P['cells-row'] = () => ([{ title: 'Cells row', opts: '', stage:'stage--start', html:
-    `<div class="ek-cells-row" style="width:100%">${['Lorem','Lorem','Lorem','Lorem'].map(t=>`<div class="ek-cell-plain"><span class="ek-cell-plain__content">${t}</span></div>`).join('')}</div>` }]);
+  P['cells-column'] = () => ([{ title: 'Cells column', opts: '', stage:'stage--start', html:
+    `<div class="ek-cells-column"><div class="ek-cell-featured"><span class="ek-cell-featured__value">Lorem ipsum</span></div>${Array.from({ length: 5 }, () => '<div class="ek-cell-plain"><span class="ek-cell-plain__content">Lorem ipsum</span></div>').join('')}</div>` }]);
 
   P['card-product'] = () => ([{ title: 'Card — Product', opts: '', stage:'stage--start', html: card({ label: true, colors: true }) }]);
 
@@ -686,22 +686,19 @@
     };
     return pick(m, name, cell('Text'));
   };
-  ITEM['cells-row'] = (sec, name) => {
-    const pcell = (t, style) => `<div class="ek-cell-plain"${style ? ` style="${style}"` : ''}><span class="ek-cell-plain__content">${t || 'Lorem'}</span></div>`;
-    const fcell = (t) => `<div class="ek-cell-featured"><span class="ek-cell-featured__value">${t || 'Lorem'}</span></div>`;
-    const lcell = (t) => `<div class="ek-cell-linkable"><span class="ek-cell-linkable__content">${t || 'Lorem'}</span></div>`;
-    const row = (inner) => `<div class="ek-cells-row" style="width:100%">${inner}</div>`;
-    const repeat = (fn, n) => Array.from({ length: n }, () => fn()).join('');
-    const m = {
-      'Plain': row(repeat(() => pcell('Lorem'), 4)),
-      'Featured': row(repeat(() => fcell('Lorem'), 4)),
-      'Linkable': row(repeat(() => lcell('Lorem'), 4)),
-      'Fill': row(repeat(() => pcell('Lorem'), 4)),
-      'Width of the cells': row(pcell('Lorem') + pcell('Lorem', 'flex:0 0 96px') + pcell('Lorem')),
-      'Mix kind of cells': row(pcell('Lorem') + pcell('Lorem') + lcell('Lorem') + lcell('Lorem')),
-      'You don’t mix featured-type cells': row(fcell('Lorem') + pcell('Lorem') + fcell('Lorem')),
+  ITEM['cells-column'] = (sec, name) => {
+    const head = (t) => `<div class="ek-cell-featured">${t ? `<span class="ek-cell-featured__value">${t}</span>` : ''}</div>`;
+    const pcell = (kind) => {
+      const mod = kind ? ` ek-cell-plain--${kind}` : '';
+      const c = kind === 'amount' ? '000.00' : kind === 'label' ? '<span class="ek-label"><span class="ek-label__dot"></span>Label</span>' : 'Lorem ipsum';
+      return `<div class="ek-cell-plain${mod}"><span class="ek-cell-plain__content">${c}</span></div>`;
     };
-    return pick(m, name, row(repeat(() => pcell('Lorem'), 4)));
+    const col = (kind, n, o = {}) => `<div class="ek-cells-column"${o.style ? ` style="${o.style}"` : ''}>${head(o.empty ? '' : 'Lorem ipsum')}${Array.from({ length: n }, () => pcell(kind)).join('')}</div>`;
+    const m = {
+      'Text': col('', 5), 'Amount': col('amount', 5), 'Label': col('label', 5),
+      'Header': col('', 5), 'Number of cells': col('', 3), 'Width': col('', 5, { style: 'width:280px' }),
+    };
+    return pick(m, name, col('', 5));
   };
 
   // ---- checkbox ----

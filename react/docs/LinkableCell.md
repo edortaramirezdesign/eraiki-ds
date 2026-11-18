@@ -7,13 +7,13 @@ An interactive table cell that navigates or selects on tap, with content kinds a
 
 The Linkable cell is an interactive row building block: unlike a plain cell that only displays information, the whole cell is a target that navigates to a detail view or selects the row. This makes it the backbone of clickable lists and selectable tables, where users act on entire rows rather than on a single control inside them.
 
-It adapts to different content through its kinds (Text, Amount, Label, Icon) and exposes a complete set of states —default, hover, selected default, selected hover, disabled, and selected disabled— so both interaction and selection are always clear. It is designed to be composed into a Cells row alongside Plain and Featured cells.
+It adapts to different content through its kinds (Text, Amount, Label, Icon) and exposes a complete set of states —default, hover, selected default, selected hover, disabled, and selected disabled— so both interaction and selection are always clear. It is designed to be combined with Plain and Featured cells in tables and lists.
 
 ## When to use
 - Rows that navigate to a detail view when tapped (clickable lists, tables).
 - Selectable lists or tables where the whole row can be picked, with a clear selected state.
 - Presenting different row content —text, amount, label, or icon— while keeping consistent interaction.
-- As part of a Cells row, combined with Plain and Featured cells.
+- As part of a table or list, combined with Plain and Featured cells.
 
 ## When not to use
 - Read-only data that shouldn't respond to taps — use a Plain cell.

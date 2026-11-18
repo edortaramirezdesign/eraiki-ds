@@ -17,7 +17,7 @@ Each part can be toggled on or off (title, label, text, icon, button), so the sa
 
 ## When not to use
 - A single standalone piece of text — use a plain text style.
-- Interactive rows of data — use Cells / Cells row.
+- Tables of data — use Cells column.
 - Page-level messages or alerts — use Banner.
 - Recreating the block manually with loose layers instead of the component.
 

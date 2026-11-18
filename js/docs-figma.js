@@ -660,7 +660,7 @@ window.ERAIKI_DOCS = {
         ]
       }
     ],
-    "description": "The Featured cell is a table/row building block used to give a single value extra visual weight within a data row. While most cells present information uniformly, a featured cell draws the eye to the piece of content that matters most —a key figure, a primary label, the item that should stand out— without breaking the row's structure.\n\nIt offers a Text kind for when there is content to highlight and an Empty kind for when the value is missing or not yet available, so rows stay aligned and consistent even with incomplete data. It is designed to be composed into a Cells row alongside Plain and Linkable cells."
+    "description": "The Featured cell is a table/row building block used to give a single value extra visual weight within a data row. While most cells present information uniformly, a featured cell draws the eye to the piece of content that matters most —a key figure, a primary label, the item that should stand out— without breaking the row's structure.\n\nIt offers a Text kind for when there is content to highlight and an Empty kind for when the value is missing or not yet available, so rows stay aligned and consistent even with incomplete data. It is designed to head a Cells column, above Plain cells."
   },
   "cell-linkable": {
     "node": "1131-13290",
@@ -732,7 +732,7 @@ window.ERAIKI_DOCS = {
         ]
       }
     ],
-    "description": "The Linkable cell is an interactive row building block: unlike a plain cell that only displays information, the whole cell is a target that navigates to a detail view or selects the row. This makes it the backbone of clickable lists and selectable tables, where users act on entire rows rather than on a single control inside them.\n\nIt adapts to different content through its kinds (Text, Amount, Label, Icon) and exposes a complete set of states —default, hover, selected default, selected hover, disabled, and selected disabled— so both interaction and selection are always clear. It is designed to be composed into a Cells row alongside Plain and Featured cells."
+    "description": "The Linkable cell is an interactive row building block: unlike a plain cell that only displays information, the whole cell is a target that navigates to a detail view or selects the row. This makes it the backbone of clickable lists and selectable tables, where users act on entire rows rather than on a single control inside them.\n\nIt adapts to different content through its kinds (Text, Amount, Label, Icon) and exposes a complete set of states —default, hover, selected default, selected hover, disabled, and selected disabled— so both interaction and selection are always clear. It is designed to be combined with Plain and Featured cells in tables and lists."
   },
   "cell-plain": {
     "node": "1131-13419",
@@ -788,26 +788,26 @@ window.ERAIKI_DOCS = {
         ]
       }
     ],
-    "description": "The Plain cell is the base building block for data rows: it presents information without acting as a navigation or selection target. It is the default choice for read-only tables and lists, keeping content aligned and consistent across rows.\n\nIt supports several content kinds (Text, Amount, Label, Button, Icon), so a cell can hold a plain value, a status label, an icon, or an inline button for a contained action —without making the whole row interactive. Its states are limited to Default and Disabled, reflecting that the cell itself isn't a link. It is designed to be composed into a Cells row alongside Featured and Linkable cells."
+    "description": "The Plain cell is the base building block for data rows: it presents information without acting as a navigation or selection target. It is the default choice for read-only tables and lists, keeping content aligned and consistent across rows.\n\nIt supports several content kinds (Text, Amount, Label, Button, Icon), so a cell can hold a plain value, a status label, an icon, or an inline button for a contained action —without making the whole row interactive. Its states are limited to Default and Disabled, reflecting that the cell itself isn't a link. It is designed to be stacked in a Cells column, below a Featured header cell."
   },
-  "cells-row": {
-    "node": "1131-13529",
+  "cells-column": {
+    "node": "1635-35600",
     "sections": [
       {
         "title": "Kinds",
         "items": [
           {
-            "name": "Plain",
-            "desc": "A row of read-only Plain cells for displaying data.",
+            "name": "Text",
+            "desc": "A column of read-only Text cells for names, descriptions or any written value.",
             "default": true
           },
           {
-            "name": "Featured",
-            "desc": "A row built around a Featured cell to highlight a standout value."
+            "name": "Amount",
+            "desc": "A column of Amount cells for prices, figures or totals, so numbers line up for comparison."
           },
           {
-            "name": "Linkable",
-            "desc": "A row of interactive Linkable cells that navigate or select on tap."
+            "name": "Label",
+            "desc": "A column of Label cells for statuses or categories that need to stand out at a glance."
           }
         ]
       },
@@ -815,26 +815,21 @@ window.ERAIKI_DOCS = {
         "title": "Behaviors",
         "items": [
           {
-            "name": "Fill",
-            "desc": "Even if you define a specific width for some of the cells inside it, the row will always have a fluid width. Keep in mind that if the sum of the cell widths is greater than the container where we place these rows, a horizontal scrollbar will appear."
+            "name": "Header",
+            "desc": "The first cell is a Featured cell that titles the column. Keep it so every column of the table is labelled, or set it to Empty when the column needs no title but must stay aligned with the others."
           },
           {
-            "name": "Width of the cells",
-            "desc": "You are free to define the type of width for each of the row’s cells, whether fill-type or fixed-type. Keep in mind that depending on this decision, horizontal scrolling may appear."
+            "name": "Number of cells",
+            "desc": "Show or hide cells to match the number of rows. The column hugs its content vertically, so it grows and shrinks with the cells it shows — keep the same count in every column of a table."
           },
           {
-            "name": "Mix kind of cells",
-            "desc": "You can make a single row contain two types of cells: plain-type cells and linkable-type cells."
-          },
-          {
-            "name": "You don’t mix featured-type cells",
-            "desc": "In a single row, there cannot be plain- or linkable-type cells together with featured-type cells. When the cells are of the featured type, all of them must be of that type.",
-            "dont": true
+            "name": "Width",
+            "desc": "Every cell fills the width of the column. Give the column a fixed width that fits its longest value, or make it fill when it shares a layout with other columns; long values are truncated with an ellipsis."
           }
         ]
       }
     ],
-    "description": "The Cells row assembles individual cells into one horizontal unit —a full row of a table or list. It is the layer that turns isolated cells into a structured, aligned record, guaranteeing consistent spacing and alignment across every row so tables stay readable no matter how the content varies.\n\nIt supports the three cell families —Plain, Featured, and Linkable— so a single row can mix read-only data, a highlighted value, and interactive targets as needed. The number of items scales from 1 to 10, letting the same component cover anything from a simple list to a wide, multi-column table."
+    "description": "The Cells column stacks individual cells into one vertical unit —a full column of a table or list. A Featured cell at the top works as the column header and Plain cells below it hold one value per row, so several columns side by side read as a structured, aligned table.\n\nEvery cell fills the column width and keeps the same height and padding, so values line up from top to bottom no matter how the content varies. Use one content kind per column —text, amounts or labels— so each column scans as a single type of data, and combine columns to build comparison tables that read from top to bottom."
   },
   "checkbox": {
     "node": "1131-13588",

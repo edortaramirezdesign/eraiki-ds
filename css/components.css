@@ -493,9 +493,10 @@
 .ek-cell__title { font-family: var(--font-family-label); font-weight: var(--font-weight-label); font-size: var(--font-size-body-m); }
 .ek-cell__sub { font-size: var(--font-size-detail-m); color: var(--color-fill-plain-text-standard-m); }
 .ek-cell__amount { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); }
-/* Cells row — horizontal row composing value cells into equal-fill columns */
-.ek-cells-row { display: flex; width: 100%; max-width: 100%; overflow-x: auto; }
-.ek-cells-row > * { flex: 1 1 0; min-width: 0; }
+/* Cells column — vertical stack: a Featured header cell over Plain cells, every cell fills the column width */
+.ek-cells-column { display: flex; flex-direction: column; width: 145px; max-width: 100%; }
+.ek-cells-column--fill { width: 100%; }
+.ek-cells-column > * { display: flex; width: 100%; min-width: 0; }
 /* File list (used by File drop) — vertical stack of file rows in a bordered box */
 /* Cell — Featured: highlighted value chip (square table cell) */
 /* Featured cell: light-gray fill + a bottom rule only (Figma: fill gray-100/.03,

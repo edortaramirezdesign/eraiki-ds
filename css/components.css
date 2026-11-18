@@ -877,6 +877,27 @@
 .ek-values3__title { color: var(--color-fill-plain-text-standard-l); }
 .ek-values3__desc { color: var(--color-fill-plain-text-standard-m); margin: 0; }
 
+/* Team Portrait Grid — Container 50% + 50% (Text group left, tertiary action bottom-right) over
+   two Containers 25% × 4 of Member cards (M gutter, XXL between rows) on Surface Standard-S.
+   Card: 3:4 portrait (Corner radius M) + name (Heading S) / number (Label M) + role (Detail M).
+   A card opens the Member panel: a 480px side dialog with prev / next (js/eraiki.js). */
+.ek-team1 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-standard-s); }
+.ek-team1 > .ek-container { background: transparent; }
+.ek-team1__top { padding: var(--spacing-6xl) var(--spacing-4xl) var(--spacing-xl); row-gap: var(--spacing-l); }
+.ek-team1__headcol { justify-content: flex-end; }
+.ek-team1__head { max-width: none; }
+.ek-team1__actioncol { justify-content: flex-end; align-items: flex-end; }
+.ek-team1__row { padding: var(--spacing-xl) var(--spacing-4xl) 0; column-gap: var(--spacing-m); }
+.ek-team1__row--last { padding: var(--spacing-xxl) var(--spacing-4xl) var(--spacing-6xl); }
+.ek-team1__card { display: flex; flex-direction: column; gap: var(--spacing-m); width: 100%; margin: 0; }
+.ek-team1__img { display: block; aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--radius-m); background: var(--color-fill-plain-surface-standard-m); }
+.ek-team1__img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ek-team1__info { display: flex; flex-direction: column; gap: var(--spacing-s); }
+.ek-team1__namerow { display: flex; flex-direction: column; }
+.ek-team1__no { color: var(--color-fill-plain-text-accent); }
+.ek-team1__name { color: var(--color-fill-plain-text-standard-l); }
+.ek-team1__role { color: var(--color-fill-plain-text-standard-m); }
+
 /* Values & Features Staggered Cards — two Containers: 100% (centered intro, up to 620) over
    33% × 3 cards (M gutter), each a heading, an illustration and a line of copy; columns step down 0/XXL/5XL. */
 .ek-values4 { display: flex; flex-direction: column; background: var(--color-fill-plain-surface-base); }
@@ -921,6 +942,7 @@
 .ek-testi2__name { color: var(--color-fill-plain-text-standard-l); }
 .ek-testi2__role { color: var(--color-fill-plain-text-standard-m); }
 @media (prefers-reduced-motion: reduce) { .ek-testi2__group { animation: none; } }
+
 
 /* FAQs Split List — Container 34% + 66%: Text group (label + Heading L) left, FAQ items right
    (XS gap). Background = Surface Base under a Surface Standard-S layer (as in Figma). Each item:
@@ -1043,6 +1065,11 @@
   .ek-testi2__group { --ek-marquee-pitch: 308; } /* card 300 + gap 8 */
   /* FAQs Split List — the heading stacks above the questions */
   .ek-faq1 { padding: var(--spacing-6xl) var(--spacing-m); row-gap: var(--spacing-xxl); }
+  /* Team Portrait Grid — header stacks (heading, then the action); portraits in two columns. */
+  .ek-team1 { padding: var(--spacing-6xl) 0; gap: var(--spacing-xxl); }
+  .ek-team1__top { padding: 0 var(--spacing-l); row-gap: var(--spacing-l); }
+  .ek-team1__actioncol { align-items: flex-start; }
+  .ek-team1__row, .ek-team1__row--last { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--spacing-m); row-gap: var(--spacing-xxl); padding: 0 var(--spacing-l); }
   /* Testimonials Image Cards — header keeps text left / arrows right (bottom-aligned); the
      cards become a horizontal carousel of 320px-wide 3:4 cards with the next one peeking in. */
   .ek-testi1 { padding: var(--spacing-6xl) 0; gap: var(--spacing-l); }

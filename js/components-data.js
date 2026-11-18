@@ -629,7 +629,7 @@ window.ERAIKI_COMPONENTS = [
   "name": "Cell - Featured",
   "slug": "cell-featured",
   "short": "A highlighted table cell that gives extra prominence to a standout value, with an empty state for missing content.",
-  "context": "The Featured cell is a table/row building block used to give a single value extra visual weight within a data row. While most cells present information uniformly, a featured cell draws the eye to the piece of content that matters most —a key figure, a primary label, the item that should stand out— without breaking the row's structure.\n\nIt offers a Text kind for when there is content to highlight and an Empty kind for when the value is missing or not yet available, so rows stay aligned and consistent even with incomplete data. It is designed to be composed into a Cells row alongside Plain and Linkable cells.",
+  "context": "The Featured cell is a table/row building block used to give a single value extra visual weight within a data row. While most cells present information uniformly, a featured cell draws the eye to the piece of content that matters most —a key figure, a primary label, the item that should stand out— without breaking the row's structure.\n\nIt offers a Text kind for when there is content to highlight and an Empty kind for when the value is missing or not yet available, so rows stay aligned and consistent even with incomplete data. It is designed to head a Cells column, above Plain cells.",
   "keywords": [
    "cell",
    "featured cell",
@@ -648,7 +648,7 @@ window.ERAIKI_COMPONENTS = [
    "Giving one value extra prominence within a data row (a key metric, the primary attribute).",
    "Highlighting the most important column in a table so it stands out while scanning.",
    "Keeping rows aligned when a highlighted value may be missing, thanks to the empty state.",
-   "As part of a Cells row, combined with Plain and Linkable cells."
+   "As the header of a Cells column, above Plain cells."
   ],
   "whenNotToUse": [
    "Ordinary data that doesn't need emphasis — use a Plain cell.",
@@ -672,7 +672,7 @@ window.ERAIKI_COMPONENTS = [
   "name": "Cell - Linkable",
   "slug": "cell-linkable",
   "short": "An interactive table cell that navigates or selects on tap, with content kinds and full selection states.",
-  "context": "The Linkable cell is an interactive row building block: unlike a plain cell that only displays information, the whole cell is a target that navigates to a detail view or selects the row. This makes it the backbone of clickable lists and selectable tables, where users act on entire rows rather than on a single control inside them.\n\nIt adapts to different content through its kinds (Text, Amount, Label, Icon) and exposes a complete set of states —default, hover, selected default, selected hover, disabled, and selected disabled— so both interaction and selection are always clear. It is designed to be composed into a Cells row alongside Plain and Featured cells.",
+  "context": "The Linkable cell is an interactive row building block: unlike a plain cell that only displays information, the whole cell is a target that navigates to a detail view or selects the row. This makes it the backbone of clickable lists and selectable tables, where users act on entire rows rather than on a single control inside them.\n\nIt adapts to different content through its kinds (Text, Amount, Label, Icon) and exposes a complete set of states —default, hover, selected default, selected hover, disabled, and selected disabled— so both interaction and selection are always clear. It is designed to be combined with Plain and Featured cells in tables and lists.",
   "keywords": [
    "cell",
    "linkable cell",
@@ -691,7 +691,7 @@ window.ERAIKI_COMPONENTS = [
    "Rows that navigate to a detail view when tapped (clickable lists, tables).",
    "Selectable lists or tables where the whole row can be picked, with a clear selected state.",
    "Presenting different row content —text, amount, label, or icon— while keeping consistent interaction.",
-   "As part of a Cells row, combined with Plain and Featured cells."
+   "As part of a table or list, combined with Plain and Featured cells."
   ],
   "whenNotToUse": [
    "Read-only data that shouldn't respond to taps — use a Plain cell.",
@@ -729,7 +729,7 @@ window.ERAIKI_COMPONENTS = [
   "name": "Cell - Plain",
   "slug": "cell-plain",
   "short": "A non-interactive table cell for displaying information, with an optional inline button or icon.",
-  "context": "The Plain cell is the base building block for data rows: it presents information without acting as a navigation or selection target. It is the default choice for read-only tables and lists, keeping content aligned and consistent across rows.\n\nIt supports several content kinds (Text, Amount, Label, Button, Icon), so a cell can hold a plain value, a status label, an icon, or an inline button for a contained action —without making the whole row interactive. Its states are limited to Default and Disabled, reflecting that the cell itself isn't a link. It is designed to be composed into a Cells row alongside Featured and Linkable cells.",
+  "context": "The Plain cell is the base building block for data rows: it presents information without acting as a navigation or selection target. It is the default choice for read-only tables and lists, keeping content aligned and consistent across rows.\n\nIt supports several content kinds (Text, Amount, Label, Button, Icon), so a cell can hold a plain value, a status label, an icon, or an inline button for a contained action —without making the whole row interactive. Its states are limited to Default and Disabled, reflecting that the cell itself isn't a link. It is designed to be stacked in a Cells column, below a Featured header cell.",
   "keywords": [
    "cell",
    "plain cell",
@@ -749,7 +749,7 @@ window.ERAIKI_COMPONENTS = [
    "Displaying read-only data in tables and lists (text, amounts, labels, icons).",
    "Rows that shouldn't respond to taps but may hold a single inline action (button/icon).",
    "Keeping row content aligned and consistent across a table.",
-   "As part of a Cells row, combined with Featured and Linkable cells."
+   "As part of a Cells column, below a Featured header cell."
   ],
   "whenNotToUse": [
    "Rows that must navigate or be selectable on tap — use a Linkable cell.",
@@ -780,55 +780,58 @@ window.ERAIKI_COMPONENTS = [
   "propertiesNote": ""
  },
  {
-  "name": "Cells row",
-  "slug": "cells-row",
-  "short": "A horizontal row that composes individual cells into a single, aligned unit of a table or list.",
-  "context": "The Cells row assembles individual cells into one horizontal unit —a full row of a table or list. It is the layer that turns isolated cells into a structured, aligned record, guaranteeing consistent spacing and alignment across every row so tables stay readable no matter how the content varies.\n\nIt supports the three cell families —Plain, Featured, and Linkable— so a single row can mix read-only data, a highlighted value, and interactive targets as needed. The number of items scales from 1 to 10, letting the same component cover anything from a simple list to a wide, multi-column table.",
+  "name": "Cells column",
+  "slug": "cells-column",
+  "short": "A vertical column that stacks a header cell over individual cells into a single, aligned column of a table or list.",
+  "context": "The Cells column stacks individual cells into one vertical unit —a full column of a table or list. A Featured cell at the top works as the column header and Plain cells below it hold one value per row, so several columns side by side read as a structured, aligned table.\n\nEvery cell fills the column width and keeps the same height and padding, so values line up from top to bottom no matter how the content varies. Use one content kind per column —text, amounts or labels— so each column scans as a single type of data, and combine columns to build comparison tables that read from top to bottom.",
   "keywords": [
-   "cells row",
-   "row",
-   "table row",
-   "list row",
-   "record",
-   "columns",
+   "cells column",
+   "column",
+   "table column",
+   "header cell",
    "cells",
-   "data row",
-   "table",
-   "list",
-   "grid",
-   "alignment"
+   "data column",
+   "table"
   ],
   "whenToUse": [
-   "Building the rows of a table or list from Plain, Featured, and Linkable cells.",
-   "Keeping spacing and alignment consistent across every row automatically.",
-   "Rows that need to mix content types (data, a highlighted value, an interactive target).",
-   "Scaling the same row pattern from a simple list to a wide multi-column table (1–10 items)."
+   "Building the columns of a table or comparison from a header cell and Plain cells.",
+   "Comparing several items side by side, one column per item or attribute.",
+   "Keeping a single content type per column —text, amounts or labels— aligned top to bottom.",
+   "Composing a table column by column when each column needs its own width."
   ],
   "whenNotToUse": [
    "A single cell in isolation — use the individual Cell component directly.",
-   "Non-tabular content that doesn't belong to a row/record structure.",
-   "Rows wider than the viewport on small screens without a plan to wrap, stack, or scroll.",
-   "Complex tables needing fixed headers, sorting, or pagination logic beyond simple row layout (compose with the relevant components)."
+   "Interactive rows that navigate or select — use Linkable cells.",
+   "Long free text in each cell — use a list or a text block.",
+   "Complex tables needing sorting, sticky headers or pagination beyond this component."
   ],
   "properties": [
    {
     "property": "Kinds",
-    "raw": "Plain, Featured, Linkable cells",
+    "raw": "Text, Amount, Label",
     "options": [
-     "Plain",
-     "Featured",
-     "Linkable cells"
+     "Text",
+     "Amount",
+     "Label"
     ]
    },
    {
-    "property": "Items",
-    "raw": "1–10",
+    "property": "Header",
+    "raw": "Featured, Empty",
     "options": [
-     "1–10"
+     "Featured",
+     "Empty"
+    ]
+   },
+   {
+    "property": "Cells",
+    "raw": "1–13",
+    "options": [
+     "1–13"
     ]
    }
   ],
-  "propertiesNote": ""
+  "propertiesNote": "Composed component — a Featured header cell over Plain cells; the kind is set on the Plain cells inside."
  },
  {
   "name": "Checkbox",
@@ -2664,7 +2667,7 @@ window.ERAIKI_COMPONENTS = [
   ],
   "whenNotToUse": [
    "A single standalone piece of text — use a plain text style.",
-   "Interactive rows of data — use Cells / Cells row.",
+   "Tables of data — use Cells column.",
    "Page-level messages or alerts — use Banner.",
    "Recreating the block manually with loose layers instead of the component."
   ],

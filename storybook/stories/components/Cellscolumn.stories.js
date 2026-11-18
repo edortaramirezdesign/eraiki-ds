@@ -6,9 +6,9 @@ import { playgroundArgTypes, playgroundArgs, playgroundRender, docMarkdown, comp
 import { DocsPage } from '../_docspage.js';
 
 export default {
-  title: 'Components/Cells row',
+  title: 'Components/Cells column',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('cells-row') }, source: { transform: componentSourceTransform } }, ek: { kind: 'component', slug: 'cells-row' } },
+  parameters: { layout: 'fullscreen', docs: { page: DocsPage, description: { component: docMarkdown('cells-column') }, source: { transform: componentSourceTransform } }, ek: { kind: 'component', slug: 'cells-column' } },
 };
 
-export const Playground = { name: 'Playground', argTypes: playgroundArgTypes('cells-row'), args: playgroundArgs('cells-row'), render: (a) => playgroundRender('cells-row', a) };
+export const Playground = { name: 'Playground', argTypes: playgroundArgTypes('cells-column'), args: playgroundArgs('cells-column'), render: (a) => playgroundRender('cells-column', a) };

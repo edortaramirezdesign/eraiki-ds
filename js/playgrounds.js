@@ -399,20 +399,20 @@
   const pgTip = (show) => show ? `<span style="display:inline-flex;color:var(--color-stroke-plain-icons-standard-s);cursor:help">${I.info}</span>` : '';
   const pgDetail = (show, err, txt) => show ? `<span class="ek-field__hint ${err ? 'ek-field__hint--error' : ''}">${err ? 'This field has an error' : (txt || 'Detail text')}</span>` : '';
 
-  // ---- Cells row ----
-  P['cells-row'] = {
+  // ---- Cells column ----
+  P['cells-column'] = {
     props: [
-      { name: 'Kind', type: 'enum', options: ['Plain', 'Featured', 'Linkable'], value: 'Plain' },
-      { name: 'Items', type: 'enum', options: ['2', '3', '4', '5', '6'], value: '4' },
+      { name: 'Kind', type: 'enum', options: ['Text', 'Amount', 'Label'], value: 'Text' },
+      { name: 'Header', type: 'enum', options: ['Featured', 'Empty'], value: 'Featured' },
+      { name: 'Cells', type: 'enum', options: ['3', '5', '8', '13'], value: '5' },
+      { name: 'Width', type: 'enum', options: ['Fixed', 'Fill'], value: 'Fixed' },
     ],
     render: (s) => {
-      const n = parseInt(s.Items, 10);
-      const one = () => {
-        if (s.Kind === 'Featured') return '<div class="ek-cell-featured"><span class="ek-cell-featured__value">Lorem</span></div>';
-        if (s.Kind === 'Linkable') return '<div class="ek-cell-linkable"><span class="ek-cell-linkable__content">Lorem</span></div>';
-        return '<div class="ek-cell-plain"><span class="ek-cell-plain__content">Lorem</span></div>';
-      };
-      return `<div class="ek-cells-row" style="width:100%">${Array.from({ length: n }, one).join('')}</div>`;
+      const kmod = { Amount: ' ek-cell-plain--amount', Label: ' ek-cell-plain--label' }[s.Kind] || '';
+      const content = s.Kind === 'Amount' ? '000.00' : s.Kind === 'Label' ? '<span class="ek-label"><span class="ek-label__dot"></span>Label</span>' : 'Lorem ipsum';
+      const head = s.Header === 'Empty' ? '<div class="ek-cell-featured"></div>' : '<div class="ek-cell-featured"><span class="ek-cell-featured__value">Lorem ipsum</span></div>';
+      const cells = Array.from({ length: parseInt(s.Cells, 10) }, () => `<div class="ek-cell-plain${kmod}"><span class="ek-cell-plain__content">${content}</span></div>`).join('');
+      return `<div class="ek-cells-column${s.Width === 'Fill' ? ' ek-cells-column--fill' : ''}">${head}${cells}</div>`;
     },
   };
 

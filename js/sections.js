@@ -376,7 +376,26 @@
         frameDesktop: 'The heading sits in the narrow left column (34%) and the questions stack in the wide right column (66%); the open question shows its answer.',
         frameMobile: 'The heading sits on top and the questions stack below it at full width.' },
     ] },
-    { slug: 'team', name: 'Team', desc: 'Team member profiles.', versions: [] },
+    { slug: 'team', name: 'Team', desc: 'Team member profiles.', versions: [
+      { slug: 'team-portrait-grid', name: 'Team Portrait Grid', shot: 'team-portrait-grid', node: '1625-4863',
+        short: 'A heading over a grid of member portraits with their number, name and role.',
+        description: "Team Portrait Grid introduces the people behind a team, club or community. A short heading leads into a grid of portrait cards — each a 3:4 photo with a member number, the person's name and their role — so the group reads as a set of real faces rather than a list.\n\nThe header is a Container 50% + 50% — a Text group on the left and a tertiary action on the right — and both card rows are Containers 25% × 4 of Member cards, built with the system type styles. On mobile the grid becomes two columns.",
+        keywords: ['team', 'people', 'members', 'portraits', 'grid', 'profiles', 'community', 'about us', 'faces', 'cards'],
+        whenToUse: [
+          'Introducing the members of a team, club or community with a face for each.',
+          'Showing a group where every person carries the same weight.',
+          'Putting faces to an About us or community page.',
+          'Pairing each portrait with short facts: number, name and role.',
+        ],
+        whenNotToUse: [
+          'Leadership bios or long profiles — use a dedicated team page.',
+          'One or two people — use a split text + image section.',
+          'When there are no real portraits to show.',
+          'Very large directories — use a searchable list instead.',
+        ],
+        frameDesktop: 'The label and heading sit left with a tertiary action bottom-right; eight portrait cards fill two rows of 25% columns below, each with a member number, name and role.',
+        frameMobile: 'The heading and action stack above the portraits, which form a two-column grid.' },
+    ] },
     { slug: 'tabs', name: 'Tabs', desc: 'Tabbed content sections.', versions: [] },
     { slug: 'process', name: 'Process', desc: 'Step-by-step process or timeline.', versions: [] },
     { slug: 'pricing', name: 'Pricing', desc: 'Pricing tiers and comparison.', versions: [] },
@@ -668,6 +687,29 @@
           </div></div>
         </div>
         <div class="ek-container ek-testi1__track">${items.map(card).join('')}</div>
+      </div>`;
+    },
+    // Team Portrait Grid — Container 50% + 50% (Text group left, tertiary action bottom-right)
+    // over two Containers 25% × 4 of Member cards (3:4 portrait; number (Label M, accent)
+    // over the name (Heading S); role in Body M).
+    'team-portrait-grid': () => {
+      const members = [
+        ['Ana R.', 'No. 0412', 'Carpenter · Davenport'], ['Tomás V.', 'No. 0087', 'Line cook · Waddell'],
+        ['Ruth O.', 'No. 0028', 'Nurse · Davenport'], ['Jesse L.', 'No. 0339', 'Electrician · Santa Cruz'],
+        ['Mara K.', 'No. 0263', 'Teacher · Scott Creek'], ['Kai M.', 'No. 0204', 'Shaper · Año Nuevo'],
+        ['Ines D.', 'No. 0151', 'Dentist · Pigeon Point'], ['Nico B.', 'No. 0377', 'Fisherman · Half Moon Bay'],
+      ].map(([name, no, role], i) => ({ name, no, role, img: `assets/sections/team-portrait-${String(i + 1).padStart(2, '0')}.webp` }));
+      const card = (m) => `<div class="ek-container__col" style="--ek-span:3"><figure class="ek-team1__card">
+        <div class="ek-team1__img"><img src="${m.img}" alt="" loading="lazy"></div>
+        <figcaption class="ek-team1__info"><span class="ek-team1__namerow"><span class="ek-team1__no ek-label-m">${m.no}</span><span class="ek-team1__name ek-heading-s">${m.name}</span></span><span class="ek-team1__role ek-body-m">${m.role}</span></figcaption>
+      </figure></div>`;
+      return `<div class="ek-team1">
+        <div class="ek-container ek-team1__top">
+          <div class="ek-container__col ek-team1__headcol" style="--ek-span:6"><div class="ek-textgroup ek-team1__head"><div class="ek-textgroup__top"><div class="ek-textgroup__head"><div class="ek-textgroup__eyebrow">Lorem ipsum</div><h2 class="ek-textgroup__title ek-heading-l">Nam a bibendum nunc eget tincidunt eros</h2></div></div></div></div>
+          <div class="ek-container__col ek-team1__actioncol" style="--ek-span:6"><button class="ek-btn ek-btn--tertiary">Lorem ipsum</button></div>
+        </div>
+        <div class="ek-container ek-team1__row">${members.slice(0, 4).map(card).join('')}</div>
+        <div class="ek-container ek-team1__row ek-team1__row--last">${members.slice(4).map(card).join('')}</div>
       </div>`;
     },
     // FAQs Split List — Container 34% + 66%: a Text group (label, Heading L, body, primary) on the left and a

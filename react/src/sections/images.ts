@@ -60,6 +60,14 @@ import tile37 from '../../../assets/sections/logo-tile-37.svg';
 import testi1 from './assets/testimonials-001-img1.jpg';
 import testi2 from './assets/testimonials-001-img2.jpg';
 import testi3 from './assets/testimonials-001-img3.jpg';
+import team1 from './assets/team-portrait-01.webp';
+import team2 from './assets/team-portrait-02.webp';
+import team3 from './assets/team-portrait-03.webp';
+import team4 from './assets/team-portrait-04.webp';
+import team5 from './assets/team-portrait-05.webp';
+import team6 from './assets/team-portrait-06.webp';
+import team7 from './assets/team-portrait-07.webp';
+import team8 from './assets/team-portrait-08.webp';
 import illus1 from '../../../assets/sections/values-004-illus-1.svg';
 import illus2 from '../../../assets/sections/values-004-illus-2.svg';
 import illus3 from '../../../assets/sections/values-004-illus-3.svg';
@@ -86,4 +94,6 @@ export const sectionImages = {
   illustrations: [illus1, illus2, illus3],
   /** Three portraits for Testimonials Image Cards. */
   testimonials: [testi1, testi2, testi3],
+  /** Eight 3:4 portraits for Team Portrait Grid. */
+  team: [team1, team2, team3, team4, team5, team6, team7, team8],
 };

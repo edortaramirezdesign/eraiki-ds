@@ -11,24 +11,24 @@
       ['M', 'ek-display-m', 52, 56, 44, 48, 500],
     ] },
     { h: 'Headings', desc: 'We will use headings for titles that help identify a screen, section, or functionality. While ideally the headings should only be a few words, in smaller sizes we can also construct short sentences.', rows: [
-      ['XL', 'ek-heading-xl', 48, 56, 40, 46, 500],
-      ['L', 'ek-heading-l', 40, 48, 34, 40, 500],
-      ['M', 'ek-heading-m', 32, 40, 28, 32, 500],
-      ['S', 'ek-heading-s', 24, 32, 24, 32, 500],
+      ['XL', 'ek-heading-xl', 48, 52, 40, 42, 500],
+      ['L', 'ek-heading-l', 36, 40, 36, 40, 500],
+      ['M', 'ek-heading-m', 30, 36, 30, 36, 500],
+      ['S', 'ek-heading-s', 24, 30, 24, 30, 500],
     ] },
     { h: 'Labels', desc: 'Labels are a size we will use both to identify small elements or subsections, as well as for CTA-type elements: buttons, dropdowns, pills… We will avoid constructing sentences; they should consist of just a few words.', rows: [
-      ['L', 'ek-label-l', 12, 20, 12, 20, 600],
-      ['M', 'ek-label-m', 10, 18, 10, 18, 600],
+      ['L', 'ek-label-l', 12, 18, 12, 18, 600],
+      ['M', 'ek-label-m', 10, 16, 10, 16, 600],
     ] },
     { h: 'Body', desc: 'We will use Body text sizes when constructing long sentences or paragraphs. By default we will use size M, although size L can be used for impactful statements we want to highlight.', rows: [
-      ['L Bold', 'ek-body-l ek-strong', 16, 24, 16, 24, 600],
-      ['L Regular', 'ek-body-l', 16, 24, 16, 24, 400],
-      ['M Bold', 'ek-body-m ek-strong', 14, 22, 14, 22, 600],
-      ['M Regular', 'ek-body-m', 14, 22, 14, 22, 400],
+      ['L Bold', 'ek-body-l ek-strong', 16, 22, 16, 22, 600],
+      ['L Regular', 'ek-body-l', 16, 22, 16, 22, 400],
+      ['M Bold', 'ek-body-m ek-strong', 14, 20, 14, 20, 600],
+      ['M Regular', 'ek-body-m', 14, 20, 14, 20, 400],
     ] },
     { h: 'Detail', desc: 'We’ll use the Detail text size for short phrases that provide additional information or context.', rows: [
-      ['M', 'ek-detail-m', 12, 20, 12, 20, 400],
-      ['S', 'ek-detail-s', 8, 16, 8, 16, 500],
+      ['M', 'ek-detail-m', 12, 18, 12, 18, 400],
+      ['S', 'ek-detail-s', 8, 14, 8, 14, 500],
     ] },
   ];
   const TYPE_FAMILY_MD = '**Font family (per role)**\n| Role | Family |\n|---|---|\n| Display | Plus Jakarta Sans |\n| Heading | Plus Jakarta Sans |\n| Label | Plus Jakarta Sans |\n| Body | Inter |\n| Detail | Inter |';

@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ExplanationBannerCard.stories.js';
-import { sectionDoc, SectionOptions } from '../_section.js';
+import { sectionDoc, SectionOptions, SectionBlocks } from '../_section.js';
 import { EkPreview } from '../_preview.js';
 
 <Meta title="Marketing sections/Explanations/Explanation Banner Card - Documentation" />
@@ -14,5 +14,9 @@ import { EkPreview } from '../_preview.js';
 <Markdown>{sectionDoc('explanation-banner-card', 'short')}</Markdown>
 
 <SectionOptions slug="explanation-banner-card" />
+
+<SectionBlocks slug="explanation-banner-card" field="states" title="States" />
+
+<SectionBlocks slug="explanation-banner-card" field="behaviors" title="Behaviors" />
 
 <Markdown>{sectionDoc('explanation-banner-card', 'body')}</Markdown>

@@ -45,6 +45,8 @@ const preview = {
           ],
           // Marketing sections: no explicit order — sorted alphabetically.
           'Marketing sections',
+          // Saas sections (Figma page 004): product UI blocks — sorted alphabetically.
+          'Saas sections',
           '*',
         ],
       },

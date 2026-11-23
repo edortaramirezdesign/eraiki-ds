@@ -1141,3 +1141,77 @@
 .ek-label-m { font-family: var(--font-family-label); font-weight: var(--font-weight-label); font-size: var(--font-size-label-m); line-height: var(--line-height-label-m); text-transform: uppercase; }
 .ek-detail-m { font-family: var(--font-family-detail); font-weight: var(--font-weight-detail); font-size: var(--font-size-detail-m); line-height: var(--line-height-detail-m); }
 .ek-detail-s { font-family: var(--font-family-detail); font-weight: var(--font-weight-detail-s); font-size: var(--font-size-detail-s); line-height: var(--line-height-detail-s); }
+
+/* ==========================================================================
+   Saas sections (Figma page 004) — product UI blocks. Each sits centred on a
+   Surface Standard-S stage (.ek-saas) at its Figma width; on mobile it takes the
+   full width, as the 375 mobile masters.
+   ========================================================================== */
+.ek-saas { box-sizing: border-box; display: flex; justify-content: center; padding: var(--spacing-4xl) 0; background: var(--color-fill-plain-surface-standard-s); }
+
+/* Table — header (Heading S title; switch + three 200px dropdown filters, S apart), L above
+   eight Cells columns (Featured header over Plain cells) that share the width equally. */
+.ek-table1 { box-sizing: border-box; width: 1154px; max-width: calc(100% - 2 * var(--spacing-4xl)); display: flex; flex-direction: column; gap: var(--spacing-l); }
+.ek-table1__head { display: flex; align-items: center; gap: var(--spacing-m); min-height: 40px; }
+.ek-table1__title { flex: 1 1 auto; margin: 0; color: var(--color-fill-plain-text-standard-l); }
+.ek-table1__options { display: flex; align-items: center; gap: var(--spacing-s); }
+.ek-table1__filter { width: 200px; }
+.ek-table1__filter .ek-dropdown { width: 100%; }
+.ek-table1__menu { display: none; }
+.ek-table1__scroll { overflow-x: auto; }
+.ek-table1__grid { display: flex; min-width: 100%; }
+.ek-table1__col { flex: 1 1 0; width: auto; }
+
+/* Notifications — card: Surface Base, Shape Standard-M border, radius M, L inset, L gap.
+   Heading S + Info counter label; Task fragments (Surface Standard-S, radius M, M inset):
+   40px icon tile, Body L title over Body M description, Alert label; primary button. */
+.ek-notif1 { box-sizing: border-box; width: 520px; max-width: calc(100% - 2 * var(--spacing-4xl)); display: flex; flex-direction: column; gap: var(--spacing-l); padding: var(--spacing-l); border-radius: var(--radius-m); background: var(--color-fill-plain-surface-base); border: var(--stroke-size-m-default) solid var(--color-stroke-plain-shape-standard-m); }
+.ek-notif1__head { display: flex; align-items: center; gap: var(--spacing-m); }
+.ek-notif1__heading { flex: 1 1 auto; margin: 0; color: var(--color-fill-plain-text-standard-l); }
+.ek-notif1__tasks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--spacing-xs); }
+.ek-notif1__task { display: flex; align-items: flex-start; gap: var(--spacing-m); padding: var(--spacing-m); border-radius: var(--radius-m); background: var(--color-fill-plain-surface-standard-s); }
+.ek-notif1__task > .ek-label { flex: none; }
+.ek-notif1__main { flex: 1 1 auto; min-width: 0; display: flex; gap: var(--spacing-xs); }
+.ek-notif1__tile, .ek-kpi1__tile { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-standard); color: var(--color-fill-plain-text-standard-m); }
+.ek-notif1__tile { background: var(--color-fill-plain-surface-standard-s); }
+.ek-notif1__text { display: flex; flex-direction: column; gap: var(--spacing-xxs); min-width: 0; }
+.ek-notif1__title { color: var(--color-fill-plain-text-standard-l); }
+.ek-notif1__desc { color: var(--color-fill-plain-text-standard-m); }
+.ek-notif1__foot { display: flex; }
+
+/* KPIs — 427px KPI cards in a wrapping row (M gap both ways). Card: Surface Base, Link
+   border (Default / Hover / Active), radius M, L inset, M gap. Header: tone icon tile +
+   Body L Bold label, status label right, M below over a Shape Standard-M rule. Value in
+   Display M with its unit in Heading M (bottom-aligned, XXS apart), Body M caption. */
+.ek-kpi1 { box-sizing: border-box; width: 1440px; max-width: 100%; display: flex; flex-wrap: wrap; gap: var(--spacing-m); }
+.ek-kpi1__card { box-sizing: border-box; flex: 0 0 427px; max-width: 100%; display: flex; flex-direction: column; gap: var(--spacing-m); padding: var(--spacing-l); border-radius: var(--radius-m); background: var(--color-fill-plain-surface-base); border: var(--stroke-size-m-default) solid var(--color-stroke-link-surface-standard-default); color: inherit; text-decoration: none; transition: border-color .12s; }
+.ek-kpi1__card:hover, .ek-kpi1__card.is-hover { border-color: var(--color-stroke-link-surface-standard-hover); }
+.ek-kpi1__card:active, .ek-kpi1__card.is-active { border-color: var(--color-stroke-link-surface-standard-active); }
+.ek-kpi1__card:focus-visible { outline: var(--border-width-default) solid var(--color-stroke-link-input-active); outline-offset: 2px; }
+.ek-kpi1__head { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-m); padding-bottom: var(--spacing-m); border-bottom: var(--stroke-size-m-default) solid var(--color-stroke-plain-shape-standard-m); }
+.ek-kpi1__name { display: flex; align-items: center; gap: var(--spacing-xs); min-width: 0; }
+.ek-kpi1__tile--info { background: var(--color-semantic-info-s); }
+.ek-kpi1__tile--success { background: var(--color-semantic-success-s); }
+.ek-kpi1__tile--alert { background: var(--color-semantic-alert-s); }
+.ek-kpi1__tile--error { background: var(--color-semantic-error-s); }
+.ek-kpi1__label { color: var(--color-fill-plain-text-standard-l); }
+.ek-kpi1__head > .ek-label { flex: none; }
+.ek-kpi1__body { display: flex; flex-direction: column; gap: var(--spacing-xxs); }
+.ek-kpi1__value { display: flex; align-items: flex-end; gap: var(--spacing-xxs); color: var(--color-fill-plain-text-standard-l); }
+.ek-kpi1__caption { color: var(--color-fill-plain-text-standard-m); }
+@media (prefers-reduced-motion: reduce) { .ek-kpi1__card { transition: none; } }
+
+@media (max-width: 1024px) {
+  .ek-saas { padding: var(--spacing-l) 0; }
+  .ek-table1, .ek-notif1, .ek-kpi1 { width: 100%; max-width: 100%; }
+  /* Table: controls behind a menu button; the table scrolls sideways with the first
+     column pinned and set apart by a Shape Standard-M divider. */
+  .ek-table1__options { display: none; }
+  .ek-table1__menu { display: inline-flex; }
+  .ek-table1__grid { min-width: 0; }
+  .ek-table1__col { flex: 0 0 145px; width: 145px; }
+  .ek-table1__col:first-child { position: sticky; left: 0; z-index: 1; border-right: var(--stroke-size-m-default) solid var(--color-stroke-plain-shape-standard-m); }
+  .ek-table1__col:first-child .ek-cell-featured { background: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s)), var(--color-fill-plain-surface-base); }
+  /* KPIs: one card per row at full width. */
+  .ek-kpi1__card { flex: 1 1 100%; }
+}

@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './TestimonialsQuoteMarquee.stories.js';
-import { sectionDoc, SectionOptions } from '../_section.js';
+import { sectionDoc, SectionOptions, SectionBlocks } from '../_section.js';
 import { EkPreview } from '../_preview.js';
 
 <Meta title="Marketing sections/Testimonials/Testimonials Quote Marquee - Documentation" />
@@ -14,5 +14,9 @@ import { EkPreview } from '../_preview.js';
 <Markdown>{sectionDoc('testimonials-quote-marquee', 'short')}</Markdown>
 
 <SectionOptions slug="testimonials-quote-marquee" />
+
+<SectionBlocks slug="testimonials-quote-marquee" field="states" title="States" />
+
+<SectionBlocks slug="testimonials-quote-marquee" field="behaviors" title="Behaviors" />
 
 <Markdown>{sectionDoc('testimonials-quote-marquee', 'body')}</Markdown>

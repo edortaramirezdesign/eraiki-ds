@@ -8,7 +8,7 @@
 (function () {
   const TYPE_DOC = [
     { h: 'Display', desc: 'We will resort to the display text size on very specific occasions, when the text to be displayed is in a page header or as a prominent KPI. We will use it to construct very short sentences or specific figures that are not very long.', rows: [
-      ['M', 'ek-display-m', 64, 72, 40, 46, 500],
+      ['M', 'ek-display-m', 52, 56, 44, 48, 500],
     ] },
     { h: 'Headings', desc: 'We will use headings for titles that help identify a screen, section, or functionality. While ideally the headings should only be a few words, in smaller sizes we can also construct short sentences.', rows: [
       ['XL', 'ek-heading-xl', 48, 56, 40, 46, 500],

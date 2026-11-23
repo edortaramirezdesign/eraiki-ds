@@ -104,6 +104,22 @@ export const SectionOptions = ({ slug }) => {
       h(SectionPreview, { slug, kind: o.kind }))));
 };
 
+// States / Behaviors blocks (Saas sections such as KPIs): one heading per item with its
+// description and a live preview rendered with the item's kind — same as in the Figma doc
+// (Overview → States → Behaviors → Description). Renders nothing when the version has none.
+export const SectionBlocks = ({ slug, field, title }) => {
+  const v = BY_VER[slug];
+  const items = (v && v[field]) || [];
+  if (!items.length) return null;
+  const h = React.createElement;
+  return h(React.Fragment, null,
+    h('h2', null, title),
+    ...items.map((o) => h(React.Fragment, { key: o.kind },
+      h('h3', null, o.name),
+      h('p', null, o.desc),
+      h(SectionPreview, { slug, kind: o.kind }))));
+};
+
 // "Show code" / "Copy code" on the section docs: drop the preview-only max-width wrapper
 // that sectionRender adds, so the copied markup is just the section itself.
 // Storybook may run the transform more than once, so only unwrap when the wrapper is there.

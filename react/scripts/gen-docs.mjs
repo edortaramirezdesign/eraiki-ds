@@ -11,7 +11,7 @@ const BY_SLUG = Object.fromEntries(ctx.window.ERAIKI_COMPONENTS.map((c) => [c.sl
 // Marketing sections: written docs live per version in js/sections.js (ERAIKI_SECTIONS).
 vm.runInNewContext(readFileSync(new URL('js/sections.js', root), 'utf8'), ctx);
 const SECTION_BY_SLUG = {};
-for (const sec of ctx.window.ERAIKI_SECTIONS) for (const v of sec.versions) SECTION_BY_SLUG[v.slug] = v;
+for (const sec of ctx.window.ERAIKI_SECTIONS) for (const v of sec.versions) SECTION_BY_SLUG[v.slug] = { ...v, category: sec.category || 'Marketing sections' };
 
 // React component -> [DS slug | null, category]
 const MAP = {
@@ -81,6 +81,9 @@ const SECTIONS = {
   ContactSplitForm: 'contact-split-form',
   FAQsSplitList: 'faqs-split-list',
   TeamPortraitGrid: 'team-portrait-grid',
+  Table: 'table',
+  Notifications: 'notifications',
+  KPIs: 'kpis',
   TestimonialsImageCards: 'testimonials-image-cards',
   TestimonialsQuoteMarquee: 'testimonials-quote-marquee',
 };
@@ -93,6 +96,9 @@ const EXTRA = {
 
 // How the design-doc (Figma) property names map onto the React props.
 const PROPS_MAP = {
+  Table: 'Title → `title`; switch → `switchLabel` / `switchChecked`; dropdown filters → `filters`; mobile menu button → `onMenu`; column headings → `columns`; cell values → `rows`.',
+  Notifications: 'Heading → `title`; counter label → `count`; Task fragments → `tasks` (`icon`, `title`, `description`, `label` / `labelKind` — Show label); button → `action` / `onAction`.',
+  KPIs: 'KPI card fragments → `items`: Tone → `tone`; Show icon → `icon` (`null` hides it); Show status → `status` / `statusKind`; value + unit → `value` / `unit`; Show caption → `caption`; State (Default / Hover / Active) comes from the pointer — pass `href` / `onClick` for the target.',
   Button: 'Level → `variant`; Size → `size`; Kind → `iconLeft` / `iconRight` / `icon` (icon-only); State Disabled → `disabled` (Hover is the real :hover).',
   Badge: 'Color → `color`; Size Small (dot) → omit children or `dot`; Large → pass the count as children.',
   Avatar: 'Kind Image → `src`; Initials → `initials`; Placeholder → neither; Size → `size`; Badge → `badge` (true = dot, or a count) + `badgeColor`.',
@@ -167,7 +173,7 @@ for (const [name, [slug, category]] of Object.entries(MAP)) {
 for (const [name, slug] of Object.entries(SECTIONS)) {
   const v = SECTION_BY_SLUG[slug];
   if (!v) throw new Error(`no section ${slug}`);
-  const out = ['---', 'category: Marketing sections'];
+  const out = ['---', `category: ${v.category}`];
   if (v.keywords?.length) out.push(`keywords: [${v.keywords.map((k) => JSON.stringify(k)).join(', ')}]`);
   out.push('---', '');
   if (v.short) out.push(v.short, '');
@@ -177,7 +183,10 @@ for (const [name, slug] of Object.entries(SECTIONS)) {
   if (v.whenToUse?.length) out.push('', '## When to use', ...v.whenToUse.map((x) => `- ${x}`));
   if (v.whenNotToUse?.length) out.push('', '## When not to use', ...v.whenNotToUse.map((x) => `- ${x}`));
   out.push('', '## Design properties → React props', PROPS_MAP[name]);
-  out.push('', 'Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.');
+  if (v.states?.length) out.push('', '## States', ...v.states.map((o) => `- ${o.name}: ${o.desc}`));
+  if (v.behaviors?.length) out.push('', '## Behaviors', ...v.behaviors.map((o) => `- ${o.name}: ${o.desc}`));
+  if (v.category === 'Saas sections') out.push('', 'Saas sections are product UI blocks for app screens: place them inside your layout; each renders on a Surface Standard-S stage at its Figma width and takes the full width on mobile.');
+  else out.push('', 'Marketing sections are full-width page blocks: stack them directly inside `EraikiProvider`, one after another, with no extra wrapper or margins. Images default to built-in samples (`sectionImages`); pass your own URLs for real content.');
   writeFileSync(new URL(`docs/${name}.md`, new URL('../', import.meta.url)), out.join('\n') + '\n');
 }
 console.log(`  docs: ${Object.keys(MAP).length + Object.keys(SECTIONS).length} files written`);

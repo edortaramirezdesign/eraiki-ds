@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './ValuesFeaturesHighlightList.stories.js';
-import { sectionDoc, SectionOptions } from '../_section.js';
+import { sectionDoc, SectionOptions, SectionBlocks } from '../_section.js';
 import { EkPreview } from '../_preview.js';
 
 <Meta title="Marketing sections/Values & Features/Values & Features Highlight List - Documentation" />
@@ -14,5 +14,9 @@ import { EkPreview } from '../_preview.js';
 <Markdown>{sectionDoc('values-highlight-list', 'short')}</Markdown>
 
 <SectionOptions slug="values-highlight-list" />
+
+<SectionBlocks slug="values-highlight-list" field="states" title="States" />
+
+<SectionBlocks slug="values-highlight-list" field="behaviors" title="Behaviors" />
 
 <Markdown>{sectionDoc('values-highlight-list', 'body')}</Markdown>

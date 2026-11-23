@@ -28,4 +28,7 @@ On desktop the columns share the available width and the controls sit in the hea
 ## Design properties → React props
 Title → `title`; switch → `switchLabel` / `switchChecked`; dropdown filters → `filters`; mobile menu button → `onMenu`; column headings → `columns`; cell values → `rows`.
 
+## Behaviors
+- Sticky first column: On mobile the table keeps all its columns instead of stacking them. The first column stays pinned on the left, set apart by a divider, while the columns to its right scroll sideways underneath it — so every row stays identified however far you scroll.
+
 Saas sections are product UI blocks for app screens: place them inside your layout; each renders on a Surface Standard-S stage at its Figma width and takes the full width on mobile.

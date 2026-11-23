@@ -138,7 +138,7 @@
   --font-weight-detail-s: 500;
 
   /* ===== TYPOGRAPHY — font size (desktop) ===== */
-  --font-size-display-m: 64px;
+  --font-size-display-m: 52px;
   --font-size-heading-xl: 44px;
   --font-size-heading-l: 36px;
   --font-size-heading-m: 30px;
@@ -151,7 +151,7 @@
   --font-size-detail-s: 8px;
 
   /* ===== TYPOGRAPHY — line height (desktop) ===== */
-  --line-height-display-m: 72px;
+  --line-height-display-m: 56px;
   --line-height-heading-xl: 52px;
   --line-height-heading-l: 40px;
   --line-height-heading-m: 36px;
@@ -285,13 +285,13 @@
 @media (max-width: 1024px) {
   :root {
       /* font size (mobile) */
-      --font-size-display-m: 40px;
+      --font-size-display-m: 44px;
       --font-size-heading-xl: 40px;
       --font-size-heading-l: 36px;
       --font-size-heading-m: 30px;
 
       /* line height (mobile) */
-      --line-height-display-m: 46px;
+      --line-height-display-m: 48px;
       --line-height-heading-xl: 42px;
       --line-height-heading-l: 40px;
       --line-height-heading-m: 36px;

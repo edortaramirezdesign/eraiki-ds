@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './MarqueeLogoTiles.stories.js';
-import { sectionDoc, SectionOptions } from '../_section.js';
+import { sectionDoc, SectionOptions, SectionBlocks } from '../_section.js';
 import { EkPreview } from '../_preview.js';
 
 <Meta title="Marketing sections/Marquee/Marquee Logo Tiles - Documentation" />
@@ -14,5 +14,9 @@ import { EkPreview } from '../_preview.js';
 <Markdown>{sectionDoc('marquee-logo-tiles', 'short')}</Markdown>
 
 <SectionOptions slug="marquee-logo-tiles" />
+
+<SectionBlocks slug="marquee-logo-tiles" field="states" title="States" />
+
+<SectionBlocks slug="marquee-logo-tiles" field="behaviors" title="Behaviors" />
 
 <Markdown>{sectionDoc('marquee-logo-tiles', 'body')}</Markdown>

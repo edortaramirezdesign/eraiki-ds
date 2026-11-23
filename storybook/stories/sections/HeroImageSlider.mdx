@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './HeroImageSlider.stories.js';
-import { sectionDoc, SectionOptions } from '../_section.js';
+import { sectionDoc, SectionOptions, SectionBlocks } from '../_section.js';
 import { EkPreview } from '../_preview.js';
 
 <Meta title="Marketing sections/Hero/Hero Image Slider - Documentation" />
@@ -14,5 +14,9 @@ import { EkPreview } from '../_preview.js';
 <Markdown>{sectionDoc('hero-image-slider', 'short')}</Markdown>
 
 <SectionOptions slug="hero-image-slider" />
+
+<SectionBlocks slug="hero-image-slider" field="states" title="States" />
+
+<SectionBlocks slug="hero-image-slider" field="behaviors" title="Behaviors" />
 
 <Markdown>{sectionDoc('hero-image-slider', 'body')}</Markdown>

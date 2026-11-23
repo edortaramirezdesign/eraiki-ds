@@ -2,7 +2,7 @@
 {/* Connected to the repo's single source (js/sections.js): live markup + written docs. */}
 import { Meta, Markdown } from '@storybook/addon-docs/blocks';
 import * as Stories from './TeamPortraitGrid.stories.js';
-import { sectionDoc, SectionOptions } from '../_section.js';
+import { sectionDoc, SectionOptions, SectionBlocks } from '../_section.js';
 import { EkPreview } from '../_preview.js';
 
 <Meta title="Marketing sections/Team/Team Portrait Grid - Documentation" />
@@ -14,5 +14,9 @@ import { EkPreview } from '../_preview.js';
 <Markdown>{sectionDoc('team-portrait-grid', 'short')}</Markdown>
 
 <SectionOptions slug="team-portrait-grid" />
+
+<SectionBlocks slug="team-portrait-grid" field="states" title="States" />
+
+<SectionBlocks slug="team-portrait-grid" field="behaviors" title="Behaviors" />
 
 <Markdown>{sectionDoc('team-portrait-grid', 'body')}</Markdown>

@@ -400,6 +400,76 @@
     { slug: 'process', name: 'Process', desc: 'Step-by-step process or timeline.', versions: [] },
     { slug: 'pricing', name: 'Pricing', desc: 'Pricing tiers and comparison.', versions: [] },
     { slug: 'video', name: 'Video', desc: 'Embedded or featured video sections.', versions: [] },
+    // ---- Saas sections (Figma page 004): product UI blocks for SaaS screens. `category`
+    // groups them apart from the Marketing sections in Storybook and the React docs.
+    { slug: 'table', name: 'Table', category: 'Saas sections', desc: 'Data tables with a title and filters.', versions: [
+      { slug: 'table', name: 'Table', shot: 'table', node: '1650-35461',
+        short: 'A data table with a title and filters over rows of cells, in its desktop and mobile breakpoints.',
+        description: 'Table presents structured data in rows and columns so people can scan, compare and filter it. A header bar carries the table’s title and its controls — a switch and dropdown filters in a slot that accepts other actions — and the table below is built from Cells columns: a Featured header cell over Plain cells for each column, so every value lines up with its row and its heading.\n\nOn desktop the columns share the available width and the controls sit in the header. On mobile the controls move behind a menu button and the table scrolls horizontally, keeping the first column fixed so each row stays identified while the rest of the data is browsed.',
+        keywords: ['table', 'data table', 'rows', 'columns', 'cells', 'filters', 'dataset', 'dashboard', 'saas', 'grid'],
+        whenToUse: [
+          'Showing many records that share the same attributes, one per row.',
+          'Letting people compare values across rows and columns.',
+          'Filtering or toggling what a dataset shows from the table header.',
+          'Dashboards, reports and back-office screens in SaaS products.',
+        ],
+        whenNotToUse: [
+          'A few values or a single record — use a list or a card.',
+          'Items with rich content such as images or long text — use cards.',
+          'Showing trends or proportions — use a chart.',
+          'Interactive rows that open a detail — use Linkable cells.',
+        ],
+        frameDesktop: 'The title sits on the left and the controls on the right — a switch and three dropdown filters. Below, the table fills the width: eight Cells columns, each a Featured header cell over Plain cells, sharing the space equally.',
+        frameMobile: 'The switch and filters collapse into a single menu button next to the title. The table keeps its columns and scrolls sideways, with the first column pinned and set apart by a divider so every row stays identified.' },
+    ] },
+    { slug: 'notifications', name: 'Notifications', category: 'Saas sections', desc: 'Pending items that need a decision.', versions: [
+      { slug: 'notifications', name: 'Notifications', shot: 'notifications', node: '1657-2528',
+        short: 'A card that gathers the tasks waiting for a decision, with a counter and a link to the full inbox.',
+        description: 'Notifications brings together the items that need someone’s attention — approvals, sign-offs or suggestions raised by people or automated agents — so they can be reviewed at a glance without leaving the current screen. A heading with a counter label says how many items are waiting, and each item is a Task fragment: an icon tile, a title, a short description with its source and timing, and a status label on the right.\n\nThe list shows the most relevant items only, and a primary action at the bottom opens the full inbox. The card is built from the system type styles, Label and Button, and all its colors come from tokens, so it works in light and dark themes.',
+        keywords: ['notifications', 'inbox', 'tasks', 'approvals', 'pending', 'agents', 'alerts', 'dashboard', 'saas', 'triage'],
+        whenToUse: [
+          'Surfacing a few items that wait for a decision or a sign-off.',
+          'Dashboards where people triage requests raised by others or by automated agents.',
+          'Showing how many items are pending and linking to the complete list.',
+          'Highlighting urgent items with a status label.',
+        ],
+        whenNotToUse: [
+          'Long lists that need filters or bulk actions — use a Table.',
+          'Transient feedback after an action — use a toast or a Banner.',
+          'Notices that block the flow until they are answered — use a dialog.',
+          'A single message with no actions — use a Banner.',
+        ],
+        frameDesktop: 'The heading and its counter label sit on top, the pending tasks stack below as Task fragments — icon tile, title, description and a status label — and a primary button closes the card to open the full inbox.',
+        frameMobile: 'Same structure at full mobile width: the tasks keep their layout and their descriptions wrap onto more lines, while spacing and type follow the Mobile size tokens.' },
+    ] },
+    { slug: 'kpis', name: 'KPIs', category: 'Saas sections', desc: 'Key metrics at a glance.', versions: [
+      { slug: 'kpis', name: 'KPIs', shot: 'kpis', node: '1663-2263',
+        short: 'A row of cards that highlight key metrics, each with its value, status and context.',
+        description: 'KPIs highlights the few numbers that matter most on a dashboard so they can be read at a glance. Each metric is a single KPI card fragment: an icon tile coloured by tone — Info, Success, Alert or Error — next to the metric’s label, an optional status label on the right, the value in Display M with its unit in Heading M, and a short caption that explains where the number comes from.\n\nThe same fragment covers every metric: its options show or hide the icon, the status label and the caption, and the tone of the icon tile is chosen from the card itself. On desktop the cards sit in a row and wrap onto a new row when they no longer fit; on mobile they stack in a single column. All colours come from tokens, so the cards follow the light and dark themes.',
+        keywords: ['kpis', 'metrics', 'stats', 'dashboard', 'numbers', 'cards', 'status', 'overview', 'saas', 'analytics'],
+        whenToUse: [
+          'Highlighting the key numbers of a dashboard or overview screen.',
+          'Showing a value together with its status against a target.',
+          'Giving each metric a short context, such as its period or source.',
+          'Comparing a few metrics of the same kind side by side.',
+        ],
+        whenNotToUse: [
+          'Many figures or detailed breakdowns — use a Table.',
+          'Trends over time — use a chart.',
+          'Marketing numbers on a landing page — use a stats section.',
+          'Pending items that need a decision — use Notifications.',
+        ],
+        states: [
+          { name: 'Default', kind: 'state-default', desc: 'At rest the card shows a light standard border. The whole card is interactive: it can be selected to open the detail behind the metric.' },
+          { name: 'Hover', kind: 'state-hover', desc: 'When the pointer is over the card the border darkens to the hover tone, signalling that it can be clicked.' },
+          { name: 'Active', kind: 'state-active', desc: 'While the card is pressed, or when it is the selected metric, the border takes the active tone.' },
+        ],
+        behaviors: [
+          { name: 'Wrap', kind: 'wrap', desc: 'On desktop the cards keep their width and sit side by side. When the container is narrower than all the cards together, the ones that don’t fit wrap onto a new row, starting again from the left and keeping the same gap between rows as between cards — here three cards fit and the fourth drops below the first.' },
+        ],
+        frameDesktop: 'The KPI cards sit side by side, one per metric, and wrap onto a new row when they no longer fit — three per row with the fourth below the first. Each card shows an icon tile in the tone of the metric with its label, a status label on the right, the value in large type with its unit, and a short caption that gives context.',
+        frameMobile: 'The same cards stack in a single column at full mobile width, keeping their content and order; spacing and type follow the Mobile size tokens.' },
+    ] },
   ];
   SECTIONS.sort((a, b) => a.name.localeCompare(b.name));
   const SECTION_BUILD = {
@@ -769,6 +839,53 @@
         <div class="ek-explain6__mediacol"><div class="ek-explain6__media" style="background-image:url('assets/sections/explanation-002-img.webp')"></div></div>
       </div>
     </div>`,
+    // ---- Saas sections ----
+    // Table — header (Heading S title; switch + three dropdown filters, a menu button on
+    // mobile) over eight Cells columns (Featured header over 13 Plain cells). Mobile: the
+    // table scrolls sideways with the first column pinned.
+    'table': () => {
+      const dd = `<div class="ek-ddinput ek-table1__filter"><div class="ek-ddinput__row"><div class="ek-dropdown"><div class="ek-input ek-input--select"><span class="ek-ddinput__value is-placeholder">Lorem ipsum...</span><span class="ek-ddinput__right"><span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm ek-ddinput__toggle">${EK_ICONS.chevronDown}</span></span></div><div class="ek-dropdown__menu">${'<div class="ek-opt">Lorem ipsum</div>'.repeat(5)}</div></div></div></div>`;
+      const col = () => `<div class="ek-cells-column ek-table1__col"><div class="ek-cell-featured"><span class="ek-cell-featured__value">Lorem ipsum</span></div>${'<div class="ek-cell-plain"><span class="ek-cell-plain__content">Lorem ipsum</span></div>'.repeat(13)}</div>`;
+      return `<div class="ek-saas"><div class="ek-table1">
+        <div class="ek-table1__head">
+          <h3 class="ek-table1__title ek-heading-s">Lorem ipsum</h3>
+          <div class="ek-table1__options"><span class="ek-switch"><span class="ek-switch__track"></span><span>Lorem ipsum</span></span>${dd}${dd}${dd}</div>
+          <button class="ek-btn ek-btn--secondary ek-btn--icon ek-table1__menu" aria-label="Table options">${EK_ICONS.menu}</button>
+        </div>
+        <div class="ek-table1__scroll"><div class="ek-table1__grid">${Array.from({ length: 8 }, col).join('')}</div></div>
+      </div></div>`;
+    },
+    // Notifications — card (Surface Base, border, radius M, L inset): Heading S title + Info
+    // label counter, Task fragments (icon tile, Body L title, Body M description, Alert label)
+    // and a primary button with a right chevron.
+    'notifications': () => {
+      const tasks = [
+        ['home', 'Place 6 boarders on 5W and 6W', 'Bed Placement Agent · on hold until the feed catches up'],
+        ['logout', 'Fast-track 5 discharges on 6W', 'Discharge Agent · 14 min ago'],
+        ['truck', 'Accept ICU transfer from Valley', 'Transfer Agent · needs sign-off'],
+      ];
+      const task = ([ic, t, d]) => `<li class="ek-notif1__task"><div class="ek-notif1__main"><span class="ek-notif1__tile">${EK_ICONS[ic]}</span><div class="ek-notif1__text"><span class="ek-notif1__title ek-body-l">${t}</span><span class="ek-notif1__desc ek-body-m">${d}</span></div></div><span class="ek-label ek-label--alert"><span class="ek-label__dot"></span>Urgent</span></li>`;
+      return `<div class="ek-saas"><section class="ek-notif1">
+        <div class="ek-notif1__head"><h3 class="ek-notif1__heading ek-heading-s">Needs your call</h3><span class="ek-label ek-label--info"><span class="ek-label__dot"></span>7 waiting</span></div>
+        <ul class="ek-notif1__tasks">${tasks.map(task).join('')}</ul>
+        <div class="ek-notif1__foot"><button class="ek-btn ek-btn--primary ek-btn--icon-right">Open agent inbox ${EK_ICONS.chevronRight}</button></div>
+      </section></div>`;
+    },
+    // KPIs — KPI cards (one fragment: tone of the icon tile, status / icon / caption on or off;
+    // states Default / Hover / Active on the border) in a wrapping row; one column on mobile.
+    // kind 'state-*' renders a single card in that state (docs States block).
+    'kpis': (kind) => {
+      const tones = [['info', 'infoCircle'], ['success', 'checkCircle'], ['alert', 'bell'], ['error', 'alertCircle']];
+      const card = ([tone, ic], state) => `<a href="#" class="ek-kpi1__card${state ? ' is-' + state : ''}" onclick="return false">
+        <span class="ek-kpi1__head"><span class="ek-kpi1__name"><span class="ek-kpi1__tile ek-kpi1__tile--${tone}">${EK_ICONS[ic]}</span><span class="ek-kpi1__label ek-body-l ek-strong">Messages today</span></span><span class="ek-label ek-label--success"><span class="ek-label__dot"></span>Under 10 sec</span></span>
+        <span class="ek-kpi1__body"><span class="ek-kpi1__value"><span class="ek-display-m">1.280</span><span class="ek-heading-m">%</span></span><span class="ek-kpi1__caption ek-body-m">Since midnight</span></span>
+      </a>`;
+      if (kind && kind.startsWith('state-')) {
+        const st = kind.slice(6);
+        return `<div class="ek-saas"><div class="ek-kpi1">${card(tones[0], st === 'default' ? '' : st)}</div></div>`;
+      }
+      return `<div class="ek-saas"><div class="ek-kpi1">${tones.map((t) => card(t)).join('')}</div></div>`;
+    },
   };
   // Every section root carries .ek-section — the hook for the entrance reveal in js/eraiki.js.
   Object.keys(SECTION_BUILD).forEach(k => {

@@ -87,3 +87,5 @@ export { FAQsSplitList } from './sections/Faqs';
 export type { FAQsSplitListProps, FaqItem } from './sections/Faqs';
 export { ContactSplitForm } from './sections/Contact';
 export type { ContactSplitFormProps, ContactField } from './sections/Contact';
+export { Table, Notifications, KPIs } from './sections/Saas';
+export type { TableProps, TableFilter, NotificationsProps, NotificationTask, KPIsProps, Kpi, KpiTone } from './sections/Saas';

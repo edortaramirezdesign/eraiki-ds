@@ -419,6 +419,9 @@
           'Showing trends or proportions — use a chart.',
           'Interactive rows that open a detail — use Linkable cells.',
         ],
+        behaviors: [
+          { name: 'Sticky first column', kind: 'sticky', desc: 'On mobile the table keeps all its columns instead of stacking them. The first column stays pinned on the left, set apart by a divider, while the columns to its right scroll sideways underneath it — so every row stays identified however far you scroll.' },
+        ],
         frameDesktop: 'The title sits on the left and the controls on the right — a switch and three dropdown filters. Below, the table fills the width: eight Cells columns, each a Featured header cell over Plain cells, sharing the space equally.',
         frameMobile: 'The switch and filters collapse into a single menu button next to the title. The table keeps its columns and scrolls sideways, with the first column pinned and set apart by a divider so every row stays identified.' },
     ] },
@@ -843,10 +846,11 @@
     // Table — header (Heading S title; switch + three dropdown filters, a menu button on
     // mobile) over eight Cells columns (Featured header over 13 Plain cells). Mobile: the
     // table scrolls sideways with the first column pinned.
-    'table': () => {
+    // kind 'sticky' forces the mobile layout at 375px (docs Behaviors block).
+    'table': (kind) => {
       const dd = `<div class="ek-ddinput ek-table1__filter"><div class="ek-ddinput__row"><div class="ek-dropdown"><div class="ek-input ek-input--select"><span class="ek-ddinput__value is-placeholder">Lorem ipsum...</span><span class="ek-ddinput__right"><span class="ek-btn ek-btn--tertiary ek-btn--icon ek-btn--sm ek-ddinput__toggle">${EK_ICONS.chevronDown}</span></span></div><div class="ek-dropdown__menu">${'<div class="ek-opt">Lorem ipsum</div>'.repeat(5)}</div></div></div></div>`;
       const col = () => `<div class="ek-cells-column ek-table1__col"><div class="ek-cell-featured"><span class="ek-cell-featured__value">Lorem ipsum</span></div>${'<div class="ek-cell-plain"><span class="ek-cell-plain__content">Lorem ipsum</span></div>'.repeat(13)}</div>`;
-      return `<div class="ek-saas"><div class="ek-table1">
+      return `<div class="ek-saas"><div class="ek-table1${kind === 'sticky' ? ' ek-table1--mobile' : ''}">
         <div class="ek-table1__head">
           <h3 class="ek-table1__title ek-heading-s">Lorem ipsum</h3>
           <div class="ek-table1__options"><span class="ek-switch"><span class="ek-switch__track"></span><span>Lorem ipsum</span></span>${dd}${dd}${dd}</div>

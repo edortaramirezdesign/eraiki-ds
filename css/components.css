@@ -1201,6 +1201,16 @@
 .ek-kpi1__caption { color: var(--color-fill-plain-text-standard-m); }
 @media (prefers-reduced-motion: reduce) { .ek-kpi1__card { transition: none; } }
 
+/* Table --mobile: forces the mobile layout at 375px on any viewport (docs Behaviors
+   preview of the pinned first column). Same rules as the mobile breakpoint below. */
+.ek-table1--mobile { width: 375px; max-width: 100%; }
+.ek-table1--mobile .ek-table1__options { display: none; }
+.ek-table1--mobile .ek-table1__menu { display: inline-flex; }
+.ek-table1--mobile .ek-table1__grid { min-width: 0; }
+.ek-table1--mobile .ek-table1__col { flex: 0 0 145px; width: 145px; }
+.ek-table1--mobile .ek-table1__col:first-child { position: sticky; left: 0; z-index: 1; border-right: var(--stroke-size-m-default) solid var(--color-stroke-plain-shape-standard-m); }
+.ek-table1--mobile .ek-table1__col:first-child .ek-cell-featured { background: linear-gradient(var(--color-fill-plain-surface-standard-s), var(--color-fill-plain-surface-standard-s)), var(--color-fill-plain-surface-base); }
+
 @media (max-width: 1024px) {
   .ek-saas { padding: var(--spacing-l) 0; }
   .ek-table1, .ek-notif1, .ek-kpi1 { width: 100%; max-width: 100%; }
